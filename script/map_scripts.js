@@ -1,39 +1,58 @@
-var map = L.map("map").setView([48.8566, 2.3522], 13);
+var map = new L.map("map", {zoomControl: false}).setView([48.8566, 2.3522], 13);
+var panelControl = L.control({position: 'topleft'});
+var filter = L.control({position: 'topleft'})
 var datiOriginali = null;
 var layerCorrente = null;
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    minZoom: 5,
     maxZoom: 19,
-    zoomControl:false,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-L.control.zoom({
-    position: 'bottomright'
-}).addTo(map);
+L.control.zoom({position: 'bottomright'}).addTo(map);
 
-var pannelloFiltri = L.control({position: 'topleft'});
+var searchBar = L.control.pinSearch({
+            position: 'topleft',
+            placeholder: 'Search...',
+            buttonText: 'Search',
+            onSearch: function(query) {
+                console.log('Search query:', query);
+                // Handle the search query here
+            },
+            searchBarWidth: '200px',
+            searchBarHeight: '30px',
+            maxSearchResults: 3
+})
 
-pannelloFiltri.onAdd = function (map) {
-    
+function removeControlPanel() {
+    searchBar.remove();
+    filter.remove();
+}
+
+function addSearchBar() {
+    removeControlPanel();
+    searchBar.addTo(map);
+}
+
+panelControl.onAdd = function (map) {
     // Creiamo un "div" che conterrà la nostra interfaccia
-    var div = L.DomUtil.create('div', 'mio-pannello-custom');
-
-    // Inseriamo l'HTML del Dropdown di Bootstrap dentro questo div
-    div.innerHTML = `
-        <div class="dropdown">
-          <button class="btn btn-light dropdown-toggle shadow-sm" type="button" id="btn-filtro" data-bs-toggle="dropdown" aria-expanded="false">
-            Scegli Regista
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="btn-filtro">
-            <li><a class="dropdown-item" href="#" id="drop-tutti">Tutti i Film</a></li>
-            <li><a class="dropdown-item" href="#" id="drop-godard">Jean-Luc Godard</a></li>
-            <li><a class="dropdown-item" href="#" id="drop-truffaut">François Truffaut</a></li>
-          </ul>
-        </div>
-    `;
+    var div = L.DomUtil.create('div', 'custom-panel');
+    div.innerHTML ='<div class="d-flex gap-2 align-items-center bg-transparent"> <button class="btn btn-light shadow-sm" type="button" onClick="addSearchBar()" id="btn-search"> Cerca </button> <button class="btn btn-light shadow-sm" onClick = createFilter() type="button" id="btn-filter"> Filtri </button> <button class="btn btn-light shadow-sm" type="button" id="btn-explore"> Esplora </button> </div>';
     L.DomEvent.disableClickPropagation(div);
     L.DomEvent.disableScrollPropagation(div);
-
     return div;
 };
-pannelloFiltri.addTo(map);
+panelControl.addTo(map);
+
+filter.onAdd = function(map) {
+    var div = L.DomUtil.create('div', 'sub-panel-filter');
+    div.innerHTML ='<div class="d-flex gap-1 align-items-center bg-transparent"> <button class="btn btn-light shadow-sm" type="button" id="btn-search"> Order by </button> <button class="btn btn-light shadow-sm" onClick = type="button" id="btn-filter"> Director </button> <button class="btn btn-light shadow-sm" type="button" id="btn-explore"> Year </button> </div>';
+    L.DomEvent.disableClickPropagation(div);
+    L.DomEvent.disableScrollPropagation(div);
+    return div;
+};
+
+function createFilter() {   
+    removeControlPanel();
+    filter.addTo(map);
+}
