@@ -1,1 +1,11 @@
+body {
+    background-color: #faf1ea;
+}
 #map { height: 500px; }
+.navbar{
+    background-color: #1a1a1a;
+}
+
+.navbar-text, .nav-link {
+    color: #faf1ea;
+}
