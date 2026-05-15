@@ -1,1 +1,110 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.308192,48.869651]},"properties":{"label":"Champs-Élysées - Avenue des Champs-Élysées, 75008 Paris, France","Regista":"Jean-Luc Godard","Film":"À bout de souffle"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[2.336991,48.860737]},"properties":{"label":"Louvre Museum - Rue de Rivoli, 75001 Paris, France","Film":"Bande à part","Regista":"Jean-Luc Godard"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[2.337505,48.858339]},"properties":{"label":"Pont des Arts - Pont des Arts, 75006 Paris, France","Film":"Jules e Jim","Regista":"François Truffaut"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[2.329151,48.841934]},"properties":{"label":"Le Dôme Café - 108 Bd du Montparnasse, 75014 Paris, France","Regista":"Agnès Varda","Film":"Cléo dalle 5 alle 7"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[2.343124,48.886108]},"properties":{"label":"Montmartre - Parvis du Sacré-Cœur, 75018 Paris, France","Film":"Les Quatre Cents Coups","Regista":"François Truffaut"}}]}
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.308192,
+                    48.869651
+                ]
+            },
+            "properties": {
+                "label": "Champs-Élysées - Avenue des Champs-Élysées, 75008 Paris, France",
+                "Regista": "Jean-Luc Godard",
+                "Film": "À bout de souffle"
+            },
+            "bbox": [
+                2.308192,
+                48.869651,
+                2.308192,
+                48.869651
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.336991,
+                    48.860737
+                ]
+            },
+            "properties": {
+                "label": "Louvre Museum - Rue de Rivoli, 75001 Paris, France",
+                "Film": "Bande à part",
+                "Regista": "Jean-Luc Godard"
+            },
+            "bbox": [
+                2.336991,
+                48.860737,
+                2.336991,
+                48.860737
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.337505,
+                    48.858339
+                ]
+            },
+            "properties": {
+                "label": "Pont des Arts - Pont des Arts, 75006 Paris, France",
+                "Film": "Jules e Jim",
+                "Regista": "François Truffaut"
+            },
+            "bbox": [
+                2.337505,
+                48.858339,
+                2.337505,
+                48.858339
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.329151,
+                    48.841934
+                ]
+            },
+            "properties": {
+                "label": "Le Dôme Café - 108 Bd du Montparnasse, 75014 Paris, France",
+                "Regista": "Agnès Varda",
+                "Film": "Cléo dalle 5 alle 7"
+            },
+            "bbox": [
+                2.329151,
+                48.841934,
+                2.329151,
+                48.841934
+            ]
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.343124,
+                    48.886108
+                ]
+            },
+            "properties": {
+                "label": "Montmartre - Parvis du Sacré-Cœur, 75018 Paris, France",
+                "Film": "Les Quatre Cents Coups",
+                "Regista": "François Truffaut"
+            },
+            "bbox": [
+                2.343124,
+                48.886108,
+                2.343124,
+                48.886108
+            ]
+        }
+    ]
+}

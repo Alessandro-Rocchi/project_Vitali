@@ -4,6 +4,7 @@ var filter = L.control({position: 'topleft'})
 var datiOriginali = null;
 var layerCorrente = null;
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    minZoom: 5,
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
@@ -23,13 +24,17 @@ var searchBar = L.control.pinSearch({
             maxSearchResults: 3
 })
 
+function removeControlPanel() {
+    searchBar.remove();
+    filter.remove();
+}
 
 function addSearchBar() {
+    removeControlPanel();
     searchBar.addTo(map);
 }
 
 panelControl.onAdd = function (map) {
-    
     // Creiamo un "div" che conterrà la nostra interfaccia
     var div = L.DomUtil.create('div', 'custom-panel');
     div.innerHTML ='<div class="d-flex gap-2 align-items-center bg-transparent"> <button class="btn btn-light shadow-sm" type="button" onClick="addSearchBar()" id="btn-search"> Cerca </button> <button class="btn btn-light shadow-sm" onClick = createFilter() type="button" id="btn-filter"> Filtri </button> <button class="btn btn-light shadow-sm" type="button" id="btn-explore"> Esplora </button> </div>';
@@ -40,13 +45,14 @@ panelControl.onAdd = function (map) {
 panelControl.addTo(map);
 
 filter.onAdd = function(map) {
-    var div = L.DomUtil.create('div', 'custom-panel');
-    div.innerHTML ='<div class="d-flex gap-2 align-items-center bg-transparent"> <button class="btn btn-light shadow-sm" type="button" onClick="addSearchBar()" id="btn-search"> Cerca </button> <button class="btn btn-light shadow-sm" onClick = createFilter() type="button" id="btn-filter"> Filtri </button> <button class="btn btn-light shadow-sm" type="button" id="btn-explore"> Esplora </button> </div>';
+    var div = L.DomUtil.create('div', 'sub-panel-filter');
+    div.innerHTML ='<div class="d-flex gap-1 align-items-center bg-transparent"> <button class="btn btn-light shadow-sm" type="button" id="btn-search"> Order by </button> <button class="btn btn-light shadow-sm" onClick = type="button" id="btn-filter"> Director </button> <button class="btn btn-light shadow-sm" type="button" id="btn-explore"> Year </button> </div>';
     L.DomEvent.disableClickPropagation(div);
     L.DomEvent.disableScrollPropagation(div);
     return div;
 };
 
-function createFilter() {
+function createFilter() {   
+    removeControlPanel();
     filter.addTo(map);
 }
