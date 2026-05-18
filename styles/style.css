@@ -9,3 +9,7 @@ body {
 .navbar-text, .nav-link {
     color: #faf1ea;
 }
+
+.page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
+    background-color: #faf1ea; 
+}
