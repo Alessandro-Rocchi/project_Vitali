@@ -1,7 +1,9 @@
 body {
     background-color: #faf1ea;
 }
+
 #map { height: 500px; }
+
 .navbar{
     background-color: #1a1a1a;
 }
@@ -13,3 +15,16 @@ body {
 .page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
     background-color: #faf1ea; 
 }
+
+.leaflet-container a.dropdown-item {
+      color: #1a1a1a;
+      text-decoration: none;
+  }
+
+
+  .leaflet-container a.dropdown-item:hover,
+  .leaflet-container a.dropdown-item:focus {
+      background-color: #e9ecef;
+      color: #1a1a1a;
+      text-decoration: underline;
+  }
