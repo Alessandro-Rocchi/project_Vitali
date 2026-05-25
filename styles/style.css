@@ -1,7 +1,16 @@
-body {
-    background-color: #faf1ea;
+*{
+   font-family: "Inter", sans-serif; 
+   color: #1a1a1a;
 }
+
+body {
+    background-color: #faf1ea;    
+}
+
 #map { height: 500px; }
+
+/*NAVBAR*/
+
 .navbar{
     background-color: #1a1a1a;
 }
@@ -10,6 +19,189 @@ body {
     color: #faf1ea;
 }
 
+.navbar-text {
+    font-family: "GFS Didot", serif;
+    font-size: 22pt; /*cambiare poi con misure relative*/
+}
+
+.navbar-nav .nav-link {
+    color: #faf1ea;
+    font-size: 16pt; /*cambiare poi con misure relative*/
+    border-bottom: 1px solid transparent;
+    font-family: "Space Mono", monospace;
+}
+
+.navbar-nav .nav-link:visited {
+    color: #faf1ea;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #e63946;
+    border-bottom: 1px solid #e63946 ;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.navbar-nav .nav-link:active {
+    color: #faf1ea;
+}
+
+.navbar-nav .nav-link.active{
+    color: #e63946;
+    border-bottom: 1px solid #e63946;
+    cursor: default;
+}
+
+/*CATALOGUE*/
+
 .page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
     background-color: #faf1ea; 
+}
+
+.leaflet-container a.dropdown-item {
+      color: #1a1a1a;
+      text-decoration: none;
+  }
+
+
+  .leaflet-container a.dropdown-item:hover,
+  .leaflet-container a.dropdown-item:focus {
+      background-color: #e9ecef;
+      color: #1a1a1a;
+      text-decoration: underline;
+  }
+
+
+#catalogue_page_title h1 {
+    font-family: "Playfair", serif;
+    font-size: 48pt;
+}
+
+#catalogue_page_title h2 {
+    font-size: 18pt;
+}
+
+.card_link{
+    text-decoration: none;
+    color: #d73b3e;
+    
+}
+
+.card_link:hover {
+    
+    color: #d73b3e;
+}
+
+.filter_toggle{
+    /*display: inline-flex;*/
+    background-color: #a9a9a9;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.filter_toggle:hover{
+    cursor: pointer;
+    background-color: #707070;
+    transition: all 0.5s ease;
+}
+
+#filter_area, #cards_area {
+  transition: all 0.3s ease-in-out;
+}
+
+#filter_list {
+    transition: 0.3s;
+}
+
+.card_arrow {
+    color: #d73b3e;
+    display: inline-block;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 1s linear, opacity 0.5s linear, margin-left 1s linear;
+}
+
+.card_link:hover .card_arrow {
+    width: auto; 
+    opacity: 1;
+    margin-left: 0.10rem;
+}
+
+
+
+/*ABOUT*/
+
+#about_NV {
+    background-image: url(../img/generic_bg.png); /*ovviamente bg da cambiare*/
+    height: 300pt; /*da cambiare, è solo per una prova*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: 100%;
+    transition: background-size 1s ease;
+}
+
+#about_our_team {
+    background-image: url(../img/generic_bg.png); /*ovviamente bg da cambiare*/
+    height: 300pt;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-position: center;
+    background-size: 100%;
+    transition: background-size 1s ease;
+
+}
+
+#about_our_team, #about_NV {
+    text-decoration: none ;
+    color:#1a1a1a
+}
+
+#about_our_team:hover h2, #about_NV:hover h2 {
+    transition: 0.5s ease;
+    color: #A92325;
+}
+
+#about_our_team:hover, #about_NV:hover {
+  /* Ingrandiamo la dimensione dello sfondo al 110% al passaggio del mouse */
+  background-size: 110%; 
+}
+
+#about_our_team h2, #about_NV h2 {
+    margin: 0;   
+    font-family: "Playfair", serif;
+    font-size: 40pt; /*cambiare poi con misure relative*/
+    font-weight: 600;
+}
+
+/*ABOUT NOUVELLE VAGUE*/
+#about_NV_bg_image {
+    background-image: url(../img/generic_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40vh;
+}
+
+#about_NV_bg_image h1 {
+    font-family: "Playfair", serif;
+    font-size: 50pt;
+}
+
+#about_NV_text_content {
+    font-size: 16pt;
+    font-weight: 300;
+}
+
+#about_NV_text_content b{
+    font-weight: 600;
+    color: #d73b3e;
+}
+
+/*ABOUT OUR TEAM*/
+.id_team h1 {
+    font-family: "Playfair", serif;
 }
