@@ -32,7 +32,7 @@
             .bgimage {
                 width:100%;
                 height:60vh;
-                background: url('images/saint_sulpiere.png');
+                background: url('img/saint_sulpiere.png');
                 background-repeat: no-repeat;
                 background-position: bottom center;
                 background-size:cover;
@@ -126,22 +126,6 @@
                 border:#A92325 1px solid !important;
             }
 
-
-            /*FOOTER*/
-            .pipe{
-                cursor: default;
-            }
-
-            footer ul a{
-                border: black 3px solid !important;
-                font-size: 1.25rem !important;
-            }
-
-            ul a:not(.pipe):hover{
-                color: #A92325 !important;
-                border-bottom: #A92325 3px solid !important;
-            }
-
             /*THEME*/
             .theme{
                 height: auto;
@@ -183,6 +167,62 @@
                 z-index: -1;
                 border-radius: 50px;
             }
+
+            /*FOOTER*/
+            .pipe{
+                cursor: default;
+            }
+
+            footer ul a{
+                border: black 3px solid !important;
+                font-size: 1.25rem !important;
+            }
+
+            ul a:not(.pipe):hover{
+                color: #A92325 !important;
+                border-bottom: #A92325 3px solid !important;
+            }
+
+            footer a.nav-link, footer h2{
+                color: #F4F1FA !important;
+            }
+
+
+            /*RESPONSIVE FOOTER*/
+            @media (max-width: 992px) {
+                .pipe-license{
+                    display: none !important;
+                }
+              
+            }
+
+            @media (max-width:440px){
+                .pipe-contacts{
+                    opacity: 0 !important;
+                }
+
+            }
+
+            @media (min-width: 1199px) and (max-width: 1270px){
+                .logo-footer{
+                    flex: 0 0 auto !important;
+                    width: 100% !important;
+                }
+
+                .links-footer{
+                    flex: 0 0 auto !important;
+                    width: 100% !important;
+                }
+
+                .logo-footer .logo-img.justify-content-center{
+                    justify-content: center !important;
+                }
+
+                .logo-footer .logo-text.text-center{
+                    text-align: center !important;
+                }
+            }
+
 
         </style>
 
@@ -328,31 +368,39 @@
         </div>
 
 
-
-
         <footer class="container-fluid col-12 mt-5" style="background-color: black">
-            <div class="row py-5 ps-2">
-                <div class="col-4">
-                    <div class="row align-items-center">
-                        <img src="images/S.png" style="max-width: 7rem; max-height: 6rem;">
+            <div class="row py-5 ps-2 py-sm-3">
+                <div class="logo-footer col-xl-4 col-xxl-3 col-12 ps-xl-5 py-3">
+                    <div class="logo-img row justify-content-center justify-content-xl-start">
+                        <img src="img/S.png" style="max-width: 7rem; max-height: 6rem;">
                     </div>
-                    <div class="row mt-2">
-                        <h2 style="color:white">Les Rues du CSS <br> (Cinéma Sur la Seine)</h2>
+                    <div class="row logo-text mt-2 text-center text-xl-start">
+                        <h2>Les Rues du CSS <br> (Cinéma Sur la Seine)</h2>
                     </div>
                 </div>
-                <div class="col-8 pe-5">
+                <div class="links-footer col-xl-8 col-xxl-9 col-12 pe-xl-5 py-3 py-xl-0">
                     <div class="row align-items-center h-100">
-                        <ul class="nav justify-content-between">
-                            <li class="nav-item"><a class="nav-link text-white" href="#">About us</a></li>
-                            <li class="nav-item"><a class="pipe nav-link text-white">|</a></li>
-                            <li class="nav-item"><a class="nav-link text-white" href="#">Contacts</a></li>
-                            <li class="nav-item"><a class="pipe nav-link text-white">|</a></li>
-                            <li class="nav-item"><a class="nav-link text-white" href="#">License</a></li>
-                            <li class="nav-item"><a class="pipe nav-link text-white">|</a></li>
-                            <li class="nav-item"><a class="nav-link text-white" href="#">Credits</a></li>
-                            <li class="nav-item"><a class="pipe nav-link text-white">|</a></li>
-                            <li class="nav-item"><a class="nav-link text-white" href="#">Web Project Plan</a></li>
-                        </ul>
+                        
+                        <ul class="nav justify-content-center">
+                            
+                            <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
+                            <li class="nav-item"><a class="pipe nav-link">|</a></li>
+                            
+                            <li class="nav-item"><a class="nav-link" href="#">Contacts</a></li>
+                            <li class="nav-item pipe-contacts"><a class="pipe nav-link">|</a></li>
+                            
+                            <li class="nav-item"><a class="nav-link" href="#">License</a></li>
+                            
+                            <li class="nav-item d-none d-lg-inline-block pipe-license"><a class="pipe nav-link">|</a></li>
+                            
+                            <li class="w-100 d-lg-none"></li>
+
+                            <li class="nav-item mt-2 mt-lg-0"><a class="nav-link" href="#">Credits</a></li>
+                            <li class="nav-item mt-2 mt-lg-0"><a class="pipe nav-link">|</a></li>
+                            
+                            <li class="nav-item mt-2 mt-lg-0"><a class="nav-link" href="#">Web Project Plan</a></li>
+                            
+                        </ul>                        
                     </div>
                 </div>                    
             </div>
