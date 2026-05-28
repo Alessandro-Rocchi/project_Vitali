@@ -4,6 +4,7 @@ var filterPanel = L.control({position: 'topleft'})
 var currentLayer = null;
 var searchBar = null;
 var initialData = null;
+var routingControl = null;
 
 async function init() {
     L.control.zoom({position: 'bottomright'}).addTo(map);
@@ -101,7 +102,7 @@ filterPanel.onAdd = function (map) {
     var registiUnivoci = Array.from(registiSet).sort();
 
     var listaLiHTML = registiUnivoci.map(function(regista) {
-        return `<li><a class="dropdown-item" href="#" data-regista="${regista}">${regista}</a></li>`;
+        return `<li><a class="dropdown-item filtro-regista" href="#" data-regista="${regista}">${regista}</a></li>`;
     }).join('');
 
     var div = L.DomUtil.create('div', 'sub-panel-filter');
@@ -112,7 +113,7 @@ filterPanel.onAdd = function (map) {
                                 Director
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#" data-regista="Tutti">Tutti i Film</a></li>
+                                <li><a class="dropdown-item filtro-regista" href="#" onclick="Drawpoints('Tutti')">Tutti i Film</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 ${listaLiHTML}
                             </ul>
@@ -122,13 +123,87 @@ filterPanel.onAdd = function (map) {
                                 Year
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#" data-year="1940-1949">1940-1949</a></li>
-                                <li><a class="dropdown-item" href="#" data-year="1950-1959">1950-1959</a></li>
-                                <li><a class="dropdown-item" href="#" data-year="1960-1969">1960-1969</a></li>
+                                <li><a class="dropdown-item filtro-year" href="#" data-year="1940-1949">1940-1949</a></li>
+                                <li><a class="dropdown-item filtro-year" href="#" data-year="1950-1959">1950-1959</a></li>
+                                <li><a class="dropdown-item filtro-year" href="#" data-year="1960-1969">1960-1969</a></li>
                             </ul>
                         </div>
                     </div>`;
     L.DomEvent.disableClickPropagation(div);
     L.DomEvent.disableScrollPropagation(div);
+
+    div.addEventListener('click', function(e) {
+        
+        
+        var linkCliccato = e.target.closest('.filtro-regista');
+
+        if (linkCliccato) {
+            e.preventDefault(); 
+            
+            var registaSelezionato = linkCliccato.getAttribute('data-regista');
+            
+            document.getElementById('btn-filterDirector').innerText = registaSelezionato;
+            
+            Drawpoints(registaSelezionato);
+        }
+    });
+
     return div;
 };
+
+function disegnaPercorso(featuresFiltrate) {
+    if (routingControl !== null) {
+        map.removeControl(routingControl);
+        routingControl = null;
+    }
+
+    if (!featuresFiltrate || featuresFiltrate.length < 2) {
+        return;
+    }
+
+    var waypoints = featuresFiltrate.map(function(feature) {
+        var coords = feature.geometry.coordinates;
+        return L.latLng(coords[1], coords[0]); 
+    });
+
+    routingControl = L.Routing.control({
+        waypoints: waypoints,
+        show: true,
+        lineOptions: {
+            styles: [{color: '#E32636', opacity: 0.8, weight: 4}] // Colore della linea (es. Rosso Alizarina)
+        },
+        createMarker: function() { return null; } 
+    }).addTo(map);
+}
+
+function Drawpoints(registaScelto) {
+    if (currentLayer !== null) {
+        map.removeLayer(currentLayer);
+    }
+    
+    var featuresFiltrate = [];
+    
+    currentLayer = L.geoJSON(initialData, {
+        filter: function(feature) {
+            var mostraPunto = (registaScelto === "Tutti" || feature.properties.Regista === registaScelto);
+            
+            if (mostraPunto) {
+                featuresFiltrate.push(feature);
+            }
+            
+            return mostraPunto;
+        },
+        onEachFeature: function(feature, layer) {
+            layer.bindPopup("<b>" + feature.properties.Film + "</b>");
+        }
+    }).addTo(map);
+
+    if (registaScelto !== "Tutti") {
+        disegnaPercorso(featuresFiltrate);
+    } else {
+        if (routingControl !== null) {
+            map.removeControl(routingControl);
+            routingControl = null;
+        }
+    }
+}
