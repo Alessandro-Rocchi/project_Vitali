@@ -21,7 +21,11 @@ body {
 
 .navbar-text {
     font-family: "GFS Didot", serif;
-    font-size: 22pt; /*cambiare poi con misure relative*/
+    font-size: 0.5rem; /*cambiare poi con misure relative*/
+}
+
+span.navbar-text {
+  white-space: nowrap;
 }
 
 .navbar-nav .nav-link {
@@ -52,12 +56,91 @@ body {
     cursor: default;
 }
 
+
+
 /*BREADCRUMBS*/
 .breadcrumbs a, .breadcrumbs p {
     font-family: "Space Mono", monospace;
+    color: #707070;
 }
 
-.breadcrumbs a:not(:disabled)
+.breadcrumbs a  {
+   text-decoration: none;
+   transition: 0.5s ease; 
+   height: auto;   
+}
+.breadcrumbs a:hover:not(.disabled) {
+    text-decoration: underline;
+    color: #1a1a1a;    
+}
+
+.breadcrumbs a.disabled:hover {
+    color: #707070;
+    cursor: default;
+}
+
+/*FOOTER*/
+.pipe{
+    cursor: default;
+}
+
+footer ul a{
+    border: black 3px solid !important;
+    font-size: 1.25rem !important;
+}
+
+ul a:not(.pipe):hover{
+    color: #A92325 !important;
+    border-bottom: #A92325 3px solid !important;
+}
+
+footer a.nav-link, footer h2{
+    color: #F4F1FA !important;
+}
+
+
+/*RESPONSIVE FOOTER*/
+@media (max-width: 992px) {
+    .pipe-license{
+        display: none !important;
+    }
+    
+}
+
+@media (max-width:440px){
+    .pipe-contacts{
+        opacity: 0 !important;
+    }
+
+}
+
+@media (min-width: 1199px) and (max-width: 1270px){
+    .logo-footer{
+        flex: 0 0 auto !important;
+        width: 100% !important;
+    }
+
+    .links-footer{
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .links-footer .row ul{
+        justify-content: center !important;
+    }
+
+    .logo-footer .logo-img.justify-content-center{
+        justify-content: center !important;
+    }
+
+    .logo-footer .logo-text.text-center{
+        text-align: center !important;
+    }
+}
+
+
 
 /*CATALOGUE*/
 

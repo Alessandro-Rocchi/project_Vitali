@@ -39,8 +39,15 @@
             </div>
         </nav>
 
-        <section class="page_content"> <!--contenuto della pagina-->
-            
+        <section class="page_content pb-5"> <!--contenuto della pagina-->
+            <!--BREADCRUMBS-->
+            <div class="breadcrumbs d-inline-flex ms-4 my-3 gap-2">
+                <a href="">Home</a>
+                <p class="mb-0">/</p>
+                <a href="">Catalogue</a>
+                <p class="mb-0">/</p>
+                <a class="disabled">About Our Team</a>
+            </div>
             <div class="row col-12 p-3" id="catalogue_page_title">
                 <h1>Catalogue</h1>
                 <h2>N luoghi mostrati</h2>
@@ -165,6 +172,44 @@
                 </div>    
             </section> 
         </section>
+        <!--FOOTER-->
+        <footer class="container-fluid col-12" style="background-color: black">
+            <div class="row py-5 ps-2 py-sm-3">
+                <div class="logo-footer col-xl-4 col-xxl-3 col-12 ps-xl-5 py-3">
+                    <div class="logo-img row justify-content-center justify-content-xl-start">
+                        <img src="img/S.png" style="max-width: 7rem; max-height: 6rem;">
+                    </div>
+                    <div class="row logo-text mt-2 text-center text-xl-start">
+                        <h2>Les Rues du CSS <br> (Cinéma Sur la Seine)</h2>
+                    </div>
+                </div>
+                <div class="links-footer col-xl-8 col-xxl-9 col-12 pe-xl-5 py-3 py-xxl-0">
+                    <div class="row align-items-center h-100">
+                        
+                        <ul class="nav justify-content-center justify-content-xl-between">
+                            
+                            <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
+                            <li class="nav-item"><a class="pipe nav-link">|</a></li>
+                            
+                            <li class="nav-item"><a class="nav-link" href="#">Contacts</a></li>
+                            <li class="nav-item pipe-contacts"><a class="pipe nav-link">|</a></li>
+                            
+                            <li class="nav-item"><a class="nav-link" href="#">License</a></li>
+                            
+                            <li class="nav-item d-none d-lg-inline-block pipe-license"><a class="pipe nav-link">|</a></li>
+                            
+                            <li class="w-100 d-lg-none"></li>
+
+                            <li class="nav-item mt-2 mt-lg-0"><a class="nav-link" href="#">Credits</a></li>
+                            <li class="nav-item mt-2 mt-lg-0"><a class="pipe nav-link">|</a></li>
+                            
+                            <li class="nav-item mt-2 mt-lg-0"><a class="nav-link" href="#">Web Project Plan</a></li>
+                            
+                        </ul>                        
+                    </div>
+                </div>                    
+            </div>
+        </footer>
     </body>
     <script>
         const filterArea = document.getElementById("filter_area")
