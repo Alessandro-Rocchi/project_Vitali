@@ -97,7 +97,8 @@
             "properties": {
                 "label": "Montmartre - Parvis du Sacré-Cœur, 75018 Paris, France",
                 "Film": "Les Quatre Cents Coups",
-                "Regista": "François Truffaut"
+                "Regista": "François Truffaut",
+                "poster_url":"../img/Mm_new.png"
             },
             "bbox": [
                 2.343124,
