@@ -52,6 +52,13 @@ body {
     cursor: default;
 }
 
+/*BREADCRUMBS*/
+.breadcrumbs a, .breadcrumbs p {
+    font-family: "Space Mono", monospace;
+}
+
+.breadcrumbs a:not(:disabled)
+
 /*CATALOGUE*/
 
 .page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
