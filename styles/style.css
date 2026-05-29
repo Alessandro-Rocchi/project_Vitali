@@ -205,3 +205,9 @@ body {
 .id_team h1 {
     font-family: "Playfair", serif;
 }
+
+.sub-panel-explore .card:hover {
+    transform: translateY(-2px);
+    background-color: #f8f9fa !important;
+    cursor: pointer;
+}

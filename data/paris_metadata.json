@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Montmartre",
+        "year": "1345",
+        "associated_movie": "Les Quatre Cents Coups",
+        "film_img": "../img/MM_old.jpg",
+        "simple_description": "A historic medieval Catholic cathedral located on the Île de la Cité in Paris.",
+        "medium_description": "Notre-Dame de Paris is a medieval cathedral widely considered one of the finest examples of French Gothic architecture. Completed in the 14th century, it is world-famous for its pioneering flying buttresses, majestic rose windows, and dramatic gargoyles.",
+        "detailed_description": "Notre-Dame de Paris is a masterpiece of French Gothic architecture, situated on the Île de la Cité in the heart of Paris. Construction began in 1163 under Bishop Maurice de Sully and was completed in 1345. The cathedral is renowned for its structural innovations, such as the rib vault and flying buttresses, its immense colorful rose windows, and its rich sculptural decorations. It serves as the primary setting and architectural anchor for the narrative of the iconic 1996 Disney animated musical 'The Hunchback of Notre Dame', which beautifully visualizes the cathedral's towers, bells, and dark romanticism."
+    }   
+]
