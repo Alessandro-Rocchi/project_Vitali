@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +18,7 @@
             <div class="container-fluid">
                 <span class="col-2 navbar-text">Les Rues du CSS</span>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="material-symbols-outlined" id="navbar_menu_icon">menu</span>
                 </button>
                 <div class="col-10 collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
@@ -45,23 +46,35 @@
             <p class="mb-0">></p>
             <a class="disabled">About</a>
         </div>
+
         <div class="container">
-            <div class= "row py-5 align-items-center justify-content-center">
-                <!--prima immagine cliccabile con link a About nouvelle Vague-->
-                <div class="card p-0 col-12 col-md-6">
-                    <img class="img-fluid" src="img/generic_bg.png" alt="Card image">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Card title</h5>
+            <div class= "row align-items-center justify-content-space-between my-4 gx-md-4 gy-4">
+                
+            <!--prima immagine cliccabile con link a About nouvelle Vague-->
+                <div class="col-md-6 col-12">
+                    <div class="card p-0 about_card">
+                        <a href="">
+                            <img class="img-fluid object-fit-cover" src="img/generic_bg.png" alt="Card image">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                <h1 class="card-title">Card title</h5>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="card p-0 col-12 col-md-6">
-                    <img class="img-fluid" src="img/generic_bg.png" alt="Card image">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-                </div>               
-            </div>
+
+            <div class="col-md-6 col-12">    
+                <div class="card p-0 about_card">
+                    <a href="">
+                        <img class="img-fluid" src="img/generic_bg.png" alt="Card image">
+                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                            <h1 class="card-title">Card title</h5>
+                        </div>
+                    </a>
+                </div> 
+            </div>   
+                
         </div>
+    </div>
     </section>
     <!--FOOTER-->
         <footer class="container-fluid col-12" style="background-color: black">
