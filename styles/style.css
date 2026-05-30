@@ -285,14 +285,14 @@ footer a.nav-link, footer h2{
 
 }
 
-#about_our_team, #about_NV {
-    text-decoration: none ;
-    color:#1a1a1a
+.about_card h2 {
+    font-family: "Playfair", serif;
+    color:#1a1a1a;
 }
 
-#about_our_team:hover h2, #about_NV:hover h2 {
+.about_card:hover h2 {
     transition: 0.5s ease;
-    color: #A92325;
+    color: #e63946;
 }
 
 #about_our_team:hover, #about_NV:hover {
@@ -334,4 +334,10 @@ footer a.nav-link, footer h2{
 /*ABOUT OUR TEAM*/
 .id_team h1 {
     font-family: "Playfair", serif;
+}
+
+@media (max-width: 768px) {
+    .id_team h1 {
+        justify-self: center;
+    }
 }
