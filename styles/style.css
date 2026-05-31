@@ -334,6 +334,7 @@ footer a.nav-link, footer h2{
 /*ABOUT OUR TEAM*/
 .id_team h1 {
     font-family: "Playfair", serif;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
