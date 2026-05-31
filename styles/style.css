@@ -52,6 +52,13 @@ body {
     cursor: default;
 }
 
+/*BREADCRUMBS*/
+.breadcrumbs a, .breadcrumbs p {
+    font-family: "Space Mono", monospace;
+}
+
+.breadcrumbs a:not(:disabled)
+
 /*CATALOGUE*/
 
 .page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
@@ -204,4 +211,10 @@ body {
 /*ABOUT OUR TEAM*/
 .id_team h1 {
     font-family: "Playfair", serif;
+}
+
+.sub-panel-explore .card:hover {
+    transform: translateY(-2px);
+    background-color: #f8f9fa !important;
+    cursor: pointer;
 }
