@@ -6,6 +6,17 @@
 body {
     background-color: #faf1ea;    
 }
+body, p {
+  /* min: 15px | ideale: oscilla pochissimo | max: 18px */
+  font-size: clamp(0.9375rem, 0.25vw + 0.875rem, 1.125rem);
+  line-height: 1.6; /* Importante per la leggibilità del corpo testo */
+}
+
+body, h1 {
+  /* min: 32px | ideale: cresce molto con lo schermo | max: 56px */
+  font-size: clamp(2rem, 4vw + 1.25rem, 3.5rem);
+  line-height: 1.2;
+}
 
 #map { height: 500px; }
 
@@ -230,7 +241,6 @@ footer a.nav-link, footer h2{
 /*ABOUT*/
 .about_card h1{
     font-family: "Playfair", serif;
-    font-size: clamp();
 }
 
 .about_card:hover h1{
@@ -307,22 +317,24 @@ footer a.nav-link, footer h2{
     font-weight: 600;
 }
 
-/*ABOUT NOUVELLE VAGUE*/
-#about_NV_bg_image {
+.about_bg_image {
     background-image: url(../img/generic_bg.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 40vh;
+    height: 30vw;
 }
 
-#about_NV_bg_image h1 {
+.about_bg_image h1 {
     font-family: "Playfair", serif;
-    font-size: 50pt;
+    font-size: clamp(2rem, 4vw + 1.25rem, 3.5rem);
+    line-height: 1.2;
 }
+
+/*ABOUT NOUVELLE VAGUE*/
+
 
 #about_NV_text_content {
-    font-size: 16pt;
     font-weight: 300;
 }
 
@@ -332,13 +344,9 @@ footer a.nav-link, footer h2{
 }
 
 /*ABOUT OUR TEAM*/
-.id_team h1 {
+.id_team h4 {
     font-family: "Playfair", serif;
     justify-content: center;
 }
 
-@media (max-width: 768px) {
-    .id_team h1 {
-        justify-self: center;
-    }
-}
+
