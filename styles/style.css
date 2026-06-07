@@ -200,17 +200,39 @@ footer a.nav-link, footer h2{
     color: #d73b3e;
 }
 
-.filter_toggle{
+#filter_toggle{
     /*display: inline-flex;*/
     background-color: #a9a9a9;
     border-radius: 0px 8px 8px 0px;
+    border: none;
+    
+}
+a.btn.secondary_filter_toggle {
+    display: none;
+    width: auto;
 }
 
-.filter_toggle:hover{
-    cursor: pointer;
-    background-color: #707070;
-    transition: all 0.5s ease;
+.secondary_filter_toggle .btn::after{
+    display: none;
 }
+
+@media (max-width: 991px) {
+    #filter_area {
+        display: none;
+        
+    }
+
+    a.btn.secondary_filter_toggle{
+        display: block;
+    }
+
+    #cards_area {
+        flex-grow: 1;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 
 #filter_area, #cards_area {
   transition: all 0.3s ease-in-out;

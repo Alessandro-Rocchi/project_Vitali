@@ -54,9 +54,77 @@
             </div>
 
             <!--zona delle cards e dei filtri-->
-
+            
+            <!--bottone per aprire filtri quando la dimensione scende sotto lg-->
             <section class="container-fluid py-2">
-                <div class="row"> <!--questo dovrebbe contenere sia l'area con il toggle del menù che, a fianco, l'area con le cards-->
+                <!--<div id="secondary_filter_toggle_area">
+                    <div class="btn-group col-12 my-4" id="secondary_filter_toggle">
+                            <button class="btn btn-secondary dropdown-toggle shadow-none" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                <span class="material-symbols-outlined filter_list">filter_list</span>
+                                <span class="material-symbols-outlined">keyboard_arrow_down</span> 
+                            </button>
+                            <ul class="dropdown-menu">
+                                <div class="row"> 
+                                    <p class="col">Ordina per:</p>
+                                    <select class=" col form-select" aria-label="Default select example">
+                                    <option selected>Seleziona...</option>
+                                    <option value="A-Z">A-Z</option>
+                                    <option value="Z-A">Z-A</option>
+                                    <option value="new_to_old">New to old</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <p class="col">Regista:</p>
+                                    <select class=" col form-select" aria-label="Default select example">
+                                    <option selected>Seleziona...</option>
+                                    <option value="Tizio">Tizio</option>
+                                    <option value="Caio">Caio</option>
+                                    <option value="Sempronio">Sempronio</option>
+                                    </select>
+                                </div>
+                                <div class="row d-flex justify-content-center align-items-center gap-2">
+                                    <p class="col-auto mb-0">Film:</p>
+                                    <select class="col-auto form-select" aria-label="Default select example">
+                                    <option selected>Seleziona...</option>
+                                    <option value="Film_1">Film 1</option>
+                                    <option value="Film_2">Film 2</option>
+                                    <option value="Film_3">Film 3</option>
+                                    </select>
+                                </div>
+                            </ul>
+                        </div>
+                </div>-->
+
+                <!--offcanvas per i filtri sotto larghezza lg-->
+                <a class="btn btn-primary secondary_filter_toggle" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <span class="material-symbols-outlined filter_list">filter_list</span>
+                <span class="material-symbols-outlined">keyboard_arrow_down</span></a>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <!--offcanvas body-->
+                <div class="offcanvas-body">
+                    <div>
+                    Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                    </div>
+                    <div class="dropdown mt-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        Dropdown button
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+
+
+                <div class="row"> <!--questo contiene sia l'area con il toggle del menù che, a fianco, l'area con le cards-->
+                
                     <!--contiene toggle per aprire i filtri (chiusi di default) e filtri-->
                     <div class="d-flex">
                         <div class="col-1 p-0" id="filter_area">
@@ -93,7 +161,7 @@
                                     </div>
                                 </div>
                                 <div class="p-2">
-                                    <button class="p-1 me-1 btn btn-primary w-auto" type="button"
+                                    <button class="p-1 me-1 btn btn-primary w-auto shadow-none" type="button"
                                     id ="filter_toggle" data-bs-toggle="collapse" data-bs-target="#filters_menu". aria-expanded="true" aria-controls="filters_menu">
                                         <span class="material-symbols-outlined filter_list" id="filter_list">filter_list</span>
                                         <span class="material-symbols-outlined arrow_forward_ios" id="arrow_forward_ios">arrow_forward_ios</span>
@@ -101,14 +169,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!--bottone per aprire i filtri-->
-                            
 
-                        <div class="col-11" id="cards_area"> 
+                                                
+
+                        <div class="col-11 d-flex" id="cards_area"> 
                             <!--contiene l'area dove stanno le cards-->
-                            <div class="row align-content-center g-3"> 
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 align-content-center g-3"> 
                                     
-                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
+                                <div class="col"> 
                                     <!--struttura delle singole cards-->
                                     <div class="card border rounded p-2">
                                         <img src="img/cow.jpeg" class="img-fluid" alt="...">
@@ -118,7 +186,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                                <div class="col">
                                     <div class="card border rounded p-2">
                                         <img src="img/cow.jpeg" class="img-fluid" alt="...">
                                         <h5 class="my-2 mx-1">Nome del luogo</h6>
@@ -126,7 +194,7 @@
                                         <a href="" class="card_link align-self-end my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                                <div class="col">
                                     <div class="card border rounded p-2">
                                         <img src="img/cow.jpeg" class="img-fluid" alt="...">
                                         <h5 class="my-2 mx-1">Nome del luogo</h6>
@@ -134,7 +202,7 @@
                                         <a href="" class="card_link align-self-end my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                                <div class="col">
                                     <div class="card border rounded p-2">
                                         <img src="img/cow.jpeg" class="img-fluid" alt="...">
                                         <h5 class="my-2 mx-1">Nome del luogo</h6>
@@ -142,7 +210,7 @@
                                         <a href="" class="card_link align-self-end my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
                                     </div>
                                 </div> 
-                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                                <div class="col">
                                     <div class="card border rounded p-2">
                                         <img src="img/cow.jpeg" class="img-fluid" alt="...">
                                         <h5 class="my-2 mx-1">Nome del luogo</h6>
@@ -158,7 +226,7 @@
                                         <a href="" class="card_link align-self-end my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                                <div class="col">
                                     <div class="card border rounded p-2">
                                         <img src="img/cow.jpeg" class="img-fluid" alt="...">
                                         <h5 class="my-2 mx-1">Nome del luogo</h6>
