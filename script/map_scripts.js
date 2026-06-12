@@ -71,14 +71,19 @@ function loadJson(){
 
 function addGeoData(map, geojson) {
     currentLayer = L.geoJSON(geojson).addTo(map).bindPopup(function (layer) {
+        
+        // Sostituiamo gli apostrofi (es. Square d'Estienne d'Orves) con un escape, 
+        // per evitare che si rompano le virgolette dell'attributo onclick
+        var safeName = layer.feature.properties.name.replace(/'/g, "\\'");
+
         return `<div class="card" style="width: 18rem;">
-                    <img src="${layer.feature.properties.poster_url}" class="card-img-top" alt="${layer.feature.properties.Film}">
+                    <img src="${layer.feature.properties.poster_url}" class="card-img-top" alt="${layer.feature.properties.name}">
                     <div class="card-body">
-                        <h5 class="card-title">${layer.feature.properties.Film}</h5>
-                        <p class="card-text"><b>Director:</b> ${layer.feature.properties.Regista}</p>
-                        <p class="card-text"><b>Year:</b> ${layer.feature.properties.year}</p>
-                        <p class="card-text"><b>Location:</b> ${layer.feature.properties.label}</p>
-                        <button class="btn btn-primary" onclick="showFilmDetails('${layer.feature.properties.Film}')">View Details</button>
+                        <h5 class="card-title">${layer.feature.properties.name}</h5>
+                        <p class="card-text"><b>Director:</b> ${layer.feature.properties.director}</p>
+                        <p class="card-text"><b>Year:</b> ${layer.feature.properties.production_year}</p>
+                        <p class="card-text"><b>Associated Film:</b> ${layer.feature.properties.movie}</p>
+                        <button class="btn btn-primary" onclick="showLocationDetails('${safeName}')">View Details</button>
                     </div>
                 </div>`;
     });
@@ -112,8 +117,8 @@ filterPanel.onAdd = function (map) {
     var registiSet = new Set();
     if (initialData && initialData.features) {
         initialData.features.forEach(function(element) {
-            if (element.properties.Regista) {
-                registiSet.add(element.properties.Regista);
+            if (element.properties.director) {
+                registiSet.add(element.properties.director);
             }
         });
     }
@@ -128,8 +133,8 @@ filterPanel.onAdd = function (map) {
     div.innerHTML =`<div class="d-flex gap-2 align-items-center bg-transparent"> 
                         <button class="btn btn-light shadow-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" type="button" id="btn-filtertOrderby"> Order by </button> 
                         <div class="dropdown">
-                            <button class="btn btn-light shadow-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" type="button" id="btn-filterDirector">
-                                Director
+                            <button class="btn btn-light shadow-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" type="button" id="btn-filterdirector">
+                                director
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item filtro-regista" href="#" onclick="Drawpoints('Tutti')">Tutti i Film</a></li>
@@ -159,11 +164,11 @@ filterPanel.onAdd = function (map) {
         if (clickedLink) {
             e.preventDefault(); 
             
-            var choosenDirector = clickedLink.getAttribute('data-regista');
+            var choosendirector = clickedLink.getAttribute('data-regista');
             
-            document.getElementById('btn-filterDirector').innerText = choosenDirector;
+            document.getElementById('btn-filterdirector').innerText = choosendirector;
             
-            Drawpoints(choosenDirector);
+            Drawpoints(choosendirector);
         }
     });
 
@@ -195,7 +200,7 @@ function disegnaPercorso(filteredFeatures) {
     }).addTo(map);
 }
 
-function Drawpoints(choosenDirector) {
+function Drawpoints(choosendirector) {
     if (currentLayer !== null) {
         map.removeLayer(currentLayer);
     }
@@ -204,7 +209,7 @@ function Drawpoints(choosenDirector) {
     
     currentLayer = L.geoJSON(initialData, {
         filter: function(feature) {
-            var showPoint = (choosenDirector === "Tutti" || feature.properties.Regista === choosenDirector);
+            var showPoint = (choosendirector === "Tutti" || feature.properties.director === choosendirector);
             
             if (showPoint) {
                 filteredFeatures.push(feature);
@@ -212,12 +217,9 @@ function Drawpoints(choosenDirector) {
             
             return showPoint;
         },
-        onEachFeature: function(feature, layer) {
-            layer.bindPopup("<b>" + feature.properties.Film + "</b>");
-        }
     }).addTo(map);
 
-    if (choosenDirector !== "Tutti") {
+    if (choosendirector !== "Tutti") {
         disegnaPercorso(filteredFeatures);
     } else {
         if (routingControl !== null) {
@@ -227,48 +229,46 @@ function Drawpoints(choosenDirector) {
     }
 }
 
-function showFilmDetails(filmproperties) {
+function showLocationDetails(locationName) {
     var text_info = document.getElementById('text-section');
     var img_panel = document.getElementById('img-section');
-    var testiDelFilm = null;
 
+    // 1. Troviamo il luogo nel GeoJSON tramite il nome
     var filmGeoJson = initialData.features.find(function(f) {
-        return f.properties.Film === filmproperties;
+        return f.properties.name === locationName;
     });
 
     if (!filmGeoJson) {
-        console.error("Film non trovato nel GeoJSON:", filmproperties);
+        console.error("Luogo non trovato nel GeoJSON:", locationName);
         return;
     }
+    
     var properties = filmGeoJson.properties;
-    var url_Img = properties.poster_url || "https://via.placeholder.com/300x400?text=Nessuna+Immagine";
+    var url_Img = properties.poster_url;
+
     if (img_panel) {
         img_panel.src = url_Img;
-        img_panel.alt = properties.Film;
+        img_panel.alt = properties.name || 'Location Image';
     }
 
     if (document.getElementById('title-sect')) {
-        document.getElementById('title-sect').textContent = properties.Film;
+        document.getElementById('title-sect').textContent = properties.name || 'Location Details';
     }
-    // Controlliamo che la variabile globale esista e abbia dati
+
+    // 2. Troviamo i metadati usando lo stesso identico nome
+    var testiDelLuogo = null;
     if (metadataJson && metadataJson.length > 0) {
-        
-        // Cerchiamo l'oggetto il cui 'titolo' combacia con il 'Film' cliccato sulla mappa
-        testiDelFilm = metadataJson.find(function(elemento) {
-            return elemento.associated_movie === filmproperties; 
+        testiDelLuogo = metadataJson.find(function(elemento) {
+            return elemento.name === locationName; 
         });
     }
-    if (testiDelFilm) {
-        
-        // 1. Leggiamo i due testi dal JSON (cambia "extended_description" se l'hai chiamata diversamente!)
-        var testoBreve = testiDelFilm.simple_description || 'Trama non disponibile.';
-        var testoMedio = testiDelFilm.medium_description || 'Trama non disponibile.';
-        var testoLungo = testiDelFilm.detailed_description || 'Trama non disponibile.';
 
-        // 2. Controlliamo se per questo film esiste la versione lunga
+    if (testiDelLuogo) {
+        var testoBreve = testiDelLuogo.simple_description || 'Dettagli non disponibili.';
+        var testoMedio = testiDelLuogo.medium_description || 'Dettagli non disponibili.';
+        var testoLungo = testiDelLuogo.detailed_description || 'Dettagli non disponibili.';
+
         if (testoBreve && testoMedio && testoLungo) {
-            
-            // Inseriamo entrambi i testi e il bottone. Il testo lungo parte nascosto (display: none)
             text_info.innerHTML = `
                 <span id="testo-breve">${testoBreve}</span>
                 <span id="testo-medio" style="display: none;">${testoMedio}</span>
@@ -276,7 +276,6 @@ function showFilmDetails(filmproperties) {
                 <button id="btn-scopri" class="btn btn-link p-0 ms-1 text-decoration-none fw-bold">Scopri di più</button>
             `;
 
-            // 3. Creiamo l'interruttore
             document.getElementById('btn-scopri').addEventListener('click', function(e) {
                 e.preventDefault();
                 
@@ -284,49 +283,31 @@ function showFilmDetails(filmproperties) {
                 var spanMedio = document.getElementById('testo-medio');
                 var spanLungo = document.getElementById('testo-lungo');
 
-               if (spanBreve.style.display !== 'none') {
-    
-                    // Nascondiamo il Breve, mostriamo il Medio
+                if (spanBreve.style.display !== 'none') {
                     spanBreve.style.display = 'none';
                     spanMedio.style.display = 'inline';
                     spanLungo.style.display = 'none';
-                    
                     this.textContent = 'Scopri ancora di più';
-
-                } 
-                // STATO 2: Se stiamo vedendo il testo MEDIO
-                else if (spanMedio.style.display !== 'none') {
-                    
-                    // Nascondiamo il Medio, mostriamo il Lungo
+                } else if (spanMedio.style.display !== 'none') {
                     spanBreve.style.display = 'none';
                     spanMedio.style.display = 'none';
                     spanLungo.style.display = 'inline';
-                    
                     this.textContent = 'Mostra meno';
-
-                } 
-                // STATO 3: Se stiamo vedendo il testo LUNGO (l'unico caso rimasto)
-                else {
-                    
-                    // IL TUO OBIETTIVO: Torniamo direttamente al testo BREVE, saltando il medio!
+                } else {
                     spanBreve.style.display = 'inline';
                     spanMedio.style.display = 'none';
                     spanLungo.style.display = 'none';
-                    
-                    this.textContent = 'Scopri di più'; // Riportiamo il bottone allo stato iniziale
+                    this.textContent = 'Scopri di più';
                 }
-    
             });
         } else {
-            // Se per un certo film hai preparato solo il testo breve, lo stampiamo senza bottone
             text_info.textContent = testoBreve;
         }
-
     } else {
-        // Se il film NON è nel JSON extra
         text_info.textContent = 'Dettagli non ancora inseriti nel database.';
     }
 }
+
 explorePanel.onAdd = function (map) {
     // Il contenitore è totalmente INVISIBILE
     var div = L.DomUtil.create('div', 'sub-panel-explore d-flex flex-column gap-2 bg-transparent border-0 p-0');
