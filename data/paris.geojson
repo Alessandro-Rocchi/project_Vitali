@@ -1,111 +1,329 @@
 {
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    2.308192,
-                    48.869651
-                ]
-            },
-            "properties": {
-                "label": "Champs-Élysées - Avenue des Champs-Élysées, 75008 Paris, France",
-                "Regista": "Jean-Luc Godard",
-                "Film": "À bout de souffle"
-            },
-            "bbox": [
-                2.308192,
-                48.869651,
-                2.308192,
-                48.869651
-            ]
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    2.336991,
-                    48.860737
-                ]
-            },
-            "properties": {
-                "label": "Louvre Museum - Rue de Rivoli, 75001 Paris, France",
-                "Film": "Bande à part",
-                "Regista": "Jean-Luc Godard"
-            },
-            "bbox": [
-                2.336991,
-                48.860737,
-                2.336991,
-                48.860737
-            ]
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    2.337505,
-                    48.858339
-                ]
-            },
-            "properties": {
-                "label": "Pont des Arts - Pont des Arts, 75006 Paris, France",
-                "Film": "Jules e Jim",
-                "Regista": "François Truffaut"
-            },
-            "bbox": [
-                2.337505,
-                48.858339,
-                2.337505,
-                48.858339
-            ]
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    2.329151,
-                    48.841934
-                ]
-            },
-            "properties": {
-                "label": "Le Dôme Café - 108 Bd du Montparnasse, 75014 Paris, France",
-                "Regista": "Agnès Varda",
-                "Film": "Cléo dalle 5 alle 7"
-            },
-            "bbox": [
-                2.329151,
-                48.841934,
-                2.329151,
-                48.841934
-            ]
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    2.343124,
-                    48.886108
-                ]
-            },
-            "properties": {
-                "label": "Montmartre - Parvis du Sacré-Cœur, 75018 Paris, France",
-                "Film": "Les Quatre Cents Coups",
-                "Regista": "François Truffaut",
-                "poster_url":"../img/Mm_new.png"
-            },
-            "bbox": [
-                2.343124,
-                48.886108,
-                2.343124,
-                48.886108
-            ]
-        }
-    ]
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3433, 48.8483] },
+      "properties": {
+        "name": "Capelle de la Sorbonne",
+        "label": "Sorbonne Chapel, Paris, France",
+        "director": "Jacques Rivette",
+        "movie": "Paris Belongs to Us",
+        "production_year": "1961"
+      },
+      "bbox": [2.3433, 48.8483, 2.3433, 48.8483]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3333, 48.8505] },
+      "properties": {
+        "name": "Chiesa di Saint Suplice",
+        "label": "Church of Saint-Sulpice, Paris, France",
+        "director": "Jacques Rivette",
+        "movie": "Paris Belongs to Us",
+        "production_year": "1961"
+      },
+      "bbox": [2.3333, 48.8505, 2.3333, 48.8505]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3375, 48.8583] },
+      "properties": {
+        "name": "Pont des Arts",
+        "label": "Pont des Arts, Paris, France",
+        "director": "Jacques Rivette",
+        "movie": "Paris Belongs to Us",
+        "production_year": "1961"
+      },
+      "bbox": [2.3375, 48.8583, 2.3375, 48.8583]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.2961, 48.8738] },
+      "properties": {
+        "name": "Café le Presbourg",
+        "label": "Café le Presbourg, Paris, France",
+        "director": "Jacques Rivette",
+        "movie": "Paris Belongs to Us",
+        "production_year": "1961"
+      },
+      "bbox": [2.2961, 48.8738, 2.2961, 48.8738]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3499, 48.8529] },
+      "properties": {
+        "name": "Notre Dame",
+        "label": "Notre-Dame Cathedral, Paris, France",
+        "director": "Jean-Luc Godard",
+        "movie": "Breathless",
+        "production_year": "1960"
+      },
+      "bbox": [2.3499, 48.8529, 2.3499, 48.8529]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3450, 48.8530] },
+      "properties": {
+        "name": "Les Rives de Notre Dame, quai St Michel, Paris",
+        "label": "Quai Saint-Michel, Paris, France",
+        "director": "Jean-Luc Godard",
+        "movie": "Breathless",
+        "production_year": "1960"
+      },
+      "bbox": [2.3450, 48.8530, 2.3450, 48.8530]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3006, 48.8720] },
+      "properties": {
+        "name": "The entrances to the George V Métro station",
+        "label": "George V Metro Station, Paris, France",
+        "director": "Jean-Luc Godard",
+        "movie": "Breathless",
+        "production_year": "1960"
+      },
+      "bbox": [2.3006, 48.8720, 2.3006, 48.8720]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3219, 48.8656] },
+      "properties": {
+        "name": "Place de la Concorde",
+        "label": "Place de la Concorde, Paris, France",
+        "director": "Jean-Luc Godard",
+        "movie": "Breathless",
+        "production_year": "1960"
+      },
+      "bbox": [2.3219, 48.8656, 2.3219, 48.8656]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3283, 48.8427] },
+      "properties": {
+        "name": "Le Select, 99 boulevard Montparnasse",
+        "label": "Le Select - 99 Bd du Montparnasse, Paris, France",
+        "director": "Jean-Luc Godard",
+        "movie": "Breathless",
+        "production_year": "1960"
+      },
+      "bbox": [2.3283, 48.8427, 2.3283, 48.8427]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3308, 48.8390] },
+      "properties": {
+        "name": "metro: Raspail",
+        "label": "Raspail Metro Station, Paris, France",
+        "director": "Jean-Luc Godard",
+        "movie": "Breathless",
+        "production_year": "1960"
+      },
+      "bbox": [2.3308, 48.8390, 2.3308, 48.8390]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.4200, 48.8200] },
+      "properties": {
+        "name": "the Marne",
+        "label": "The Marne River, France",
+        "director": "Jean-Luc Godard",
+        "movie": "Band of Outsiders",
+        "production_year": "1964"
+      },
+      "bbox": [2.4200, 48.8200, 2.4200, 48.8200]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.4330, 48.8160] },
+      "properties": {
+        "name": "Ile des Corbeaux at Saint-Maurice",
+        "label": "Île des Corbeaux, Saint-Maurice, France",
+        "director": "Jean-Luc Godard",
+        "movie": "Band of Outsiders",
+        "production_year": "1964"
+      },
+      "bbox": [2.4330, 48.8160, 2.4330, 48.8160]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3690, 48.8531] },
+      "properties": {
+        "name": "Column de Juillet, Paris",
+        "label": "July Column, Place de la Bastille, Paris, France",
+        "director": "Jean-Luc Godard",
+        "movie": "Band of Outsiders",
+        "production_year": "1964"
+      },
+      "bbox": [2.3690, 48.8531, 2.3690, 48.8531]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3385, 48.8569] },
+      "properties": {
+        "name": "quai de Conti",
+        "label": "Quai de Conti, Paris, France",
+        "director": "Jean-Luc Godard",
+        "movie": "Band of Outsiders",
+        "production_year": "1964"
+      },
+      "bbox": [2.3385, 48.8569, 2.3385, 48.8569]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3376, 48.8606] },
+      "properties": {
+        "name": "Louvre’s",
+        "label": "Louvre Museum, Paris, France",
+        "director": "Jean-Luc Godard",
+        "movie": "Band of Outsiders",
+        "production_year": "1964"
+      },
+      "bbox": [2.3376, 48.8606, 2.3376, 48.8606]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3116, 48.8828] },
+      "properties": {
+        "name": "street market in Pl. de Levis",
+        "label": "Place de Lévis, Paris, France",
+        "director": "Éric Rohmer",
+        "movie": "The Bakery Girl of Monceau",
+        "production_year": "1962"
+      },
+      "bbox": [2.3116, 48.8828, 2.3116, 48.8828]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3039, 48.8794] },
+      "properties": {
+        "name": "Boulevard de Courcelles",
+        "label": "Boulevard de Courcelles, Paris, France",
+        "director": "Éric Rohmer",
+        "movie": "The Bakery Girl of Monceau",
+        "production_year": "1962"
+      },
+      "bbox": [2.3039, 48.8794, 2.3039, 48.8794]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3422, 48.8719] },
+      "properties": {
+        "name": "boulevard Montmartre 12",
+        "label": "12 Boulevard Montmartre, Paris, France",
+        "director": "François Truffaut",
+        "movie": "The 400 Blows",
+        "production_year": "1959"
+      },
+      "bbox": [2.3422, 48.8719, 2.3422, 48.8719]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3303, 48.8836] },
+      "properties": {
+        "name": "Rue Puget 2",
+        "label": "2 Rue Puget, Paris, France",
+        "director": "François Truffaut",
+        "movie": "The 400 Blows",
+        "production_year": "1959"
+      },
+      "bbox": [2.3303, 48.8836, 2.3303, 48.8836]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3328, 48.8837] },
+      "properties": {
+        "name": "Rue Lepic 3",
+        "label": "3 Rue Lepic, Paris, France",
+        "director": "François Truffaut",
+        "movie": "The 400 Blows",
+        "production_year": "1959"
+      },
+      "bbox": [2.3328, 48.8837, 2.3328, 48.8837]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3317, 48.8770] },
+      "properties": {
+        "name": "Square d'Estienne d'Orves",
+        "label": "Square d'Estienne d'Orves, Paris, France",
+        "director": "François Truffaut",
+        "movie": "The 400 Blows",
+        "production_year": "1959"
+      },
+      "bbox": [2.3317, 48.8770, 2.3317, 48.8770]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3431, 48.8867] },
+      "properties": {
+        "name": "Sacré-Cœur in Montmartre.",
+        "label": "Sacré-Cœur, Montmartre, Paris, France",
+        "director": "François Truffaut",
+        "movie": "The 400 Blows",
+        "production_year": "1959"
+      },
+      "bbox": [2.3431, 48.8867, 2.3431, 48.8867]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3060, 48.8705] },
+      "properties": {
+        "name": "Champs Elysées (60 avenue des Champs Elysées)",
+        "label": "60 Avenue des Champs-Élysées, Paris, France",
+        "director": "François Truffaut",
+        "movie": "The 400 Blows",
+        "production_year": "1959"
+      },
+      "bbox": [2.3060, 48.8705, 2.3060, 48.8705]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.2884, 48.8624] },
+      "properties": {
+        "name": "Palais de Chaillot",
+        "label": "Palais de Chaillot, Paris, France",
+        "director": "François Truffaut",
+        "movie": "The 400 Blows",
+        "production_year": "1959"
+      },
+      "bbox": [2.2884, 48.8624, 2.2884, 48.8624]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3415, 48.8601] },
+      "properties": {
+        "name": "128 Rue de Rivoli",
+        "label": "128 Rue de Rivoli, Paris, France",
+        "director": "Agnès Varda",
+        "movie": "Cléo from 5 to 7",
+        "production_year": "1962"
+      },
+      "bbox": [2.3415, 48.8601, 2.3415, 48.8601]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3289, 48.8425] },
+      "properties": {
+        "name": "Café du Dôme",
+        "label": "Café du Dôme - 108 Bd du Montparnasse, Paris, France",
+        "director": "Agnès Varda",
+        "movie": "Cléo from 5 to 7",
+        "production_year": "1962"
+      },
+      "bbox": [2.3289, 48.8425, 2.3289, 48.8425]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [2.3380, 48.8225] },
+      "properties": {
+        "name": "Parc Montsouris",
+        "label": "Parc Montsouris, Paris, France",
+        "director": "Agnès Varda",
+        "movie": "Cléo from 5 to 7",
+        "production_year": "1962"
+      },
+      "bbox": [2.3380, 48.8225, 2.3380, 48.8225]
+    }
+  ]
 }

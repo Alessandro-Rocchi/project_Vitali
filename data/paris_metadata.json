@@ -1,11 +1,218 @@
 [
-    {
-        "name": "Montmartre",
-        "year": "1345",
-        "associated_movie": "Les Quatre Cents Coups",
-        "film_img": "../img/MM_old.jpg",
-        "simple_description": "A historic medieval Catholic cathedral located on the Île de la Cité in Paris.",
-        "medium_description": "Notre-Dame de Paris is a medieval cathedral widely considered one of the finest examples of French Gothic architecture. Completed in the 14th century, it is world-famous for its pioneering flying buttresses, majestic rose windows, and dramatic gargoyles.",
-        "detailed_description": "Notre-Dame de Paris is a masterpiece of French Gothic architecture, situated on the Île de la Cité in the heart of Paris. Construction began in 1163 under Bishop Maurice de Sully and was completed in 1345. The cathedral is renowned for its structural innovations, such as the rib vault and flying buttresses, its immense colorful rose windows, and its rich sculptural decorations. It serves as the primary setting and architectural anchor for the narrative of the iconic 1996 Disney animated musical 'The Hunchback of Notre Dame', which beautifully visualizes the cathedral's towers, bells, and dark romanticism."
-    }   
+  {
+    "name": "Capelle de la Sorbonne",
+    "year": "1642",
+    "associated_movie": "Paris nous appartient",
+    "simple_description": "The private chapel of the Sorbonne University in Paris.",
+    "medium_description": "A historic Parisian chapel completed in 1642 at the request of Cardinal Richelieu. It represents an important example of French Baroque architecture in the heart of the Latin Quarter.",
+    "detailed_description": "The Chapelle de la Sorbonne is a masterpiece of French Baroque architecture, designed by the architect Jacques Lemercier and completed in 1642. It was commissioned by Cardinal Richelieu, whose remains still rest today in the mausoleum within the nave. The structure is distinguished by its elegant dome, which was one of the first of its kind to be built in Paris, and is one of the intellectual symbols of the city."
+  },
+  {
+    "name": "Chiesa di Saint Suplice",
+    "year": "1646",
+    "associated_movie": "Paris nous appartient",
+    "simple_description": "A large and historic Catholic church in the Odéon district.",
+    "medium_description": "The second largest church in Paris after Notre-Dame, with construction beginning in 1646. It is famous for its imposing twin-tower facade and the astronomical gnomon located inside.",
+    "detailed_description": "The Église Saint-Sulpice is a vast religious building located in the 6th arrondissement of Paris, whose construction origins date back to 1646, although it took over a century and a half to complete. It is famous for its imposing asymmetrical facade designed by Jean-Nicolas Servandoni and for the magnificent frescoes by Eugène Delacroix. The church also houses an important astronomical meridian (the gnomon of Saint-Sulpice) and a monumental Cavaillé-Coll organ, among the finest in France."
+  },
+  {
+    "name": "Pont des Arts",
+    "year": "1804",
+    "associated_movie": "Paris nous appartient",
+    "simple_description": "A famous pedestrian bridge crossing the Seine.",
+    "medium_description": "The Pont des Arts is a metal pedestrian bridge connecting the Institut de France to the Louvre Museum. Originally built in 1804, it is famous worldwide as a romantic and scenic location.",
+    "detailed_description": "The Pont des Arts, or Passerelle des Arts, was the first metal bridge built in Paris, originally inaugurated in 1804 under Napoleon Bonaparte. After being damaged by bombings and river collisions, it was rebuilt in the 1980s retaining a similar appearance to the original. It majestically connects the right and left banks of the Seine between the Louvre and the Institut de France, and is known in popular culture as the 'bridge of love locks', an unmissable destination for photographers and lovers."
+  },
+  {
+    "name": "Café le Presbourg",
+    "year": "1954",
+    "associated_movie": "Paris nous appartient",
+    "simple_description": "An iconic Parisian café located near the Arc de Triomphe.",
+    "medium_description": "A historic venue strategically positioned at Place de l'Étoile. It was a favorite meeting place for intellectuals, artists, and protagonists of the French New Wave.",
+    "detailed_description": "Café le Presbourg is one of the iconic addresses of Parisian social and cultural life, set in the elegant surroundings of the Arc de Triomphe and Champs-Élysées district. A place of transit and pause for intellectuals and filmmakers throughout the twentieth century, it embodies the classic style of a French brasserie. Its vibrant atmosphere and period architecture make it the perfect stage for the dynamics and discussions that historically animated the Parisian cinema world."
+  },
+  {
+    "name": "Notre Dame",
+    "year": "1345",
+    "associated_movie": "A Bout De Soufflé",
+    "simple_description": "Historic Gothic cathedral on the Île de la Cité.",
+    "medium_description": "Notre-Dame de Paris is a majestic cathedral completed in 1345, a masterpiece of Gothic architecture. It is known worldwide for its gargoyles, rose windows, and flying buttresses.",
+    "detailed_description": "Notre-Dame de Paris is the spiritual and geographical heart of Paris, located on the Île de la Cité. Built over roughly two centuries and completed in 1345, it defined the canons of Gothic architecture with its pioneering introduction of flying buttresses and rib vaults. Its priceless artistic heritage includes sculptures, medieval stained glass windows, and sacred relics. Having survived revolutions and wars, it continues to be an immortal symbol of French culture and resilience."
+  },
+  {
+    "name": "Les Rives de Notre Dame, quai St Michel, Paris",
+    "year": "1378",
+    "associated_movie": "A Bout De Soufflé",
+    "simple_description": "Historic promenades along the Seine, near Notre-Dame.",
+    "medium_description": "The Quai Saint-Michel is a famous street running along the left bank of the Seine. It offers one of the most iconic views of the Notre-Dame Cathedral and hosts numerous antique book stalls.",
+    "detailed_description": "The Quai Saint-Michel is a historic street on the riverfront of the Parisian Rive Gauche, whose current layout largely dates back to medieval urban works and subsequent adjustments. It offers a picturesque and uninterrupted panoramic view of the nearby Notre-Dame Cathedral and the Île de la Cité. The banks are populated by the traditional 'bouquinistes', the open-air booksellers that characterize the bohemian and literary soul of the capital, making this walk a true immersion into history."
+  },
+  {
+    "name": "The entrances to the George V Métro station",
+    "year": "1900",
+    "associated_movie": "A Bout De Soufflé",
+    "simple_description": "The historic entrance of a famous Parisian metro station.",
+    "medium_description": "Opened in 1900 on Line 1, this station is located under the Champs-Élysées. Its entrances are typical of the Parisian metropolitan style, offering direct access to the city's most famous avenue.",
+    "detailed_description": "The George V metro station, inaugurated on August 13, 1900, is located in the heart of the 8th arrondissement of Paris, serving the bustling and luxurious Avenue des Champs-Élysées. Originally named 'Alma', it was renamed in 1920 in honor of the King of England, George V, for British support during the First World War. The entrances reflect the functional yet iconic aesthetics of Parisian public transport, emerging directly onto the wide sidewalks where high society and global tourism intertwine."
+  },
+  {
+    "name": "Place de la Concorde",
+    "year": "1772",
+    "associated_movie": "A Bout De Soufflé",
+    "simple_description": "The largest and most famous square in Paris.",
+    "medium_description": "A majestic public square located at the end of the Champs-Élysées, completed in 1772. It is famous for the ancient Egyptian obelisk at its center and its turbulent past during the French Revolution.",
+    "detailed_description": "Place de la Concorde is the largest and most monumental square in Paris, designed by architect Ange-Jacques Gabriel and originally conceived as Place Louis XV. It became one of the main stages of the French Revolution, where the beheadings of Louis XVI and Marie Antoinette were carried out. At its center stands the Luxor Obelisk, an Egyptian artifact over 3,000 years old donated to France in the 19th century. Concluding the Champs-Élysées, it offers spectacular perspectives of the Tuileries Gardens, the Arc de Triomphe, and the Seine."
+  },
+  {
+    "name": "Le Select, 99 boulevard Montparnasse",
+    "year": "1923",
+    "associated_movie": "A Bout De Soufflé",
+    "simple_description": "A classic Parisian brasserie in the Montparnasse district.",
+    "medium_description": "Opened in 1923, Le Select was one of the favorite literary cafés for American expatriates and artists. It still maintains its charming original 1920s decor intact.",
+    "detailed_description": "Le Select is a famous Parisian café and brasserie located at 99 Boulevard du Montparnasse. In the 1920s and 30s, it became the headquarters of the so-called 'Lost Generation', frequently visited by prominent literary and artistic figures such as Ernest Hemingway, F. Scott Fitzgerald, and Pablo Picasso. Unlike other modernized venues, Le Select has proudly maintained the authentic atmosphere and original booths of the era, remaining an intact temple of the bohemian spirit."
+  },
+  {
+    "name": "metro: Raspail",
+    "year": "1906",
+    "associated_movie": "A Bout De Soufflé",
+    "simple_description": "A Parisian metro station on lines 4 and 6.",
+    "medium_description": "Opened in 1906, this metro station serves the Montparnasse area. It takes its name from the boulevard above, dedicated to the chemist and politician François-Vincent Raspail.",
+    "detailed_description": "The Raspail metro station is an underground hub located in the 14th arrondissement of Paris, inaugurated in 1906. It serves lines 4 and 6 and is strategically positioned in the Montparnasse district. The internal architecture features the classic beveled white tiles of the historic metro network. It serves as a vital vein for city transit and access to the historic sites of the Rive Gauche."
+  },
+  {
+    "name": "the Marne",
+    "year": "N/D",
+    "associated_movie": "Bande à part",
+    "simple_description": "A major French river that flows into the Seine.",
+    "medium_description": "The Marne is a river about 514 km long that flows in the east and within the Parisian basin of France. It is historically famous for being the site of two major battles during the First World War.",
+    "detailed_description": "The Marne is one of the main rivers in France and a major right tributary of the Seine, which it joins at the eastern gates of Paris. In addition to shaping the landscapes of the French countryside, it has profound historical significance: it was the front line for the famous Battles of the Marne (1914 and 1918) during the First World War. Its placid and tree-lined banks have inspired countless impressionist painters and remain a classic backdrop for French cinema."
+  },
+  {
+    "name": "Ile des Corbeaux at Saint-Maurice",
+    "year": "N/D",
+    "associated_movie": "Bande à part",
+    "simple_description": "A small and picturesque river island near Paris.",
+    "medium_description": "Located on the Marne River, the Island of the Crows (Île des Corbeaux) is part of the municipality of Saint-Maurice. It is a strip of natural land appreciated for walks surrounded by greenery.",
+    "detailed_description": "Île des Corbeaux is a quiet and small river islet located on the Marne River, falling within the administrative territory of the municipality of Saint-Maurice, not far from the Bois de Vincennes, on the outskirts of Paris. The name evokes rural and wild atmospheres in stark contrast to urban expansion. Over time, these river islands have attracted Parisians looking for nature, offering idyllic landscapes and enchanting paths far from the urban frenzy."
+  },
+  {
+    "name": "Column de Juillet, Paris",
+    "year": "1840",
+    "associated_movie": "Bande à part",
+    "simple_description": "An imposing monument located in Place de la Bastille.",
+    "medium_description": "The July Column is a commemorative monument erected in 1840 to honor the victims of the July Revolution of 1830. Surmounted by the 'Spirit of Freedom', it dominates the Bastille intersection.",
+    "detailed_description": "The Colonne de Juillet is a monumental bronze commemorative pillar located in the center of the renowned Place de la Bastille in Paris. Built between 1835 and 1840 under the reign of Louis Philippe, it commemorates the 'Trois Glorieuses', or the three days of the July Revolution of 1830. Engraved with the names of the victims, it is crowned by the famous gilded sculpture of the 'Spirit of Freedom' (Génie de la Liberté) by Auguste Dumont, a symbol of the republican spirit in motion."
+  },
+  {
+    "name": "quai de Conti",
+    "year": "1313",
+    "associated_movie": "Bande à part",
+    "simple_description": "An iconic street running along the left bank of the Seine.",
+    "medium_description": "The Quai de Conti is located in the 6th arrondissement of Paris and houses prestigious buildings such as the Institut de France and the Monnaie de Paris. It is a hub of cultural and academic life.",
+    "detailed_description": "The Quai de Conti is a historic riverside promenade located on the Rive Gauche in the 6th arrondissement of Paris, with roots dating back to the development of the river embankments since 1313. It is a walk of great architectural value and is dominated by two imposing institutions: the monumental headquarters of the Institut de France, under whose dome the Académie Française meets, and the Monnaie de Paris (Paris Mint). The quai captures the essence of Parisian elegance and the preservation of its high culture."
+  },
+  {
+    "name": "Louvre’s",
+    "year": "1793",
+    "associated_movie": "Bande à part",
+    "simple_description": "The most famous and largest art museum in the world.",
+    "medium_description": "Initially conceived as a fortress and later as a royal palace, the Louvre opened as a museum in 1793. It houses priceless masterpieces such as Leonardo da Vinci's Mona Lisa.",
+    "detailed_description": "The Louvre Museum is the largest art museum exhibition in the world, nestled in the heart of Paris along the right bank of the Seine. Originally a medieval fortress in the 12th century, it was transformed into the main residence of the French kings, before becoming a public museum in 1793 during the French Revolution. Its countless galleries cover millennia of history and civilization, and its modern glass Pyramid now creates an extraordinary contrast between classical and contemporary architecture."
+  },
+  {
+    "name": "street market in Pl. de Levis",
+    "year": "1800s",
+    "associated_movie": "La fornaia di Morceau",
+    "simple_description": "A lively and historic neighborhood market in Paris.",
+    "medium_description": "Located in the 17th arrondissement, the market around Place de Lévis is a popular pedestrian street known for its gastronomic excellence, offering cheese, wine, and fresh produce.",
+    "detailed_description": "The street market that winds around Place de Lévis, in the 17th arrondissement of Paris, is one of the city's most beloved commercial and culinary promenades. Having transformed from a simple rural road in the 19th century into a modern pedestrian zone, the street retains the vibrant atmosphere of the classic Parisian 'marché de quartier' (neighborhood market). Visitors flock there for the abundance of artisan shops, fromageries, boulangeries, and stalls of prime produce, which fully represent the French art of living."
+  },
+  {
+    "name": "Boulevard de Courcelles",
+    "year": "1864",
+    "associated_movie": "La fornaia di Morceau",
+    "simple_description": "A broad and elegant avenue located in the north of Paris.",
+    "medium_description": "Created in the 19th century during Baron Haussmann's renovations, the boulevard runs alongside the picturesque Parc Monceau. It is characterized by opulent Haussmann-style buildings.",
+    "detailed_description": "Boulevard de Courcelles is a long and elegant Parisian artery that marks the border between the 8th and 17th arrondissements. Its current configuration is the result of the grand urban renovations of the Second Empire desired by Napoleon III and supervised by Baron Haussmann. The avenue is renowned for its high concentration of magnificent representative buildings and because it skirts the northern edge of the enchanting Parc Monceau, offering glimpses through its gilded gates."
+  },
+  {
+    "name": "boulevard Montmartre 12",
+    "year": "1833",
+    "associated_movie": "Les 400 coups",
+    "simple_description": "An address located along the famous Grands Boulevards of Paris.",
+    "medium_description": "Located on the famous Boulevard Montmartre, in the vibrant heart of Paris, this address is close to the famous Passage Jouffroy. The area is historically known for its theaters and cafés.",
+    "detailed_description": "The address at number 12 Boulevard Montmartre is part of the string of 'Grands Boulevards' in Paris, arteries born from the demolition of the old city walls. The 19th century saw this boulevard flourish as a center of high society and theatrical entertainment. In the immediate vicinity of number 12 are the entrances to the evocative Parisian covered passages, such as Passage Jouffroy, veritable arcades that enclose the soul of 19th-century French commerce."
+  },
+  {
+    "name": "Rue Puget 2",
+    "year": "1800s",
+    "associated_movie": "Les 400 coups",
+    "simple_description": "A small street nestled in the Montmartre district.",
+    "medium_description": "Located in the artistic 18th arrondissement, Rue Puget is a short street that reflects the classic bohemian charm of the Montmartre hill, adjacent to the famous eponymous cemetery.",
+    "detailed_description": "Number 2 Rue Puget is situated on a quiet, short street in the 18th arrondissement of Paris, right in the atmosphere of Montmartre. The street runs tightly against the protective walls of the famous Montmartre Cemetery, where countless French intellectual figures rest. Despite its secluded position away from the main tourist routes, the surrounding architecture perfectly reflects the residential character and the romantic, slightly decadent appearance typical of the Belle Époque."
+  },
+  {
+    "name": "Rue Lepic 3",
+    "year": "1852",
+    "associated_movie": "Les 400 coups",
+    "simple_description": "A historic address on the famous winding street of Montmartre.",
+    "medium_description": "At the beginning of Rue Lepic, a short walk from the Moulin Rouge, this address paves the way to the top of Montmartre. The street is known for its historic cafés and for having hosted great artists.",
+    "detailed_description": "Number 3 Rue Lepic marks the beginning of one of the most iconic and ancient streets in the Montmartre district, originally traced out in 1852 by Emperor Napoleon III to facilitate the ascent up the hill. Starting from Boulevard de Clichy, the address introduces pedestrians to the lively uphill path. Giants of art such as Vincent van Gogh have lived along Rue Lepic, making the entire artery a true open-air scenography, perfect for cinema."
+  },
+  {
+    "name": "Square d'Estienne d'Orves",
+    "year": "1866",
+    "associated_movie": "Les 400 coups",
+    "simple_description": "A scenic square in front of the Trinité Church.",
+    "medium_description": "Formerly known as Square de la Trinité, it is a green space designed by architect Adolphe Alphand. It offers a magnificent perspective of the imposing Église de la Sainte-Trinité.",
+    "detailed_description": "The Square d'Estienne d'Orves is a charming tree-lined square located in the 9th arrondissement of Paris. It was created in 1866 as part of the great Haussmannian works to serve as an elegant frame for the adjacent Church of the Sainte-Trinité. Later renowned to honor the name of a hero of the French Resistance, the square is a refined urban hub featuring allegorical fountains surrounded by carefully modeled flower beds."
+  },
+  {
+    "name": "Sacré-Cœur in Montmartre.",
+    "year": "1914",
+    "associated_movie": "Les 400 coups",
+    "simple_description": "A magnificent white basilica at the top of the Montmartre hill.",
+    "medium_description": "Built between the late 19th century and 1914, the Basilica of the Sacred Heart is the highest point in Paris. Its Romano-Byzantine architecture offers a spectacular view over the entire city.",
+    "detailed_description": "The Sacré-Cœur Basilica is a grand Catholic place of worship that dominates the city from the summit of the Montmartre butte. Construction began in 1875 and the structure was completed in 1914. It is characterized by its luminous limestone, known for cleaning itself with rain, and by an eclectic style that combines Romanesque and Byzantine influences. From its monumental parvise, one can admire one of the most extraordinary and vast panoramas of the entire French capital."
+  },
+  {
+    "name": "Champs Elysées (60 avenue des Champs Elysées)",
+    "year": "1670",
+    "associated_movie": "Les 400 coups",
+    "simple_description": "An address on the most famous avenue in the world in Paris.",
+    "medium_description": "At number 60 of the famous Avenue des Champs-Élysées, you are in the beating heart of Parisian luxury. The avenue extends from Place de la Concorde to the imposing Arc de Triomphe.",
+    "detailed_description": "Number 60 Avenue des Champs-Élysées is located along the majestic perspective axis that defines the triumph of Parisian urban planning. Originally traced out by André Le Nôtre in 1670, the avenue took its final shape in the 18th century, becoming the symbol of national grandeur. Hosting haute couture boutiques, historic automobile showrooms, restaurants, and luxury cafés, this stretch of the avenue embodies the undisputed prestige of the city, lending itself to countless cinematic shots."
+  },
+  {
+    "name": "Palais de Chaillot",
+    "year": "1937",
+    "associated_movie": "Les 400 coups",
+    "simple_description": "A large exhibition building with the best view of the Eiffel Tower.",
+    "medium_description": "Built in Art Deco style for the 1937 Universal Exhibition, it is located on the Chaillot hill. Its famous esplanade offers a breathtaking panorama of the Trocadéro gardens.",
+    "detailed_description": "The Palais de Chaillot is a majestic architectural complex located in the 16th arrondissement, at the peak of the Chaillot hill. It was built for the 1937 International Exhibition. Composed of two large curved wings separated by a monumental esplanade, it offers by far the most famous and emblematic framing of the Eiffel Tower on the other bank of the Seine. It houses prestigious museums inside, such as the Cité de l'Architecture et du Patrimoine."
+  },
+  {
+    "name": "128 Rue de Rivoli",
+    "year": "1802",
+    "associated_movie": "Cléo de 5 à 7",
+    "simple_description": "An address along one of the main shopping streets in Paris.",
+    "medium_description": "Located along the famous commercial arcades, Rue de Rivoli was founded by Napoleon Bonaparte. This address is very close to central monuments, including the Louvre.",
+    "detailed_description": "Number 128 Rue de Rivoli is part of one of the longest, most central, and most historic arteries in the city of Paris. The street was designed and initiated in 1802 with the characteristic structure of uniform arcades and colonnades alongside the Tuileries Gardens and the Louvre. This commercial stretch connects the city's main monumental axes and reflects the splendor of the imperial era through the unmistakable alignment of its imposing stone facades."
+  },
+  {
+    "name": "Café du Dôme",
+    "year": "1898",
+    "associated_movie": "Cléo de 5 à 7",
+    "simple_description": "A historic intellectual café in the Montparnasse district.",
+    "medium_description": "Opened in 1898, Le Dôme was the first true gathering place for intellectuals in Montparnasse. Artists and writers who frequented it were nicknamed 'Dômiers'.",
+    "detailed_description": "The Café du Dôme is a true Parisian cultural institution inaugurated in 1898 at the corner of Boulevard du Montparnasse and Boulevard Raspail. At the beginning of the 20th century, it became the nerve center of intellectual life on the Rive Gauche, attracting prominent international painters, sculptors, poets, and writers of the Anglo-American and Eastern European scenes. Today, it still perfectly preserves its status as a legend of the golden age of French bohemian and cinematic art."
+  },
+  {
+    "name": "Parc Montsouris",
+    "year": "1869",
+    "associated_movie": "Cléo de 5 à 7",
+    "simple_description": "A large and peaceful English-style public park in the south of Paris.",
+    "medium_description": "Designed by Adolphe Alphand at the request of Napoleon III in 1869, Parc Montsouris covers 15 hectares. It is known for its large artificial lake, waterfalls, and rich vegetation.",
+    "detailed_description": "Parc Montsouris is one of the four large urban parks commissioned by Emperor Napoleon III to offer green oxygen zones to the capital, officially opened in 1869. Located in the 14th arrondissement near the Cité Universitaire, it was designed by the brilliant engineer Jean-Charles Adolphe Alphand in a typical English landscape style, transforming an area of abandoned quarries. It is dominated by a vast central artificial lake that makes it a serene oasis as much appreciated by students as by filmmakers."
+  }
 ]
