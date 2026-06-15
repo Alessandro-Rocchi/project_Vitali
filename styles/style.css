@@ -21,21 +21,28 @@ body {
 
 .navbar-text {
     font-family: "GFS Didot", serif;
-    font-size: 22pt; /*cambiare poi con misure relative*/
+    font-size: clamp(1.25rem, 2vw + 1rem, 2rem);
+}
+
+
+span.navbar-text {
+  white-space: nowrap;
 }
 
 .navbar-nav .nav-link {
     color: #faf1ea;
-    font-size: 16pt; /*cambiare poi con misure relative*/
+    font-size: clamp(0.75rem, 0.5vw + 0.75rem, 1.5rem); /*cambiare poi con misure relative*/
     border-bottom: 1px solid transparent;
     font-family: "Space Mono", monospace;
+    padding-right: clamp(0.75rem, 2vw,4rem);
+    padding-left: clamp(0.75rem, 2vw, 4rem);
 }
 
 .navbar-nav .nav-link:visited {
     color: #faf1ea;
 }
 
-.navbar-nav .nav-link:hover {
+.navbar-nav .nav-link:hover:not(.active) {
     color: #e63946;
     border-bottom: 1px solid #e63946 ;
     transition: 0.3s ease-in-out;
@@ -52,12 +59,95 @@ body {
     cursor: default;
 }
 
+.navbar-toggler #navbar_menu_icon {
+    color: #faf1ea;
+    font-size: clamp(1rem, 5vw, 3rem);
+}
+
+
 /*BREADCRUMBS*/
 .breadcrumbs a, .breadcrumbs p {
     font-family: "Space Mono", monospace;
+    color: #707070;
 }
 
-.breadcrumbs a:not(:disabled)
+.breadcrumbs a  {
+   text-decoration: none;
+   transition: 0.5s ease; 
+   height: auto;   
+}
+.breadcrumbs a:hover:not(.disabled) {
+    text-decoration: underline;
+    color: #1a1a1a;    
+}
+
+.breadcrumbs a.disabled:hover {
+    color: #707070;
+    cursor: default;
+}
+
+/*FOOTER*/
+.pipe{
+    cursor: default;
+}
+
+footer ul a{
+    border: black 3px solid !important;
+    font-size: 1.25rem !important;
+}
+
+footer ul a:not(.pipe):hover{
+    color: #A92325 !important;
+    border-bottom: #A92325 3px solid !important;
+}
+
+footer a.nav-link, footer h2{
+    color: #F4F1FA !important;
+}
+
+
+/*RESPONSIVE FOOTER*/
+@media (max-width: 992px) {
+    .pipe-license{
+        display: none !important;
+    }
+    
+}
+
+@media (max-width:440px){
+    .pipe-contacts{
+        opacity: 0 !important;
+    }
+
+}
+
+@media (min-width: 1199px) and (max-width: 1270px){
+    .logo-footer{
+        flex: 0 0 auto !important;
+        width: 100% !important;
+    }
+
+    .links-footer{
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .links-footer .row ul{
+        justify-content: center !important;
+    }
+
+    .logo-footer .logo-img.justify-content-center{
+        justify-content: center !important;
+    }
+
+    .logo-footer .logo-text.text-center{
+        text-align: center !important;
+    }
+}
+
+
 
 /*CATALOGUE*/
 
@@ -138,6 +228,39 @@ body {
 
 
 /*ABOUT*/
+.about_card h1{
+    font-family: "Playfair", serif;
+    font-size: clamp();
+}
+
+.about_card:hover h1{
+    color: #A92325;
+}
+
+/* 1. The container stays exactly the same size */
+.about_card {
+  overflow: hidden; /* This is the "window" that stays still */
+  display: block;   /* Ensures the anchor tag respects dimensions */
+  position: relative;
+}
+
+/* 2. The image transition */
+.about_card img {
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+}
+
+/* 3. TARGET ONLY THE IMAGE ON HOVER */
+/* Correct: The card is hovered, but ONLY the image scales */
+.about_card:hover img {
+  transform: scale(1.1);
+}
+
+/* Ensure the overlay doesn't zoom with the image */
+.about_card:hover .card-img-overlay {
+  transform: none; 
+}
 
 #about_NV {
     background-image: url(../img/generic_bg.png); /*ovviamente bg da cambiare*/

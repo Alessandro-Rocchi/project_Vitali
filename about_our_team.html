@@ -9,17 +9,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <title>About</title>
+    <title>About Our Team</title>
 </head>
 <body>
     <!--navbar-->
     <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <span class="col-2 navbar-text">Les Rues du CSS</span>
+                <span class="col-auto navbar-text">Les Rues du CSS</span>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="col-10 collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <div class="col-auto collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item mx-3">
                             <a class="nav-link" href="#">home</a>
@@ -39,14 +39,21 @@
         </nav>
     <!--contenuto della pagina-->
     <section class="page_content pb-4 m-0">
-        <!--breadcrumbs vanno qua-->
-        <div class="row">
+        <!--BREADCRUMBS-->
+        <div class="breadcrumbs d-inline-flex ms-4 my-3 gap-2">
+            <a href="">Home</a>
+            <p class="mb-0">/</p>
+            <a href="">About</a>
+            <p class="mb-0">/</p>
+            <a class="disabled">About Our Team</a>
+        </div>
+        <div class="row m-0 w-100">
             <div class="col-12 d-flex align-items-end" id="about_NV_bg_image">
                 <h1 class="my-4 mx-5">Our team</h1>
             </div>
         </div>
             <div class="row id_team justify-content-center my-5 px-5">
-                <img src="img/cow_pres.jpg" class="col-4 w-25">
+                <img src="img/cow_pres.jpg" class="col-4 w-25 p-0">
                 <div class="col-8">
                     <h1>Presidente</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, deserunt, quos, aperiam dolore iusto nam perferendis exercitationem cum eaque eveniet. Corporis facere, veritatis id ea, at modi adipisci provident est eveniet laudantium explicabo doloribus officiis illo laborum nemo perferendis voluptatibus doloremque quo aut. Totam labore ipsa porro itaque. Pariatur.</p>
@@ -70,5 +77,43 @@
                 </div>
             </div>        
     </section>
+    <!--FOOTER-->
+        <footer class="container-fluid col-12" style="background-color: black">
+            <div class="row py-5 ps-2 py-sm-3">
+                <div class="logo-footer col-xl-4 col-xxl-3 col-12 ps-xl-5 py-3">
+                    <div class="logo-img row justify-content-center justify-content-xl-start">
+                        <img src="img/S.png" style="max-width: 7rem; max-height: 6rem;">
+                    </div>
+                    <div class="row logo-text mt-2 text-center text-xl-start">
+                        <h2>Les Rues du CSS <br> (Cinéma Sur la Seine)</h2>
+                    </div>
+                </div>
+                <div class="links-footer col-xl-8 col-xxl-9 col-12 pe-xl-5 py-3 py-xxl-0">
+                    <div class="row align-items-center h-100">
+                        
+                        <ul class="nav justify-content-center justify-content-xl-between">
+                            
+                            <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
+                            <li class="nav-item"><a class="pipe nav-link">|</a></li>
+                            
+                            <li class="nav-item"><a class="nav-link" href="#">Contacts</a></li>
+                            <li class="nav-item pipe-contacts"><a class="pipe nav-link">|</a></li>
+                            
+                            <li class="nav-item"><a class="nav-link" href="#">License</a></li>
+                            
+                            <li class="nav-item d-none d-lg-inline-block pipe-license"><a class="pipe nav-link">|</a></li>
+                            
+                            <li class="w-100 d-lg-none"></li>
+
+                            <li class="nav-item mt-2 mt-lg-0"><a class="nav-link" href="#">Credits</a></li>
+                            <li class="nav-item mt-2 mt-lg-0"><a class="pipe nav-link">|</a></li>
+                            
+                            <li class="nav-item mt-2 mt-lg-0"><a class="nav-link" href="#">Web Project Plan</a></li>
+                            
+                        </ul>                        
+                    </div>
+                </div>                    
+            </div>
+        </footer>
 </body>
 </html>
