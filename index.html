@@ -10,6 +10,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
+        <!--Per le bootstrap icons-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
         <style>
             h1, h2, h3{
                 font-family: "Playfair Display", serif;
@@ -17,62 +20,113 @@
                 font-style: normal;
             }
 
-            body{
-                background-color: #F4F1FA;
+            p{ 
+                font-family: "Inter", sans-serif;
+                font-optical-sizing: auto;
+                font-style: normal;
             }
 
-            footer ul li a{
-                color:#F4F1FA;
+            body{
+                background-color: #F4F1EA !important;
             }
 
             /*HERO IMAGE*/
-            .bgimage {
+            .hero-img {
                 width:100%;
                 height:60vh;
-                background: url('https://michaeljcinema.com/wp-content/uploads/2013/07/jean-luc-godard-breathless.jpg');
+                background: url('img/breathless-hero.jpg');
                 background-repeat: no-repeat;
-                background-position: center;
-                background-size:cover;
-                background-attachment: fixed;
+                background-position: center top;
+                background-size: cover;
+                /*background-attachment: fixed;*/ /*per mantenere l'immagine fissa durante lo scroll, ma ho deciso di rimuoverlo per evitare problemi di visualizzazione della hero image*/
             }
+
             /*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/
-                      
+            @media (max-width: 520px) {
+                .hero-img{
+                    height: 30vh !important;
+                    background-position: 20% center !important;
+                }
+            }
+
+            @media (min-width:521px) and (max-width: 768px) {
+                .hero-img {
+                    background-position: 50% center !important;
+                }
+            }
 
             @media (max-width: 992px) {
-                header#prova{
+                .hero-img{
                     height: 40vh;
-                    background-position: left bottom;
+                    background-position: 35% center;
                 }
-                .catchphrase{
-                    font-size: 2.7rem !important;
-                }
+
             }
 
-            @media (max-width: 768px) {
-
-                header#prova{
-                    height: 40vh;
-                    background-position: left bottom;
+            @media (min-width:769px) and (max-width: 942px){
+                .hero-img {
+                    background-position: 70% center !important; 
                 }
             }
 
-
-            @media (max-width: 577px) {
-                .catchphrase{
-                    font-size: 2rem !important;
+            @media (min-width: 1000px) and (max-width: 1200px) {
+                header#prova {
+                    background-position: 60% center; 
                 }
-                header > .row{
-                    height: 60% !important;
-                }        
             }
 
-            .bgimage h1 {
-                color:#F4F1FA;
-                text-shadow:4px 4px #d73b3e;
-                font-size: clamp(1rem, 2.5vw, rem)
-                
+
+            .paper-card {
+                /*background-color:rgba(255, 0, 60, 0.32);*/
+                background-color: #EDEAE2;
+                color:#1A1A1A;
+                border-radius: 12px;
+                box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.068);
             }
+
+            .bi-chevron-down {
+                position: absolute !important;
+                top: 0.3rem;
+                right: 0.75rem; 
+                font-size: clamp(1rem, 0.8rem + 1vw, 1.75rem) !important;
+
+                margin: 0;
+            }
+
+            a[aria-expanded="true"] i {
+                transform: rotate(180deg);
+                display: inline-block;
+                transition: transform 0.3s ease;
+            }
+
+            a[aria-expanded="false"] i {
+                transition: transform 0.3s ease;
+            }
+
+            @media (min-width: 767px) and (max-width: 928px){
+                .pretty-catch{
+                    display: block !important;
+                }
+            }
+            @media (min-width: 1312px){
+                .pretty-big-catch{
+                    display: none !important;
+                }
+            }
+
+            @media (min-width: 796px){
+                .pretty-title{
+                    display: none;
+                }
+            }
+            @media (max-width: 795px){
+                .pretty-title{
+                    display: block;
+                }
+            }
+
             /*FINE HERO IMAGE*/
+
 
             /*PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
 
@@ -91,15 +145,28 @@
                 transition: transform 1.5s ease;
             }
 
-            /*èer avere il titolo responsive*/
-            .responsive-title {
-                /* clamp(dimensione-minima, dimensione-fluida, dimensione-massima) */
-                font-size: clamp(1.1rem, 2.5vw, 2rem);
+            .zoom-card:hover .responsive-title-sm{
+                font-weight: 800;
             }
 
+            .responsive-title {
+                font-size: clamp(1.5rem, 1.2rem + 2vw, 2.25rem);
+            }
+            
+            .responsive-title-sm{
+                font-size: clamp(0.75rem, 0.8rem + 1.5vw, 2rem) !important;
+            }
+            
             /*FINE PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
 
+            /*Per le immagini delle carte esplora*/
+            .explore-card{
+                filter: grayscale(1) brightness(100%);
+            }
 
+            .zoom-card:hover .explore-card{
+                filter: grayscale(1) brightness(60%);
+            }
         </style>
 
         <!--Link bootstrap-->
@@ -122,7 +189,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="tour.html">Tour</a>
                         </li>
                         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -143,107 +210,129 @@
             </div>
         </nav>
 
-        <header class="bgimage container-fluid" id="prova">
-            <div class="row h-50"></div>
-            <div class="row align-items-start">
-                <h1 class="text-light display-2 fw-bold ps-5 catchphrase">Les Rues du CSS <br>(Cinéma Sur la Seine)</h1>
-            </div>
-        </header>  
+        <header class="hero-img container-fluid d-flex flex-column justify-content-end pb-5">
 
+            <div class="row catchphrase text-start d-none d-lg-block">
+                <h1 class="text-light display-4 fw-bold ps-4" style="text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.751) !important;">
+                    Walk Paris through <br class="pretty-big-catch">the lens of the <span style="color: #d73b3e !important; font-weight: 800 !important;">Nouvelle Vague</span>
+                </h1>
+            </div>
+
+        </header>
 
         <!--Presentazione sito sotto hero image-->
 
-        <section>
-            <div class="container text-center mt-4">
-                <h1>Presentazione sito</h1>
-                <p class="mt-3 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nihil iste, minus quis veniam fugiat modi esse illum. Nesciunt corrupti animi possimus reiciendis quas quam enim sed optio architecto natus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, veritatis? Quaerat aperiam nulla maiores, dolore obcaecati corporis dignissimos nihil officia, optio, doloribus molestiae nam. Minus ipsum possimus cupiditate commodi voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure minus tempora mollitia quas, eos, eligendi in odit eaque quis repellat a doloremque sunt aliquid earum voluptate veniam id labore deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nihil iste, minus quis veniam fugiat modi esse illum. Nesciunt corrupti animi possimus reiciendis quas quam enim sed optio architecto natus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, veritatis?</p>
-            </div>
-        </section>
+        <section class="presentation">
+            <div class="container-fluid mt-2 mt-lg-5">
+                <div class="row">
+                    <h1 class="text-center display-4 pb-5">Les Rues du CSS <br class="pretty-title">(Cinéma Sur la Seine)</h1>
+                </div>
 
-        <!--Due card centrali-->
+                <div class="container d-lg-none text-center mb-3">
+                    <h1>Walk Paris through the <br class="pretty-catch d-none d-md-block"> lens of the <span style="color: #d73b3e !important;">Nouvelle Vague</span></h1>
+                </div>
 
-        <section>
-            <div class="container-lg mt-5">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-6">
-                        <a href="#map"><div class="card border-0 text-center ratio ratio-16x9 overflow-hidden zoom-card">
-                            <img class="img-fluid" src="images/paris_nousAppartient.webp"/>
-                            <div class="card-img-overlay d-flex justify-content-center align-items-center bg-dark bg-opacity-25">
-                                <h2 class="card-title fw-bold m-0 text-light responsive-title">Esplora Parigi dalla mappa</h2>
-                            </div>
-                        </div></a>    
-                    </div>
-                    <div class="col-6">
-                        <a href="#nouvelleVague"><div class="card border-0 text-center ratio ratio-16x9 overflow-hidden zoom-card">
-                            <img class="img-fluid" src="images/nouvelle_vague.jpg"/>
-                            <div class="card-img-overlay d-flex justify-content-center align-items-center bg-dark bg-opacity-50">
-                                <h2 class="card-title fw-bold m-0 text-light responsive-title">Scopri di più sulla Nouvelle Vague</h2>
-                            </div>
-                        </div></a>    
+                <div class="container my-5 pb-5">
+                    <div class="row justify-content-around">
+                        <div class="col-9 col-lg-7 col-xl-3 text-center paper-card p-4 d-flex flex-column justify-content-center position-relative">
+                            <a href="#paper-card1" class="d-block d-lg-none" data-bs-toggle="collapse" role="button" aria-expanded="false"><i class="bi bi-chevron-down" style="color:black;"></i></a>
+                            <h3 class="fw-semibold pb-0 pb-lg-2 mb-0">A Cinematic Cartography</h3>
+                            <p id="paper-card1" class="collapse d-lg-block mb-0 pt-3">This project maps and analyzes the <strong>real locations of the Nouvelle Vague</strong> within the <strong>urban fabric of Paris</strong>, connecting physical space to the scenes that redefined global cinema. Through our <strong>interactive platform</strong>, users can explore the overlap between real Parisian topography and its transfiguration on the big screen.</p>
+                        </div>
+                        <div class="col-9 col-lg-7 col-xl-3 mt-3 mt-xl-0 text-center paper-card p-4 d-flex flex-column justify-content-center position-relative">
+                            <a href="#paper-card2" class="d-block d-lg-none" data-bs-toggle="collapse" role="button" aria-expanded="false"><i class="bi bi-chevron-down" style="color:black;"></i></a>
+                            <h3 class="fw-semibold p-2 pb-0 pb-lg-2 mb-0">The Road as Set</h3>
+                            <p id="paper-card2" class="collapse d-lg-block mb-0 pt-3">In the late 1950s, young French auteurs broke away from traditional studio systems and artificial lighting. Filmmakers like <a href="#">Truffaut</a>, <a href="#">Godard</a>, and <a href="#">Varda</a> took to the <strong>streets of Paris with lightweight cameras</strong>, transforming the city from a mere decorative backdrop into an <strong>active, rhythm-dictating character</strong>.</p>
+                        </div>
+                        <div class="col-9 col-lg-7 col-xl-3 mt-3 mt-xl-0 text-center paper-card p-4 d-flex flex-column justify-content-center position-relative">
+                            <a href="#paper-card3" class="d-block d-lg-none" data-bs-toggle="collapse" role="button" aria-expanded="false"><i class="bi bi-chevron-down" style="color:black;"></i></a>
+                            <h3 class="fw-semibold pb-0 pb-lg-2 mb-0">Exploration Tools</h3>
+                            <p id="paper-card3" class="collapse d-lg-block mb-0 pt-3">The site's architecture offers multiple levels of interaction with <strong>geo-cinematographic data</strong>. The analytical catalog connects directly with the <strong>interactive map</strong>, allowing users to follow <strong>curated thematic itineraries</strong> or explore the historical evolution of the movement through an <strong>integrated chronological timeline</strong>.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </section>
 
+        <hr class="my-5 w-50 ms-auto me-auto" style="color:#d73b3e; border-top:2px solid currentColor; opacity: 1;">
 
+        <!--Due card centrali-->
+
+        <div class="container pt-5">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-lg-6 mb-5">
+                    <a href="#map"><div class="card border-0 text-center ratio ratio-16x9 overflow-hidden zoom-card">
+                        <img class="img-fluid" src="img/paris_nousAppartient.webp"/>
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center bg-dark bg-opacity-25">
+                            <h2 class="card-title fw-bold m-0 text-light responsive-title">Explore the interactive map</h2>
+                        </div>
+                    </div></a>    
+                </div>
+                <div class="col-12 col-lg-6 mb-5">
+                    <a href="#nouvelleVague"><div class="card border-0 text-center ratio ratio-16x9 overflow-hidden zoom-card">
+                        <img class="img-fluid" src="img/nouvelle_vague.jpg"/>
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center bg-dark bg-opacity-50">
+                            <h2 class="card-title fw-bold m-0 text-light responsive-title">Inside the Nouvelle Vague</h2>
+                        </div>
+                    </div></a>    
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5 w-50 ms-auto me-auto" style="color:#d73b3e; border-top:2px solid currentColor; opacity: 1;">
         <!--le card di ispirazione-->
         <section class="mt-5">
             <div class="container text-center my-4">
-                <h1>Cerchi un'ispirazione?</h1>
-                <div class="row mt-3">
-                    <div class="col-6 col-md-4 col-lg-3 my-3">
+                <h1>Looking for some inspiration?</h1>
+                <div class="row mt-5">
+                    <div class="col-6 col-md-4 my-3">
                         <a href="#"><div class="card border-0 text-center ratio ratio-16x9 overflow-hidden zoom-card">
-                            <img class="img-fluid" src="images/paris_nousAppartient.webp"/>
+                            <img class="img-fluid explore-card" src="img/top-ten-locations.jpg"/>
                             <div class="card-img-overlay d-flex justify-content-center align-items-center bg-dark bg-opacity-25">
-                                <h3 class="card-title m-0 text-light responsive-title">Percorsi di tendenza</h3>
+                                <h3 class="card-title m-0 text-light responsive-title-sm">Top 10 locations</h3>
                             </div>
                         </div></a> 
                     </div>
-                    <div class="col-6 col-md-4 col-lg-3 my-3">
+                    <div class="col-6 col-md-4 my-3">
                         <a href="#"><div class="card border-0 text-center ratio ratio-16x9 overflow-hidden zoom-card">
-                            <img class="img-fluid" src="images/paris_nousAppartient.webp"/>
+                            <img class="img-fluid explore-card" src="img/breathless.jpg"/>
                             <div class="card-img-overlay d-flex justify-content-center align-items-center bg-dark bg-opacity-25">
-                                <h3 class="card-title m-0 text-light responsive-title">Proprio quel regista</h3>
+                                <h3 class="card-title m-0 text-light responsive-title-sm">Godard's "Breathless" Locations</h3>
                             </div>
                         </div></a> 
                     </div>
-                    <div class="col-6 col-md-4 col-lg-3 my-3">
+                    <div class="col-6 col-md-4 my-3">
                         <a href="#"><div class="card border-0 text-center ratio ratio-16x9 overflow-hidden zoom-card">
-                            <img class="img-fluid" src="img/paris_nousAppartient.webp"/>
+                            <img class="img-fluid explore-card" src="img/montmartre-sacre-coeur.jpg"/>
                             <div class="card-img-overlay d-flex justify-content-center align-items-center bg-dark bg-opacity-25">
-                                <h3 class="card-title m-0 text-light responsive-title">Film da normie</h3>
+                                <h3 class="card-title m-0 text-light responsive-title-sm">Montmartre District</h3>
                             </div>
                         </div></a> 
                     </div>
-                    <div class="col-6 col-md-4 col-lg-3 my-3">
+                    <div class="col-6 col-md-4 my-3">
                         <a href="#"><div class="card border-0 text-center ratio ratio-16x9 overflow-hidden zoom-card">
-                            <img class="img-fluid" src="img/paris_nousAppartient.webp"/>
+                            <img class="img-fluid explore-card" src="img/saint_sulpiere.png"/>
                             <div class="card-img-overlay d-flex justify-content-center align-items-center bg-dark bg-opacity-25">
-                                <h3 class="card-title m-0 text-light responsive-title">I percorsi meno scelti</h3>
+                                <h3 class="card-title m-0 text-light responsive-title-sm">Cinematic Churches</h3>
                             </div>
                         </div></a> 
                     </div>
-                    <div class="col-6 col-md-4 col-lg-3 my-3">
+                    <div class="col-6 col-md-4 my-3">
                         <a href="#"><div class="card border-0 text-center ratio ratio-16x9 overflow-hidden zoom-card">
-                            <img class="img-fluid" src="img/paris_nousAppartient.webp"/>
+                            <img class="img-fluid explore-card" src="img/agnes_varda.jpg"/>
                             <div class="card-img-overlay d-flex justify-content-center align-items-center bg-dark bg-opacity-25">
-                                <h3 class="card-title m-0 text-light responsive-title">I film peggiori</h3>
+                                <h3 class="card-title m-0 text-light responsive-title-sm">Agnès Varda's Paris</h3>
                             </div>
                         </div></a> 
                     </div>
-                    <div class="col-6 col-md-4 col-lg-3 my-3">
+                    <div class="col-6 col-md-4 my-3">
                         <a href="#"><div class="card border-0 text-center ratio ratio-16x9 overflow-hidden zoom-card">
-                            <img class="img-fluid" src="img/paris_nousAppartient.webp"/>
+                            <img class="img-fluid explore-card" src="img/hidden-gems.jpg"/>
                             <div class="card-img-overlay d-flex justify-content-center align-items-center bg-dark bg-opacity-25">
-                                <h3 class="card-title m-0 text-light responsive-title">Non so più che inventarmi</h3>
+                                <h3 class="card-title m-0 text-light responsive-title-sm">Hidden Gems</h3>
                             </div>
                         </div></a> 
                     </div>
-                        <div class="col-6 col-md-4 col-xl-3 my-3 bg-primary py-4">col2</div>
-                        <div class="col-6 col-md-4 col-xl-3 my-3 bg-primary py-4">col3</div>
-                        <div class="col-6 col-md-4 col-xl-3 my-3 bg-primary py-4">col4</div>
-                        <div class="col-6 col-md-4 col-xl-3 my-3 bg-danger py-4">col5</div>
                             
                 </div>
             </div>
@@ -263,6 +352,6 @@
             </footer> 
         </div>    
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
