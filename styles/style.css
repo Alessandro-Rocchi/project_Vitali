@@ -18,7 +18,7 @@
             .hero-img {
                 width:100%;
                 height:60vh;
-                background: url('img/breathless-hero.jpg');
+                background: url('../img/breathless-hero.jpg');
                 background-repeat: no-repeat;
                 background-position: center top;
                 background-size: cover;
@@ -85,6 +85,12 @@
 
             a[aria-expanded="false"] i {
                 transition: transform 0.3s ease;
+            }
+
+            hr{
+                color:#d73b3e !important; 
+                border-top: 2px solid currentColor !important;
+                opacity: 1 !important;
             }
 
             @media (min-width: 767px) and (max-width: 928px){
