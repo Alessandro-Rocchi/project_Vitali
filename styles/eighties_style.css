@@ -1,5 +1,5 @@
  h1, h2, h3{
-    font-family: "VT323", monospace;
+    font-family: "VT323", monospace; /*carattere monospaziato per simulare CRT*/
     color: #33FF33; /*verde lime per il testo*/
     font-optical-sizing: auto;
     font-style: normal;
@@ -14,7 +14,7 @@ p {
 
 body{
     background-color: #030a03 !important;
-    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    font-size: clamp(15px, 1.1vw + 12px, 40px); /*dimensione del testo costante in tutta la pagina per evocare effetto più realistico di schermo a griglia fissa per i caratteri*/
     font-family: 'VT323', 'Courier New', monospace;
     line-height: 1.2;
 }
@@ -158,14 +158,7 @@ a[aria-expanded="false"] i {
 }
 
 
-*{
-   font-family: "Inter", sans-serif; 
-   color: #1a1a1a;
-}
 
-body {
-    background-color: #faf1ea;    
-}
 
 #map { height: 500px; }
 
@@ -173,11 +166,41 @@ body {
 
 .navbar{
     background-color: #030a03;
-    background-image: linear-gradient(to right, #33FF33 65%, transparent 65%);
-    background-position: bottom;
-    background-size: 14px 2px; /* 14px è la larghezza del "carattere" finto */
-    background-repeat: repeat-x;
-    padding-bottom: 12px; /* Spazio interno per non far toccare il testo */
+    width: 100%;
+    box-sizing: border-box; 
+    
+    /* 1. QUATTRO GRADIENTI (Nuovo inserimento: il primo in alto) */
+    background-image: 
+        linear-gradient(to right, #33FF33 65%, transparent 65%),  /* 1. Trattini SOPRA */
+        linear-gradient(to bottom, #33FF33 12px, transparent 12px), /* 2. Pipe Sinistra */
+        linear-gradient(to bottom, #33FF33 12px, transparent 12px), /* 3. Pipe Destra */
+        linear-gradient(to right, #33FF33 65%, transparent 65%);   /* 4. Trattini SOTTO */
+
+    /* 2. QUATTRO POSIZIONI */
+    background-position: 
+        top,    /* 1. Sopra */
+        left,   /* 2. Sinistra */
+        right,  /* 3. Destra */
+        bottom; /* 4. Sotto */
+
+    /* 3. QUATTRO DIMENSIONI */
+    background-size: 
+        14px 2px, /* 1. Sopra: lungo 14px, spesso 2px */
+        2px 16px, /* 2. Sinistra: spessa 2px, alta 16px */
+        2px 16px, /* 3. Destra: identica */
+        14px 2px; /* 4. Sotto: lungo 14px, spesso 2px */
+
+    /* 4. QUATTRO REPEAT */
+    background-repeat: 
+        repeat-x, /* 1. Orizzontale per il top */
+        repeat-y, /* 2. Verticale per la sinistra */
+        repeat-y, /* 3. Verticale per la destra */
+        repeat-x; /* 4. Orizzontale per il bottom */
+
+    /* --- NUOVA SPAZIATURA DI SICUREZZA --- */
+    /* Ora aggiungiamo 12px anche SOPRA per non far appiccicare il testo ai nuovi trattini */
+    /* Sopra (12px) | Destra (18px) | Basso (12px) | Sinistra (18px) */
+    padding: 12px 18px 12px 18px; 
 }
 
 .navbar-text, .nav-link {
@@ -263,73 +286,40 @@ span.navbar-text {
     cursor: default;
 }
 
-/*FOOTER*/
-.pipe{
-    cursor: default;
-}
-
-footer ul a{
-    border: black 3px solid !important;
-    font-size: 1.25rem !important;
-}
-
-footer ul a:not(.pipe):hover{
-    color: #A92325;
-    border-bottom: #A92325 3px solid;
-}
-
-footer a.nav-link, footer h2{
-    color: #F4F1FA !important;
-}
-
-
-/*RESPONSIVE FOOTER*/
-@media (max-width: 992px) {
-    .pipe-license{
-        display: none !important;
-    }
-    
-}
-
-@media (max-width:440px){
-    .pipe-contacts{
-        opacity: 0 !important;
-    }
-
-}
-
-@media (min-width: 1199px) and (max-width: 1270px){
-    .logo-footer{
-        flex: 0 0 auto !important;
-        width: 100% !important;
-    }
-
-    .links-footer{
-        flex: 0 0 auto !important;
-        width: 100% !important;
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
-    }
-
-    .links-footer .row ul{
-        justify-content: center !important;
-    }
-
-    .logo-footer .logo-img.justify-content-center{
-        justify-content: center !important;
-    }
-
-    .logo-footer .logo-text.text-center{
-        text-align: center !important;
-    }
-}
-
-
-
 /*CATALOGUE*/
 
 .page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
-    background-color: #030a03; 
+    background-color: #030a03;/*verde molto scuro quasi nero per simulare monitor crt*/
+    background-image: linear-gradient(to right, #33FF33 65%, transparent 65%);
+    /* 1. SICUREZZA LAYOUT */
+  width: 100%;
+  box-sizing: border-box; 
+
+  /* 2. I DUE GRADIENTI (Sinistra e Destra) */
+  background-image: 
+    linear-gradient(to bottom, #33FF33 12px, transparent 12px), /* Lato Sinistro */
+    linear-gradient(to bottom, #33FF33 12px, transparent 12px); /* Lato Destro */
+
+  /* 3. LE DUE POSIZIONI */
+  background-position: 
+    left, 
+    right;
+
+  /* 4. LE DIMENSIONI DELLA "PIPE" (Larghezza x Altezza del blocco) */
+  background-size: 
+    2px 16px,  /* Pipe sinistra: spessa 2px, modulo totale di 16px */
+    2px 16px;  /* Pipe destra: identica */
+
+  /* 5. RIPETIZIONE SOLO IN VERTICALE */
+  background-repeat: 
+    repeat-y, 
+    repeat-y;
+
+  /* 6. PROTEZIONE DEL TESTO */
+  /* Lascia 18px di spazio a destra e sinistra per evitare che il testo tocchi le linee */
+  padding-left: 18px;
+  padding-right: 18px; 
+
 }
 
 .leaflet-container a.dropdown-item {
@@ -406,97 +396,80 @@ footer a.nav-link, footer h2{
 
 /*ABOUT*/
 .about_card h1{
-    font-family: "Playfair", serif;
-    font-size: clamp();
+    font-family: "VT323", monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);    line-height: 1.2;
+    text-transform: uppercase;
+    background-color: #33FF33;
+    color: #030a03;
 }
 
-.about_card:hover h1{
-    color: #A92325;
-}
 
 /* 1. The container stays exactly the same size */
 .about_card {
   overflow: hidden; /* This is the "window" that stays still */
   display: block;   /* Ensures the anchor tag respects dimensions */
   position: relative;
+  border: none !important;
+  border-radius: 0 !important;
 }
 
-/* 2. The image transition */
-.about_card img {
-  transition: transform 0.5s ease;
+.about_card .card-img-overlay{
+    border: 3px solid #33FF33;
+    border-radius: 0 !important;
+    padding: 5px;
+    background-color: #030a03;
+    overflow: hidden;
+}
+/*sto sbrodolo di roba fa fare quell'effetto figo delle righine orizzontali. in hover*/
+.about_card .card-img-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(51, 255, 51, 0.18) 0px, /* Linea verde acido tenue */
+    rgba(51, 255, 51, 0.18) 2px, 
+    transparent 2px,
+    transparent 4px              
+  );
+  
+  opacity: 0;
+  pointer-events: none; 
+  transition: opacity 0.05s ease-in-out; 
 }
 
-/* 3. TARGET ONLY THE IMAGE ON HOVER */
-/* Correct: The card is hovered, but ONLY the image scales */
-.about_card:hover img {
-  transform: scale(1.1);
+
+.card:hover .card-img-overlay::after {
+  opacity: 1;
 }
 
-/* Ensure the overlay doesn't zoom with the image */
-.about_card:hover .card-img-overlay {
-  transform: none; 
+.about_card:hover h1{
+    background-color: transparent;
+    color: #33FF33;
 }
 
-#about_NV {
-    background-image: url(../img/generic_bg.png); /*ovviamente bg da cambiare*/
-    height: 300pt; /*da cambiare, è solo per una prova*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-position: center;
-    background-size: 100%;
-    transition: background-size 1s ease;
-}
 
-#about_our_team {
-    background-image: url(../img/generic_bg.png); /*ovviamente bg da cambiare*/
-    height: 300pt;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    background-position: center;
-    background-size: 100%;
-    transition: background-size 1s ease;
 
-}
 
-#about_our_team, #about_NV {
-    text-decoration: none ;
-    color:#1a1a1a
-}
-
-#about_our_team:hover h2, #about_NV:hover h2 {
-    transition: 0.5s ease;
-    color: #A92325;
-}
-
-#about_our_team:hover, #about_NV:hover {
-  /* Ingrandiamo la dimensione dello sfondo al 110% al passaggio del mouse */
-  background-size: 110%; 
-}
-
-#about_our_team h2, #about_NV h2 {
-    margin: 0;   
-    font-family: "Playfair", serif;
-    font-size: 40pt; /*cambiare poi con misure relative*/
-    font-weight: 600;
-}
-
-/*ABOUT NOUVELLE VAGUE*/
-#about_NV_bg_image {
+/*le seguenti regole stylano i titoli con le bg images all'interno della pagina about our team e about nouvelle vague*/
+.about_bg_image {
     background-image: url(../img/generic_bg.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 40vh;
+    height: 30vw;
 }
 
-.about_card h1 {
-    font-family: "Playfair", serif;
-    font-size: 50pt;
+.about_bg_image h1 {
+    font-family: "VT323", monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);    line-height: 1.2;
 }
+
+/*ABOUT NOUVELLE VAGUE*/
 
 #about_NV_text_content {
     font-size: 16pt;
@@ -519,27 +492,14 @@ footer a.nav-link, footer h2{
     cursor: pointer;
 }
 
-
-*{
-                margin:0;
-            }
-
-            /*set a background color to the body*/
-
-            h1, h2, h3{
-                font-family: "Playfair Display", serif;
-                font-optical-sizing: auto;
-                font-style: normal;
-            }
-
-            /*GOOGLE FONTS & ICONS*/
-            .material-symbols-outlined {
-                font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
-            }
+/*GOOGLE FONTS & ICONS*/
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
 
             /*HERO IMAGE*/
             .background-image {
@@ -687,64 +647,122 @@ footer a.nav-link, footer h2{
                 border-radius: 50px;
             }
 
-            /*FOOTER*/
-            .pipe{
-                cursor: default;
-            }
+/*FOOTER*/
+.pipe{
+    cursor: default;
+}
 
-            footer ul a{
-                border: black 3px solid !important;
-                font-size: 1.25rem !important;
-            }
+footer {
+    background-color: #030a03;
+    font-size: clamp(15px, 1.1vw + 12px, 40px); 
+    font-family: 'VT323', 'Courier New', monospace;
+    line-height: 1.2;
+    width: 100%;
+    box-sizing: border-box; 
+    
+    /* 1. QUATTRO GRADIENTI (Nuovo inserimento: il primo in alto) */
+    background-image: 
+        linear-gradient(to right, #33FF33 65%, transparent 65%),  /* 1. Trattini SOPRA */
+        linear-gradient(to bottom, #33FF33 12px, transparent 12px), /* 2. Pipe Sinistra */
+        linear-gradient(to bottom, #33FF33 12px, transparent 12px), /* 3. Pipe Destra */
+        linear-gradient(to right, #33FF33 65%, transparent 65%);   /* 4. Trattini SOTTO */
 
-            footer ul a:not(.pipe):hover{
-                color: #A92325;
-                border-bottom: #A92325 3px solid;
-            }
+    /* 2. QUATTRO POSIZIONI */
+    background-position: 
+        top,    /* 1. Sopra */
+        left,   /* 2. Sinistra */
+        right,  /* 3. Destra */
+        bottom; /* 4. Sotto */
 
-            footer a.nav-link, footer h2{
-                color: #F4F1FA !important;
-            }
+    /* 3. QUATTRO DIMENSIONI */
+    background-size: 
+        14px 2px, /* 1. Sopra: lungo 14px, spesso 2px */
+        2px 16px, /* 2. Sinistra: spessa 2px, alta 16px */
+        2px 16px, /* 3. Destra: identica */
+        14px 2px; /* 4. Sotto: lungo 14px, spesso 2px */
+
+    /* 4. QUATTRO REPEAT */
+    background-repeat: 
+        repeat-x, /* 1. Orizzontale per il top */
+        repeat-y, /* 2. Verticale per la sinistra */
+        repeat-y, /* 3. Verticale per la destra */
+        repeat-x; /* 4. Orizzontale per il bottom */
+
+    /* --- NUOVA SPAZIATURA DI SICUREZZA --- */
+    /* Ora aggiungiamo 12px anche SOPRA per non far appiccicare il testo ai nuovi trattini */
+    /* Sopra (12px) | Destra (18px) | Basso (12px) | Sinistra (18px) */
+    padding: 12px 18px 12px 18px; 
+}
+
+footer img{
+    display: none;
+}
+
+footer h2 {
+    font-size: inherit;
+}
+
+footer a.nav-link{
+    font-size: clamp(15px, 1.1vw + 12px, 40px); 
+    font-family: 'VT323', 'Courier New', monospace;
+    line-height: 1.2;
+    color: #33FF33;
+}
+footer a.nav-link:hover{
+    color: #33FF33;
+}
+
+footer a.nav-link::before{
+    content: "> ";
+    opacity: 0;
+}
+
+footer a.nav-link:hover::before{
+    opacity: 100;
+}
 
 
-            /*RESPONSIVE FOOTER*/
-            @media (max-width: 992px) {
-                .pipe-license{
-                    display: none !important;
-                }
-              
-            }
 
-            @media (max-width:440px){
-                .pipe-contacts{
-                    opacity: 0 !important;
-                }
 
-            }
 
-            @media (min-width: 1199px) and (max-width: 1270px){
-                .logo-footer{
-                    flex: 0 0 auto !important;
-                    width: 100% !important;
-                }
+/*RESPONSIVE FOOTER*/
+@media (max-width: 992px) {
+    .pipe-license{
+        display: none !important;
+    }
+    
+}
 
-                .links-footer{
-                    flex: 0 0 auto !important;
-                    width: 100% !important;
-                    padding-top: 1rem !important;
-                    padding-bottom: 1rem !important;
-                }
+@media (max-width:440px){
+    .pipe-contacts{
+        opacity: 0 !important;
+    }
 
-                .links-footer .row ul{
-                    justify-content: center !important;
-                }
+}
 
-                .logo-footer .logo-img.justify-content-center{
-                    justify-content: center !important;
-                }
+@media (min-width: 1199px) and (max-width: 1270px){
+    .logo-footer{
+        flex: 0 0 auto !important;
+        width: 100% !important;
+    }
 
-                .logo-footer .logo-text.text-center{
-                    text-align: center !important;
-                }
-            }
+    .links-footer{
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .links-footer .row ul{
+        justify-content: center !important;
+    }
+
+    .logo-footer .logo-img.justify-content-center{
+        justify-content: center !important;
+    }
+
+    .logo-footer .logo-text.text-center{
+        text-align: center !important;
+    }
+}
 
