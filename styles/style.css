@@ -560,7 +560,7 @@ footer a.nav-link, footer h2{
             .background-image {
                 width:100%;
                 height:50vh;
-                background: url('img/saint_sulpiere.png');
+                background: url('../img/saint_sulpiere.png');
                 background-repeat: no-repeat;
                 background-position: bottom center;
                 background-size:cover;
@@ -734,7 +734,7 @@ footer a.nav-link, footer h2{
 
             }
 
-            @media (min-width: 1199px) and (max-width: 1270px){
+            @media (min-width: 1199px) and (max-width: 1282px){
                 .logo-footer{
                     flex: 0 0 auto !important;
                     width: 100% !important;
