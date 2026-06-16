@@ -417,19 +417,20 @@ footer a.nav-link, footer h2{
   transform: none; 
 }
 
+/* TAG OBSOLETO - FARE CHECK SU PAGINE ABOUT PRIMA DI ELIMINARE
 #about_NV {
-    background-image: url(../img/generic_bg.png); /*ovviamente bg da cambiare*/
-    height: 300pt; /*da cambiare, è solo per una prova*/
+    background-image: url(../img/generic_bg.png);
     display: flex;
     justify-content: center;
     align-items: center;
     background-position: center;
     background-size: 100%;
     transition: background-size 1s ease;
-}
+}*/
 
+/* TAG OBSOLETO - FARE CHECK SU PAGINE ABOUT PRIMA DI ELIMINARE
 #about_our_team {
-    background-image: url(../img/generic_bg.png); /*ovviamente bg da cambiare*/
+    background-image: url(../img/generic_bg.png);
     height: 300pt;
     display: flex;
     justify-content: center;
@@ -438,29 +439,43 @@ footer a.nav-link, footer h2{
     background-size: 100%;
     transition: background-size 1s ease;
 
-}
-
+}*/
+/*TAG OBSOLETO - FARE CHECK SU PAGINE ABOUT PRIMA DI ELIMINARE
 #about_our_team, #about_NV {
     text-decoration: none ;
     color:#1a1a1a
-}
-
+}*/
+/*TAG OBSOLETO - FARE CHECK SU PAGINE ABOUT PRIMA DI ELIMINARE
 #about_our_team:hover h2, #about_NV:hover h2 {
     transition: 0.5s ease;
     color: #A92325;
 }
 
 #about_our_team:hover, #about_NV:hover {
-  /* Ingrandiamo la dimensione dello sfondo al 110% al passaggio del mouse */
   background-size: 110%; 
 }
 
 #about_our_team h2, #about_NV h2 {
     margin: 0;   
     font-family: "Playfair", serif;
-    font-size: 40pt; /*cambiare poi con misure relative*/
+    font-size: 40pt;
     font-weight: 600;
+}*/
+
+.about_bg_image {
+    background-image: url(../img/generic_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30vw;
 }
+
+.about_bg_image h1 {
+    font-family: "Playfair", serif;
+    font-size: clamp(2rem, 4vw + 1.25rem, 3.5rem);
+    line-height: 1.2;
+}
+
 
 /*ABOUT NOUVELLE VAGUE*/
 #about_NV_bg_image {
