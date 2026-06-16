@@ -1,17 +1,22 @@
  h1, h2, h3{
-    font-family: "Playfair Display", serif;
+    font-family: "VT323", monospace;
+    color: #33FF33; /*verde lime per il testo*/
     font-optical-sizing: auto;
     font-style: normal;
 }
 
-p{ 
+p { 
     font-family: "Inter", sans-serif;
+    color: #33FF33;
     font-optical-sizing: auto;
     font-style: normal;
 }
 
 body{
-    background-color: #F4F1EA !important;
+    background-color: #121212 !important;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    font-family: 'VT323', 'Courier New', monospace;
+    line-height: 1.2;
 }
 
 /*HERO IMAGE*/
@@ -167,16 +172,18 @@ body {
 /*NAVBAR*/
 
 .navbar{
-    background-color: #1a1a1a;
+    background-color: #030a03;
+    border-bottom: ;
 }
 
 .navbar-text, .nav-link {
-    color: #faf1ea;
+    color: #33FF33;
+    font-size: clamp(15px, 1.1vw + 12px, 40px); /*non ho usato vh o vw per le dimensioni limite e per la proporzione usata nel valore centrale per evitare che il browser calcolasse dimensioni con la virgola e facesse saltare l'effetto pixellato del font*/
 }
 
 .navbar-text {
-    font-family: "GFS Didot", serif;
-    font-size: clamp(1.25rem, 2vw + 1rem, 2rem);
+    font-family: "VT323", monospace;
+    text-transform: uppercase;
 }
 
 
@@ -185,32 +192,35 @@ span.navbar-text {
 }
 
 .navbar-nav .nav-link {
-    color: #faf1ea;
-    font-size: clamp(0.75rem, 0.5vw + 0.75rem, 1.5rem); /*cambiare poi con misure relative*/
-    border-bottom: 1px solid transparent;
-    font-family: "Space Mono", monospace;
+    color: #33FF33;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    font-family: "VT323", monospace;
     padding-right: clamp(0.75rem, 2vw,4rem);
     padding-left: clamp(0.75rem, 2vw, 4rem);
 }
 
-.navbar-nav .nav-link:visited {
-    color: #faf1ea;
+.navbar-nav .nav-link:before {
+    content: "> "; 
+    opacity: 0;
+    color: #33FF33;
 }
 
-.navbar-nav .nav-link:hover:not(.active) {
-    color: #e63946;
-    border-bottom: 1px solid #e63946 ;
-    transition: 0.3s ease-in-out;
+.navbar-nav .nav-link:visited {
+    color: #33FF33;
+}
+
+.navbar-nav .nav-link:hover:not(.active)::before {
+    color: #33FF33;
+    opacity: 100;
     cursor: pointer;
 }
 
 .navbar-nav .nav-link:active {
-    color: #faf1ea;
+    color: #33FF33;
 }
 
 .navbar-nav .nav-link.active{
-    color: #e63946;
-    border-bottom: 1px solid #e63946;
+    color: #33FF33;
     cursor: default;
 }
 
@@ -252,8 +262,8 @@ footer ul a{
 }
 
 footer ul a:not(.pipe):hover{
-    color: #A92325 !important;
-    border-bottom: #A92325 3px solid !important;
+    color: #A92325;
+    border-bottom: #A92325 3px solid;
 }
 
 footer a.nav-link, footer h2{
@@ -675,9 +685,9 @@ footer a.nav-link, footer h2{
                 font-size: 1.25rem !important;
             }
 
-            ul a:not(.pipe):hover{
-                color: #A92325 !important;
-                border-bottom: #A92325 3px solid !important;
+            footer ul a:not(.pipe):hover{
+                color: #A92325;
+                border-bottom: #A92325 3px solid;
             }
 
             footer a.nav-link, footer h2{
