@@ -16,8 +16,6 @@ h1 span{
     color: #A87C43 !important;
 }
 
-
-
 p{ 
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -85,9 +83,9 @@ body{
 }
 
 hr{
-    color:#A87C43;
-    border-top:2px solid currentColor;
-    opacity: 1;
+    color:#A87C43 !important;
+    border-top:2px solid currentColor !important;
+    opacity: 1 !important;
 }
 
 .paper-card {
@@ -175,6 +173,10 @@ a[aria-expanded="false"] i {
 
 /*PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
 
+.card-title{
+    color: #faf1ea!important;
+}
+
 /*per lo zoom delle card*/
 .zoom-card .img-fluid{
     transition: transform .75s ease;
@@ -212,3 +214,171 @@ a[aria-expanded="false"] i {
 .zoom-card:hover .explore-card{
     filter: grayscale(1) brightness(60%);
 }
+
+
+/*--------------------FINE CSS HOMEPAGE---------------------*/
+
+/*--------------------INIZIO CSS TOUR---------------------*/
+
+
+/*GOOGLE FONTS & ICONS*/
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+/*HERO IMAGE*/
+.background-image {
+    width:100%;
+    height:50vh;
+    background: url('../img/saint_sulpiere.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+/*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/          
+
+@media (max-width: 992px) {
+    header#prova{
+        height: 40vh;
+        background-position: left bottom !important;
+    }
+    .catchphrase{
+        font-size: 2.7rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    header#prova{
+        height: 30vh;
+        background-position: left bottom !important;
+    }
+}
+
+
+@media (max-width: 577px) {
+    .catchphrase{
+        font-size: 2rem !important;
+    }
+    header > .row{
+        height: 60% !important;
+    }        
+}
+
+/*FINE HERO IMAGE*/
+
+button{
+    border-radius: 50px !important;
+}
+
+
+/*PILLS*/
+.pill{
+    color:#A87C43;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    background-color:#D4EFE2;
+    font-size: clamp(0.8rem, 1.3vw, 1.2rem);
+    border: #A87C43 1px solid;
+}
+
+.pill .material-symbols-outlined{
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+/*PARAGRAPHS*/
+.paragraph{
+    display: none !important;
+}
+
+.paragraph h1{
+    color: #A87C43 !important;
+}
+
+.active{
+    display: block !important;
+    animation: fade 1s ease forwards;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+button:disabled {
+    pointer-events: auto !important;
+    cursor: not-allowed !important;
+}
+
+/*PROGRESS BAR*/
+.progress-bar {
+    background-color: #A87C43 !important;
+}
+
+/*BACK TO FIRST BUTTON*/
+#backToFirst {
+    color: #F4F1FA !important;
+    background-color:#A87C43 !important;
+    border:#A87C43 1px solid !important;
+}
+
+#backToFirst:hover {
+    color: #A87C43 !important;
+    background-color:#D4EFE2 !important;
+    border:#A87C43 1px solid !important;
+}
+
+/*THEME*/
+.theme{
+    height: auto;
+}
+
+.closeTheme, .openTheme{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.closeTheme span{ 
+    font-size: 2.5rem;
+    border:#A87C43 2px solid;
+    border-radius: 100%;
+    color: #A87C43;
+}
+
+.openTheme span{
+    font-size: 2.5rem;
+    color: #A87C43;
+}
+
+.openTheme{
+    display: none;
+    border:#A87C43 2px solid;
+    border-radius: 50px;
+}
+
+.blur-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    z-index: -1;
+    border-radius: 50px;
+}
+
+/*--------------------FINE CSS TOUR---------------------*/
+
+
+/*--------------------INIZIO CSS CATALOGUE---------------------*/
+

@@ -581,7 +581,7 @@ h1, h2, h3{
 .background-image {
     width:100%;
     height:50vh;
-    background: url('img/saint_sulpiere.png');
+    background: url('../img/saint_sulpiere.png');
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size:cover;
