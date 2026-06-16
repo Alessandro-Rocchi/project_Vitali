@@ -100,6 +100,7 @@ hr{
     background-position: top left, top right;
     background-size: 10% auto, 10% auto;
     background-repeat: no-repeat, no-repeat;
+    border: 2px solid #A87C43;
 }
 
 @media (min-width: 1400px){
@@ -182,7 +183,7 @@ a[aria-expanded="false"] i {
     transition: transform .75s ease;
 }
 
-    /* 2. Quando l'utente passa il mouse sulla CARD, l'immagine si ingrandisce del 10% (scale 1.1) */
+/* 2. Quando l'utente passa il mouse sulla CARD, l'immagine si ingrandisce del 10% (scale 1.1) */
 .zoom-card:hover .img-fluid {
     transform: scale(1.1);
 }
@@ -380,5 +381,34 @@ button:disabled {
 /*--------------------FINE CSS TOUR---------------------*/
 
 
-/*--------------------INIZIO CSS CATALOGUE---------------------*/
+/*--------------------INIZIO CSS ABOUT NOUVELLE VAGUE---------------------*/
+
+#about_NV_bg_image {
+    background-image: url(../img/generic_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40vh;
+}
+
+#about_NV_bg_image h1 {
+    font-family: "Playfair", serif;
+    font-size: 50pt;
+}
+
+#about_NV_text_content {
+    font-size: 16pt;
+    font-weight: 300;
+}
+
+#about_NV_text_content b{
+    font-weight: 600;
+    color: #A87C43;
+}
+
+/*--------------------FINE CSS ABOUT NOUVELLE VAGUE---------------------*/
+
+
+
+
 
