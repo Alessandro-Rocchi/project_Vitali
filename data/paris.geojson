@@ -9,7 +9,8 @@
         "label": "Sorbonne Chapel, Paris, France",
         "director": "Jacques Rivette",
         "movie": "Paris Belongs to Us",
-        "production_year": "1961"
+        "production_year": "1961",
+        "poster_url": "img/img_movie/capelleDeLaSorbonneOld.png"
       },
       "bbox": [2.3433, 48.8483, 2.3433, 48.8483]
     },
@@ -21,7 +22,8 @@
         "label": "Church of Saint-Sulpice, Paris, France",
         "director": "Jacques Rivette",
         "movie": "Paris Belongs to Us",
-        "production_year": "1961"
+        "production_year": "1961",
+        "poster_url": "img/img_movie/saintSupliceOld.png"
       },
       "bbox": [2.3333, 48.8505, 2.3333, 48.8505]
     },

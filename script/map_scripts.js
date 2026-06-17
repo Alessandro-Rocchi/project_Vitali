@@ -233,47 +233,45 @@ function showLocationDetails(locationName) {
     var text_info = document.getElementById('text-section');
     var img_panel = document.getElementById('img-section');
 
-    // 1. Troviamo il luogo nel GeoJSON tramite il nome
     var filmGeoJson = initialData.features.find(function(f) {
         return f.properties.name === locationName;
     });
 
     if (!filmGeoJson) {
-        console.error("Luogo non trovato nel GeoJSON:", locationName);
+        console.error("Location not found in GeoJSON:", locationName);
         return;
     }
-    
-    var properties = filmGeoJson.properties;
-    var url_Img = properties.poster_url;
 
-    if (img_panel) {
-        img_panel.src = url_Img;
-        img_panel.alt = properties.name || 'Location Image';
-    }
-
-    if (document.getElementById('title-sect')) {
-        document.getElementById('title-sect').textContent = properties.name || 'Location Details';
-    }
-
-    // 2. Troviamo i metadati usando lo stesso identico nome
-    var testiDelLuogo = null;
+    var Locationtexts = null;
     if (metadataJson && metadataJson.length > 0) {
-        testiDelLuogo = metadataJson.find(function(elemento) {
+        Locationtexts = metadataJson.find(function(elemento) {
             return elemento.name === locationName; 
         });
     }
 
-    if (testiDelLuogo) {
-        var testoBreve = testiDelLuogo.simple_description || 'Dettagli non disponibili.';
-        var testoMedio = testiDelLuogo.medium_description || 'Dettagli non disponibili.';
-        var testoLungo = testiDelLuogo.detailed_description || 'Dettagli non disponibili.';
+    var url_Img = Locationtexts.img_url;
 
-        if (testoBreve && testoMedio && testoLungo) {
+    if (img_panel) {
+        img_panel.src = url_Img;
+        img_panel.alt = Locationtexts.name || 'Location Image';
+    }
+
+    if (document.getElementById('title-sect')) {
+        document.getElementById('title-sect').textContent = Locationtexts.name || 'Location Details';
+    }
+
+
+    if (Locationtexts) {
+        var text_short = Locationtexts.simple_description || 'Details not available.';
+        var text_medium = Locationtexts.medium_description || 'Details not available.';
+        var text_long = Locationtexts.detailed_description || 'Details not available.';
+
+        if (text_short && text_medium && text_long) {
             text_info.innerHTML = `
-                <span id="testo-breve">${testoBreve}</span>
-                <span id="testo-medio" style="display: none;">${testoMedio}</span>
-                <span id="testo-lungo" style="display: none;">${testoLungo}</span>
-                <button id="btn-scopri" class="btn btn-link p-0 ms-1 text-decoration-none fw-bold">Scopri di più</button>
+                <span id="testo-breve">${text_short}</span>
+                <span id="testo-medio" style="display: none;">${text_medium}</span>
+                <span id="testo-lungo" style="display: none;">${text_long}</span>
+                <button id="btn-scopri" class="btn btn-link p-0 ms-1 text-decoration-none fw-bold">Learn more</button>
             `;
 
             document.getElementById('btn-scopri').addEventListener('click', function(e) {
@@ -287,29 +285,28 @@ function showLocationDetails(locationName) {
                     spanBreve.style.display = 'none';
                     spanMedio.style.display = 'inline';
                     spanLungo.style.display = 'none';
-                    this.textContent = 'Scopri ancora di più';
+                    this.textContent = 'Learn more';
                 } else if (spanMedio.style.display !== 'none') {
                     spanBreve.style.display = 'none';
                     spanMedio.style.display = 'none';
                     spanLungo.style.display = 'inline';
-                    this.textContent = 'Mostra meno';
+                    this.textContent = 'Show less';
                 } else {
                     spanBreve.style.display = 'inline';
                     spanMedio.style.display = 'none';
                     spanLungo.style.display = 'none';
-                    this.textContent = 'Scopri di più';
+                    this.textContent = 'Learn more';
                 }
             });
         } else {
-            text_info.textContent = testoBreve;
+            text_info.textContent = text_short || 'Details not available.';
         }
     } else {
-        text_info.textContent = 'Dettagli non ancora inseriti nel database.';
+        text_info.textContent = 'Details not yet inserted into the database.';
     }
 }
 
 explorePanel.onAdd = function (map) {
-    // Il contenitore è totalmente INVISIBILE
     var div = L.DomUtil.create('div', 'sub-panel-explore d-flex flex-column gap-2 bg-transparent border-0 p-0');
     
     div.innerHTML = `

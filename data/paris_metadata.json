@@ -5,7 +5,8 @@
     "associated_movie": "Paris nous appartient",
     "simple_description": "The private chapel of the Sorbonne University in Paris.",
     "medium_description": "A historic Parisian chapel completed in 1642 at the request of Cardinal Richelieu. It represents an important example of French Baroque architecture in the heart of the Latin Quarter.",
-    "detailed_description": "The Chapelle de la Sorbonne is a masterpiece of French Baroque architecture, designed by the architect Jacques Lemercier and completed in 1642. It was commissioned by Cardinal Richelieu, whose remains still rest today in the mausoleum within the nave. The structure is distinguished by its elegant dome, which was one of the first of its kind to be built in Paris, and is one of the intellectual symbols of the city."
+    "detailed_description": "The Chapelle de la Sorbonne is a masterpiece of French Baroque architecture, designed by the architect Jacques Lemercier and completed in 1642. It was commissioned by Cardinal Richelieu, whose remains still rest today in the mausoleum within the nave. The structure is distinguished by its elegant dome, which was one of the first of its kind to be built in Paris, and is one of the intellectual symbols of the city.",
+    "img_url": "img/img_movie/capelleDeLaSorbonneModern.png"
   },
   {
     "name": "Chiesa di Saint Suplice",
@@ -13,7 +14,8 @@
     "associated_movie": "Paris nous appartient",
     "simple_description": "A large and historic Catholic church in the Odéon district.",
     "medium_description": "The second largest church in Paris after Notre-Dame, with construction beginning in 1646. It is famous for its imposing twin-tower facade and the astronomical gnomon located inside.",
-    "detailed_description": "The Église Saint-Sulpice is a vast religious building located in the 6th arrondissement of Paris, whose construction origins date back to 1646, although it took over a century and a half to complete. It is famous for its imposing asymmetrical facade designed by Jean-Nicolas Servandoni and for the magnificent frescoes by Eugène Delacroix. The church also houses an important astronomical meridian (the gnomon of Saint-Sulpice) and a monumental Cavaillé-Coll organ, among the finest in France."
+    "detailed_description": "The Église Saint-Sulpice is a vast religious building located in the 6th arrondissement of Paris, whose construction origins date back to 1646, although it took over a century and a half to complete. It is famous for its imposing asymmetrical facade designed by Jean-Nicolas Servandoni and for the magnificent frescoes by Eugène Delacroix. The church also houses an important astronomical meridian (the gnomon of Saint-Sulpice) and a monumental Cavaillé-Coll organ, among the finest in France.",
+    "img_url": "img/img_movie/saintSupliceModern.png"
   },
   {
     "name": "Pont des Arts",
@@ -72,7 +74,7 @@
     "detailed_description": "Le Select is a famous Parisian café and brasserie located at 99 Boulevard du Montparnasse. In the 1920s and 30s, it became the headquarters of the so-called 'Lost Generation', frequently visited by prominent literary and artistic figures such as Ernest Hemingway, F. Scott Fitzgerald, and Pablo Picasso. Unlike other modernized venues, Le Select has proudly maintained the authentic atmosphere and original booths of the era, remaining an intact temple of the bohemian spirit."
   },
   {
-    "name": "metro: Raspail",
+    "name": "The Raspail metro station",
     "year": "1906",
     "associated_movie": "A Bout De Soufflé",
     "simple_description": "A Parisian metro station on lines 4 and 6.",
@@ -80,7 +82,7 @@
     "detailed_description": "The Raspail metro station is an underground hub located in the 14th arrondissement of Paris, inaugurated in 1906. It serves lines 4 and 6 and is strategically positioned in the Montparnasse district. The internal architecture features the classic beveled white tiles of the historic metro network. It serves as a vital vein for city transit and access to the historic sites of the Rive Gauche."
   },
   {
-    "name": "the Marne",
+    "name": "The Marne",
     "year": "N/D",
     "associated_movie": "Bande à part",
     "simple_description": "A major French river that flows into the Seine.",
@@ -88,7 +90,7 @@
     "detailed_description": "The Marne is one of the main rivers in France and a major right tributary of the Seine, which it joins at the eastern gates of Paris. In addition to shaping the landscapes of the French countryside, it has profound historical significance: it was the front line for the famous Battles of the Marne (1914 and 1918) during the First World War. Its placid and tree-lined banks have inspired countless impressionist painters and remain a classic backdrop for French cinema."
   },
   {
-    "name": "Ile des Corbeaux at Saint-Maurice",
+    "name": "The Island of the Crows (Île des Corbeaux) at Saint-Maurice",
     "year": "N/D",
     "associated_movie": "Bande à part",
     "simple_description": "A small and picturesque river island near Paris.",
@@ -96,7 +98,7 @@
     "detailed_description": "Île des Corbeaux is a quiet and small river islet located on the Marne River, falling within the administrative territory of the municipality of Saint-Maurice, not far from the Bois de Vincennes, on the outskirts of Paris. The name evokes rural and wild atmospheres in stark contrast to urban expansion. Over time, these river islands have attracted Parisians looking for nature, offering idyllic landscapes and enchanting paths far from the urban frenzy."
   },
   {
-    "name": "Column de Juillet, Paris",
+    "name": "The July Column, Paris",
     "year": "1840",
     "associated_movie": "Bande à part",
     "simple_description": "An imposing monument located in Place de la Bastille.",
@@ -104,7 +106,7 @@
     "detailed_description": "The Colonne de Juillet is a monumental bronze commemorative pillar located in the center of the renowned Place de la Bastille in Paris. Built between 1835 and 1840 under the reign of Louis Philippe, it commemorates the 'Trois Glorieuses', or the three days of the July Revolution of 1830. Engraved with the names of the victims, it is crowned by the famous gilded sculpture of the 'Spirit of Freedom' (Génie de la Liberté) by Auguste Dumont, a symbol of the republican spirit in motion."
   },
   {
-    "name": "quai de Conti",
+    "name": "The Quai de Conti, Paris",
     "year": "1313",
     "associated_movie": "Bande à part",
     "simple_description": "An iconic street running along the left bank of the Seine.",
@@ -112,7 +114,7 @@
     "detailed_description": "The Quai de Conti is a historic riverside promenade located on the Rive Gauche in the 6th arrondissement of Paris, with roots dating back to the development of the river embankments since 1313. It is a walk of great architectural value and is dominated by two imposing institutions: the monumental headquarters of the Institut de France, under whose dome the Académie Française meets, and the Monnaie de Paris (Paris Mint). The quai captures the essence of Parisian elegance and the preservation of its high culture."
   },
   {
-    "name": "Louvre’s",
+    "name": "The Louvre Museum, Paris",
     "year": "1793",
     "associated_movie": "Bande à part",
     "simple_description": "The most famous and largest art museum in the world.",
@@ -120,7 +122,7 @@
     "detailed_description": "The Louvre Museum is the largest art museum exhibition in the world, nestled in the heart of Paris along the right bank of the Seine. Originally a medieval fortress in the 12th century, it was transformed into the main residence of the French kings, before becoming a public museum in 1793 during the French Revolution. Its countless galleries cover millennia of history and civilization, and its modern glass Pyramid now creates an extraordinary contrast between classical and contemporary architecture."
   },
   {
-    "name": "street market in Pl. de Levis",
+    "name": "The street market in Place de évis",
     "year": "1800s",
     "associated_movie": "La fornaia di Morceau",
     "simple_description": "A lively and historic neighborhood market in Paris.",
