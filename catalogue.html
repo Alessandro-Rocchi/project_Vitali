@@ -3,7 +3,7 @@
   <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/style.css"> 
+        <link rel="stylesheet" href="styles/rococo_style.css"> 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="script/scripts.js" defer></script>
@@ -42,15 +42,17 @@
 
         <section class="page_content pb-5"> <!--contenuto della pagina-->
             <!--BREADCRUMBS-->
-            <div class="breadcrumbs d-inline-flex ms-4 my-3 gap-2">
+            <div class="breadcrumbs d-flex ps-4 py-3 gap-2">
                 <a href="">Home</a>
                 <p class="mb-0">/</p>
                 <a href="">Catalogue</a>
                 <p class="mb-0">/</p>
                 <a class="disabled">About Our Team</a>
             </div>
-            <div class="row col-12 p-3" id="catalogue_page_title">
-                <h1>Catalogue</h1>
+            <div class="col-12 p-3 mb-3 text-center" id="catalogue_page_title">
+                <img src="img/rococo-ornament-left.png" alt="Ornament Icon" class="img-fluid d-inline mb-3" style="width: 6vw; max-width: 100px; min-width: 40px; height: auto;">
+                <h1 class="d-inline">Catalogue</h1>
+                <img src="img/rococo-ornament-right.png" alt="Ornament Icon" class="img-fluid d-inline mb-3" style="width: 6vw; max-width: 100px; min-width: 40px; height: auto;">
                 <h2>N luoghi mostrati</h2>
             </div>
 
@@ -64,40 +66,59 @@
                             <div class="d-flex">
                                 <div class="collapse" id="filters_menu">
                                     <div class="card card-body">
-                                        <div class="row"> 
-                                            <p class="col">Ordina per:</p>
-                                            <select class=" col form-select" aria-label="Default select example">
-                                            <option selected>Seleziona...</option>
-                                            <option value="A-Z">A-Z</option>
-                                            <option value="Z-A">Z-A</option>
-                                            <option value="new_to_old">New to old</option>
-                                            </select>
+                                        <div class="row text-center mb-2">
+                                            <h2>Filters</h2>
                                         </div>
                                         <div class="row">
-                                            <p class="col">Regista:</p>
-                                            <select class=" col form-select" aria-label="Default select example">
-                                            <option selected>Seleziona...</option>
-                                            <option value="Tizio">Tizio</option>
-                                            <option value="Caio">Caio</option>
-                                            <option value="Sempronio">Sempronio</option>
-                                            </select>
+                                            <div class="col">
+                                                <p>Order by:</p>
+                                            </div>
+                                            <div class="col">
+                                                <select class="form-select d-inline">
+                                                    <option selected>Select...</option>
+                                                    <option value="A-Z">A-Z</option>
+                                                    <option value="Z-A">Z-A</option>
+                                                    <option value="new_to_old">New to old</option>
+                                                </select>
+                                            </div> 
+                                            
                                         </div>
-                                        <div class="row d-flex justify-content-center align-items-center gap-2">
-                                            <p class="col-auto mb-0">Film:</p>
-                                            <select class="col-auto form-select" aria-label="Default select example">
-                                            <option selected>Seleziona...</option>
-                                            <option value="Film_1">Film 1</option>
-                                            <option value="Film_2">Film 2</option>
-                                            <option value="Film_3">Film 3</option>
-                                            </select>
+                                        <div class="row mt-3">     
+                                            <div class="col">
+                                                <p>Regista:</p>
+                                            </div>                                      
+                                            <div class="col">
+                                                <select class=" col form-select" aria-label="Default select example">
+                                                    <option selected>Select...</option>
+                                                    <option value="Tizio">Tizio</option>
+                                                    <option value="Caio">Caio</option>
+                                                    <option value="Sempronio">Sempronio</option>
+                                                </select>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row d-flex justify-content-center align-items-center mt-3">
+                                            <div class="col-12">
+                                                <p class="mb-1">Film:</p>
+                                            </div>
+                                            <div class="col">
+                                                <select class="col form-select" aria-label="Default select example">
+                                                    <option selected>Select...</option>
+                                                    <option value="Film_1">Film 1</option>
+                                                    <option value="Film_2">Film 2</option>
+                                                    <option value="Film_3">Film 3</option>
+                                                </select>
+                                            </div>
+                                            
                                         </div>              
                                     </div>
                                 </div>
                                 <div class="p-2">
-                                    <button class="p-1 me-1 btn btn-primary w-auto" type="button"
-                                    id ="filter_toggle" data-bs-toggle="collapse" data-bs-target="#filters_menu". aria-expanded="true" aria-controls="filters_menu">
+                                    <button class="p-1 me-1 btn w-auto shadow-none collapsed" type="button"
+                                    id ="filter_toggle" data-bs-toggle="collapse" data-bs-target="#filters_menu". aria-expanded="false" aria-controls="filters_menu">
                                         <span class="material-symbols-outlined filter_list" id="filter_list">filter_list</span>
                                         <span class="material-symbols-outlined arrow_forward_ios" id="arrow_forward_ios">arrow_forward_ios</span>
+                                        
                                     </button>
                                 </div>
                             </div>
@@ -111,62 +132,74 @@
                                     
                                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
                                     <!--struttura delle singole cards-->
-                                    <div class="card border rounded p-2">
-                                        <img src="img/cow.jpeg" class="img-fluid" alt="...">
-                                        <h5 class="my-2 mx-1">Nome del luogo</h6>
-                                        <p class="my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                                        <a href="" class="card_link align-self-end my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
+                                    <div class="card border">
+                                        <img src="img/saint_sulpiere.png" class="img-fluid" alt="...">
+                                        <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
+                                        <p class="ps-2 my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                        <a href="" class="card_link align-self-end pe-2 my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
                                     </div>
                                 </div>
 
-                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                                    <div class="card border rounded p-2">
-                                        <img src="img/cow.jpeg" class="img-fluid" alt="...">
-                                        <h5 class="my-2 mx-1">Nome del luogo</h6>
-                                        <p class="my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                                        <a href="" class="card_link align-self-end my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
+                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
+                                    <div class="card border rounded">
+                                        <img src="img/paris_nousAppartient.webp" class="img-fluid" alt="...">
+                                        <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
+                                        <p class="ps-2 my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                        <a href="" class="card_link align-self-end pe-2 my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                                    <div class="card border rounded p-2">
-                                        <img src="img/cow.jpeg" class="img-fluid" alt="...">
-                                        <h5 class="my-2 mx-1">Nome del luogo</h6>
-                                        <p class="my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                                        <a href="" class="card_link align-self-end my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
+
+                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
+                                    <div class="card border rounded">
+                                        <img src="img/hidden-gems.jpg" class="img-fluid" alt="...">
+                                        <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
+                                        <p class="ps-2 my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                        <a href="" class="card_link align-self-end pe-2 my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                                    <div class="card border rounded p-2">
-                                        <img src="img/cow.jpeg" class="img-fluid" alt="...">
-                                        <h5 class="my-2 mx-1">Nome del luogo</h6>
-                                        <p class="my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                                        <a href="" class="card_link align-self-end my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
-                                    </div>
-                                </div> 
-                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                                    <div class="card border rounded p-2">
-                                        <img src="img/cow.jpeg" class="img-fluid" alt="...">
-                                        <h5 class="my-2 mx-1">Nome del luogo</h6>
-                                        <p class="my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                                        <a href="" class="card_link align-self-end my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
+                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
+                                    <div class="card border rounded">
+                                        <img src="img/jean-luc-godard-breathless.jpg" class="img-fluid" alt="...">
+                                        <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
+                                        <p class="ps-2 my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                        <a href="" class="card_link align-self-end pe-2 my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                                    <div class="card border rounded p-2">
+                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
+                                    <div class="card border rounded">
                                         <img src="img/cow.jpeg" class="img-fluid" alt="...">
-                                        <h5 class="my-2 mx-1">Nome del luogo</h6>
-                                        <p class="my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                                        <a href="" class="card_link align-self-end my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
+                                        <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
+                                        <p class="ps-2 my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                        <a href="" class="card_link align-self-end pe-2 my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                                    <div class="card border rounded p-2">
+                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
+                                    <div class="card border rounded">
                                         <img src="img/cow.jpeg" class="img-fluid" alt="...">
-                                        <h5 class="my-2 mx-1">Nome del luogo</h6>
-                                        <p class="my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                                        <a href="" class="card_link align-self-end my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
+                                        <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
+                                        <p class="ps-2 my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                        <a href="" class="card_link align-self-end pe-2 my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
                                     </div>
                                 </div>
+                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
+                                    <div class="card border rounded">
+                                        <img src="img/cow.jpeg" class="img-fluid" alt="...">
+                                        <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
+                                        <p class="ps-2 my-2 mx-1">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                        <a href="" class="card_link align-self-end pe-2 my-2 mx-1 d-flex align-items-center">Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span></a>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-4">                          
+                                    <div class="pagination d-flex justify-content-center gap-1" id="pagination">
+                                        <button class="arrow" data-dir="-1"><b>&laquo;</b></button>
+                                        <button class="page-num active">1</button>
+                                        <button class="page-num">2</button>
+                                        <button class="page-num">3</button>
+                                        <button class="arrow" data-dir="1"><b>&raquo;</b></button>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -211,5 +244,24 @@
                 </div>                    
             </div>
         </footer>
+        <script>
+            const pg = document.getElementById('pagination');
+            const nums = [...pg.querySelectorAll('.page-num')];
+
+            pg.onclick = (e) => {
+            const btn = e.target.closest('button');
+            if (!btn) return;
+
+            const active = pg.querySelector('.active');
+            const nextIdx = btn.classList.contains('arrow') 
+                ? nums.indexOf(active) + +btn.dataset.dir 
+                : nums.indexOf(btn);
+
+            if (nums[nextIdx]) {
+                active.classList.remove('active');
+                nums[nextIdx].classList.add('active');
+            }
+            };
+        </script>
     </body>
 </html>

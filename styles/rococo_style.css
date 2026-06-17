@@ -274,7 +274,7 @@ a[aria-expanded="false"] i {
 
 /*FINE HERO IMAGE*/
 
-button{
+.tour-container button{
     border-radius: 50px !important;
 }
 
@@ -408,7 +408,152 @@ button:disabled {
 
 /*--------------------FINE CSS ABOUT NOUVELLE VAGUE---------------------*/
 
+/*--------------------INIZIO CSS CATALOGUE---------------------*/
 
 
+.page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
+    background-color:#FAD1D1; 
+}
 
+/*
+.leaflet-container a.dropdown-item {
+      color: #1a1a1a;
+      text-decoration: none;
+}
+
+
+.leaflet-container a.dropdown-item:hover,
+.leaflet-container a.dropdown-item:focus {
+    background-color:#a87c43 !important;
+    color: #1a1a1a;
+    text-decoration: underline;
+}
+*/
+
+#filters_menu {
+    background-color: #D4EFE2;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#filters_menu .card.card-body {
+    background-color: transparent;
+    border: none;
+}
+
+#catalogue_page_title h1 {
+    font-family: "Playfair", serif;
+    font-size: 48pt;
+    color:#a87c43;
+}
+
+#catalogue_page_title h2 {
+    font-size: 18pt;
+    color:#a87c43;
+}
+
+.breadcrumbs, #catalogue_page_title {
+    /*background-color:#1b1b1b10;*/
+    background-color: #d4efe29d;
+}
+
+.card_link{
+    text-decoration: none;
+    color: #a87c43 !important;
+    
+}
+
+#filter_toggle{
+    /*display: inline-flex;*/
+    background-color:#D4EFE2;
+    border-radius: 0px 8px 8px 0px;
+    
+}
+
+#filter_toggle span {
+  vertical-align: middle;
+  color:#a87c43; 
+}
+
+#filter_toggle:hover{
+    cursor: pointer;
+    background-color: #707070;
+    transition: all 0.5s ease;
+}
+
+#filter_toggle:not(.collapsed) #arrow_forward_ios {
+    transform: rotate(180deg);
+}
+
+#filter_area, #cards_area {
+  transition: all 0.3s ease-in-out;
+}
+
+#filter_area h2{
+    color:#A87C43;
+}
+
+#filter_list {
+    transition: 0.3s;
+}
+
+#cards_area .card{
+    background-color:#D4EFE2 !important;
+    border-radius: 5px !important;
+}
+
+#cards_area .card h5, #cards_area .card p{
+    color:#1A1A1A !important;
+}
+
+.card_arrow {
+    color: #a87c43 !important;
+    display: inline-block;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 1s linear, opacity 0.5s linear, margin-left 1s linear;
+}
+
+.card_link:hover .card_arrow {
+    width: auto; 
+    opacity: 1;
+    margin-left: 0.10rem;
+}
+
+#cards_area .card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.pagination button { 
+    padding: 8px 12px;
+    text-decoration: none;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;  
+    margin: 0 4px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Only numeric buttons turn red */
+.pagination .page-num:hover, .pagination .page-num.active { 
+    background-color: #a87c43 !important;
+    color:#EDEAE2 !important;
+    transition: 0.5s ease;
+}
+
+/* Arrows stay neutral */
+.pagination .arrow:hover {
+    background: #a87c43 !important;
+    color:#edeae2 !important;
+}
+
+/*--------------------FINE CSS CATALOGUE---------------------*/
 
