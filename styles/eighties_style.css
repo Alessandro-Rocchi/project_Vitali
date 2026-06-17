@@ -1,4 +1,28 @@
- h1, h2, h3{
+/*barra di scorrimento verde come piace a noi*/
+html::-webkit-scrollbar {
+  width: 16px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #051405;
+  background-image: radial-gradient(
+    rgba(51, 255, 51, 0.2) 1px, 
+    transparent 1px             
+  );
+  background-size: 4px 4px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #33FF33;
+  border: 2px solid #051405; 
+  border-radius: 0 !important;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #66FF66;
+}
+
+h1, h2, h3{
     font-family: "VT323", monospace; /*carattere monospaziato per simulare CRT*/
     color: #33FF33; /*verde lime per il testo*/
     font-optical-sizing: auto;
@@ -399,7 +423,7 @@ span.navbar-text {
     font-family: "VT323", monospace;
     font-size: clamp(15px, 1.1vw + 12px, 40px);    line-height: 1.2;
     text-transform: uppercase;
-    background-color: #33FF33;
+    background-color: #33FF33; /*colori invertiti per evidenziare titoli*/
     color: #030a03;
 }
 
@@ -420,7 +444,7 @@ span.navbar-text {
     background-color: #030a03;
     overflow: hidden;
 }
-/*sto sbrodolo di roba fa fare quell'effetto figo delle righine orizzontali. in hover*/
+/*sto sbrodolo di roba fa fare quell'effetto figo delle righine orizzontali in hover*/
 .about_card .card-img-overlay::after {
   content: "";
   position: absolute;
@@ -456,17 +480,23 @@ span.navbar-text {
 
 
 /*le seguenti regole stylano i titoli con le bg images all'interno della pagina about our team e about nouvelle vague*/
+/*rimuovo l'immagine della banda superiore nelle pagine about*/
+
 .about_bg_image {
-    background-image: url(../img/generic_bg.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 30vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: none !important;
+    border-radius: 0 !important;
 }
 
 .about_bg_image h1 {
+    text-transform: uppercase;
     font-family: "VT323", monospace;
-    font-size: clamp(15px, 1.1vw + 12px, 40px);    line-height: 1.2;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    background-color: #33FF33; /*colori invertiti per evidenziare titoli*/
+    color: #030a03;
+    line-height: 1.2;
 }
 
 /*ABOUT NOUVELLE VAGUE*/
@@ -477,13 +507,44 @@ span.navbar-text {
 }
 
 #about_NV_text_content b{
-    font-weight: 600;
-    color: #d73b3e;
+    color: #030a03;
+    background-color: #33FF33;
+}
+
+#about_NV_text_content img {
+    border: 3px #33FF33 solid;
 }
 
 /*ABOUT OUR TEAM*/
-.id_team h1 {
-    font-family: "Playfair", serif;
+.card.id_team {
+    border-radius: 0 !important;
+    border: 3px solid #33FF33 !important;
+    background-color: #030a03;
+}
+
+.card.id_team .card-img-top{
+    border-radius: 0;
+}
+
+.card.card.id_team h4{
+    text-transform: uppercase;
+}
+
+.card.id_team h4, p {
+    font-family: "VT323", monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    color: #33FF33;
+}
+/*tento di modificare le immagini con solo css in modo da ricordare un po' l'effetto prince of persia*/
+.id_team img.card-img-top {
+    filter: 
+        grayscale(100%)    /* Forza in bianco e nero perfetto */
+        brightness(1.1)    /* Un piccolo boost ai grigi per farli emergere */
+        contrast(1.3)
+        hue-rotate(95deg)
+        saturate(300%);
+    image-rendering: pixelated; /* Chrome/Edge/Opera/Vivaldi*/
+    image-rendering: crisp-edges;
 }
 
 .sub-panel-explore .card:hover {
