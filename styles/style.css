@@ -1,156 +1,156 @@
  h1, h2, h3{
-            font-family: "Playfair Display", serif;
-                font-optical-sizing: auto;
-                font-style: normal;
-            }
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
-            p{ 
-                font-family: "Inter", sans-serif;
-                font-optical-sizing: auto;
-                font-style: normal;
-            }
+p{ 
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
-            body{
-                background-color: #F4F1EA !important;
-            }
+body{
+    background-color: #F4F1EA !important;
+}
 
-            /*HERO IMAGE*/
-            .hero-img {
-                width:100%;
-                height:60vh;
-                background: url('img/breathless-hero.jpg');
-                background-repeat: no-repeat;
-                background-position: center top;
-                background-size: cover;
-                /*background-attachment: fixed;*/ /*per mantenere l'immagine fissa durante lo scroll, ma ho deciso di rimuoverlo per evitare problemi di visualizzazione della hero image*/
-            }
+/*HERO IMAGE*/
+.hero-img {
+    width:100%;
+    height:60vh;
+    background: url('img/breathless-hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    /*background-attachment: fixed;*/ /*per mantenere l'immagine fissa durante lo scroll, ma ho deciso di rimuoverlo per evitare problemi di visualizzazione della hero image*/
+}
 
-            /*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/
-            @media (max-width: 520px) {
-                .hero-img{
-                    height: 30vh !important;
-                    background-position: 20% center !important;
-                }
-            }
+/*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/
+@media (max-width: 520px) {
+    .hero-img{
+        height: 30vh !important;
+        background-position: 20% center !important;
+    }
+}
 
-            @media (min-width:521px) and (max-width: 768px) {
-                .hero-img {
-                    background-position: 50% center !important;
-                }
-            }
+@media (min-width:521px) and (max-width: 768px) {
+    .hero-img {
+        background-position: 50% center !important;
+    }
+}
 
-            @media (max-width: 992px) {
-                .hero-img{
-                    height: 40vh;
-                    background-position: 35% center;
-                }
+@media (max-width: 992px) {
+    .hero-img{
+        height: 40vh;
+        background-position: 35% center;
+    }
 
-            }
+}
 
-            @media (min-width:769px) and (max-width: 942px){
-                .hero-img {
-                    background-position: 70% center !important; 
-                }
-            }
+@media (min-width:769px) and (max-width: 942px){
+    .hero-img {
+        background-position: 70% center !important; 
+    }
+}
 
-            @media (min-width: 1000px) and (max-width: 1200px) {
-                header#prova {
-                    background-position: 60% center; 
-                }
-            }
-
-
-            .paper-card {
-                /*background-color:rgba(255, 0, 60, 0.32);*/
-                background-color: #EDEAE2;
-                color:#1A1A1A;
-                border-radius: 12px;
-                box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.068);
-            }
-
-            .bi-chevron-down {
-                position: absolute !important;
-                top: 0.3rem;
-                right: 0.75rem; 
-                font-size: clamp(1rem, 0.8rem + 1vw, 1.75rem) !important;
-
-                margin: 0;
-            }
-
-            a[aria-expanded="true"] i {
-                transform: rotate(180deg);
-                display: inline-block;
-                transition: transform 0.3s ease;
-            }
-
-            a[aria-expanded="false"] i {
-                transition: transform 0.3s ease;
-            }
-
-            @media (min-width: 767px) and (max-width: 928px){
-                .pretty-catch{
-                    display: block !important;
-                }
-            }
-            @media (min-width: 1312px){
-                .pretty-big-catch{
-                    display: none !important;
-                }
-            }
-
-            @media (min-width: 796px){
-                .pretty-title{
-                    display: none;
-                }
-            }
-            @media (max-width: 795px){
-                .pretty-title{
-                    display: block;
-                }
-            }
-
-            /*FINE HERO IMAGE*/
+@media (min-width: 1000px) and (max-width: 1200px) {
+    header#prova {
+        background-position: 60% center; 
+    }
+}
 
 
-            /*PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
+.paper-card {
+    /*background-color:rgba(255, 0, 60, 0.32);*/
+    background-color: #EDEAE2;
+    color:#1A1A1A;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.068);
+}
 
-            /*per lo zoom delle card*/
-            .zoom-card .img-fluid{
-                transition: transform .75s ease;
-            }
+.bi-chevron-down {
+    position: absolute !important;
+    top: 0.3rem;
+    right: 0.75rem; 
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.75rem) !important;
 
-                /* 2. Quando l'utente passa il mouse sulla CARD, l'immagine si ingrandisce del 10% (scale 1.1) */
-            .zoom-card:hover .img-fluid {
-                transform: scale(1.1);
-            }
+    margin: 0;
+}
 
-            .zoom-card:hover .card-title{
-                color: #d73b3e !important;
-                transition: transform 1.5s ease;
-            }
+a[aria-expanded="true"] i {
+    transform: rotate(180deg);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
 
-            .zoom-card:hover .responsive-title-sm{
-                font-weight: 800;
-            }
+a[aria-expanded="false"] i {
+    transition: transform 0.3s ease;
+}
 
-            .responsive-title {
-                font-size: clamp(1.5rem, 1.2rem + 2vw, 2.25rem);
-            }
-            
-            .responsive-title-sm{
-                font-size: clamp(0.75rem, 0.8rem + 1.5vw, 2rem) !important;
-            }
-            
-            /*FINE PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
+@media (min-width: 767px) and (max-width: 928px){
+    .pretty-catch{
+        display: block !important;
+    }
+}
+@media (min-width: 1312px){
+    .pretty-big-catch{
+        display: none !important;
+    }
+}
 
-            /*Per le immagini delle carte esplora*/
-            .explore-card{
-                filter: grayscale(1) brightness(100%);
-            }
+@media (min-width: 796px){
+    .pretty-title{
+        display: none;
+    }
+}
+@media (max-width: 795px){
+    .pretty-title{
+        display: block;
+    }
+}
 
-            .zoom-card:hover .explore-card{
-                filter: grayscale(1) brightness(60%);
-            }
+/*FINE HERO IMAGE*/
+
+
+/*PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
+
+/*per lo zoom delle card*/
+.zoom-card .img-fluid{
+    transition: transform .75s ease;
+}
+
+    /* 2. Quando l'utente passa il mouse sulla CARD, l'immagine si ingrandisce del 10% (scale 1.1) */
+.zoom-card:hover .img-fluid {
+    transform: scale(1.1);
+}
+
+.zoom-card:hover .card-title{
+    color: #d73b3e !important;
+    transition: transform 1.5s ease;
+}
+
+.zoom-card:hover .responsive-title-sm{
+    font-weight: 800;
+}
+
+.responsive-title {
+    font-size: clamp(1.5rem, 1.2rem + 2vw, 2.25rem);
+}
+
+.responsive-title-sm{
+    font-size: clamp(0.75rem, 0.8rem + 1.5vw, 2rem) !important;
+}
+
+/*FINE PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
+
+/*Per le immagini delle carte esplora*/
+.explore-card{
+    filter: grayscale(1) brightness(100%);
+}
+
+.zoom-card:hover .explore-card{
+    filter: grayscale(1) brightness(60%);
+}
 
 
 *{
@@ -316,21 +316,28 @@ footer a.nav-link, footer h2{
   }
 
 
-  .leaflet-container a.dropdown-item:hover,
-  .leaflet-container a.dropdown-item:focus {
-      background-color: #e9ecef;
-      color: #1a1a1a;
-      text-decoration: underline;
-  }
+.leaflet-container a.dropdown-item:hover,
+.leaflet-container a.dropdown-item:focus {
+    background-color: #e9ecef;
+    color: #1a1a1a;
+    text-decoration: underline;
+}
 
 
 #catalogue_page_title h1 {
     font-family: "Playfair", serif;
     font-size: 48pt;
+    color:#1a1a1a;
 }
 
 #catalogue_page_title h2 {
     font-size: 18pt;
+    color:#1a1a1a;
+}
+
+.breadcrumbs, #catalogue_page_title {
+    /*background-color:#1b1b1b10;*/
+    background-color: #EDEAE2;
 }
 
 .card_link{
@@ -344,16 +351,26 @@ footer a.nav-link, footer h2{
     color: #d73b3e;
 }
 
-.filter_toggle{
+#filter_toggle{
     /*display: inline-flex;*/
-    background-color: #a9a9a9;
+    background-color:#1a1a1a;
     border-radius: 0px 8px 8px 0px;
+    
 }
 
-.filter_toggle:hover{
+#filter_toggle span {
+  vertical-align: middle;
+  color:#F4F1EA; 
+}
+
+#filter_toggle:hover{
     cursor: pointer;
     background-color: #707070;
     transition: all 0.5s ease;
+}
+
+#filter_toggle:not(.collapsed) #arrow_forward_ios {
+    transform: rotate(180deg);
 }
 
 #filter_area, #cards_area {
@@ -362,6 +379,15 @@ footer a.nav-link, footer h2{
 
 #filter_list {
     transition: 0.3s;
+}
+
+#cards_area .card{
+    background-color:#1a1a1a !important;
+    border-radius: 5px !important;
+}
+
+#cards_area .card h5, #cards_area .card p{
+    color:#faf1ea !important;
 }
 
 .card_arrow {
@@ -380,6 +406,38 @@ footer a.nav-link, footer h2{
     margin-left: 0.10rem;
 }
 
+#cards_area .card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.pagination button { 
+    padding: 8px 12px;
+    text-decoration: none;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;  
+    margin: 0 4px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Only numeric buttons turn red */
+.pagination .page-num:hover, .pagination .page-num.active { 
+    background-color: #d73b3e;
+    color:#EDEAE2 !important;
+    transition: 0.5s ease;
+}
+
+/* Arrows stay neutral */
+.pagination .arrow:hover {
+    background: #d73b3e;
+    color:#edeae2 !important;
+}
 
 
 /*ABOUT*/
@@ -499,230 +557,230 @@ footer a.nav-link, footer h2{
 
 
 *{
-                margin:0;
-            }
+    margin:0;
+}
 
-            /*set a background color to the body*/
+/*set a background color to the body*/
 
-            h1, h2, h3{
-                font-family: "Playfair Display", serif;
-                font-optical-sizing: auto;
-                font-style: normal;
-            }
+h1, h2, h3{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
-            /*GOOGLE FONTS & ICONS*/
-            .material-symbols-outlined {
-                font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
-            }
+/*GOOGLE FONTS & ICONS*/
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
 
-            /*HERO IMAGE*/
-            .background-image {
-                width:100%;
-                height:50vh;
-                background: url('img/saint_sulpiere.png');
-                background-repeat: no-repeat;
-                background-position: bottom center;
-                background-size:cover;
-                background-attachment: fixed;
-            }
+/*HERO IMAGE*/
+.background-image {
+    width:100%;
+    height:50vh;
+    background: url('img/saint_sulpiere.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size:cover;
+    background-attachment: fixed;
+}
 
-            /*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/          
+/*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/          
 
-            @media (max-width: 992px) {
-                header#prova{
-                    height: 40vh;
-                    background-position: left bottom !important;
-                }
-                .catchphrase{
-                    font-size: 2.7rem !important;
-                }
-            }
+@media (max-width: 992px) {
+    header#prova{
+        height: 40vh;
+        background-position: left bottom !important;
+    }
+    .catchphrase{
+        font-size: 2.7rem !important;
+    }
+}
 
-            @media (max-width: 768px) {
+@media (max-width: 768px) {
 
-                header#prova{
-                    height: 30vh;
-                    background-position: left bottom !important;
-                }
-            }
-
-
-            @media (max-width: 577px) {
-                .catchphrase{
-                    font-size: 2rem !important;
-                }
-                header > .row{
-                    height: 60% !important;
-                }        
-            }
-
-            .background-image h1 {
-                color:#F4F1FA;
-            }
-            /*FINE HERO IMAGE*/
-
-            button{
-                border-radius: 50px !important;
-            }
+    header#prova{
+        height: 30vh;
+        background-position: left bottom !important;
+    }
+}
 
 
-            /*PILLS*/
-            .pill{
-                color: #F4F1FA;
-                border-radius: 50px;
-                display: inline-flex;
-                align-items: center;
-                background-color:  #A92325;
-                font-size: clamp(0.8rem, 1.3vw, 1.2rem);
+@media (max-width: 577px) {
+    .catchphrase{
+        font-size: 2rem !important;
+    }
+    header > .row{
+        height: 60% !important;
+    }        
+}
 
-            }
+.background-image h1 {
+    color:#F4F1FA;
+}
+/*FINE HERO IMAGE*/
 
-            .pill .material-symbols-outlined{
-                font-size: clamp(1rem, 2vw, 1.5rem);
-            }
-
-            /*PARAGRAPHS*/
-            .paragraph{
-                display: none !important;
-            }
-
-            .active{
-                display: block !important;
-                animation: fade 1s ease forwards;
-            }
-
-            @keyframes fade {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-
-            button:disabled {
-                pointer-events: auto !important;
-                cursor: not-allowed !important;
-            }
-
-            /*PROGRESS BAR*/
-            .progress-bar {
-                background-color: #A92325 !important;
-            }
-
-            /*BACK TO FIRST BUTTON*/
-            #backToFirst {
-                color: #F4F1FA !important;
-                background-color:#A92325 !important;
-                border:#A92325 1px solid !important;
-            }
-
-            #backToFirst:hover {
-                color: #A92325 !important;
-                background-color:#F4F1FA !important;
-                border:#A92325 1px solid !important;
-            }
-
-            /*THEME*/
-            .theme{
-                height: auto;
-            }
-
-            .closeTheme, .openTheme{
-                position: fixed;
-                bottom: 1rem;
-                right: 1rem;
-                z-index: 1000;
-                cursor: pointer;
-            }
-
-            .closeTheme span{ 
-                font-size: 2.5rem;
-                border:#A92325 2px solid;
-                border-radius: 100%;
-                color: #A92325;
-            }
-
-            .openTheme span{
-                font-size: 2.5rem;
-                color: #A92325;
-            }
-
-            .openTheme{
-                display: none;
-                border:#A92325 2px solid;
-                border-radius: 50px;
-            }
-
-            .blur-background{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                backdrop-filter: blur(4px);
-                z-index: -1;
-                border-radius: 50px;
-            }
-
-            /*FOOTER*/
-            .pipe{
-                cursor: default;
-            }
-
-            footer ul a{
-                border: black 3px solid !important;
-                font-size: 1.25rem !important;
-            }
-
-            ul a:not(.pipe):hover{
-                color: #A92325 !important;
-                border-bottom: #A92325 3px solid !important;
-            }
-
-            footer a.nav-link, footer h2{
-                color: #F4F1FA !important;
-            }
+.tour-container button{
+    border-radius: 50px !important;
+}
 
 
-            /*RESPONSIVE FOOTER*/
-            @media (max-width: 992px) {
-                .pipe-license{
-                    display: none !important;
-                }
-              
-            }
+/*PILLS*/
+.pill{
+    color: #F4F1FA;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    background-color:  #A92325;
+    font-size: clamp(0.8rem, 1.3vw, 1.2rem);
 
-            @media (max-width:440px){
-                .pipe-contacts{
-                    opacity: 0 !important;
-                }
+}
 
-            }
+.pill .material-symbols-outlined{
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
 
-            @media (min-width: 1199px) and (max-width: 1270px){
-                .logo-footer{
-                    flex: 0 0 auto !important;
-                    width: 100% !important;
-                }
+/*PARAGRAPHS*/
+.paragraph{
+    display: none !important;
+}
 
-                .links-footer{
-                    flex: 0 0 auto !important;
-                    width: 100% !important;
-                    padding-top: 1rem !important;
-                    padding-bottom: 1rem !important;
-                }
+.active{
+    display: block !important;
+    animation: fade 1s ease forwards;
+}
 
-                .links-footer .row ul{
-                    justify-content: center !important;
-                }
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
-                .logo-footer .logo-img.justify-content-center{
-                    justify-content: center !important;
-                }
+button:disabled {
+    pointer-events: auto !important;
+    cursor: not-allowed !important;
+}
 
-                .logo-footer .logo-text.text-center{
-                    text-align: center !important;
-                }
-            }
+/*PROGRESS BAR*/
+.progress-bar {
+    background-color: #A92325 !important;
+}
+
+/*BACK TO FIRST BUTTON*/
+#backToFirst {
+    color: #F4F1FA !important;
+    background-color:#A92325 !important;
+    border:#A92325 1px solid !important;
+}
+
+#backToFirst:hover {
+    color: #A92325 !important;
+    background-color:#F4F1FA !important;
+    border:#A92325 1px solid !important;
+}
+
+/*THEME*/
+.theme{
+    height: auto;
+}
+
+.closeTheme, .openTheme{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.closeTheme span{ 
+    font-size: 2.5rem;
+    border:#A92325 2px solid;
+    border-radius: 100%;
+    color: #A92325;
+}
+
+.openTheme span{
+    font-size: 2.5rem;
+    color: #A92325;
+}
+
+.openTheme{
+    display: none;
+    border:#A92325 2px solid;
+    border-radius: 50px;
+}
+
+.blur-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    z-index: -1;
+    border-radius: 50px;
+}
+
+/*FOOTER*/
+.pipe{
+    cursor: default;
+}
+
+footer ul a{
+    border: black 3px solid !important;
+    font-size: 1.25rem !important;
+}
+
+footer ul a:not(.pipe):hover{
+    color: #A92325 !important;
+    border-bottom: #A92325 3px solid !important;
+}
+
+footer a.nav-link, footer h2{
+    color: #F4F1FA !important;
+}
+
+
+/*RESPONSIVE FOOTER*/
+@media (max-width: 992px) {
+    .pipe-license{
+        display: none !important;
+    }
+    
+}
+
+@media (max-width:440px){
+    .pipe-contacts{
+        opacity: 0 !important;
+    }
+
+}
+
+@media (min-width: 1199px) and (max-width: 1270px){
+    .logo-footer{
+        flex: 0 0 auto !important;
+        width: 100% !important;
+    }
+
+    .links-footer{
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .links-footer .row ul{
+        justify-content: center !important;
+    }
+
+    .logo-footer .logo-img.justify-content-center{
+        justify-content: center !important;
+    }
+
+    .logo-footer .logo-text.text-center{
+        text-align: center !important;
+    }
+}
 
