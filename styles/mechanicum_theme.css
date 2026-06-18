@@ -527,3 +527,106 @@ footer ul a:not(.pipe):hover {
     .catchphrase { font-size: 2rem !important; }
     header > .row { height: 60% !important; }        
 }
+
+
+/* ==========================================================================
+   FIX FUNZIONALITÀ TOUR.HTML E JS (Logica di visualizzazione)
+   ========================================================================== */
+
+/* Nasconde tutti i paragrafi di base */
+.paragraph {
+    display: none !important;
+}
+
+/* Mostra solo il paragrafo attivo con l'animazione */
+.active {
+    display: block !important;
+    animation: fade 1s ease forwards;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Gestione dei bottoni disabilitati (quando arrivi a inizio/fine tour) */
+button:disabled {
+    pointer-events: auto !important;
+    cursor: not-allowed !important;
+    opacity: 0.3 !important;
+    filter: grayscale(1) !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* Fix per i Bottoni Previous/Next (Li trasformiamo in leve di ferro) */
+.btn-outline-secondary {
+    color: var(--text-bone) !important;
+    background: var(--void-black) !important;
+    border: 4px solid var(--iron-plate) !important;
+    box-shadow: 4px 4px 0 var(--blood-rust) !important;
+    font-family: "Space Mono", monospace !important;
+    text-transform: uppercase;
+    font-weight: 900;
+    transition: 0s !important;
+    border-radius: 0 !important;
+}
+
+.btn-outline-secondary:hover:not(:disabled) {
+    background: var(--blood-rust) !important;
+    color: var(--void-black) !important;
+    border-color: var(--void-black) !important;
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0 #000 !important;
+}
+
+/* Fix della struttura del Menu dei Temi in basso a destra */
+.theme {
+    height: auto;
+}
+
+.closeTheme, .openTheme {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    cursor: pointer;
+    /* Adattiamo le icone al tema brutalista */
+    background: var(--void-black);
+    border: 4px solid var(--iron-plate);
+    box-shadow: 6px 6px 0 var(--blood-rust);
+}
+
+.closeTheme:hover, .openTheme:hover {
+    background: var(--mech-yellow);
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0 #000;
+}
+
+.openTheme {
+    display: none;
+}
+
+.blur-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    z-index: -1;
+}
+
+/* Fix per i bottoni con icona del tema */
+.openTheme span, .closeTheme span {
+    color: var(--text-bone);
+    display: block;
+    padding: 5px;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.openTheme span:hover, .closeTheme span:hover {
+    color: var(--void-black) !important;
+}
