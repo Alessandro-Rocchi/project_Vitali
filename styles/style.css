@@ -355,7 +355,6 @@ footer a.nav-link, footer h2{
     /*display: inline-flex;*/
     background-color:#1a1a1a;
     border-radius: 0px 8px 8px 0px;
-    
 }
 
 #filter_toggle span {
@@ -381,7 +380,7 @@ footer a.nav-link, footer h2{
     transition: 0.3s;
 }
 
-#cards_area .card{
+#cards_area .card, .id_team{
     background-color:#1a1a1a !important;
     border-radius: 4px !important;
     overflow: hidden;
@@ -440,8 +439,8 @@ footer a.nav-link, footer h2{
     color:#edeae2 !important;
 }
 
+/*----------------------INIZIO CSS ABOUT-----------------------*/
 
-/*ABOUT*/
 .about_card h1{
     font-family: "Playfair", serif;
     font-size: clamp();
@@ -545,17 +544,22 @@ footer a.nav-link, footer h2{
     color: #d73b3e;
 }
 
-/*ABOUT OUR TEAM*/
-.id_team h1 {
+/*----------------------------FINE CSS ABOUT-------------------*/
+
+/*------------------INIZIO CSS ABOUT OUR TEAM-------------------------*/
+.id_team h4{
     font-family: "Playfair", serif;
+    color:#d73b3e !important;
 }
 
-.sub-panel-explore .card:hover {
-    transform: translateY(-2px);
-    background-color: #f8f9fa !important;
-    cursor: pointer;
+.id_team p{
+    color:#faf1ea !important;
 }
 
+/*------------------FINE CSS ABOUT OUR TEAM-------------------------*/
+
+
+/*------------------INIZIO CSS TOUR-------------------------*/
 
 *{
     margin:0;
@@ -785,3 +789,13 @@ footer a.nav-link, footer h2{
     }
 }
 
+/*------------------FINE CSS ABOUT OUR TEAM-------------------------*/
+
+/*------------------INIZIO CSS MAPPA-------------------------*/
+
+
+.sub-panel-explore .card:hover {
+    transform: translateY(-2px);
+    background-color: #f8f9fa !important;
+    cursor: pointer;
+}
