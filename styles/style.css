@@ -383,7 +383,8 @@ footer a.nav-link, footer h2{
 
 #cards_area .card{
     background-color:#1a1a1a !important;
-    border-radius: 5px !important;
+    border-radius: 4px !important;
+    overflow: hidden;
 }
 
 #cards_area .card h5, #cards_area .card p{
