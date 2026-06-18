@@ -1,4 +1,6 @@
- h1, h2, h3{
+/*---------------INIZIO CSS HOMEPAGE-------------------*/
+
+h1, h2, h3{
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -302,9 +304,10 @@ footer a.nav-link, footer h2{
     }
 }
 
+/*---------------FINE CSS HOMEPAGE-------------------*/
 
+/*---------------INIZIO CSS CATALOGUE-------------------*/
 
-/*CATALOGUE*/
 
 .page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
     background-color: #faf1ea; 
@@ -439,6 +442,8 @@ footer a.nav-link, footer h2{
     color:#edeae2 !important;
 }
 
+/*---------------FINE CSS CATALOGUE-------------------*/
+
 /*----------------------INIZIO CSS ABOUT-----------------------*/
 
 .about_card h1{
@@ -452,75 +457,46 @@ footer a.nav-link, footer h2{
 
 /* 1. The container stays exactly the same size */
 .about_card {
-  overflow: hidden; /* This is the "window" that stays still */
-  display: block;   /* Ensures the anchor tag respects dimensions */
-  position: relative;
+    overflow: hidden; /* This is the "window" that stays still */
+    display: block;   /* Ensures the anchor tag respects dimensions */
+    position: relative;
 }
 
 /* 2. The image transition */
 .about_card img {
-  transition: transform 0.5s ease;
-  width: 100%;
-  height: 100%;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
 }
 
 /* 3. TARGET ONLY THE IMAGE ON HOVER */
 /* Correct: The card is hovered, but ONLY the image scales */
 .about_card:hover img {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /* Ensure the overlay doesn't zoom with the image */
 .about_card:hover .card-img-overlay {
-  transform: none; 
+    transform: none; 
 }
 
-#about_NV {
-    background-image: url(../img/generic_bg.png); /*ovviamente bg da cambiare*/
-    height: 300pt; /*da cambiare, è solo per una prova*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.about_bg_image {
+    background-image: url(../img/generic_bg.png);
+    background-size: cover;
     background-position: center;
-    background-size: 100%;
-    transition: background-size 1s ease;
+    background-repeat: no-repeat;
+    height: 30vw;
 }
 
-#about_our_team {
-    background-image: url(../img/generic_bg.png); /*ovviamente bg da cambiare*/
-    height: 300pt;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    background-position: center;
-    background-size: 100%;
-    transition: background-size 1s ease;
-
-}
-
-#about_our_team, #about_NV {
-    text-decoration: none ;
-    color:#1a1a1a
-}
-
-#about_our_team:hover h2, #about_NV:hover h2 {
-    transition: 0.5s ease;
-    color: #A92325;
-}
-
-#about_our_team:hover, #about_NV:hover {
-  /* Ingrandiamo la dimensione dello sfondo al 110% al passaggio del mouse */
-  background-size: 110%; 
-}
-
-#about_our_team h2, #about_NV h2 {
-    margin: 0;   
+.about_bg_image h1 {
     font-family: "Playfair", serif;
-    font-size: 40pt; /*cambiare poi con misure relative*/
-    font-weight: 600;
+    font-size: clamp(2rem, 4vw + 1.25rem, 3.5rem);
+    line-height: 1.2;
 }
+/*----------------------------FINE CSS ABOUT-------------------*/
 
-/*ABOUT NOUVELLE VAGUE*/
+/*----------------------------INIZIO CSS ABOUT NOUVELLE VAGUE-------------------*/
+
 #about_NV_bg_image {
     background-image: url(../img/generic_bg.png);
     background-size: cover;
@@ -544,9 +520,10 @@ footer a.nav-link, footer h2{
     color: #d73b3e;
 }
 
-/*----------------------------FINE CSS ABOUT-------------------*/
+/*----------------------------FINE CSS ABOUT NOUVELLE VAGUE-------------------*/
 
 /*------------------INIZIO CSS ABOUT OUR TEAM-------------------------*/
+
 .id_team h4{
     font-family: "Playfair", serif;
     color:#d73b3e !important;
@@ -560,10 +537,6 @@ footer a.nav-link, footer h2{
 
 
 /*------------------INIZIO CSS TOUR-------------------------*/
-
-*{
-    margin:0;
-}
 
 /*set a background color to the body*/
 
@@ -789,7 +762,7 @@ footer a.nav-link, footer h2{
     }
 }
 
-/*------------------FINE CSS ABOUT OUR TEAM-------------------------*/
+/*------------------FINE CSS TOUR-------------------------*/
 
 /*------------------INIZIO CSS MAPPA-------------------------*/
 
