@@ -608,13 +608,15 @@ h1, h2, h3{
 
 /*PILLS*/
 .pill{
-    color: #F4F1FA;
     border-radius: 50px;
     display: inline-flex;
     align-items: center;
     background-color:  #A92325;
     font-size: clamp(0.8rem, 1.3vw, 1.2rem);
+}
 
+.pill span{
+    color: #F4F1FA;
 }
 
 .pill .material-symbols-outlined{
@@ -653,10 +655,20 @@ button:disabled {
     border:#A92325 1px solid !important;
 }
 
-#backToFirst:hover {
+#backToFirst span{
+    color: #F4F1FA !important;
+}
+
+#backToFirst:hover{
     color: #A92325 !important;
     background-color:#F4F1FA !important;
     border:#A92325 1px solid !important;
+    transition: all 0.3s ease;
+}
+
+#backToFirst:hover span{
+    color: #A92325 !important;
+    transition: all 0.3s ease;
 }
 
 /*THEME*/
