@@ -1,57 +1,70 @@
-/*barra di scorrimento verde come piace a noi*/
-html::-webkit-scrollbar {
-  width: 16px;
-}
-
-html::-webkit-scrollbar-track {
-  background-color: #051405;
-  background-image: radial-gradient(
-    rgba(51, 255, 51, 0.2) 1px, 
-    transparent 1px             
-  );
-  background-size: 4px 4px;
-}
-
-html::-webkit-scrollbar-thumb {
-  background-color: #33FF33;
-  border: 2px solid #051405; 
-  border-radius: 0 !important;
-}
-
-html::-webkit-scrollbar-thumb:hover {
-  background-color: #66FF66;
-}
-
 h1, h2, h3{
-    font-family: "VT323", monospace; /*carattere monospaziato per simulare CRT*/
-    color: #33FF33; /*verde lime per il testo*/
+    font-family: "VT323", Courier, monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px); /*non ho usato vh o vw per le dimensioni limite e per la proporzione usata nel valore centrale per evitare che il browser calcolasse dimensioni con la virgola e facesse saltare l'effetto pixellato del font*/
     font-optical-sizing: auto;
     font-style: normal;
+    background-color: #030a03;
 }
 
-p { 
+p{ 
     font-family: "Inter", sans-serif;
-    color: #33FF33;
     font-optical-sizing: auto;
     font-style: normal;
 }
 
-body{
-    background-color: #030a03 !important;
-    font-size: clamp(15px, 1.1vw + 12px, 40px); /*dimensione del testo costante in tutta la pagina per evocare effetto più realistico di schermo a griglia fissa per i caratteri*/
-    font-family: 'VT323', 'Courier New', monospace;
-    line-height: 1.2;
+body {
+    background-color: #030a03;
+    background-color: #030a03;/*verde molto scuro quasi nero per simulare monitor crt*/
+    background-image: linear-gradient(to right, #33FF33 65%, transparent 65%);
+    /* 1. SICUREZZA LAYOUT */
+    width: 100%;
+    box-sizing: border-box; 
+
+    /* 2. I DUE GRADIENTI (Sinistra e Destra) */
+    background-image: 
+        linear-gradient(to bottom, #33FF33 12px, transparent 12px), /* Lato Sinistro */
+        linear-gradient(to bottom, #33FF33 12px, transparent 12px); /* Lato Destro */
+
+    /* 3. LE DUE POSIZIONI */
+    background-position: 
+        left, 
+        right;
+
+    /* 4. LE DIMENSIONI DELLA "PIPE" (Larghezza x Altezza del blocco) */
+    background-size: 
+        2px 16px,  /* Pipe sinistra: spessa 2px, modulo totale di 16px */
+        2px 16px;  /* Pipe destra: identica */
+
+    /* 5. RIPETIZIONE SOLO IN VERTICALE */
+    background-repeat: 
+        repeat-y, 
+        repeat-y;
+
+    /* 6. PROTEZIONE DEL TESTO */
+    /* Lascia 18px di spazio a destra e sinistra per evitare che il testo tocchi le linee */
+    padding-left: 18px;
+    padding-right: 18px;
 }
 
+
+/*HOMEPAGE*/
 /*HERO IMAGE*/
 .hero-img {
-    width:100%;
-    height:60vh;
-    background: url('../img/breathless-hero.jpg');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
-    /*background-attachment: fixed;*/ /*per mantenere l'immagine fissa durante lo scroll, ma ho deciso di rimuoverlo per evitare problemi di visualizzazione della hero image*/
+    display: none;
+}    
+
+h1 span{
+    font-family: "VT323", Courier, monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: clamp(15px, 1.1vw + 12px, 40px); /*non ho usato vh o vw per le dimensioni limite e per la proporzione usata nel valore centrale per evitare che il browser calcolasse dimensioni con la virgola e facesse saltare l'effetto pixellato del font*/
+
+}
+
+.catchphrase h1 {
+    font-family: "VT323", Courier, monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px); /*non ho usato vh o vw per le dimensioni limite e per la proporzione usata nel valore centrale per evitare che il browser calcolasse dimensioni con la virgola e facesse saltare l'effetto pixellato del font*/
+
 }
 
 /*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/
@@ -88,13 +101,38 @@ body{
     }
 }
 
+hr{
+    display: none;
+}
+
+.presentation{
+    background-color: #030a03;
+}
 
 .paper-card {
-    /*background-color:rgba(255, 0, 60, 0.32);*/
-    background-color: #EDEAE2;
-    color:#1A1A1A;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.068);
+    background-color: #030a03;
+    color:#33FF33;
+    border-radius: 0px;
+    border: #33FF33 3px solid;
+}
+
+.paper-card strong, .paper-card a {
+   color: #33FF33;
+   font-weight: 400;
+   font-family: "VT323", Courier, monospace;
+   text-decoration: none;
+}
+.paper-card a::before {
+    content: "["; 
+    color: #33FF33;
+}
+
+.paper-card a::after {
+    content: "]"; 
+    color: #33FF33;
+}
+.paper-card h3 {
+    text-transform: capitalize;
 }
 
 .bi-chevron-down {
@@ -102,9 +140,11 @@ body{
     top: 0.3rem;
     right: 0.75rem; 
     font-size: clamp(1rem, 0.8rem + 1vw, 1.75rem) !important;
-
     margin: 0;
+    color: #33FF33;
+    -webkit-text-stroke: 1px currentColor;
 }
+
 
 a[aria-expanded="true"] i {
     transform: rotate(180deg);
@@ -143,20 +183,41 @@ a[aria-expanded="false"] i {
 
 /*PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
 
+.zoom-card, .explore-card {
+    border-radius: 0px;
+}
+
+.card-title{
+    color: #030a03;
+    background-color: #33FF33;
+}
+
 /*per lo zoom delle card*/
 .zoom-card .img-fluid{
     transition: transform .75s ease;
+    filter:
+        grayscale(100%)    /* Trasforma la foto in bianco e nero puro */
+        sepia(100%)        /* Applica una base calda/ambrata (fondamentale per il passaggio successivo) */
+        hue-rotate(85deg)  /* Ruota la tonalità ambrata trasformandola in un perfetto verde fosforo */
+        saturate(250%)     /* Rende il verde vivido e hi-tech */
+        brightness(0.9);
 }
 
-    /* 2. Quando l'utente passa il mouse sulla CARD, l'immagine si ingrandisce del 10% (scale 1.1) */
-.zoom-card:hover .img-fluid {
-    transform: scale(1.1);
+.zoom-card .card-img-overlay {
+    border-radius: 0px;
 }
 
 .zoom-card:hover .card-title{
-    color: #d73b3e !important;
-    transition: transform 1.5s ease;
+    color: #33FF33;
+    background-color: transparent;
 }
+
+.zoom-card:hover img {
+filter: grayscale(1) brightness(60%);
+}
+
+
+
 
 .zoom-card:hover .responsive-title-sm{
     font-weight: 800;
@@ -180,9 +241,6 @@ a[aria-expanded="false"] i {
 .zoom-card:hover .explore-card{
     filter: grayscale(1) brightness(60%);
 }
-
-
-
 
 #map { height: 500px; }
 
@@ -446,24 +504,24 @@ span.navbar-text {
 }
 /*sto sbrodolo di roba fa fare quell'effetto figo delle righine orizzontali in hover*/
 .about_card .card-img-overlay::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(51, 255, 51, 0.18) 0px, /* Linea verde acido tenue */
-    rgba(51, 255, 51, 0.18) 2px, 
-    transparent 2px,
-    transparent 4px              
-  );
-  
-  opacity: 0;
-  pointer-events: none; 
-  transition: opacity 0.05s ease-in-out; 
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(51, 255, 51, 0.18) 0px, /* Linea verde acido tenue */
+        rgba(51, 255, 51, 0.18) 2px, 
+        transparent 2px,
+        transparent 4px              
+    );
+    
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity 0.05s ease-in-out; 
 }
 
 

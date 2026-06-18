@@ -1,156 +1,178 @@
- h1, h2, h3{
-            font-family: "Playfair Display", serif;
-                font-optical-sizing: auto;
-                font-style: normal;
-            }
+h1, h2, h3{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
-            p{ 
-                font-family: "Inter", sans-serif;
-                font-optical-sizing: auto;
-                font-style: normal;
-            }
+p{ 
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
-            body{
-                background-color: #F4F1EA !important;
-            }
+body{
+    background-color: #F4F1EA !important;
+}
 
-            /*HERO IMAGE*/
-            .hero-img {
-                width:100%;
-                height:60vh;
-                background: url('img/breathless-hero.jpg');
-                background-repeat: no-repeat;
-                background-position: center top;
-                background-size: cover;
-                /*background-attachment: fixed;*/ /*per mantenere l'immagine fissa durante lo scroll, ma ho deciso di rimuoverlo per evitare problemi di visualizzazione della hero image*/
-            }
+/*HERO IMAGE*/
+.hero-img {
+    width:100%;
+    height:60vh;
+    background: url('../img/breathless-hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    /*background-attachment: fixed;*/ /*per mantenere l'immagine fissa durante lo scroll, ma ho deciso di rimuoverlo per evitare problemi di visualizzazione della hero image*/
+}
 
-            /*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/
-            @media (max-width: 520px) {
-                .hero-img{
-                    height: 30vh !important;
-                    background-position: 20% center !important;
-                }
-            }
+h1 span{
+    color: #d73b3e !important; 
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
-            @media (min-width:521px) and (max-width: 768px) {
-                .hero-img {
-                    background-position: 50% center !important;
-                }
-            }
+.catchphrase h1 {
+    color:#F4F1FA;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.751);
+}
 
-            @media (max-width: 992px) {
-                .hero-img{
-                    height: 40vh;
-                    background-position: 35% center;
-                }
+/*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/
+@media (max-width: 520px) {
+    .hero-img{
+        height: 30vh !important;
+        background-position: 20% center !important;
+    }
+}
 
-            }
+@media (min-width:521px) and (max-width: 768px) {
+    .hero-img {
+        background-position: 50% center !important;
+    }
+}
 
-            @media (min-width:769px) and (max-width: 942px){
-                .hero-img {
-                    background-position: 70% center !important; 
-                }
-            }
+@media (max-width: 992px) {
+    .hero-img{
+        height: 40vh;
+        background-position: 35% center;
+    }
 
-            @media (min-width: 1000px) and (max-width: 1200px) {
-                header#prova {
-                    background-position: 60% center; 
-                }
-            }
+}
+
+@media (min-width:769px) and (max-width: 942px){
+    .hero-img {
+        background-position: 70% center !important; 
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+    header#prova {
+        background-position: 60% center; 
+    }
+}
+
+hr{
+    color:#d73b3e !important;
+    border-top:2px solid currentColor !important;
+    opacity: 1 !important;
+}
+
+.paper-card {
+    /*background-color:rgba(255, 0, 60, 0.32);*/
+    background-color: #EDEAE2;
+    color:#1A1A1A;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.068);
+}
+
+.bi-chevron-down {
+    position: absolute !important;
+    top: 0.3rem;
+    right: 0.75rem; 
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.75rem) !important;
+    margin: 0;
+    color: black;
+    -webkit-text-stroke: 1px currentColor;
+}
+
+a[aria-expanded="true"] i {
+    transform: rotate(180deg);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+a[aria-expanded="false"] i {
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 767px) and (max-width: 928px){
+    .pretty-catch{
+        display: block !important;
+    }
+}
+@media (min-width: 1312px){
+    .pretty-big-catch{
+        display: none !important;
+    }
+}
+
+@media (min-width: 796px){
+    .pretty-title{
+        display: none;
+    }
+}
+@media (max-width: 795px){
+    .pretty-title{
+        display: block;
+    }
+}
+
+/*FINE HERO IMAGE*/
 
 
-            .paper-card {
-                /*background-color:rgba(255, 0, 60, 0.32);*/
-                background-color: #EDEAE2;
-                color:#1A1A1A;
-                border-radius: 12px;
-                box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.068);
-            }
+/*PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
 
-            .bi-chevron-down {
-                position: absolute !important;
-                top: 0.3rem;
-                right: 0.75rem; 
-                font-size: clamp(1rem, 0.8rem + 1vw, 1.75rem) !important;
+.card-title{
+    color: #faf1ea !important;
+}
 
-                margin: 0;
-            }
+/*per lo zoom delle card*/
+.zoom-card .img-fluid{
+    transition: transform .75s ease;
+}
 
-            a[aria-expanded="true"] i {
-                transform: rotate(180deg);
-                display: inline-block;
-                transition: transform 0.3s ease;
-            }
+    /* 2. Quando l'utente passa il mouse sulla CARD, l'immagine si ingrandisce del 10% (scale 1.1) */
+.zoom-card:hover .img-fluid {
+    transform: scale(1.1);
+}
 
-            a[aria-expanded="false"] i {
-                transition: transform 0.3s ease;
-            }
+.zoom-card:hover .card-title{
+    color: #d73b3e !important;
+    transition: transform 1.5s ease;
+}
 
-            @media (min-width: 767px) and (max-width: 928px){
-                .pretty-catch{
-                    display: block !important;
-                }
-            }
-            @media (min-width: 1312px){
-                .pretty-big-catch{
-                    display: none !important;
-                }
-            }
+.zoom-card:hover .responsive-title-sm{
+    font-weight: 800;
+}
 
-            @media (min-width: 796px){
-                .pretty-title{
-                    display: none;
-                }
-            }
-            @media (max-width: 795px){
-                .pretty-title{
-                    display: block;
-                }
-            }
+.responsive-title {
+    font-size: clamp(1.5rem, 1.2rem + 2vw, 2.25rem);
+}
 
-            /*FINE HERO IMAGE*/
+.responsive-title-sm{
+    font-size: clamp(0.75rem, 0.8rem + 1.5vw, 2rem) !important;
+}
 
+/*FINE PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
 
-            /*PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
+/*Per le immagini delle carte esplora*/
+.explore-card{
+    filter: grayscale(1) brightness(100%);
+}
 
-            /*per lo zoom delle card*/
-            .zoom-card .img-fluid{
-                transition: transform .75s ease;
-            }
-
-                /* 2. Quando l'utente passa il mouse sulla CARD, l'immagine si ingrandisce del 10% (scale 1.1) */
-            .zoom-card:hover .img-fluid {
-                transform: scale(1.1);
-            }
-
-            .zoom-card:hover .card-title{
-                color: #d73b3e !important;
-                transition: transform 1.5s ease;
-            }
-
-            .zoom-card:hover .responsive-title-sm{
-                font-weight: 800;
-            }
-
-            .responsive-title {
-                font-size: clamp(1.5rem, 1.2rem + 2vw, 2.25rem);
-            }
-            
-            .responsive-title-sm{
-                font-size: clamp(0.75rem, 0.8rem + 1.5vw, 2rem) !important;
-            }
-            
-            /*FINE PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
-
-            /*Per le immagini delle carte esplora*/
-            .explore-card{
-                filter: grayscale(1) brightness(100%);
-            }
-
-            .zoom-card:hover .explore-card{
-                filter: grayscale(1) brightness(60%);
-            }
+.zoom-card:hover .explore-card{
+    filter: grayscale(1) brightness(60%);
+}
 
 
 *{
@@ -538,7 +560,7 @@ footer a.nav-link, footer h2{
             .background-image {
                 width:100%;
                 height:50vh;
-                background: url('img/saint_sulpiere.png');
+                background: url('../img/saint_sulpiere.png');
                 background-repeat: no-repeat;
                 background-position: bottom center;
                 background-size:cover;
@@ -575,9 +597,6 @@ footer a.nav-link, footer h2{
                 }        
             }
 
-            .background-image h1 {
-                color:#F4F1FA;
-            }
             /*FINE HERO IMAGE*/
 
             button{
@@ -715,7 +734,7 @@ footer a.nav-link, footer h2{
 
             }
 
-            @media (min-width: 1199px) and (max-width: 1270px){
+            @media (min-width: 1199px) and (max-width: 1282px){
                 .logo-footer{
                     flex: 0 0 auto !important;
                     width: 100% !important;
