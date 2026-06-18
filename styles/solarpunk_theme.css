@@ -1,0 +1,416 @@
+/* ==========================================================================
+   LES RUES DU CSS - SOLARPUNK THEME (Ultra-Aesthetic Light Mode)
+   ========================================================================== */
+
+:root {
+    /* PALETTE SOLARPUNK VIBRANTE */
+    --bg-color: #f4f1e1;          /* Carta pergamena / Crema caldo */
+    --bg-mint: #e8f0e4;           /* Riflesso menta leggerissimo */
+    
+    --text-color: #163820;        /* Verde pino scuro (migliore del nero) */
+    --text-muted: #51705a;        /* Salvia intenso */
+    
+    --primary: #1b5e20;           /* Verde foresta */
+    --primary-bright: #4caf50;    /* Verde foglia vibrante */
+    
+    --secondary: #f5a623;         /* Sole del mattino */
+    --accent-brass: #d4af37;      /* Ottone / Oro Art Nouveau */
+
+    /* EFFETTI VETRO DI SERRA (Glassmorphism 2.0) */
+    --glass-bg: rgba(255, 255, 255, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --glass-edge: rgba(76, 175, 80, 0.3);
+    --glass-shadow: 0 8px 32px rgba(27, 94, 32, 0.1);
+    
+    /* GLOW VIBRANTI */
+    --glow-green: 0 4px 20px rgba(76, 175, 80, 0.4);
+    --glow-gold: 0 6px 25px rgba(245, 166, 35, 0.4);
+}
+
+/* --- TYPOGRAPHY & GLOBAL --- */
+h1, h2, h3 {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: var(--text-color);
+}
+
+p, a, span { 
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+}
+
+body {
+    /* Sfondo organico: un mix tra crema solare e riflessi menta */
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-mint) 100%) !important;
+    color: var(--text-color);
+    
+    /* Sfere di luce fluttuanti in CSS puro */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(245, 166, 35, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(76, 175, 80, 0.08) 0%, transparent 50%),
+        linear-gradient(135deg, var(--bg-color) 0%, var(--bg-mint) 100%) !important;
+    background-attachment: fixed;
+}
+
+/* Effetto Testo Metallico per gli accenti */
+h1 span {
+    background: linear-gradient(90deg, var(--primary-bright), var(--accent-brass));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 15px rgba(245, 166, 35, 0.2);
+}
+
+hr {
+    border: none !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, transparent, var(--accent-brass), transparent) !important;
+    opacity: 0.7 !important;
+}
+
+/* --- NAVBAR (Vetro Iper-Luminoso) --- */
+.navbar {
+    background: rgba(244, 241, 225, 0.7) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 2px solid var(--glass-edge);
+    box-shadow: var(--glass-shadow);
+}
+
+.navbar-text {
+    font-family: "GFS Didot", serif;
+    font-size: clamp(1.25rem, 2vw + 1rem, 2rem);
+    /* Titolo del sito dorato/verde brillante */
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(76, 175, 80, 0.2);
+}
+
+.navbar-nav .nav-link {
+    font-family: "Space Mono", monospace;
+    font-weight: bold;
+    color: var(--primary) !important;
+    position: relative;
+}
+
+/* Animazione organica (sottolineatura che cresce dal centro) */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0; height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--secondary);
+    transition: width 0.4s ease;
+    -webkit-transition: width 0.4s ease;
+}
+.navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after {
+    width: 100%;
+    left: 0;
+    background: var(--primary-bright);
+}
+
+.navbar-toggler #navbar_menu_icon, .navbar-toggler-icon {
+    color: var(--primary-bright) !important;
+    filter: drop-shadow(0 0 5px rgba(76, 175, 80, 0.5));
+}
+
+/* --- HERO IMAGES (Golden Hour Overlay) --- */
+.hero-img, .background-image, .about_bg_image, #about_NV_bg_image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-bottom: 4px solid var(--accent-brass); /* Bordo in ottone */
+}
+
+/* Filtro "Golden Hour": rende ogni immagine magica e solarpunk */
+.hero-img::before, .background-image::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(27, 94, 32, 0.3), rgba(245, 166, 35, 0.25));
+    z-index: 0;
+}
+
+.catchphrase h1, .catchphrase h1 span, header > .row h1 {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+    color: #ffffff !important; 
+}
+
+/* --- CARDS & PANELS (Serre di Vetro) --- */
+.paper-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-left: 4px solid var(--primary-bright); /* Bordo strutturale verde */
+    border-radius: 16px;
+    color: var(--text-color);
+    box-shadow: var(--glass-shadow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Effetto rimbalzo */
+}
+
+.paper-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.2);
+    border-left: 4px solid var(--secondary);
+}
+
+.bi-chevron-down {
+    color: var(--primary-bright) !important;
+    filter: drop-shadow(0 2px 4px rgba(76,175,80,0.4));
+}
+
+/* --- ZOOM CARDS & IMAGES --- */
+.zoom-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--glass-shadow);
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+}
+
+.zoom-card .img-fluid {
+    transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.zoom-card:hover {
+    border-color: var(--accent-brass);
+    box-shadow: var(--glow-gold);
+}
+
+.zoom-card:hover .img-fluid {
+    transform: scale(1.1) rotate(1deg); /* Leggera rotazione dinamica */
+}
+
+.card-img-overlay {
+    background: linear-gradient(to top, rgba(22, 56, 32, 0.9), rgba(22, 56, 32, 0.1)) !important;
+    border-radius: 0;
+}
+
+.zoom-card .card-title {
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+}
+
+.zoom-card:hover .card-title {
+    color: var(--secondary) !important;
+    text-shadow: 0 0 15px var(--secondary);
+    transform: translateY(-5px);
+}
+
+/* Filtro fotografico Solarpunk per la home */
+.explore-card {
+    filter: sepia(0.3) hue-rotate(60deg) saturate(1.2) contrast(1.1); 
+}
+
+.zoom-card:hover .explore-card {
+    filter: sepia(0) hue-rotate(0) saturate(1.3) contrast(1.1);
+}
+
+/* --- PILLS, BUTTONS & PROGRESS BAR --- */
+button {
+    border-radius: 50px !important;
+    transition: all 0.3s ease;
+}
+
+.pill {
+    color: #ffffff;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary), var(--primary-bright));
+    box-shadow: var(--glow-green);
+    font-size: clamp(0.8rem, 1.3vw, 1.2rem);
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pill:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, var(--secondary), var(--accent-brass));
+    box-shadow: var(--glow-gold);
+    color: var(--text-color);
+}
+
+.pill span { color: inherit; font-weight: 600; }
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--primary-bright), var(--secondary)) !important;
+    box-shadow: 0 0 15px var(--primary-bright);
+}
+
+#backToFirst {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, var(--primary), var(--primary-bright)) !important;
+    border: none !important;
+    box-shadow: var(--glow-green);
+}
+
+#backToFirst:hover {
+    transform: scale(1.1) rotate(90deg); /* Animazione figa per il bottone torna su */
+    background: linear-gradient(135deg, var(--secondary), var(--accent-brass)) !important;
+    box-shadow: var(--glow-gold);
+}
+
+/* --- THEME TOGGLE WIDGET --- */
+.closeTheme span, .openTheme {
+    border: var(--primary-bright) 2px solid;
+    color: var(--primary-bright);
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    box-shadow: var(--glow-green);
+}
+.openTheme span { color: var(--primary-bright); }
+
+/* --- FOOTER: LA RADICE PROFONDA --- */
+/* Invece del nero, usiamo un verde foresta scurissimo con testi in oro e menta */
+footer {
+    background: linear-gradient(to bottom, #112d18, #0a1a0e) !important;
+    border-top: 4px solid var(--primary-bright);
+    box-shadow: 0 -10px 30px rgba(76, 175, 80, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sfumatura luminosa interna al footer */
+footer::before {
+    content: '';
+    position: absolute;
+    top: -50px; left: 50%; transform: translateX(-50%);
+    width: 60%; height: 100px;
+    background: radial-gradient(ellipse, rgba(76, 175, 80, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+footer a.nav-link, footer p {
+    color: #a5c2b0 !important; /* Menta polvere */
+}
+
+footer h2 {
+    background: linear-gradient(90deg, var(--primary-bright), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+footer ul a {
+    color: var(--secondary) !important;
+    border: 1px solid rgba(245, 166, 35, 0.3) !important;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 6px 18px !important;
+    margin: 4px 5px;
+    transition: all 0.3s ease;
+}
+
+footer ul a:not(.pipe):hover {
+    color: #112d18 !important;
+    background-color: var(--secondary);
+    box-shadow: var(--glow-gold);
+    transform: translateY(-2px);
+}
+
+.pipe { display: none !important; } /* Niente barre verticali industriali */
+
+/* --- BREADCRUMBS --- */
+.breadcrumbs a, .breadcrumbs p {
+    font-family: "Space Mono", monospace;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.breadcrumbs a:hover:not(.disabled) {
+    color: var(--secondary);    
+    text-shadow: 0 0 8px rgba(245, 166, 35, 0.4);
+}
+
+/* --- MAP & CATALOGUE SPECIFICS --- */
+.card_link { color: var(--primary-bright); font-weight: bold; text-decoration: underline; text-decoration-color: transparent; transition: 0.3s;}
+.card_link:hover { color: var(--secondary); text-decoration-color: var(--secondary); }
+.card_arrow { color: var(--accent-brass); }
+
+.filter_toggle { 
+    background-color: var(--glass-bg); 
+    color: var(--primary); 
+    border: 2px solid var(--primary-bright);
+    box-shadow: var(--glow-green);
+}
+.filter_toggle:hover { 
+    background-color: var(--primary-bright); 
+    color: #ffffff; 
+}
+
+.custom-panel, .sub-panel-filter, .sub-panel-explore {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 10px 40px rgba(27, 94, 32, 0.15);
+    border-radius: 16px;
+}
+
+/* --- SCROLLBAR ECOLOGICA BIO-LUMINESCENTE --- */
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--bg-color); }
+::-webkit-scrollbar-thumb {
+    background: var(--primary-bright);
+    border-radius: 12px;
+    border: 3px solid var(--bg-color);
+}
+::-webkit-scrollbar-thumb:hover { 
+    background: var(--secondary); 
+}
+
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 520px) {
+    .hero-img { height: 30vh !important; background-position: 20% center !important; }
+}
+@media (min-width:521px) and (max-width: 768px) {
+    .hero-img { background-position: 50% center !important; }
+    header#prova { height: 30vh; background-position: left bottom !important; }
+}
+@media (max-width: 992px) {
+    .hero-img { height: 40vh; background-position: 35% center; }
+    .pipe-license { display: none !important; }
+    header#prova { height: 40vh; background-position: left bottom !important; }
+    .catchphrase { font-size: 2.7rem !important; }
+}
+@media (min-width:769px) and (max-width: 942px) {
+    .hero-img { background-position: 70% center !important; }
+}
+@media (min-width: 1000px) and (max-width: 1200px) {
+    header#prova { background-position: 60% center; }
+}
+@media (min-width: 767px) and (max-width: 928px) {
+    .pretty-catch { display: block !important; }
+}
+@media (min-width: 1312px) {
+    .pretty-big-catch { display: none !important; }
+}
+@media (min-width: 796px) {
+    .pretty-title { display: none; }
+}
+@media (max-width: 795px) {
+    .pretty-title { display: block; }
+}
+@media (max-width:440px) {
+    .pipe-contacts { opacity: 0 !important; }
+}
+@media (min-width: 1199px) and (max-width: 1282px) {
+    .logo-footer, .links-footer { flex: 0 0 auto !important; width: 100% !important; }
+    .links-footer { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+    .links-footer .row ul, .logo-footer .logo-img.justify-content-center { justify-content: center !important; }
+    .logo-footer .logo-text.text-center { text-align: center !important; }
+}
+@media (max-width: 577px) {
+    .catchphrase { font-size: 2rem !important; }
+    header > .row { height: 60% !important; }        
+}

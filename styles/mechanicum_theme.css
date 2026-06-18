@@ -1,0 +1,529 @@
+/* ==========================================================================
+   LES RUES DU CSS - THEME: FORNACE INDUSTRIALE (Nessuno sfasamento + Effetto Fuoco)
+   ========================================================================== */
+
+:root {
+    /* PALETTE: CARBONE, RUGGINE E CANTIERE */
+    --void-black: #000000;            /* Nero abisso */
+    --iron-plate: #111111;            /* Piastre di metallo scuro */
+    --steel-gray: #1a1a1a;            /* Acciaio pesante */
+    
+    --blood-rust: #4a0d04;            /* Rosso sangue / Ruggine profonda */
+    --furnace-fire: #d94a1e;          /* Rosso fuoco / Metallo fuso */
+    --mech-yellow: #dca714;
+    --rust-pure: #9c1f08;           /* Giallo meccanico */
+    
+    --toxic-green: #1a3b22;           /* Verde ossidato per le ombre */
+    --toxic-green-bright: #3a854a;    /* Verde acido per i dettagli */
+
+    --text-ash: #9c978e;              /* Grigio cenere per testi lunghi */
+    --text-bone: #e3ddcf;             /* Bianco osso sporco per leggibilità */
+
+    /* EFFETTI MACCHINARIO (Senza sfasamenti) */
+    --brutal-shadow: 6px 6px 0px var(--void-black); 
+    --hazard-stripes: repeating-linear-gradient(45deg, var(--void-black), var(--void-black) 10px, var(--mech-yellow) 10px, var(--mech-yellow) 20px);
+}
+
+/* --- TYPOGRAPHY & GLOBAL --- */
+h1, h2, h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--mech-yellow);
+    text-shadow: 3px 3px 0px var(--void-black);
+    letter-spacing: 1px;
+}
+
+p, a, span, li { 
+    font-family: "Space Mono", monospace; 
+    color: var(--text-ash);
+}
+
+body {
+    background-color: var(--iron-plate) !important;
+    color: var(--text-ash);
+    
+    /* Sfondo: Griglia di sfogo fumi e oscurità */
+    background-image: 
+        repeating-linear-gradient(90deg, rgba(0,0,0,0.8) 0px, rgba(0,0,0,0.8) 3px, transparent 3px, transparent 40px),
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.8) 0px, rgba(0,0,0,0.8) 3px, transparent 3px, transparent 40px),
+        radial-gradient(circle at 50% 100%, rgba(74, 13, 4, 0.2) 0%, var(--void-black) 90%);
+    background-attachment: fixed;
+}
+
+/* Evidenziazione dei titoli - Ingrandimento pulito */
+h1 span {
+    color: var(--text-bone) !important;
+    background-color: var(--blood-rust);
+    padding: 2px 12px;
+    border: 3px solid var(--void-black);
+    box-shadow: 4px 4px 0 var(--toxic-green-bright); /* Dettaglio verde tossico */
+    display: inline-block;
+    text-shadow: none; 
+    transition: all 0.2s ease-out;
+}
+
+h1 span:hover {
+    background-color: var(--furnace-fire);
+    color: var(--void-black) !important;
+    transform: scale(1.05); /* Ingrandimento centrale, nessuno sfasamento */
+    box-shadow: 0 0 15px var(--furnace-fire);
+}
+
+hr {
+    border: none !important;
+    height: 10px !important;
+    background: var(--hazard-stripes) !important;
+    box-shadow: 0 4px 10px var(--void-black);
+    opacity: 1 !important;
+}
+
+/* --- NAVBAR (Blocco di Metallo dritto) --- */
+.navbar {
+    background: var(--iron-plate) !important;
+    border-bottom: 6px solid var(--blood-rust);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.9);
+}
+
+.navbar-text {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem);
+    color: var(--mech-yellow) !important;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0 var(--void-black);
+}
+
+.navbar-nav .nav-link {
+    font-family: "Space Mono", monospace;
+    font-weight: 900;
+    color: var(--text-ash) !important;
+    text-transform: uppercase;
+    background-color: var(--void-black);
+    border: 3px solid var(--iron-plate);
+    padding: 10px 20px !important;
+    margin: 0 4px;
+    box-shadow: 3px 3px 0 var(--toxic-green);
+    transition: all 0.2s ease-out;
+}
+
+.navbar-nav .nav-link:hover:not(.active) {
+    background-color: var(--furnace-fire);
+    color: var(--void-black) !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--furnace-fire);
+    border-color: var(--furnace-fire);
+}
+
+.navbar-nav .nav-link.active {
+    background-color: var(--mech-yellow);
+    color: var(--void-black) !important;
+    border-color: var(--mech-yellow);
+    box-shadow: 0 0 15px var(--mech-yellow);
+}
+
+.navbar-toggler #navbar_menu_icon, .navbar-toggler-icon {
+    color: var(--mech-yellow) !important;
+}
+
+/* --- HERO IMAGES --- */
+.hero-img, .background-image, .about_bg_image, #about_NV_bg_image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-bottom: 12px solid var(--void-black);
+    filter: sepia(0.8) hue-rotate(-10deg) saturate(2) contrast(1.5) brightness(0.4); 
+}
+
+.hero-img::before, .background-image::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), var(--iron-plate));
+    z-index: 0;
+}
+
+.catchphrase h1, .catchphrase h1 span, header > .row h1 {
+    position: relative;
+    z-index: 1;
+    text-shadow: 4px 4px 0px var(--void-black); 
+    color: var(--mech-yellow) !important; 
+}
+
+/* --- CARDS & PANELS --- */
+.paper-card {
+    background: var(--steel-gray);
+    border: 4px solid var(--void-black);
+    border-top: 8px solid var(--blood-rust);
+    border-radius: 0; 
+    color: var(--text-bone);
+    box-shadow: var(--brutal-shadow);
+    transition: all 0.2s ease-out; 
+}
+
+.paper-card:hover {
+    background-color: var(--iron-plate);
+    border-top-color: var(--furnace-fire);
+    transform: scale(1.02); /* Sollevamento dritto e leggero */
+    box-shadow: 0 0 25px rgba(217, 74, 30, 0.3); /* Alone fuoco */
+}
+
+.bi-chevron-down {
+    color: var(--mech-yellow) !important;
+}
+
+/* --- ZOOM CARDS & IMAGES (L'EFFETTO BRUCIATO) --- */
+.zoom-card {
+    border-radius: 0;
+    overflow: hidden;
+    background-color: var(--void-black);
+    border: 6px solid var(--iron-plate);
+    outline: 4px solid var(--void-black);
+    box-shadow: var(--brutal-shadow);
+    position: relative;
+}
+
+.zoom-card .img-fluid {
+    transition: transform 0.4s ease-out, filter 0.4s ease-out, opacity 0.4s ease-out; 
+    opacity: 0.3;
+    /* Di base è grigia, morta e coperta di fuliggine */
+    filter: grayscale(1) contrast(4) brightness(0.4); 
+}
+
+.zoom-card:hover {
+    border-color: var(--blood-rust);
+}
+
+.zoom-card:hover .img-fluid {
+    transform: scale(1.15); /* Zoom interno fluido */
+    opacity: 1;
+    /* L'EFFETTO BRUCIATO: La foto si incendia di rosso/arancio */
+    filter: sepia(1) hue-rotate(-15deg) saturate(8) contrast(2) brightness(0.7);
+}
+
+.card-img-overlay {
+    background: rgba(0, 0, 0, 0.8) !important; 
+    border-radius: 0;
+    border-top: 6px solid var(--blood-rust);
+}
+
+.zoom-card .card-title {
+    color: var(--text-bone) !important;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    background: var(--void-black);
+    padding: 10px 15px;
+    border: 3px solid var(--blood-rust);
+    box-shadow: 4px 4px 0 var(--toxic-green);
+    display: inline-block;
+    transition: all 0.2s ease-out;
+}
+
+.zoom-card:hover .card-title {
+    color: var(--void-black) !important;
+    background: var(--furnace-fire);
+    border-color: var(--furnace-fire);
+    box-shadow: 0 0 15px var(--furnace-fire);
+    transform: scale(1.05); /* Ingrandimento senza scatti laterali */
+}
+
+/* Filtro fotografico: Rifiuti tossici per il catalogo */
+.explore-card {
+    transition: filter 0.4s ease-out;
+    filter: sepia(1) hue-rotate(45deg) contrast(4) grayscale(0.8) brightness(0.2); 
+}
+
+.zoom-card:hover .explore-card {
+    /* Si brucia anche lei in rosso/arancio */
+    filter: sepia(1) hue-rotate(-20deg) saturate(8) contrast(3) brightness(0.6);
+}
+
+/* --- PILLS, BUTTONS & PROGRESS BAR --- */
+button {
+    border-radius: 0 !important; 
+    text-transform: uppercase;
+    font-family: "Playfair Display", serif !important;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.pill {
+    color: var(--text-bone);
+    border-radius: 0;
+    display: inline-flex;
+    align-items: center;
+    background: var(--blood-rust); 
+    box-shadow: var(--brutal-shadow);
+    font-size: clamp(0.8rem, 1.3vw, 1.2rem);
+    border: 3px solid var(--void-black);
+    transition: all 0.2s ease-out; 
+}
+
+.pill:hover, .pill:active {
+    transform: scale(1.05); /* Ingrandimento dritto */
+    box-shadow: 0 0 15px var(--furnace-fire);
+    background: var(--furnace-fire); 
+    color: var(--void-black);
+    border-color: var(--furnace-fire);
+}
+
+.pill span { 
+    color: var(--text-bone); 
+    background: var(--void-black); 
+    padding: 4px 10px;
+    border: 2px solid var(--iron-plate);
+    transition: color 0.2s ease-out;
+}
+
+.pill:hover span {
+    color: var(--furnace-fire);
+}
+
+/* Barra di avanzamento */
+.progress {
+    border-radius: 0 !important;
+    border: 4px solid var(--void-black);
+    background-color: var(--iron-plate) !important;
+    box-shadow: inset 0 5px 15px rgba(0,0,0,1);
+    height: 35px !important; 
+}
+
+.progress-bar {
+    background: var(--hazard-stripes) !important;
+    border-right: 6px solid var(--furnace-fire);
+}
+
+#backToFirst {
+    color: var(--text-bone) !important;
+    background: var(--blood-rust) !important;
+    border: 3px solid var(--void-black) !important;
+    box-shadow: 4px 4px 0 var(--toxic-green-bright);
+    border-radius: 0 !important;
+    font-weight: 900;
+    transition: all 0.2s ease-out;
+}
+
+#backToFirst:hover {
+    background: var(--mech-yellow) !important;
+    color: var(--void-black) !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--mech-yellow);
+}
+
+/* --- THEME TOGGLE WIDGET --- */
+.closeTheme span, .openTheme {
+    border: 3px solid var(--void-black);
+    border-radius: 0 !important; 
+    color: var(--void-black);
+    background: var(--mech-yellow);
+    box-shadow: 4px 4px 0 var(--toxic-green);
+    transition: all 0.2s ease-out;
+}
+.openTheme:hover {
+    background: var(--furnace-fire);
+    transform: scale(1.1);
+}
+.openTheme span { color: var(--void-black); }
+
+/* --- FOOTER --- */
+footer {
+    background: var(--void-black) !important;
+    border-top: 15px solid var(--blood-rust); 
+    border-bottom: 10px solid var(--mech-yellow);
+}
+
+footer a.nav-link, footer p {
+    color: var(--text-ash) !important;
+    font-family: "Space Mono", monospace;
+    text-transform: uppercase;
+}
+
+footer h2 {
+    color: var(--void-black) !important;
+    font-family: "Playfair Display", serif;
+    background-color: var(--mech-yellow);
+    padding: 15px;
+    border: 4px solid var(--void-black);
+    box-shadow: 6px 6px 0 var(--toxic-green);
+    display: inline-block;
+    text-shadow: none;
+}
+
+footer ul a {
+    color: var(--text-ash) !important;
+    border: 3px solid var(--iron-plate) !important;
+    background: var(--void-black);
+    border-radius: 0;
+    padding: 10px 20px !important;
+    margin: 8px 5px;
+    box-shadow: 4px 4px 0 var(--blood-rust);
+    transition: all 0.2s ease-out;
+    font-weight: bold;
+    display: inline-block;
+}
+
+footer ul a:not(.pipe):hover {
+    color: var(--void-black) !important;
+    background-color: var(--furnace-fire);
+    border-color: var(--furnace-fire) !important;
+    transform: scale(1.05); /* Ingrandimento centrato */
+    box-shadow: 0 0 15px var(--furnace-fire);
+}
+
+.pipe { display: none !important; }
+
+/* --- BREADCRUMBS --- */
+.breadcrumbs a, .breadcrumbs p {
+    font-family: "Space Mono", monospace;
+    color: var(--mech-yellow);
+    text-transform: uppercase;
+    font-weight: 900;
+    background: var(--void-black);
+    padding: 5px 15px;
+    border: 3px solid var(--iron-plate);
+    box-shadow: 3px 3px 0 var(--blood-rust);
+    transition: all 0.2s ease-out;
+}
+
+.breadcrumbs a:hover:not(.disabled) {
+    color: var(--text-bone);    
+    background-color: var(--blood-rust);
+    border-color: var(--void-black);
+    box-shadow: 0 0 10px var(--blood-rust);
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+/* --- MAP & CATALOGUE SPECIFICS --- */
+.card_link { 
+    color: var(--void-black); 
+    font-weight: 900; 
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    background: var(--mech-yellow);
+    padding: 5px 15px;
+    border: 3px solid var(--void-black);
+    box-shadow: 4px 4px 0 var(--toxic-green);
+    display: inline-block;
+    transition: all 0.2s ease-out;
+}
+.card_link:hover { 
+    color: var(--text-bone); 
+    background: var(--furnace-fire); 
+    border-color: var(--furnace-fire);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--furnace-fire);
+}
+.card_arrow { color: var(--text-ash); }
+
+.filter_toggle { 
+    background-color: var(--void-black); 
+    color: var(--text-ash); 
+    border: 4px solid var(--iron-plate);
+    border-radius: 0;
+    box-shadow: 6px 6px 0 var(--toxic-green);
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    transition: all 0.2s ease-out;
+}
+.filter_toggle:hover { 
+    background-color: var(--mech-yellow); 
+    color: var(--void-black); 
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--mech-yellow);
+    border-color: var(--mech-yellow);
+}
+
+/* Pannelli laterali mappa */
+.custom-panel, .sub-panel-filter, .sub-panel-explore {
+    background: var(--steel-gray);
+    border-top: 10px solid var(--mech-yellow);
+    border-left: 4px solid var(--void-black);
+    border-right: 8px solid var(--void-black);
+    border-bottom: 8px solid var(--void-black);
+    box-shadow: var(--brutal-shadow);
+    border-radius: 0;
+    color: var(--text-bone);
+}
+
+/* --- SCROLLBAR A INGRANAGGI (Cremagliera) --- */
+::-webkit-scrollbar { width: 24px; } /* Più larga per far vedere i denti di metallo */
+::-webkit-scrollbar-track { 
+    background: var(--void-black); 
+    border-left: 6px solid var(--iron-plate);
+    border-right: 2px solid var(--void-black);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--void-black);
+    border: 4px solid var(--void-black);
+    border-radius: 0;
+    /* Denti dell'ingranaggio giallo cantiere e neri */
+    background-image: repeating-linear-gradient(
+        0deg,
+        var(--mech-yellow),
+        var(--mech-yellow) 8px,
+        var(--void-black) 8px,
+        var(--void-black) 16px
+    );
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.8);
+}
+::-webkit-scrollbar-thumb:hover { 
+    /* Quando la afferri, gli ingranaggi diventano rosso fuoco/ruggine */
+    background-image: repeating-linear-gradient(
+        0deg,
+        var(--rust-pure),
+        var(--rust-pure) 8px,
+        var(--void-black) 8px,
+        var(--void-black) 16px
+    );
+}
+/* ==========================================================================
+   MEDIA QUERIES ORIGINALI
+   ========================================================================== */
+@media (max-width: 520px) {
+    .hero-img { height: 30vh !important; background-position: 20% center !important; }
+}
+@media (min-width:521px) and (max-width: 768px) {
+    .hero-img { background-position: 50% center !important; }
+    header#prova { height: 30vh; background-position: left bottom !important; }
+}
+@media (max-width: 992px) {
+    .hero-img { height: 40vh; background-position: 35% center; }
+    .pipe-license { display: none !important; }
+    header#prova { height: 40vh; background-position: left bottom !important; }
+    .catchphrase { font-size: 2.7rem !important; }
+}
+@media (min-width:769px) and (max-width: 942px) {
+    .hero-img { background-position: 70% center !important; }
+}
+@media (min-width: 1000px) and (max-width: 1200px) {
+    header#prova { background-position: 60% center; }
+}
+@media (min-width: 767px) and (max-width: 928px) {
+    .pretty-catch { display: block !important; }
+}
+@media (min-width: 1312px) {
+    .pretty-big-catch { display: none !important; }
+}
+@media (min-width: 796px) {
+    .pretty-title { display: none; }
+}
+@media (max-width: 795px) {
+    .pretty-title { display: block; }
+}
+@media (max-width:440px) {
+    .pipe-contacts { opacity: 0 !important; }
+}
+@media (min-width: 1199px) and (max-width: 1282px) {
+    .logo-footer, .links-footer { flex: 0 0 auto !important; width: 100% !important; }
+    .links-footer { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+    .links-footer .row ul, .logo-footer .logo-img.justify-content-center { justify-content: center !important; }
+    .logo-footer .logo-text.text-center { text-align: center !important; }
+}
+@media (max-width: 577px) {
+    .catchphrase { font-size: 2rem !important; }
+    header > .row { height: 60% !important; }        
+}
