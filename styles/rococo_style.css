@@ -499,7 +499,12 @@ button:disabled {
 
 #cards_area .card{
     background-color:#D4EFE2 !important;
-    border-radius: 5px !important;
+    border-radius: 4px !important;
+    overflow: hidden;
+}
+
+#cards_area .card-bodys{
+    border: 2px solid #A87C43;
 }
 
 #cards_area .card h5, #cards_area .card p{
@@ -533,7 +538,7 @@ button:disabled {
 .pagination button { 
     padding: 8px 12px;
     text-decoration: none;
-    border: 1px solid #1a1a1a;
+    border: 1px solid #a87c43;
     color: #1a1a1a;  
     margin: 0 4px;
     border-radius: 5px;
