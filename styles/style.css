@@ -18,7 +18,7 @@ body{
 .hero-img {
     width:100%;
     height:60vh;
-    background: url('img/breathless-hero.jpg');
+    background: url('../img/breathless-hero.jpg');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -586,7 +586,7 @@ h1, h2, h3{
 .background-image {
     width:100%;
     height:50vh;
-    background: url('img/saint_sulpiere.png');
+    background: url('../img/saint_sulpiere.png');
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size:cover;
