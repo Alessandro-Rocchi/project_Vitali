@@ -24,8 +24,13 @@ jobs:
       - name: Checkout del codice
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
       - name: Configura GitHub Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5 # Aggiornato alla v5
 
       - name: Carica i file (Artifact)
         uses: actions/upload-pages-artifact@v3
