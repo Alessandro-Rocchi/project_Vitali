@@ -520,6 +520,16 @@ footer a.nav-link, footer h2{
     color: #d73b3e;
 }
 
+.card.w-25 {
+    max-height: 300px; /* Adjust this value as needed */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body p{
+    font-size: 1rem;
+}
+
 /*----------------------------FINE CSS ABOUT NOUVELLE VAGUE-------------------*/
 
 /*------------------INIZIO CSS ABOUT OUR TEAM-------------------------*/
