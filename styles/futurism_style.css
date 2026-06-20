@@ -1,0 +1,770 @@
+h1, h2, h3{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+p{ 
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body{
+    background-color: #f2e6ce;
+    background-image: 
+        /* Linea rossa molto sfumata (15% opacità: #d32f2f26) */
+        linear-gradient(115deg, transparent 40%, #d32f2f26 40%, #d32f2f26 41.5%, transparent 41.5%),
+        
+        /* Fascio nero industriale leggerissimo (10% opacità: #1a1a1a1a) */
+        linear-gradient(135deg, transparent 70%, #1a1a1a1a 70%, #1a1a1a1a 74%, transparent 74%),
+        
+        /* Seconda linea rossa d'intersezione finissima (10% opacità: #d32f2f1a) */
+        linear-gradient(55deg, transparent 20%, #d32f2f1a 20%, #d32f2f1a 20.5%, transparent 20.5%);
+    background-attachment: fixed;
+    color: #1a1a1a;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "ZANG!";
+    position: fixed; /* Rimane fisso nello schermo */
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 28vw; /* Dimensione fluida in base alla larghezza schermo */
+    font-weight: 900;
+    color: rgba(26, 26, 26, 0.1); 
+    left: 3%;
+    transform: rotate(-18deg);
+    pointer-events: none; /* Permette di cliccare gli elementi sottostanti */
+    z-index: -1; /* Lo mette dietro a tutto il testo */
+}
+
+/*HERO IMAGE*/
+.hero-img {
+    width:100%;
+    height:60vh;
+    background: url('../img/breathless-hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    /*background-attachment: fixed;*/ /*per mantenere l'immagine fissa durante lo scroll, ma ho deciso di rimuoverlo per evitare problemi di visualizzazione della hero image*/
+}
+
+h1 span{
+    color: #d73b3e !important; 
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.catchphrase h1 {
+    color:#F4F1FA;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.751);
+}
+
+/*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/
+@media (max-width: 520px) {
+    .hero-img{
+        height: 30vh !important;
+        background-position: 20% center !important;
+    }
+}
+
+@media (min-width:521px) and (max-width: 768px) {
+    .hero-img {
+        background-position: 50% center !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-img{
+        height: 40vh;
+        background-position: 35% center;
+    }
+
+}
+
+@media (min-width:769px) and (max-width: 942px){
+    .hero-img {
+        background-position: 70% center !important; 
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+    header#prova {
+        background-position: 60% center; 
+    }
+}
+
+hr{
+    color:#d73b3e !important;
+    border-top:2px solid currentColor !important;
+    opacity: 1 !important;
+}
+
+.paper-card {
+    /*background-color:rgba(255, 0, 60, 0.32);*/
+    background-color: #EDEAE2;
+    color:#1A1A1A;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.068);
+}
+
+.bi-chevron-down {
+    position: absolute !important;
+    top: 0.3rem;
+    right: 0.75rem; 
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.75rem) !important;
+    margin: 0;
+    color: black;
+    -webkit-text-stroke: 1px currentColor;
+}
+
+a[aria-expanded="true"] i {
+    transform: rotate(180deg);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+a[aria-expanded="false"] i {
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 767px) and (max-width: 928px){
+    .pretty-catch{
+        display: block !important;
+    }
+}
+@media (min-width: 1312px){
+    .pretty-big-catch{
+        display: none !important;
+    }
+}
+
+@media (min-width: 796px){
+    .pretty-title{
+        display: none;
+    }
+}
+@media (max-width: 795px){
+    .pretty-title{
+        display: block;
+    }
+}
+
+/*FINE HERO IMAGE*/
+
+
+/*PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
+
+.card-title{
+    color: #faf1ea;
+}
+
+/*per lo zoom delle card*/
+.zoom-card .img-fluid{
+    transition: transform .75s ease;
+}
+
+    /* 2. Quando l'utente passa il mouse sulla CARD, l'immagine si ingrandisce del 10% (scale 1.1) */
+.zoom-card:hover .img-fluid {
+    transform: scale(1.1);
+}
+
+.zoom-card:hover .card-title{
+    color: #d73b3e !important;
+    transition: transform 1.5s ease;
+}
+
+.zoom-card:hover .responsive-title-sm{
+    font-weight: 800;
+}
+
+.responsive-title {
+    font-size: clamp(1.5rem, 1.2rem + 2vw, 2.25rem);
+}
+
+.responsive-title-sm{
+    font-size: clamp(0.75rem, 0.8rem + 1.5vw, 2rem) !important;
+}
+
+/*FINE PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
+
+/*Per le immagini delle carte esplora*/
+.explore-card{
+    filter: grayscale(1) brightness(100%);
+}
+
+.zoom-card:hover .explore-card{
+    filter: grayscale(1) brightness(60%);
+}
+
+
+*{
+   font-family: "Inter", sans-serif; 
+   color: #1a1a1a;
+}
+
+
+
+#map { height: 500px; }
+
+/*NAVBAR*/
+
+.navbar{
+    background-color: #1a1a1a;
+}
+
+.navbar-text, .nav-link {
+    color: #faf1ea;
+}
+
+.navbar-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(1.25rem, 2vw + 1rem, 2rem);
+}
+
+
+span.navbar-text {
+  white-space: nowrap;
+}
+
+.navbar-nav .nav-link {
+    color: #faf1ea;
+    font-size: clamp(0.75rem, 0.5vw + 0.75rem, 1.5rem); /*cambiare poi con misure relative*/
+    border-bottom: 1px solid transparent;
+    font-family: "Space Mono", monospace;
+    padding-right: clamp(0.75rem, 2vw,4rem);
+    padding-left: clamp(0.75rem, 2vw, 4rem);
+}
+
+.navbar-nav .nav-link:visited {
+    color: #faf1ea;
+}
+
+.navbar-nav .nav-link:hover:not(.active) {
+    color: #F2A900;
+    border-bottom: 1px solid #F2A900 ;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.navbar-nav .nav-link:active {
+    color: #faf1ea;
+}
+
+.navbar-nav .nav-link.active{
+    color: #F2A900;
+    border-bottom: 1px solid #F2A900;
+    cursor: default;
+}
+
+.navbar-toggler #navbar_menu_icon {
+    color: #faf1ea;
+    font-size: clamp(1rem, 5vw, 3rem);
+}
+
+
+/*BREADCRUMBS*/
+.breadcrumbs a, .breadcrumbs p {
+    font-family: "Space Mono", monospace;
+    color: #707070;
+}
+
+.breadcrumbs a  {
+   text-decoration: none;
+   transition: 0.5s ease; 
+   height: auto;   
+}
+.breadcrumbs a:hover:not(.disabled) {
+    text-decoration: underline;
+    color: #1a1a1a;    
+}
+
+.breadcrumbs a.disabled:hover {
+    color: #707070;
+    cursor: default;
+}
+
+
+/*CATALOGUE*/
+
+.page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
+    background: transparent; 
+
+}
+
+
+.leaflet-container a.dropdown-item {
+      color: #1a1a1a;
+      text-decoration: none;
+  }
+
+
+  .leaflet-container a.dropdown-item:hover,
+  .leaflet-container a.dropdown-item:focus {
+      background-color: #e9ecef;
+      color: #1a1a1a;
+      text-decoration: underline;
+  }
+
+
+#catalogue_page_title h1 {
+    font-family: "Playfair", serif;
+    font-size: 48pt;
+}
+
+#catalogue_page_title h2 {
+    font-size: 18pt;
+}
+
+.card_link{
+    text-decoration: none;
+    color: #d73b3e;
+    
+}
+
+.card_link:hover {
+    
+    color: #d73b3e;
+}
+
+.filter_toggle{
+    /*display: inline-flex;*/
+    background-color: #a9a9a9;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.filter_toggle:hover{
+    cursor: pointer;
+    background-color: #707070;
+    transition: all 0.5s ease;
+}
+
+#filter_area, #cards_area {
+  transition: all 0.3s ease-in-out;
+}
+
+#filter_list {
+    transition: 0.3s;
+}
+
+.card_arrow {
+    color: #d73b3e;
+    display: inline-block;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 1s linear, opacity 0.5s linear, margin-left 1s linear;
+}
+
+.card_link:hover .card_arrow {
+    width: auto; 
+    opacity: 1;
+    margin-left: 0.10rem;
+}
+
+
+
+/*ABOUT*/
+.about_card h2{
+    color: #1a1a1a;
+}
+
+.about_card:hover h2{
+    color: #A92325;
+}
+
+/* 1. The container stays exactly the same size */
+.about_card {
+    overflow: hidden; /* This is the "window" that stays still */
+    display: block;   /* Ensures the anchor tag respects dimensions */
+    position: relative;
+}
+
+/*ho selezionato il primo figlio diretto di row (che è la col definita con le classi bootstrap) e all'interno di questo ho fatto in modo che .about_card fosse ruotato*/
+.row > div:nth-child(1) .about_card {
+    transform: rotate(-2deg);
+    border-color: #d32f2f;
+    box-shadow: 8px 8px 0px #d32f2f;
+}
+
+/*questo invece seleziona il secondo figlio diretto di row, che è la seconda colonna, e quindi la card all'interno della colonna*/
+.row > div:nth-child(2) .about_card {
+    transform: rotate(3deg);
+    border: #1a1a1a 2px solid;
+}
+
+.row > div:nth-child(1) .about_card h2 {
+    font-family: "Anton", sans-serif;
+}
+
+.row > div:nth-child(2) .about_card h2{
+    font-family: "Space mono", Courier, monospace;
+}
+
+/* 2. The image transition */
+.about_card img {
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+}
+
+/* 3. TARGET ONLY THE IMAGE ON HOVER */
+/* Correct: The card is hovered, but ONLY the image scales */
+.about_card:hover img {
+  transform: scale(1.1);
+}
+
+/* Ensure the overlay doesn't zoom with the image */
+.about_card:hover .card-img-overlay {
+  transform: none; 
+}
+
+/* TAG OBSOLETO - FARE CHECK SU PAGINE ABOUT PRIMA DI ELIMINARE
+#about_NV {
+    background-image: url(../img/generic_bg.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: 100%;
+    transition: background-size 1s ease;
+}*/
+
+/* TAG OBSOLETO - FARE CHECK SU PAGINE ABOUT PRIMA DI ELIMINARE
+#about_our_team {
+    background-image: url(../img/generic_bg.png);
+    height: 300pt;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-position: center;
+    background-size: 100%;
+    transition: background-size 1s ease;
+
+}*/
+/*TAG OBSOLETO - FARE CHECK SU PAGINE ABOUT PRIMA DI ELIMINARE
+#about_our_team, #about_NV {
+    text-decoration: none ;
+    color:#1a1a1a
+}*/
+/*TAG OBSOLETO - FARE CHECK SU PAGINE ABOUT PRIMA DI ELIMINARE
+#about_our_team:hover h2, #about_NV:hover h2 {
+    transition: 0.5s ease;
+    color: #A92325;
+}
+
+#about_our_team:hover, #about_NV:hover {
+  background-size: 110%; 
+}
+
+#about_our_team h2, #about_NV h2 {
+    margin: 0;   
+    font-family: "Playfair", serif;
+    font-size: 40pt;
+    font-weight: 600;
+}*/
+
+.about_bg_image {
+    display: none;
+    background-image: url(../img/feu_artifice_balla.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30vw;
+}
+
+.about_bg_image h1 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(2rem, 4vw + 1.25rem, 3.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+
+/*ABOUT NOUVELLE VAGUE*/
+
+
+#about_NV_bg_image h1 {
+    font-family: "Playfair", serif;
+    font-size: 50pt;
+}
+
+#about_NV_text_content {
+    font-size: 16pt;
+    font-weight: 300;
+}
+
+#about_NV_text_content b{
+    font-weight: 600;
+    color: #d73b3e;
+}
+
+/*ABOUT OUR TEAM*/
+
+.card:nth-child(1) {
+    box-shadow: 8px 8px 0px #00A86B
+}
+
+.card:nth-child(3){
+    box-shadow: -30px 8px 0px #002FA7
+}
+
+.card:nth-child(1) h4 {
+    font-family: "Space mono", monospace;
+    font-size: 1.5rem;
+}
+
+.card:nth-child(2) h4 {
+    font-family: "Anton", sans-serif;
+    transform: rotate(10deg);
+    
+}
+
+.card:nth-child(3) h4 {
+    font-family: "Playfair", serif;
+    font-style: italic;   
+}
+
+
+
+.sub-panel-explore .card:hover {
+    transform: translateY(-2px);
+    background-color: #f8f9fa !important;
+    cursor: pointer;
+}
+
+
+*{
+                margin:0;
+            }
+
+            /*set a background color to the body*/
+
+            h1, h2, h3{
+                font-family: "Playfair Display", serif;
+                font-optical-sizing: auto;
+                font-style: normal;
+            }
+
+            /*GOOGLE FONTS & ICONS*/
+            .material-symbols-outlined {
+                font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+            }
+
+            /*HERO IMAGE*/
+            .background-image {
+                width:100%;
+                height:50vh;
+                background: url('../img/saint_sulpiere.png');
+                background-repeat: no-repeat;
+                background-position: bottom center;
+                background-size:cover;
+                background-attachment: fixed;
+            }
+
+            /*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/          
+
+            @media (max-width: 992px) {
+                header#prova{
+                    height: 40vh;
+                    background-position: left bottom !important;
+                }
+                .catchphrase{
+                    font-size: 2.7rem !important;
+                }
+            }
+
+            @media (max-width: 768px) {
+
+                header#prova{
+                    height: 30vh;
+                    background-position: left bottom !important;
+                }
+            }
+
+
+            @media (max-width: 577px) {
+                .catchphrase{
+                    font-size: 2rem !important;
+                }
+                header > .row{
+                    height: 60% !important;
+                }        
+            }
+
+            /*FINE HERO IMAGE*/
+
+            button{
+                border-radius: 50px !important;
+            }
+
+
+            /*PILLS*/
+            .pill{
+                color: #F4F1FA;
+                border-radius: 50px;
+                display: inline-flex;
+                align-items: center;
+                background-color:  #A92325;
+                font-size: clamp(0.8rem, 1.3vw, 1.2rem);
+
+            }
+
+            .pill .material-symbols-outlined{
+                font-size: clamp(1rem, 2vw, 1.5rem);
+            }
+
+            /*PARAGRAPHS*/
+            .paragraph{
+                display: none !important;
+            }
+
+            .active{
+                display: block !important;
+                animation: fade 1s ease forwards;
+            }
+
+            @keyframes fade {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            button:disabled {
+                pointer-events: auto !important;
+                cursor: not-allowed !important;
+            }
+
+            /*PROGRESS BAR*/
+            .progress-bar {
+                background-color: #A92325 !important;
+            }
+
+            /*BACK TO FIRST BUTTON*/
+            #backToFirst {
+                color: #F4F1FA !important;
+                background-color:#A92325 !important;
+                border:#A92325 1px solid !important;
+            }
+
+            #backToFirst:hover {
+                color: #A92325 !important;
+                background-color:#F4F1FA !important;
+                border:#A92325 1px solid !important;
+            }
+
+            /*THEME*/
+            .theme{
+                height: auto;
+            }
+
+            .closeTheme, .openTheme{
+                position: fixed;
+                bottom: 1rem;
+                right: 1rem;
+                z-index: 1000;
+                cursor: pointer;
+            }
+
+            .closeTheme span{ 
+                font-size: 2.5rem;
+                border:#A92325 2px solid;
+                border-radius: 100%;
+                color: #A92325;
+            }
+
+            .openTheme span{
+                font-size: 2.5rem;
+                color: #A92325;
+            }
+
+            .openTheme{
+                display: none;
+                border:#A92325 2px solid;
+                border-radius: 50px;
+            }
+
+            .blur-background{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(4px);
+                z-index: -1;
+                border-radius: 50px;
+            }
+
+/*FOOTER*/
+.pipe{
+    cursor: default;
+}
+
+footer ul a{
+    border: black 3px solid;
+    font-size: 1.25rem;
+}
+
+footer ul a:not(.pipe):hover{
+    color: #00A86B;
+    border-bottom: #00A86B 3px solid;
+}
+
+footer a.nav-link {
+    color: #F4F1FA;
+}
+
+footer h2 {
+    font-family: "Anton", sans-serif;
+    color: #F2A900;
+}
+
+/*RESPONSIVE FOOTER*/
+@media (max-width: 992px) {
+    .pipe-license{
+        display: none !important;
+    }
+    
+}
+
+@media (max-width:440px){
+    .pipe-contacts{
+        opacity: 0 !important;
+    }
+
+}
+
+@media (min-width: 1199px) and (max-width: 1270px){
+    .logo-footer{
+        flex: 0 0 auto !important;
+        width: 100% !important;
+    }
+
+    .links-footer{
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .links-footer .row ul{
+        justify-content: center !important;
+    }
+
+    .logo-footer .logo-img.justify-content-center{
+        justify-content: center !important;
+    }
+
+    .logo-footer .logo-text.text-center{
+        text-align: center !important;
+    }
+}
+
+
