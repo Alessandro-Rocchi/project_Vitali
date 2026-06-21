@@ -14,6 +14,8 @@
         <title>Catalogue</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
 
+        <script src="script/rococo_scripts.js" defer></script>
+
     </head>
     <body>
 
@@ -67,9 +69,9 @@
                 <a class="disabled">About Our Team</a>
             </div>
             <div class="col-12 p-3 mb-3 text-center" id="catalogue_page_title">
-                <img src="img/rococo-ornament-left.png" alt="Ornament Icon" class="img-fluid d-inline mb-3" style="width: 6vw; max-width: 100px; min-width: 40px; height: auto;">
+                <img src="img/rococo-ornament-left.png" alt="Ornament Icon" class="img-fluid d-inline mb-3 d-none d-sm-inline-block" style="width: 6vw; max-width: 100px; min-width: 40px; height: auto;">
                 <h1 class="d-inline">Catalogue</h1>
-                <img src="img/rococo-ornament-right.png" alt="Ornament Icon" class="img-fluid d-inline mb-3" style="width: 6vw; max-width: 100px; min-width: 40px; height: auto;">
+                <img src="img/rococo-ornament-right.png" alt="Ornament Icon" class="img-fluid d-inline mb-3 d-none d-sm-inline-block" style="width: 6vw; max-width: 100px; min-width: 40px; height: auto;">
                 <h2>N luoghi mostrati</h2>
             </div>
 
@@ -105,7 +107,7 @@
                                                 <p>Regista:</p>
                                             </div>                                      
                                             <div class="col">
-                                                <select class=" col form-select" aria-label="Default select example">
+                                                <select class="col form-select" aria-label="Default select example">
                                                     <option selected>Select...</option>
                                                     <option value="Tizio">Tizio</option>
                                                     <option value="Caio">Caio</option>
@@ -149,7 +151,7 @@
                                     
                                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
                                     <!--struttura delle singole cards-->
-                                    <div class="card">
+                                    <div class="card border-0">
                                         <img src="img/saint_sulpiere.png" class="img-fluid" alt="...">
                                         <div class="card-bodys d-flex flex-column border-top-0">
                                             <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
@@ -161,7 +163,7 @@
 
                                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
                                     <!--struttura delle singole cards-->
-                                    <div class="card">
+                                    <div class="card border-0">
                                         <img src="img/paris_nousAppartient.webp" class="img-fluid" alt="...">
                                         <div class="card-bodys d-flex flex-column border-top-0">
                                             <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
@@ -173,7 +175,7 @@
 
                                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
                                     <!--struttura delle singole cards-->
-                                    <div class="card">
+                                    <div class="card border-0">
                                         <img src="img/hidden-gems.jpg" class="img-fluid" alt="...">
                                         <div class="card-bodys d-flex flex-column border-top-0">
                                             <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
@@ -185,7 +187,7 @@
 
                                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
                                     <!--struttura delle singole cards-->
-                                    <div class="card">
+                                    <div class="card border-0">
                                         <img src="img/jean-luc-godard-breathless.jpg" class="img-fluid" alt="...">
                                         <div class="card-bodys d-flex flex-column border-top-0">
                                             <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
@@ -196,7 +198,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
                                     <!--struttura delle singole cards-->
-                                    <div class="card">
+                                    <div class="card border-0">
                                         <img src="img/saint_sulpiere.png" class="img-fluid" alt="...">
                                         <div class="card-bodys d-flex flex-column border-top-0">
                                             <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
@@ -207,7 +209,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
                                     <!--struttura delle singole cards-->
-                                    <div class="card">
+                                    <div class="card border-0">
                                         <img src="img/cow.jpeg" class="img-fluid" alt="...">
                                         <div class="card-bodys d-flex flex-column border-top-0">
                                             <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
@@ -218,7 +220,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3"> 
                                     <!--struttura delle singole cards-->
-                                    <div class="card">
+                                    <div class="card border-0">
                                         <img src="img/cow.jpeg" class="img-fluid" alt="...">
                                         <div class="card-bodys d-flex flex-column border-top-0">
                                             <h5 class="ps-2 my-2 mx-1">Nome del luogo</h6>
@@ -282,24 +284,5 @@
                 </div>                    
             </div>
         </footer>
-        <script>
-            const pg = document.getElementById('pagination');
-            const nums = [...pg.querySelectorAll('.page-num')];
-
-            pg.onclick = (e) => {
-            const btn = e.target.closest('button');
-            if (!btn) return;
-
-            const active = pg.querySelector('.active');
-            const nextIdx = btn.classList.contains('arrow') 
-                ? nums.indexOf(active) + +btn.dataset.dir 
-                : nums.indexOf(btn);
-
-            if (nums[nextIdx]) {
-                active.classList.remove('active');
-                nums[nextIdx].classList.add('active');
-            }
-            };
-        </script>
     </body>
 </html>

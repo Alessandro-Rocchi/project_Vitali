@@ -457,6 +457,10 @@ button:disabled {
     background-color: #d4efe29d;
 }
 
+#catalogue_page_title{
+    border-bottom: 2px solid #A87C43;
+}
+
 .card_link{
     text-decoration: none;
     color: #a87c43 !important;
