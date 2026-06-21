@@ -338,6 +338,10 @@ footer a.nav-link, footer h2{
     color:#1a1a1a;
 }
 
+#catalogue_page_title{
+    border-bottom: 2px solid #A92325;
+}
+
 .breadcrumbs, #catalogue_page_title {
     /*background-color:#1b1b1b10;*/
     background-color: #EDEAE2;
