@@ -53,12 +53,13 @@ body::before {
 
 h1 span{
     color: #d73b3e !important; 
-    font-family: "Playfair Display", serif;
+    font-family: "GFS Didot", serif;
     font-optical-sizing: auto;
-    font-style: normal;
+    font-style: italic;
 }
 
 .catchphrase h1 {
+    font-family: "Impact", sans-serif;
     color:#F4F1FA;
     text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.751);
 }
@@ -103,12 +104,33 @@ hr{
     opacity: 1 !important;
 }
 
-.paper-card {
-    /*background-color:rgba(255, 0, 60, 0.32);*/
-    background-color: #EDEAE2;
+/*CARDS IN HOME PAGE SOTTO LA HERO IMAGE*/
+
+.paper-card:nth-child(1), .paper-card:nth-child(3) {
+    background-color: #d32f2f;
     color:#1A1A1A;
     border-radius: 12px;
     box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.068);
+}
+
+.paper-card:nth-child(2) {
+    background-color: #F2A900;
+    color:#1A1A1A;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.068);
+}
+
+.paper-card:nth-child(1) {
+    transform: rotate(5
+    deg);
+}
+
+.paper-card:nth-child(3) {
+    transform: rotate(-3deg);
+}
+
+.paper-card h2 {
+    font-family: "Space Mono", Courier, monospace;
 }
 
 .bi-chevron-down {
