@@ -121,8 +121,7 @@ hr{
 }
 
 .paper-card:nth-child(1) {
-    transform: rotate(5
-    deg);
+    transform: rotate(5deg);
 }
 
 .paper-card:nth-child(3) {
@@ -189,14 +188,27 @@ a[aria-expanded="false"] i {
     transition: transform .75s ease;
 }
 
-    /* 2. Quando l'utente passa il mouse sulla CARD, l'immagine si ingrandisce del 10% (scale 1.1) */
+.row > div:nth-child(1) .zoom-card h2 {
+    font-family: "Anton", sans-serif;
+}
+
+.row > div:nth-child(2) .zoom-card h2 {
+    font-family: "GFS Didot", serif;
+}
+
+
+/* 2. Quando l'utente passa il mouse sulla CARD, l'immagine si ingrandisce del 10% (scale 1.1) */
+.zoom-card:hover {
+    box-shadow: 8px 8px 0px #F2A900;
+    transition: 0.5s ease;
+}
 .zoom-card:hover .img-fluid {
     transform: scale(1.1);
 }
 
 .zoom-card:hover .card-title{
-    color: #d73b3e !important;
-    transition: transform 1.5s ease;
+    color: #d32f2f;
+    transition: 0.5s ease;
 }
 
 .zoom-card:hover .responsive-title-sm{
@@ -214,19 +226,23 @@ a[aria-expanded="false"] i {
 /*FINE PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
 
 /*Per le immagini delle carte esplora*/
-.explore-card{
+.container h1 {
+    font-family: "Space Mono", Courier, monospace;
+}
+
+.zoom-card .explore-card{
     filter: grayscale(1) brightness(100%);
-}
-
-.zoom-card:hover .explore-card{
-    filter: grayscale(1) brightness(60%);
+    transition: transform 0.3s ease-in-out; 
 }
 
 
-*{
-   font-family: "Inter", sans-serif; 
-   color: #1a1a1a;
-}
+
+
+
+
+
+
+
 
 
 
@@ -517,7 +533,7 @@ span.navbar-text {
 
 #about_NV_text_content {
     font-size: 16pt;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 #about_NV_text_content b{
@@ -527,26 +543,26 @@ span.navbar-text {
 
 /*ABOUT OUR TEAM*/
 
-.card:nth-child(1) {
+.id_team:nth-child(1) {
     box-shadow: 8px 8px 0px #00A86B
 }
 
-.card:nth-child(3){
+.id_team:nth-child(3){
     box-shadow: -30px 8px 0px #002FA7
 }
 
-.card:nth-child(1) h4 {
+.id_team:nth-child(1) h4 {
     font-family: "Space mono", monospace;
     font-size: 1.5rem;
 }
 
-.card:nth-child(2) h4 {
+.id_team:nth-child(2) h4 {
     font-family: "Anton", sans-serif;
     transform: rotate(10deg);
     
 }
 
-.card:nth-child(3) h4 {
+.id_team:nth-child(3) h4 {
     font-family: "Playfair", serif;
     font-style: italic;   
 }
