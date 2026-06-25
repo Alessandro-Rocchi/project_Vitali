@@ -3,7 +3,6 @@ h1, h2, h3{
     font-size: clamp(15px, 1.1vw + 12px, 40px); /*non ho usato vh o vw per le dimensioni limite e per la proporzione usata nel valore centrale per evitare che il browser calcolasse dimensioni con la virgola e facesse saltare l'effetto pixellato del font*/
     font-optical-sizing: auto;
     font-style: normal;
-    background-color: #030a03;
 }
 
 p{ 
@@ -740,6 +739,328 @@ span.navbar-text {
 .pipe{
     cursor: default;
 }
+
+/*PAGINA TOUR*/
+
+h1, h2, h3{
+    font-family: "VT323", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #33FF33;
+}
+
+/*GOOGLE FONTS & ICONS*/
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+/*HERO IMAGE*/
+.background-image {
+    width:100%;
+    height:50vh;
+    background: url('../img/saint_sulpiere.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+/*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/          
+
+@media (max-width: 992px) {
+    header#prova{
+        height: 40vh;
+        background-position: left bottom !important;
+    }
+    .catchphrase{
+        font-size: 2.7rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    header#prova{
+        height: 30vh;
+        background-position: left bottom !important;
+    }
+}
+
+
+@media (max-width: 577px) {
+    .catchphrase{
+        font-size: 2rem !important;
+    }
+    header > .row{
+        height: 60% !important;
+    }        
+}
+
+.background-image h1 {
+    color:#F4F1FA;
+}
+/*FINE HERO IMAGE*/
+
+.tour-container button{
+    border-radius: 50px !important;
+}
+
+
+/*PILLS*/
+.pill{
+    border-radius: 0px;
+    display: inline-flex;
+    align-items: center;
+    background-color:  #33FF33;
+    font-size: clamp(15px, 1.1vw + 12px, 40px); 
+    font-family: "VT323", monospace;
+}
+
+.pill span{
+    color: #030a03;
+}
+
+.pill .material-symbols-outlined{
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+/*PARAGRAPHS*/
+.paragraph{
+    display: none !important;
+}
+
+.active{
+    display: block !important;
+    animation: fade 1s ease forwards;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+button:disabled {
+    pointer-events: auto !important;
+    cursor: not-allowed !important;
+}
+
+/*PROGRESS BAR*/
+.progress {
+    border-radius: 0px;
+}
+
+.progress-bar {
+    background-color: #33FF33 !important;
+}
+
+/*next and previous button*/
+
+#btn-prev {
+    border-radius: 0px !important;
+    background-color: #33FF33;
+    color: #030a03;
+    font-family: "VT323", monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    border: none; 
+    transition: none;
+    padding: 0%;
+}
+
+#btn-prev::before{
+    content: "[ ";
+    visibility: hidden;
+}
+
+#btn-prev::after{
+    content: " ]";
+    visibility: hidden;
+}
+
+#btn-prev:hover {
+    background-color: #030a03;
+    color: #33FF33;
+}
+
+#btn-prev:hover::before{
+    visibility: visible;
+}
+
+#btn-prev:hover:after{
+    visibility: visible;
+}
+
+#btn-next {
+    border-radius: 0px !important;
+    background-color: #33FF33;
+    color: #030a03;
+    font-family: "VT323", monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    border: none; 
+    transition: none;
+    padding: 0%;
+}
+
+#btn-next::before{
+    content: "[ ";
+    visibility: hidden;
+}
+
+#btn-next::after{
+    content: " ]";
+    visibility: hidden;
+}
+
+#btn-next:hover {
+    background-color: #030a03;
+    color: #33FF33;
+}
+
+#btn-next:hover::before{
+    visibility: visible;
+}
+
+#btn-next:hover:after{
+    visibility: visible;
+}
+
+
+#btn-prev-mobile {
+    border-radius: 0px !important;
+    background-color: #33FF33;
+    color: #030a03;
+    font-family: "VT323", monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    border: none; 
+    transition: none;
+    padding: 0%;
+}
+
+#btn-prev-mobile::before{
+    content: "[ ";
+    visibility: hidden;
+}
+
+#btn-prev-mobile::after{
+    content: " ]";
+    visibility: hidden;
+}
+
+#btn-prev-mobile:hover {
+    background-color: #030a03;
+    color: #33FF33;
+}
+
+#btn-prev-mobile:hover::before{
+    visibility: visible;
+}
+
+#btn-prev-mobile:hover:after{
+    visibility: visible;
+}
+
+#btn-next-mobile {
+    border-radius: 0px !important;
+    background-color: #33FF33;
+    color: #030a03;
+    font-family: "VT323", monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    border: none; 
+    transition: none;
+    padding: 0%;
+}
+
+#btn-next-mobile::before{
+    content: "[ ";
+    visibility: hidden;
+}
+
+#btn-next-mobile::after{
+    content: " ]";
+    visibility: hidden;
+}
+
+#btn-next-mobile:hover {
+    background-color: #030a03;
+    color: #33FF33;
+}
+
+#btn-next-mobile:hover::before{
+    visibility: visible;
+}
+
+#btn-next-mobile:hover:after{
+    visibility: visible;
+}
+
+
+
+/*BACK TO FIRST BUTTON*/
+#backToFirst {
+    color: #030a03 !important;
+    background-color:#33FF33 !important;
+    border: none !important;
+}
+
+#backToFirst span{
+    color: #030a03 !important;
+}
+
+#backToFirst:hover{
+    color: #33FF33 !important;
+    background-color:#030a03 !important;
+    border: none !important;
+}
+
+#backToFirst:hover span{
+    color: #33FF33 !important;
+}
+
+/*THEME*/
+.theme{
+    height: auto;
+}
+
+.closeTheme, .openTheme{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.closeTheme span{ 
+    font-size: 2.5rem;
+    border:#A92325 2px solid;
+    border-radius: 100%;
+    color: #A92325;
+}
+
+.openTheme span{
+    font-size: 2.5rem;
+    color: #A92325;
+}
+
+.openTheme{
+    display: none;
+    border:#A92325 2px solid;
+    border-radius: 50px;
+}
+
+.blur-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    z-index: -1;
+    border-radius: 50px;
+}
+
+/*FOOTER*/
 
 footer {
     background-color: #030a03;
