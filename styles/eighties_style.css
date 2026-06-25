@@ -13,37 +13,7 @@ p{
 }
 
 body {
-    background-color: #030a03;
     background-color: #030a03;/*verde molto scuro quasi nero per simulare monitor crt*/
-    background-image: linear-gradient(to right, #33FF33 65%, transparent 65%);
-    /* 1. SICUREZZA LAYOUT */
-    width: 100%;
-    box-sizing: border-box; 
-
-    /* 2. I DUE GRADIENTI (Sinistra e Destra) */
-    background-image: 
-        linear-gradient(to bottom, #33FF33 12px, transparent 12px), /* Lato Sinistro */
-        linear-gradient(to bottom, #33FF33 12px, transparent 12px); /* Lato Destro */
-
-    /* 3. LE DUE POSIZIONI */
-    background-position: 
-        left, 
-        right;
-
-    /* 4. LE DIMENSIONI DELLA "PIPE" (Larghezza x Altezza del blocco) */
-    background-size: 
-        2px 16px,  /* Pipe sinistra: spessa 2px, modulo totale di 16px */
-        2px 16px;  /* Pipe destra: identica */
-
-    /* 5. RIPETIZIONE SOLO IN VERTICALE */
-    background-repeat: 
-        repeat-y, 
-        repeat-y;
-
-    /* 6. PROTEZIONE DEL TESTO */
-    /* Lascia 18px di spazio a destra e sinistra per evitare che il testo tocchi le linee */
-    padding-left: 18px;
-    padding-right: 18px;
 }
 
 
