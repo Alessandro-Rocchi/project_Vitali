@@ -1002,6 +1002,9 @@ button:disabled {
     color: #030a03 !important;
     background-color:#33FF33 !important;
     border: none !important;
+    font-family: "VT323", monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    line-height: normal;
 }
 
 #backToFirst span{
