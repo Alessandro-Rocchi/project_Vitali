@@ -514,6 +514,25 @@ footer a.nav-link, footer h2{
     font-size: 50pt;
 }
 
+.bookmarks li{
+    padding-bottom: 10px;
+}
+
+.bookmarks li a{
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+.bookmarks li a:hover{
+    color:#A92325;
+}
+
+.bookmarks ol{
+    background-color: #70707023;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
 #about_NV_text_content {
     font-size: 16pt;
     font-weight: 300;
