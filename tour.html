@@ -10,7 +10,6 @@
         <!--Link google fonts-->
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-        <script src="script/scripts.js" defer></script>
     </head>
     <body>
 
@@ -92,13 +91,13 @@
 
 
         <!--Back to first button-->
-        <div id="backToFirstContainer" class="row container-fluid">
-            <button id="backToFirst" class="rounded-1 w-auto ms-auto me-lg-3 py-1 d-inline-flex justify-content-center gap-1" ><span class="material-symbols-outlined">undo</span>Back to first</button>      
+        <div id="backToFirstContainer" class="container-lg d-flex">
+            <button id="backToFirst" class="rounded-1 w-auto ms-auto me-0 py-1 d-inline-flex justify-content-center" ><span class="material-symbols-outlined">undo</span>Back to first</button>      
         </div>
 
         <!--MAP and PARAGRAPHS-->
 
-        <div class="container-lg mt-2 mt-lg-0">
+        <div class="tour-container container-lg mt-2 mt-lg-0">
 
             <div class="row">
                 <div class="col-12 col-lg-6">
@@ -198,6 +197,99 @@
                 </div>                    
             </div>
         </footer>
+
+        <script>
+            // Selezioniamo gli elementi dal DOM
+            const paragraphs = document.querySelectorAll('.paragraph');
+            const prevButtons = document.querySelectorAll('#btn-prev, #btn-prev-mobile');
+            const nextButtons = document.querySelectorAll('#btn-next, #btn-next-mobile');
+
+            // Il tuo counter (l'indice del paragrafo corrente)
+            let currentIndex = 0;
+
+            //settiamo la barra di progresso
+            const progress = document.querySelector('.progress-bar');
+            progress.style.width = ((currentIndex + 1) / paragraphs.length * 100) + '%';
+
+
+            // Funzione per attivare/disattivare i bottoni in base all'indice
+            function updateBtnStatus() {
+                prevButtons.forEach(button => {
+                    button.disabled = (currentIndex === 0);
+                });
+                nextButtons.forEach(button => {
+                    button.disabled = (currentIndex === paragraphs.length - 1);
+                });
+
+                const backToFirstBtn = document.getElementById('backToFirst');
+                    if (currentIndex == 0) {
+                        const buttonHeight = backToFirstBtn.offsetHeight;
+                        backToFirstBtn.style.setProperty('display', 'none', 'important');
+                        document.getElementById('backToFirstContainer').style.height = buttonHeight + 'px';
+                        backToFirstBtn.style.setProperty('animation', 'fade 1s ease forwards', 'important');
+
+                    } else {
+                        backToFirstBtn.style.setProperty('display', 'inline-flex', 'important');    
+                    }
+            }
+
+            // Funzione che aggiorna la visibilità dei paragrafi
+            function showParagraph(newIndex) {
+                // Rimuoviamo la classe 'active' dal paragrafo attualmente visibile
+                paragraphs[currentIndex].classList.remove('active');
+                
+                // Aggiorniamo l'indice con quello nuovo
+                currentIndex = newIndex;
+                
+                // Aggiungiamo la classe 'active' al nuovo paragrafo
+                paragraphs[currentIndex].classList.add('active');
+                
+                // Aggiorniamo la barra di progresso
+                progress.style.width = ((currentIndex + 1) / paragraphs.length * 100) + '%';
+                updateBtnStatus();
+            }
+
+            // Evento per il bottone NEXT
+            nextButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Calcoliamo il prossimo indice.
+                    if (currentIndex < paragraphs.length - 1){
+                        showParagraph(currentIndex + 1);
+                    }
+                });
+            });
+
+
+            // Evento per il bottone PREVIOUS
+            prevButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Calcoliamo l'indice precedente.
+                    if (currentIndex > 0){
+                        showParagraph(currentIndex - 1);
+                    }
+                });
+            });
+
+
+            // Evento per il link "Back to first"
+            document.getElementById('backToFirst').addEventListener('click', () => {
+                showParagraph(0);
+            });
+
+            updateBtnStatus(); // Inizialmente aggiorniamo lo stato dei bottoni
+
+            document.querySelector('.closeTheme').addEventListener('click', () => {
+                document.querySelector('.closeTheme').style.display = 'none';
+                document.querySelector('.openTheme').style.display = 'block';
+            });
+            document.querySelector('.openTheme').addEventListener('click', () => {
+                document.querySelector('.openTheme').style.display = 'none';
+                document.querySelector('.closeTheme').style.display = 'block';
+            });
+
+            
+
+        </script>
 
     </body>
 </html>
