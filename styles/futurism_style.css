@@ -322,13 +322,12 @@ span.navbar-text {
 }
 
 
-/*CATALOGUE*/
+/*---------------INIZIO CSS CATALOGUE-------------------*/
+
 
 .page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
-    background: transparent; 
-
+    background-color: #faf1ea; 
 }
-
 
 .leaflet-container a.dropdown-item {
       color: #1a1a1a;
@@ -336,21 +335,32 @@ span.navbar-text {
   }
 
 
-  .leaflet-container a.dropdown-item:hover,
-  .leaflet-container a.dropdown-item:focus {
-      background-color: #e9ecef;
-      color: #1a1a1a;
-      text-decoration: underline;
-  }
+.leaflet-container a.dropdown-item:hover,
+.leaflet-container a.dropdown-item:focus {
+    background-color: #e9ecef;
+    color: #1a1a1a;
+    text-decoration: underline;
+}
 
 
 #catalogue_page_title h1 {
     font-family: "Playfair", serif;
     font-size: 48pt;
+    color:#1a1a1a;
 }
 
 #catalogue_page_title h2 {
     font-size: 18pt;
+    color:#1a1a1a;
+}
+
+#catalogue_page_title{
+    border-bottom: 2px solid #A92325;
+}
+
+.breadcrumbs, #catalogue_page_title {
+    /*background-color:#1b1b1b10;*/
+    background-color: #EDEAE2;
 }
 
 .card_link{
@@ -364,16 +374,25 @@ span.navbar-text {
     color: #d73b3e;
 }
 
-.filter_toggle{
+#filter_toggle{
     /*display: inline-flex;*/
-    background-color: #a9a9a9;
+    background-color:#1a1a1a;
     border-radius: 0px 8px 8px 0px;
 }
 
-.filter_toggle:hover{
+#filter_toggle span {
+  vertical-align: middle;
+  color:#F4F1EA; 
+}
+
+#filter_toggle:hover{
     cursor: pointer;
     background-color: #707070;
     transition: all 0.5s ease;
+}
+
+#filter_toggle:not(.collapsed) #arrow_forward_ios {
+    transform: rotate(180deg);
 }
 
 #filter_area, #cards_area {
@@ -382,6 +401,16 @@ span.navbar-text {
 
 #filter_list {
     transition: 0.3s;
+}
+
+#cards_area .card, .id_team{
+    background-color:#1a1a1a !important;
+    border-radius: 4px !important;
+    overflow: hidden;
+}
+
+#cards_area .card h5, #cards_area .card p{
+    color:#faf1ea !important;
 }
 
 .card_arrow {
@@ -400,6 +429,40 @@ span.navbar-text {
     margin-left: 0.10rem;
 }
 
+#cards_area .card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.pagination button { 
+    padding: 8px 12px;
+    text-decoration: none;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;  
+    margin: 0 4px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Only numeric buttons turn red */
+.pagination .page-num:hover, .pagination .page-num.active { 
+    background-color: #d73b3e;
+    color:#EDEAE2 !important;
+    transition: 0.5s ease;
+}
+
+/* Arrows stay neutral */
+.pagination .arrow:hover {
+    background: #d73b3e;
+    color:#edeae2 !important;
+}
+
+/*---------------FINE CSS CATALOGUE-------------------*/
 
 
 /*ABOUT*/
