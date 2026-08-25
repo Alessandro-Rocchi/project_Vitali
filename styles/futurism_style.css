@@ -233,15 +233,6 @@ a[aria-expanded="false"] i {
 
 
 
-
-
-
-
-
-
-
-
-
 #map { height: 500px; }
 
 /*NAVBAR*/
@@ -313,7 +304,7 @@ span.navbar-text {
 }
 .breadcrumbs a:hover:not(.disabled) {
     text-decoration: underline;
-    color: #1a1a1a;    
+    color: #00A86B;    
 }
 
 .breadcrumbs a.disabled:hover {
@@ -325,8 +316,8 @@ span.navbar-text {
 /*---------------INIZIO CSS CATALOGUE-------------------*/
 
 
-.page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
-    background-color: #faf1ea; 
+.page_content {
+    background-color: transparent; 
 }
 
 .leaflet-container a.dropdown-item {
@@ -344,7 +335,7 @@ span.navbar-text {
 
 
 #catalogue_page_title h1 {
-    font-family: "Playfair", serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 48pt;
     color:#1a1a1a;
 }
@@ -362,16 +353,129 @@ span.navbar-text {
     /*background-color:#1b1b1b10;*/
     background-color: #EDEAE2;
 }
+/*SEGUE CSS PER DARE EFFETTO "FUTURISMO" ALLE CARDS*/
 
-.card_link{
-    text-decoration: none;
-    color: #d73b3e;
+/* =========================================================
+   1. STILE BASE DELLE CARD E HOVER DINAMICO
+   ========================================================= */
+
+/* Sovrascrive il rounded di Bootstrap per bordi netti e geometrici */
+.row_catalogue > div .card {
+    border-radius: 0 !important;
+    border: 3px solid #1a1a1a !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+/* Immagini con desaturazione stile stampa d'epoca -> magari si può anche togliere */
+.row_catalogue > div .card img {
+    border-radius: 0 !important;
+    filter: grayscale(30%) contrast(110%);
+    transition: filter 0.3s ease;
+}
+
+/* Effetto Hover: la card si raddrizza e ingrandisce leggermente */
+.row_catalogue > div .card:hover {
+    transform: rotate(0deg) scale(1.03) !important;
+    z-index: 5;
+}
+
+
+
+/* Titoli in stampatello maiuscolo impattante 
+.row_catalogue > div .card h5 {
+    font-family: 'Anton', sans-serif, system-ui;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}*/
+
+
+/* =========================================================
+   2. CICLO A 4 TEMPI: COLORI, ROTAZIONI ED OMBRE
+   ========================================================= */
+
+/* VARIANTI TEMPO 1: Sfondo Nero Industriale + Ombra Rossa */
+.row_catalogue > div:nth-child(4n + 1) .card {
+    background-color: #1a1a1a;
+    color: #f2e6ce;
+    border-color: #1a1a1a !important;
+    box-shadow: 6px 6px 0px #d32f2f;
+    transform: rotate(-0.5deg);
+}
+
+.row_catalogue > div:nth-child(4n + 1) .card h5 {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.row_catalogue > div:nth-child(4n + 1) .card .card_link { 
+    color: #00A86B; 
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+/* VARIANTI TEMPO 2: Sfondo Rosso Futurista + Ombra Nera */
+.row_catalogue > div:nth-child(4n + 2) .card {
+    background-color: #d32f2f !important;
+    color: #ffffff;
+    border-color: #d32f2f !important;
+    transform: rotate(1deg);
+}
+
+.row_catalogue > div:nth-child(4n + 1) .card h5 {
+   
     
 }
 
+.row_catalogue > div:nth-child(4n + 2) .card .card_link { 
+    color: #f2e6ce;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+}
+
+/* VARIANTI TEMPO 3: Sfondo Giallo Cromo + Ombra Invertita */
+.row_catalogue > div:nth-child(4n + 3) .card {
+    background-color: #F2A900;
+    color: #1a1a1a;
+    border-color: #1a1a1a !important;
+    box-shadow: -6px 6px 0px #001e43;
+    transform: rotate(-1.3deg);
+}
+
+.row_catalogue > div:nth-child(4n + 3) .card h5 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.row_catalogue > div:nth-child(4n + 3) .card .card_link { 
+    color: #1a1a1a; 
+}
+
+/* VARIANTI TEMPO 4: Sfondo Blu Cobalto + Ombra Sparata in Alto */
+.row_catalogue > div:nth-child(4n + 4) .card {
+    background-color: #0047AB;
+    color: #ffffff;
+    border-color: #0047AB !important;
+    box-shadow: 6px -6px 0px #00A86B;
+    transform: rotate(1.5deg);
+}
+.row_catalogue > div:nth-child(4n + 4) .card .card_link { 
+    color: #F2A900; 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.row_catalogue > div:nth-child(4n + 4) .card h5 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.card_link{
+    text-decoration: none;
+}
+
 .card_link:hover {
-    
-    color: #d73b3e;
+    text-decoration: underline; 
+    opacity: 1;
+    margin-left: 0.10rem;
 }
 
 #filter_toggle{
@@ -403,9 +507,7 @@ span.navbar-text {
     transition: 0.3s;
 }
 
-#cards_area .card, .id_team{
-    background-color:#1a1a1a !important;
-    border-radius: 4px !important;
+#cards_area .card {
     overflow: hidden;
 }
 
@@ -423,11 +525,7 @@ span.navbar-text {
     transition: width 1s linear, opacity 0.5s linear, margin-left 1s linear;
 }
 
-.card_link:hover .card_arrow {
-    width: auto; 
-    opacity: 1;
-    margin-left: 0.10rem;
-}
+
 
 #cards_area .card img {
     width: 100%;
@@ -451,14 +549,14 @@ span.navbar-text {
 
 /* Only numeric buttons turn red */
 .pagination .page-num:hover, .pagination .page-num.active { 
-    background-color: #d73b3e;
+    background-color: #0047AB;
     color:#EDEAE2 !important;
     transition: 0.5s ease;
 }
 
 /* Arrows stay neutral */
 .pagination .arrow:hover {
-    background: #d73b3e;
+    background: #00A86B;
     color:#edeae2 !important;
 }
 
