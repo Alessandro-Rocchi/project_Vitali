@@ -203,13 +203,13 @@ a[aria-expanded="false"] i {
 }
 
 .zoom-card:hover .card-title{
-    color: #d32f2f;
+    color: #001e43;
     transition: 0.5s ease;
 }
 
-.zoom-card:hover .responsive-title-sm{
-    font-weight: 800;
-}
+/*.zoom-card:hover .responsive-title-sm{   ho commentato perché l'aumentare del font weight in hover in certi casi fa saltare le parole alla riga sotto in maniera poco bella
+    font-weight: 500;
+}*/ 
 
 .responsive-title {
     font-size: clamp(1.5rem, 1.2rem + 2vw, 2.25rem);
@@ -422,8 +422,7 @@ span.navbar-text {
 }
 
 .row_catalogue > div:nth-child(4n + 1) .card h5 {
-   
-    
+   font-family: "Anton", Impact, sans-serif;    
 }
 
 .row_catalogue > div:nth-child(4n + 2) .card .card_link { 
@@ -980,9 +979,6 @@ button:disabled {
     font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-#btn-prev-mobile{
-    
-}
 
 /*PARAGRAPHS*/
 .paragraph{
@@ -1245,8 +1241,12 @@ button:disabled {
 }
 
 /*FOOTER*/
-.pipe{
+footer .pipe{
     cursor: default;
+}
+
+footer .pipe:hover {
+    color: #F4F1FA;
 }
 
 footer ul a{
