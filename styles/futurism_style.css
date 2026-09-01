@@ -285,8 +285,8 @@ span.navbar-text {
     cursor: default;
 }
 
-.navbar-toggler #navbar_menu_icon {
-    color: #faf1ea;
+.navbar-toggler .material-symbols-outlined {
+    color: #faf1ea !important;
     font-size: clamp(1rem, 5vw, 3rem);
 }
 
@@ -315,17 +315,12 @@ span.navbar-text {
 
 /*---------------INIZIO CSS CATALOGUE-------------------*/
 
-/*css di prova per catalogue di prova!!*/
-
-/* =========================================
-   STILI STRUTTURALI (Layout e Animazioni)
-   ========================================= */
 
 /* Comportamento della sidebar SOLO su Desktop */
 @media (min-width: 768px) {
     .filter-sidebar {
         /* Larghezza desiderata del menu a comparsa */
-        width: 300px;
+        width: 25%;
         /* Transizione fluida su larghezza per l'effetto push */
         transition: width 0.3s ease-in-out;
         overflow-x: hidden;
@@ -345,11 +340,11 @@ span.navbar-text {
     }
 
     /* Animazione rotazione icona freccia */
-    .btn-desktop-toggle .toggle-arrow {
+    .btn-desktop-toggle #arrow_forward_ios {
         transition: transform 0.3s ease;
     }
-    
-    .btn-desktop-toggle.is-open .toggle-arrow {
+
+    .btn-desktop-toggle.is-open #arrow_forward_ios {
         transform: rotate(180deg);
     }
 }
@@ -391,7 +386,6 @@ span.navbar-text {
     padding: 0.75rem;
 }
 
-/*fine css di prova per catalogue*/
 
 .page_content {
     background-color: transparent; 
@@ -427,7 +421,6 @@ span.navbar-text {
 }
 
 .breadcrumbs, #catalogue_page_title {
-    /*background-color:#1b1b1b10;*/
     background-color: #EDEAE2;
 }
 /*SEGUE CSS PER DARE EFFETTO "FUTURISMO" ALLE CARDS*/
@@ -457,14 +450,6 @@ span.navbar-text {
     z-index: 5;
 }
 
-
-
-/* Titoli in stampatello maiuscolo impattante 
-.row_catalogue > div .card h5 {
-    font-family: 'Anton', sans-serif, system-ui;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}*/
 
 
 /* =========================================================
@@ -570,10 +555,6 @@ span.navbar-text {
     background-color: #707070;
     transition: all 0.5s ease;
 }
-
-/*#desktop_filter_toggle:not(.collapsed) #arrow_forward_ios {
-    transform: rotate(180deg);
-}*/
 
 #filter_area, #cards_area {
   transition: all 0.3s ease-in-out;

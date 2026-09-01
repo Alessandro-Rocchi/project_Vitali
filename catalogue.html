@@ -22,7 +22,7 @@
             <div class="container-fluid">
                 <span class="col-2 navbar-text">Les Rues du CSS</span>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="material-symbols-outlined">menu</span>
                 </button>
                 <div class="col-10 collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
@@ -252,17 +252,17 @@
             </div>
         </footer>
         <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const desktopToggleBtn = document.getElementById("desktop_filter_toggle");
-            const filterSidebar = document.getElementById("filters_menu");
+            document.addEventListener("DOMContentLoaded", () => {
+                const desktopToggleBtn = document.getElementById("desktop_filter_toggle");
+                const filterSidebar = document.getElementById("filters_menu");
 
-            if (desktopToggleBtn && filterSidebar) {
-                desktopToggleBtn.addEventListener("click", () => {
-                    filterSidebar.classList.toggle("collapsed-desktop");
-                    desktopToggleBtn.classList.toggle("is-open");
-                });
-            }
-        });
-    </script>
+                if (desktopToggleBtn && filterSidebar) {
+                    desktopToggleBtn.addEventListener("click", () => {
+                        filterSidebar.classList.toggle("collapsed-desktop");
+                        desktopToggleBtn.classList.toggle("is-open");
+                    });
+                }
+            });
+        </script>
     </body>
 </html>
