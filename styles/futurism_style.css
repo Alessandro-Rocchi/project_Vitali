@@ -315,6 +315,83 @@ span.navbar-text {
 
 /*---------------INIZIO CSS CATALOGUE-------------------*/
 
+/*css di prova per catalogue di prova!!*/
+
+/* =========================================
+   STILI STRUTTURALI (Layout e Animazioni)
+   ========================================= */
+
+/* Comportamento della sidebar SOLO su Desktop */
+@media (min-width: 768px) {
+    .filter-sidebar {
+        /* Larghezza desiderata del menu a comparsa */
+        width: 300px;
+        /* Transizione fluida su larghezza per l'effetto push */
+        transition: width 0.3s ease-in-out;
+        overflow-x: hidden;
+        flex-shrink: 0;
+    }
+
+    /* Stato chiuso di default */
+    .filter-sidebar.collapsed-desktop {
+        width: 0;
+    }
+
+    /* Manteniamo il contenuto interno a larghezza fissa altrimenti 
+       durante l'animazione gli elementi andranno a capo rompendosi */
+    .filter-content-wrapper {
+        width: 300px;
+        padding: 1rem;
+    }
+
+    /* Animazione rotazione icona freccia */
+    .btn-desktop-toggle .toggle-arrow {
+        transition: transform 0.3s ease;
+    }
+    
+    .btn-desktop-toggle.is-open .toggle-arrow {
+        transform: rotate(180deg);
+    }
+}
+
+/* Comportamento Mobile */
+@media (max-width: 767.98px) {
+    /* Assicuriamoci che l'offcanvas mobile abbia il padding corretto */
+    .filter-content-wrapper {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* =========================================
+   STILI DECORATIVI
+   Qui puoi personalizzare colori, bordi ecc. 
+   ========================================= */
+
+.filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Esempio di pulizia bottoni senza utility di Bootstrap fisse */
+.btn-desktop-toggle {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-mobile-toggle {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+}
+
+/*fine css di prova per catalogue*/
 
 .page_content {
     background-color: transparent; 
@@ -477,26 +554,26 @@ span.navbar-text {
     margin-left: 0.10rem;
 }
 
-#filter_toggle{
-    /*display: inline-flex;*/
+
+#desktop_filter_toggle{
     background-color:#1a1a1a;
     border-radius: 0px 8px 8px 0px;
 }
 
-#filter_toggle span {
+#desktop_filter_toggle span {
   vertical-align: middle;
   color:#F4F1EA; 
 }
 
-#filter_toggle:hover{
+#desktop_filter_toggle:hover{
     cursor: pointer;
     background-color: #707070;
     transition: all 0.5s ease;
 }
 
-#filter_toggle:not(.collapsed) #arrow_forward_ios {
+/*#desktop_filter_toggle:not(.collapsed) #arrow_forward_ios {
     transform: rotate(180deg);
-}
+}*/
 
 #filter_area, #cards_area {
   transition: all 0.3s ease-in-out;
@@ -524,9 +601,15 @@ span.navbar-text {
     transition: width 1s linear, opacity 0.5s linear, margin-left 1s linear;
 }
 
+.btn-mobile-toggle {
+    background-color: #F2A900;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
 
 
-#cards_area .card img {
+
+.row_catalogue .card img {
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
