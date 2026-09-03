@@ -251,7 +251,7 @@ filter: grayscale(1) brightness(60%);
     padding: 12px 18px 12px 18px; 
 }
 
-.navbar-text, .nav-link {
+.navbar-text, .nav-link, #menu_icon {
     color: #33FF33;
     font-size: clamp(15px, 1.1vw + 12px, 40px); /*non ho usato vh o vw per le dimensioni limite e per la proporzione usata nel valore centrale per evitare che il browser calcolasse dimensioni con la virgola e facesse saltare l'effetto pixellato del font*/
 }
@@ -385,48 +385,119 @@ span.navbar-text {
     background-color: #33FF33;
 }
 
-#filter_toggle{
-    background-color:#1a1a1a;
-    border-radius: 0px 8px 8px 0px;
+/* Comportamento della sidebar SOLO su Desktop */
+@media (min-width: 768px) {
+    .filter-sidebar {
+        /* Larghezza desiderata del menu a comparsa */
+        width: 25%;
+        /* Transizione fluida su larghezza per l'effetto push */
+        transition: width 0.3s ease-in-out;
+        overflow-x: hidden;
+        flex-shrink: 0;
+    }
+
+    /* Stato chiuso di default */
+    .filter-sidebar.collapsed-desktop {
+        width: 0;
+    }
+
+    /* Manteniamo il contenuto interno a larghezza fissa altrimenti 
+       durante l'animazione gli elementi andranno a capo rompendosi */
+    .filter-content-wrapper {
+        width: 300px;
+        padding: 1rem;
+    }
+
+    /* Animazione rotazione icona freccia */
+    .btn-desktop-toggle #arrow_forward_ios {
+        transition: transform 0.3s ease;
+    }
+
+    .btn-desktop-toggle.is-open #arrow_forward_ios {
+        transform: rotate(180deg);
+    }
 }
 
-#filter_toggle span {
-  vertical-align: middle;
-  color:#F4F1EA; 
+/* Comportamento Mobile */
+@media (max-width: 767.98px) {
+    /* Assicuriamoci che l'offcanvas mobile abbia il padding corretto */
+    .filter-content-wrapper {
+        width: 100%;
+        padding: 0;
+    }
+}/* Comportamento della sidebar SOLO su Desktop */
+@media (min-width: 768px) {
+    .filter-sidebar {
+        /* Larghezza desiderata del menu a comparsa */
+        width: 25%;
+        /* Transizione fluida su larghezza per l'effetto push */
+        transition: width 0.3s ease-in-out;
+        overflow-x: hidden;
+        flex-shrink: 0;
+    }
+
+    /* Stato chiuso di default */
+    .filter-sidebar.collapsed-desktop {
+        width: 0;
+    }
+
+    /* Manteniamo il contenuto interno a larghezza fissa altrimenti 
+       durante l'animazione gli elementi andranno a capo rompendosi */
+    .filter-content-wrapper {
+        width: 300px;
+        padding: 1rem;
+    }
+
+    .btn-desktop-toggle #arrow_forward_ios {
+        color:#33FF33;
+        transition: transform 0.3s ease;
+    }
+
+    .btn-desktop-toggle #filter_list {
+        color: #33FF33;
+    }
+
+    /* Animazione rotazione icona freccia */
+    .btn-desktop-toggle.is-open #arrow_forward_ios {
+        transform: rotate(180deg);
+    }
 }
 
-#filter_toggle:hover{
-    cursor: pointer;
-    background-color: #707070;
-    transition: all 0.5s ease;
+/* Comportamento Mobile */
+@media (max-width: 767.98px) {
+    /* Assicuriamoci che l'offcanvas mobile abbia il padding corretto */
+    .filter-content-wrapper {
+        width: 100%;
+        padding: 0;
+    }
 }
 
-#filter_toggle:not(.collapsed) #arrow_forward_ios {
-    transform: rotate(180deg);
+.filter-content-wrapper .form-label {
+    font-family: "VT323", Courier, monospace;
+    color: #33FF33;
 }
 
-#filter_area, #cards_area {
-  transition: all 0.3s ease-in-out;
+.row_catalogue .card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
 }
 
-#filter_list {
-    transition: 0.3s;
-}
-
-#cards_area .card {
+.row_catalogue .card {
     background-color: #030a03;
     border-radius: 0px !important; 
     border-color: #33FF33 !important;
     overflow: hidden;
 }
 
-#cards_area .card h5{
+.row_catalogue .card h5{
     font-family: "VT323", Courier, monospace;
     color:#030a03;
     background-color: #33FF33;
 }
 
-#cards_area .card p{
+.row_catalogue .card p{
     font-family: "VT323", Courier, monospace;
     color:#33FF33;
 }
