@@ -514,7 +514,7 @@ footer a.nav-link, footer h2{
     font-size: 50pt;
 }
 
-.bookmarks li{
+/*.bookmarks li{
     padding-bottom: 10px;
 }
 
@@ -544,13 +544,79 @@ footer a.nav-link, footer h2{
 }
 
 .card.w-25 {
-    max-height: 300px; /* Adjust this value as needed */
+    max-height: 300px; 
     display: flex;
     flex-direction: column;
 }
 
 .card-body p{
     font-size: 1rem;
+}*/
+/* Scorrimento fluido quando l'utente clicca su un link ancora */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fissa la barra laterale durante lo scorrimento (Effetto Wikipedia) */
+ 
+/* --- MENU LATERALE / INDICE WIKIPEDIA --- */
+
+/* 1. Stile base per il menù (valido per tutti, anche mobile) */
+.bookmarks ol {
+    background-color: #70707023;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* 2. Regola magica: lo Sticky si attiva SOLO dai 768px in su */
+@media (min-width: 768px) {
+    .bookmarks {
+        position: sticky; 
+        top: 2rem; 
+        height: max-content; 
+    }
+
+    /* Aggiungiamo lo scroll interno al menù solo su schermi grandi, 
+       su mobile è meglio che il menù si allunghi normalmente */
+    .bookmarks ol {
+        max-height: 80vh; 
+        overflow-y: auto; 
+    }
+}
+
+/*styling delle immagini all'interno del testo*/
+
+/* --- IMMAGINI STILE WIKIPEDIA (FLUIDE E RESPONSIVE) --- */
+
+.wiki-img-right, .wiki-img-left {
+    /* Su schermi molto piccoli (mobile) occupano tutta la larghezza per non schiacciare il testo */
+    width: 100%; 
+    margin-bottom: 1.5rem;
+}
+
+/* Assicuriamoci che l'immagine interna non sbordi mai dal contenitore */
+.wiki-img-right img, .wiki-img-left img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Dai tablet in su (schermi medi e grandi) */
+@media (min-width: 768px) {
+    .wiki-img-right {
+        float: right;
+        margin-left: 1.5rem;
+        /* Al posto di un valore fisso, usiamo una percentuale! */
+        /* Ora l'immagine occuperà sempre il 35% dello spazio disponibile nel testo */
+        width: 35%; 
+    }
+    
+    .wiki-img-left {
+        float: left;
+        margin-right: 1.5rem;
+        /* Anche qui, 35% dello spazio testuale */
+        width: 35%; 
+    }
 }
 
 /*----------------------------FINE CSS ABOUT NOUVELLE VAGUE-------------------*/
