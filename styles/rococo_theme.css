@@ -1,0 +1,569 @@
+h1, h2, h3{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.catchphrase h1 span{
+    font-family: "Pinyon Script", cursive;
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: 0.15em;
+    color: #A87C43 !important;
+}
+
+h1 span{
+    color: #A87C43 !important;
+}
+
+p{ 
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body{
+    background-color: #FAD1D1 !important;
+}
+
+/*HERO IMAGE*/
+.hero-img {
+    width:100%;
+    height:60vh;
+    background: url('../img/breathless-hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    /*background-attachment: fixed;*/ /*per mantenere l'immagine fissa durante lo scroll, ma ho deciso di rimuoverlo per evitare problemi di visualizzazione della hero image*/
+}
+
+.catchphrase h1{
+    color:#D4EFE2 !important;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.751) !important;
+}
+
+/*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/
+@media (max-width: 520px) {
+    .hero-img{
+        height: 30vh !important;
+        background-position: 20% center !important;
+    }
+}
+
+@media (min-width:521px) and (max-width: 768px) {
+    .hero-img {
+        background-position: 50% center !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-img{
+        height: 40vh;
+        background-position: 35% center;
+    }
+
+}
+
+@media (min-width:769px) and (max-width: 942px){
+    .hero-img {
+        background-position: 70% center !important; 
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+    header#prova {
+        background-position: 60% center; 
+    }
+}
+
+@media (min-width: 1312px){
+    .space-maker{
+        height: 85% ;
+    }
+}
+
+hr{
+    color:#A87C43 !important;
+    border-top:2px solid currentColor !important;
+    opacity: 1 !important;
+}
+
+.paper-card {
+    /*background-color:rgba(255, 0, 60, 0.32);*/
+    background-color: #D4EFE2;
+    color:#1A1A1A;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.068);
+    background-image:
+        url(../img/rococo-ornament-left.png),
+        url(../img/rococo-ornament-right.png);
+    background-position: top left, top right;
+    background-size: 10% auto, 10% auto;
+    background-repeat: no-repeat, no-repeat;
+    border: 2px solid #A87C43;
+}
+
+@media (min-width: 1400px){
+    .paper-card {
+        background-size: 60px auto, 60px auto;
+        background-position: left 0 top 10px, right 0 top 10px;
+    }
+}
+
+@media (max-width: 767px), (min-width: 1199px) and (max-width: 1399px){
+    .paper-card {
+        background-image: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .paper-card {
+        background-size: 50px auto, 50px auto;
+        background-position: left 60px top 0px, right 60px top 0px;
+    }
+}
+
+.paper-card h3{
+    color: #A87C43; 
+}
+
+.bi-chevron-down {
+    position: absolute !important;
+    top: 0.3rem;
+    right: 0.75rem; 
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.75rem) !important;
+    color: #A87C43 !important;
+    margin: 0;
+    -webkit-text-stroke: 1px currentColor;
+}
+
+a[aria-expanded="true"] i {
+    transform: rotate(180deg);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+a[aria-expanded="false"] i {
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 767px) and (max-width: 928px){
+    .pretty-catch{
+        display: block !important;
+    }
+}
+@media (min-width: 1312px){
+    .pretty-big-catch{
+        display: none !important;
+    }
+}
+
+@media (min-width: 796px){
+    .pretty-title{
+        display: none;
+    }
+}
+@media (max-width: 795px){
+    .pretty-title{
+        display: block;
+    }
+}
+
+/*FINE HERO IMAGE*/
+
+
+/*PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
+
+.card-title{
+    color: #faf1ea!important;
+}
+
+/*per lo zoom delle card*/
+.zoom-card .img-fluid{
+    transition: transform .75s ease;
+}
+
+/* 2. Quando l'utente passa il mouse sulla CARD, l'immagine si ingrandisce del 10% (scale 1.1) */
+.zoom-card:hover .img-fluid {
+    transform: scale(1.1);
+}
+
+.zoom-card:hover .card-title{
+    color: #A87C43 !important;
+    transition: transform 1.5s ease;
+}
+
+.zoom-card:hover .responsive-title-sm{
+    font-weight: 800;
+}
+
+.responsive-title {
+    font-size: clamp(1.5rem, 1.2rem + 2vw, 2.25rem);
+}
+
+.responsive-title-sm{
+    font-size: clamp(0.75rem, 0.8rem + 1.5vw, 2rem) !important;
+}
+
+/*FINE PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
+
+/*Per le immagini delle carte esplora*/
+.explore-card{
+    filter: grayscale(1) brightness(100%);
+}
+
+.zoom-card:hover .explore-card{
+    filter: grayscale(1) brightness(60%);
+}
+
+
+/*--------------------FINE CSS HOMEPAGE---------------------*/
+
+/*--------------------INIZIO CSS TOUR---------------------*/
+
+
+/*GOOGLE FONTS & ICONS*/
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+/*HERO IMAGE*/
+.background-image {
+    width:100%;
+    height:50vh;
+    background: url('../img/saint_sulpiere.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+/*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/          
+
+@media (max-width: 992px) {
+    header#prova{
+        height: 40vh;
+        background-position: left bottom !important;
+    }
+    .catchphrase{
+        font-size: 2.7rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    header#prova{
+        height: 30vh;
+        background-position: left bottom !important;
+    }
+}
+
+
+@media (max-width: 577px) {
+    .catchphrase{
+        font-size: 2rem !important;
+    }
+    header > .row{
+        height: 60% !important;
+    }        
+}
+
+/*FINE HERO IMAGE*/
+
+.tour-container button{
+    border-radius: 50px !important;
+}
+
+
+/*PILLS*/
+.pill{
+    color:#A87C43;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    background-color:#D4EFE2;
+    font-size: clamp(0.8rem, 1.3vw, 1.2rem);
+    border: #A87C43 1px solid;
+}
+
+.pill .material-symbols-outlined{
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+/*PARAGRAPHS*/
+.paragraph{
+    display: none !important;
+}
+
+.paragraph h1{
+    color: #A87C43 !important;
+}
+
+.active{
+    display: block !important;
+    animation: fade 1s ease forwards;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+button:disabled {
+    pointer-events: auto !important;
+    cursor: not-allowed !important;
+}
+
+/*PROGRESS BAR*/
+.progress-bar {
+    background-color: #A87C43 !important;
+}
+
+/*BACK TO FIRST BUTTON*/
+#backToFirst {
+    color: #F4F1FA !important;
+    background-color:#A87C43 !important;
+    border:#A87C43 1px solid !important;
+}
+
+#backToFirst:hover {
+    color: #A87C43 !important;
+    background-color:#D4EFE2 !important;
+    border:#A87C43 1px solid !important;
+}
+
+/*THEME*/
+.theme{
+    height: auto;
+}
+
+.closeTheme, .openTheme{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.closeTheme span{ 
+    font-size: 2.5rem;
+    border:#A87C43 2px solid;
+    border-radius: 100%;
+    color: #A87C43;
+}
+
+.openTheme span{
+    font-size: 2.5rem;
+    color: #A87C43;
+}
+
+.openTheme{
+    display: none;
+    border:#A87C43 2px solid;
+    border-radius: 50px;
+}
+
+.blur-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    z-index: -1;
+    border-radius: 50px;
+}
+
+/*--------------------FINE CSS TOUR---------------------*/
+
+
+/*--------------------INIZIO CSS ABOUT NOUVELLE VAGUE---------------------*/
+
+#about_NV_bg_image {
+    background-image: url(../img/generic_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40vh;
+}
+
+#about_NV_bg_image h1 {
+    font-family: "Playfair", serif;
+    font-size: 50pt;
+}
+
+#about_NV_text_content {
+    font-size: 16pt;
+    font-weight: 300;
+}
+
+#about_NV_text_content b{
+    font-weight: 600;
+    color: #A87C43;
+}
+
+/*--------------------FINE CSS ABOUT NOUVELLE VAGUE---------------------*/
+
+/*--------------------INIZIO CSS CATALOGUE---------------------*/
+
+
+.page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
+    background-color:#FAD1D1; 
+}
+
+/*
+.leaflet-container a.dropdown-item {
+      color: #1a1a1a;
+      text-decoration: none;
+}
+
+
+.leaflet-container a.dropdown-item:hover,
+.leaflet-container a.dropdown-item:focus {
+    background-color:#a87c43 !important;
+    color: #1a1a1a;
+    text-decoration: underline;
+}
+*/
+
+#filters_menu {
+    background-color: #D4EFE2;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#filters_menu .card.card-body {
+    background-color: transparent;
+    border: none;
+}
+
+#catalogue_page_title h1 {
+    font-family: "Playfair", serif;
+    font-size: 48pt;
+    color:#a87c43;
+}
+
+#catalogue_page_title h2 {
+    font-size: 18pt;
+    color:#a87c43;
+}
+
+.breadcrumbs, #catalogue_page_title {
+    /*background-color:#1b1b1b10;*/
+    background-color: #d4efe29d;
+}
+
+#catalogue_page_title{
+    border-bottom: 2px solid #A87C43;
+}
+
+.card_link{
+    text-decoration: none;
+    color: #a87c43 !important;
+    
+}
+
+#filter_toggle{
+    /*display: inline-flex;*/
+    background-color:#D4EFE2;
+    border-radius: 0px 8px 8px 0px;
+    
+}
+
+#filter_toggle span {
+  vertical-align: middle;
+  color:#a87c43; 
+}
+
+#filter_toggle:hover{
+    cursor: pointer;
+    background-color: #707070;
+    transition: all 0.5s ease;
+}
+
+#filter_toggle:not(.collapsed) #arrow_forward_ios {
+    transform: rotate(180deg);
+}
+
+#filter_area, #cards_area {
+  transition: all 0.3s ease-in-out;
+}
+
+#filter_area h2{
+    color:#A87C43;
+}
+
+#filter_list {
+    transition: 0.3s;
+}
+
+#cards_area .card{
+    background-color:#D4EFE2 !important;
+    border-radius: 4px !important;
+    overflow: hidden;
+}
+
+#cards_area .card-bodys{
+    border: 2px solid #A87C43;
+}
+
+#cards_area .card h5, #cards_area .card p{
+    color:#1A1A1A !important;
+}
+
+.card_arrow {
+    color: #a87c43 !important;
+    display: inline-block;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 1s linear, opacity 0.5s linear, margin-left 1s linear;
+}
+
+.card_link:hover .card_arrow {
+    width: auto; 
+    opacity: 1;
+    margin-left: 0.10rem;
+}
+
+#cards_area .card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.pagination button { 
+    padding: 8px 12px;
+    text-decoration: none;
+    border: 1px solid #a87c43;
+    color: #1a1a1a;  
+    margin: 0 4px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Only numeric buttons turn red */
+.pagination .page-num:hover, .pagination .page-num.active { 
+    background-color: #a87c43 !important;
+    color:#EDEAE2 !important;
+    transition: 0.5s ease;
+}
+
+/* Arrows stay neutral */
+.pagination .arrow:hover {
+    background: #a87c43 !important;
+    color:#edeae2 !important;
+}
+
+/*--------------------FINE CSS CATALOGUE---------------------*/
+
