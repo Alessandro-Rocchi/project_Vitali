@@ -401,10 +401,8 @@ span.navbar-text {
         width: 0;
     }
 
-    /* Manteniamo il contenuto interno a larghezza fissa altrimenti 
-       durante l'animazione gli elementi andranno a capo rompendosi */
     .filter-content-wrapper {
-        width: 300px;
+        width: 100%;
         padding: 1rem;
     }
 
@@ -415,37 +413,6 @@ span.navbar-text {
 
     .btn-desktop-toggle.is-open #arrow_forward_ios {
         transform: rotate(180deg);
-    }
-}
-
-/* Comportamento Mobile */
-@media (max-width: 767.98px) {
-    /* Assicuriamoci che l'offcanvas mobile abbia il padding corretto */
-    .filter-content-wrapper {
-        width: 100%;
-        padding: 0;
-    }
-}/* Comportamento della sidebar SOLO su Desktop */
-@media (min-width: 768px) {
-    .filter-sidebar {
-        /* Larghezza desiderata del menu a comparsa */
-        width: 25%;
-        /* Transizione fluida su larghezza per l'effetto push */
-        transition: width 0.3s ease-in-out;
-        overflow-x: hidden;
-        flex-shrink: 0;
-    }
-
-    /* Stato chiuso di default */
-    .filter-sidebar.collapsed-desktop {
-        width: 0;
-    }
-
-    /* Manteniamo il contenuto interno a larghezza fissa altrimenti 
-       durante l'animazione gli elementi andranno a capo rompendosi */
-    .filter-content-wrapper {
-        width: 300px;
-        padding: 1rem;
     }
 
     .btn-desktop-toggle #arrow_forward_ios {
@@ -470,7 +437,8 @@ span.navbar-text {
         width: 100%;
         padding: 0;
     }
-}
+}/* Comportamento della sidebar SOLO su Desktop */
+
 
 .filter-content-wrapper .form-label {
     font-family: "VT323", Courier, monospace;
