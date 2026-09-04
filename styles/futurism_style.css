@@ -292,6 +292,11 @@ span.navbar-text {
 
 
 /*BREADCRUMBS*/
+
+.breadcrumbs {
+    background-color: transparent;
+}
+
 .breadcrumbs a, .breadcrumbs p {
     font-family: "Space Mono", monospace;
     color: #707070;
@@ -421,7 +426,7 @@ span.navbar-text {
 }
 
 .breadcrumbs, #catalogue_page_title {
-    background-color: #EDEAE2;
+    background-color: transparent;
 }
 /*SEGUE CSS PER DARE EFFETTO "FUTURISMO" ALLE CARDS*/
 
