@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles/style.css">
+        <link id="stylesheet_file" rel="stylesheet" href="styles/style.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +13,21 @@
         <title>About Nouvelle Vague</title>
     </head>
     <body data-page="about_nouvelle_vague">
+
+        <div class="theme">
+            <div class="closeTheme"><span class="material-symbols-outlined p-1">palette</span></div>
+            <div class="openTheme">
+                <div class="blur-background"></div>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/mechanicum_theme.css">settings</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/solarpunk_theme.css">clear_day</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/nouvelle_vague_theme.css">videocam</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/eighties_theme.css">monitor</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/futurism_theme.css">flash_on</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/rococo_theme.css">spa</span>
+                <span class="material-symbols-outlined p-1 d-block btn-chiudi">palette</span>
+            </div>
+        </div>
+
         <!--navbar-->
         <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">

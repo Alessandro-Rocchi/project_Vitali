@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/style.css">
+        <link id="stylesheet_file" rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet.pinsearch/src/Leaflet.PinSearch.css" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
@@ -16,6 +16,21 @@
         <title>Map</title>
     </head>
     <body data-page="map">
+
+        <div class="theme">
+            <div class="closeTheme"><span class="material-symbols-outlined p-1">palette</span></div>
+            <div class="openTheme">
+                <div class="blur-background"></div>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/mechanicum_theme.css">settings</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/solarpunk_theme.css">clear_day</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/nouvelle_vague_theme.css">videocam</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/eighties_theme.css">monitor</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/futurism_theme.css">flash_on</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/rococo_theme.css">spa</span>
+                <span class="material-symbols-outlined p-1 d-block btn-chiudi">palette</span>
+            </div>
+        </div>
+
         <nav class="navbar navbar-expand-lg navbar-dark shadow-lg" style="background-color: #1a1a1a; border-color: #1a1a1a;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Logo</a>
