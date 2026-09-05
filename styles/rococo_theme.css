@@ -596,3 +596,38 @@ button:disabled {
 
 /*--------------------FINE CSS CATALOGUE---------------------*/
 
+/*--------------------INIZIO CSS MAP---------------------*/
+/* ==========================================================================
+   INIZIO CSS MAPPA (ROCOCÒ THEME)
+   ========================================================================== */
+
+#map {
+    height: 65vh;
+    min-height: 450px;
+    width: 95%;
+    margin: 1.5rem auto;
+    border: 2px solid #A87C43;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(168, 124, 67, 0.25);
+    background-color: #D4EFE2;
+    z-index: 1;
+}
+
+#head-info #title-sect {
+    font-family: "Playfair Display", serif;
+    color: #A87C43;
+    font-weight: 700;
+    margin: 1.5rem 0 1rem 0;
+}
+
+#info-panel {
+    background-color: #D4EFE2;
+    border: 2px solid #A87C43;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: #1A1A1A;
+}
+
+#info-panel #text-section {
+    color: #1A1A1A;
+}

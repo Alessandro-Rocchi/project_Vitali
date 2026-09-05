@@ -1,5 +1,6 @@
 const pages = {
     catalogue: () => {
+        
         const pg = document.getElementById('pagination');
         if (pg) {
             const nums = [...pg.querySelectorAll('.page-num')];

@@ -124,11 +124,19 @@ hr {
 .hero-img, .background-image, .about_bg_image, #about_NV_bg_image {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     position: relative;
-    border-bottom: 4px solid var(--accent-brass); /* Bordo in ottone */
+    height: 60vh; /* Altezza di base per desktop */
+    min-height: 400px;
+    border-bottom: 4px solid var(--accent-brass);
 }
 
-/* Filtro "Golden Hour": rende ogni immagine magica e solarpunk */
+/* Assegnazione dell'immagine di sfondo dall'interno di styles/ */
+.hero-img {
+    background-image: url('../img/breathless-hero.jpg');
+}
+
+/* Filtro "Golden Hour" */
 .hero-img::before, .background-image::before {
     content: '';
     position: absolute;
@@ -337,6 +345,33 @@ footer ul a:not(.pipe):hover {
 }
 
 /* --- MAP & CATALOGUE SPECIFICS --- */
+
+/* --- MAPPA LEAFLET SOLARPUNK --- */
+#map {
+    height: 65vh;
+    min-height: 450px;
+    width: 95%;
+    margin: 1.5rem auto;
+    border: 2px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    background-color: var(--bg-color);
+    z-index: 1; /* Rimane sotto la navbar */
+}
+
+#head-info #title-sect {
+    color: var(--primary);
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+#info-panel {
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--glass-shadow);
+}
+
 .card_link { color: var(--primary-bright); font-weight: bold; text-decoration: underline; text-decoration-color: transparent; transition: 0.3s;}
 .card_link:hover:not(.card_arrow){ 
     color: var(--secondary); 
