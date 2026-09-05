@@ -18,19 +18,18 @@ const pages = {
                     nums[nextIdx].classList.add('active');
                 }
             };
-
-            document.addEventListener("DOMContentLoaded", () => {
-                const desktopToggleBtn = document.getElementById("desktop_filter_toggle");
-                const filterSidebar = document.getElementById("filters_menu");
-
-                if (desktopToggleBtn && filterSidebar) {
-                    desktopToggleBtn.addEventListener("click", () => {
-                        filterSidebar.classList.toggle("collapsed-desktop");
-                        desktopToggleBtn.classList.toggle("is-open");
-                    });
-                }
-            });
         } 
+
+        const desktopToggleBtn = document.getElementById("desktop_filter_toggle");
+        const filterSidebar = document.getElementById("filters_menu");
+            
+        if (desktopToggleBtn && filterSidebar) {
+            desktopToggleBtn.addEventListener("click", () => {
+                filterSidebar.classList.toggle("collapsed-desktop");
+                desktopToggleBtn.classList.toggle("is-open");
+            });
+        }
+
     },
     tour: () => {
             // Selezioniamo gli elementi dal DOM
