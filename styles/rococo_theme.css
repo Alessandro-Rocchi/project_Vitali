@@ -468,51 +468,81 @@ button:disabled {
     
 }
 
-#filter_toggle{
+#desktop_filter_toggle{
     /*display: inline-flex;*/
     background-color:#D4EFE2;
     border-radius: 0px 8px 8px 0px;
     
 }
 
-#filter_toggle span {
+#desktop_filter_toggle span {
   vertical-align: middle;
   color:#a87c43; 
 }
 
-#filter_toggle:hover{
+#desktop_filter_toggle:hover{
     cursor: pointer;
     background-color: #707070;
     transition: all 0.5s ease;
 }
 
-#filter_toggle:not(.collapsed) #arrow_forward_ios {
-    transform: rotate(180deg);
+
+/* =========================================
+   STRUTTURA FILTRI CATALOGO (Necessaria per JS)
+   ========================================= */
+
+/* Comportamento della sidebar SOLO su Desktop */
+@media (min-width: 768px) {
+    .filter-sidebar {
+        /* Larghezza desiderata del menu a comparsa */
+        width: 25%;
+        /* Transizione fluida su larghezza per l'effetto push */
+        transition: width 0.3s ease-in-out;
+        overflow-x: hidden;
+        flex-shrink: 0;
+    }
+
+    /* Stato chiuso di default gestito da JS */
+    .filter-sidebar.collapsed-desktop {
+        width: 0;
+    }
+
+    .filter-content-wrapper {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* Animazione rotazione icona freccia */
+    .btn-desktop-toggle #arrow_forward_ios {
+        transition: transform 0.3s ease;
+    }
+
+    /* Classe aggiunta da JS per ruotare la freccia */
+    .btn-desktop-toggle.is-open #arrow_forward_ios {
+        transform: rotate(180deg);
+    }
 }
 
-#filter_area, #cards_area {
-  transition: all 0.3s ease-in-out;
+/* Comportamento Mobile */
+@media (max-width: 767.98px) {
+    /* Il padding corretto per l'Offcanvas nativo di Bootstrap */
+    .filter-content-wrapper {
+        width: 100%;
+        padding: 0;
+    }
 }
 
-#filter_area h2{
-    color:#A87C43;
-}
-
-#filter_list {
-    transition: 0.3s;
-}
-
-#cards_area .card{
+.row_catalogue .card{
     background-color:#D4EFE2 !important;
     border-radius: 4px !important;
     overflow: hidden;
 }
 
-#cards_area .card-bodys{
+.row_catalogue .card-bodys{ /*RISOLVERE*/
     border: 2px solid #A87C43;
 }
 
-#cards_area .card h5, #cards_area .card p{
+.row_catalogue .card h5, .row_catalogue .card p{
     color:#1A1A1A !important;
 }
 
@@ -532,7 +562,7 @@ button:disabled {
     margin-left: 0.10rem;
 }
 
-#cards_area .card img {
+.row_catalogue .card img {
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
@@ -552,7 +582,6 @@ button:disabled {
     justify-content: center;
 }
 
-/* Only numeric buttons turn red */
 .pagination .page-num:hover, .pagination .page-num.active { 
     background-color: #a87c43 !important;
     color:#EDEAE2 !important;

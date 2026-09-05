@@ -338,18 +338,73 @@ footer ul a:not(.pipe):hover {
 
 /* --- MAP & CATALOGUE SPECIFICS --- */
 .card_link { color: var(--primary-bright); font-weight: bold; text-decoration: underline; text-decoration-color: transparent; transition: 0.3s;}
-.card_link:hover { color: var(--secondary); text-decoration-color: var(--secondary); }
+.card_link:hover:not(.card_arrow){ 
+    color: var(--secondary); 
+    text-decoration-color: var(--secondary); 
+}
 .card_arrow { color: var(--accent-brass); }
 
-.filter_toggle { 
+.row_catalogue .card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+}
+
+.desktop_filter_toggle { 
     background-color: var(--glass-bg); 
     color: var(--primary); 
     border: 2px solid var(--primary-bright);
     box-shadow: var(--glow-green);
 }
-.filter_toggle:hover { 
+.desktop_filter_toggle:hover { 
     background-color: var(--primary-bright); 
     color: #ffffff; 
+}
+
+/* =========================================
+   STRUTTURA FILTRI CATALOGO (Necessaria per JS)
+   ========================================= */
+
+/* Comportamento della sidebar SOLO su Desktop */
+@media (min-width: 768px) {
+    .filter-sidebar {
+        /* Larghezza desiderata del menu a comparsa */
+        width: 25%;
+        /* Transizione fluida su larghezza per l'effetto push */
+        transition: width 0.3s ease-in-out;
+        overflow-x: hidden;
+        flex-shrink: 0;
+    }
+
+    /* Stato chiuso di default gestito da JS */
+    .filter-sidebar.collapsed-desktop {
+        width: 0;
+    }
+
+    .filter-content-wrapper {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* Animazione rotazione icona freccia */
+    .btn-desktop-toggle #arrow_forward_ios {
+        transition: transform 0.3s ease;
+    }
+
+    /* Classe aggiunta da JS per ruotare la freccia */
+    .btn-desktop-toggle.is-open #arrow_forward_ios {
+        transform: rotate(180deg);
+    }
+}
+
+/* Comportamento Mobile */
+@media (max-width: 767.98px) {
+    /* Il padding corretto per l'Offcanvas nativo di Bootstrap */
+    .filter-content-wrapper {
+        width: 100%;
+        padding: 0;
+    }
 }
 
 .custom-panel, .sub-panel-filter, .sub-panel-explore {
