@@ -187,6 +187,22 @@ hr {
 
 .bi-chevron-down {
     color: var(--mech-yellow) !important;
+    position: absolute !important;
+    top: 0.3rem;
+    right: 0.75rem; 
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.75rem) !important;
+    margin: 0;
+    -webkit-text-stroke: 1px currentColor;
+}
+
+a[aria-expanded="true"] i {
+    transform: rotate(180deg);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+a[aria-expanded="false"] i {
+    transition: transform 0.3s ease;
 }
 
 /* --- ZOOM CARDS & IMAGES (L'EFFETTO BRUCIATO) --- */
