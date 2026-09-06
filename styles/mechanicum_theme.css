@@ -133,8 +133,9 @@ hr {
     background-size: cover;
     background-position: center;
     position: relative;
-    height: 60vh; /* Altezza di base per schermi desktop */
+    height: 50vh; /* Altezza di base per schermi desktop */
     min-height: 400px;
+    max-height: 550px;
     border-bottom: 12px solid var(--void-black);
     filter: sepia(0.8) hue-rotate(-10deg) saturate(2) contrast(1.5) brightness(0.4); 
 }
@@ -608,7 +609,7 @@ footer ul a:not(.pipe):hover {
 @media (min-width: 767px) and (max-width: 928px) {
     .pretty-catch { display: block !important; }
 }
-@media (min-width: 1312px) {
+@media (min-width: 1408px) {
     .pretty-big-catch { display: none !important; }
 }
 @media (min-width: 796px) {

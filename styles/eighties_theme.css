@@ -130,7 +130,7 @@ a[aria-expanded="false"] i {
         display: block !important;
     }
 }
-@media (min-width: 1312px){
+@media (min-width: 1408px){
     .pretty-big-catch{
         display: none !important;
     }
