@@ -8,8 +8,6 @@ var initialData = null;
 var metadataJson = null;
 var routingControl = null;
 var activeSubpanel = null;
-
-// Stato dei filtri attivi
 var selectedDirector = "Tutti";
 var selectedYearRange = "Tutti";
 
@@ -25,7 +23,10 @@ async function init() {
 
     panelControl = L.control({ position: 'topleft' });
     filterPanel = L.control({ position: 'topleft' });
+    filterPanel.onAdd = createFilterPanelUI;
+
     explorePanel = L.control({ position: 'topleft' });
+    explorePanel.onAdd = createExplorePanelUI;
 
     searchBar = L.control.pinSearch({
         position: 'topleft',
@@ -83,7 +84,6 @@ async function init() {
         return matchingLayer;
     };
 
-    // Override del click sui risultati di PinSearch per aprire popup e mostrare dettagli
     searchBar._onSearchItemClick = function (query) {
         var input = this._container && this._container.querySelector('.search-input');
         if (input) {
@@ -172,9 +172,15 @@ function addGeoData(geojson) {
 }
 
 function removeControlPanel() {
-    if (searchBar) searchBar.remove();
-    if (filterPanel) filterPanel.remove();
-    if (explorePanel) explorePanel.remove();
+    if (searchBar && searchBar._map && searchBar._container) {
+        searchBar.remove();
+    }
+    if (filterPanel && filterPanel._map && filterPanel._container) {
+        filterPanel.remove();
+    }
+    if (explorePanel && explorePanel._map && explorePanel._container) {
+        explorePanel.remove();
+    }
     activeSubpanel = null;
 }
 
@@ -224,7 +230,6 @@ function handleSearch(query) {
         });
     }
 
-    // Se non trovato nel layer corrente a causa di un filtro attivo, ripristina tutti i marker
     if (!targetLayer && initialData && initialData.features) {
         var foundInAll = initialData.features.find(function(f) {
             return f.properties.name && f.properties.name.toLowerCase() === query.toLowerCase();
@@ -249,7 +254,7 @@ function handleSearch(query) {
     }
 }
 
-filterPanel.onAdd = function (map) {
+function createFilterPanelUI(map) {
     var registiSet = new Set();
     if (initialData && initialData.features) {
         initialData.features.forEach(function(element) {
@@ -293,13 +298,20 @@ filterPanel.onAdd = function (map) {
                         </div>
                     </div>`;
 
+    L.DomEvent.disableClickPropagation(div);
     L.DomEvent.disableScrollPropagation(div);
 
     div.addEventListener('click', function(e) {
         var dropdownToggle = e.target.closest('[data-bs-toggle="dropdown"]');
         if (dropdownToggle && window.bootstrap && bootstrap.Dropdown) {
+            var allToggles = div.querySelectorAll('[data-bs-toggle="dropdown"]');
+            allToggles.forEach(function(t) {
+                if (t !== dropdownToggle) {
+                    var otherDd = bootstrap.Dropdown.getInstance(t);
+                    if (otherDd) otherDd.hide();
+                }
+            });
             var dd = bootstrap.Dropdown.getOrCreateInstance(dropdownToggle);
-            dd.toggle();
         }
 
         var clickedDirector = e.target.closest('.filtro-regista');
@@ -309,6 +321,12 @@ filterPanel.onAdd = function (map) {
             var btnDir = document.getElementById('btn-filterdirector');
             if (btnDir) {
                 btnDir.innerText = (choosendirector === "Tutti") ? "Director" : choosendirector;
+            }
+            
+            var menu = clickedDirector.closest('.dropdown');
+            if (menu && window.bootstrap) {
+                var toggleBtn = menu.querySelector('[data-bs-toggle="dropdown"]');
+                if (toggleBtn) bootstrap.Dropdown.getOrCreateInstance(toggleBtn).hide();
             }
             Drawpoints(choosendirector);
             return;
@@ -321,6 +339,12 @@ filterPanel.onAdd = function (map) {
             var btnYear = document.getElementById('btn-filterYear');
             if (btnYear) {
                 btnYear.innerText = (choosenYear === "Tutti") ? "Year" : choosenYear;
+            }
+            // Chiudi manualmente il menu dropdown
+            var menu = clickedYear.closest('.dropdown');
+            if (menu && window.bootstrap) {
+                var toggleBtn = menu.querySelector('[data-bs-toggle="dropdown"]');
+                if (toggleBtn) bootstrap.Dropdown.getOrCreateInstance(toggleBtn).hide();
             }
             filterByYear(choosenYear);
             return;
@@ -509,14 +533,13 @@ function showLocationDetails(locationName) {
         text_info.textContent = 'Details not yet inserted into the database.';
     }
 
-    // Scroll verso la sezione informativa per una visualizzazione immediata dei dettagli
     var headInfo = document.getElementById('head-info');
     if (headInfo) {
         headInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 }
 
-explorePanel.onAdd = function (map) {
+function createExplorePanelUI(map) {
     var div = L.DomUtil.create('div', 'sub-panel-explore d-flex flex-column gap-2 bg-transparent border-0 p-0');
     
     div.innerHTML = `
