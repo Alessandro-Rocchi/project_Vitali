@@ -1314,6 +1314,10 @@ button:disabled {
 }
 
 /*FOOTER*/
+footer {
+    background-color: #131313;
+}
+
 footer .pipe{
     cursor: default;
 }
@@ -1322,14 +1326,14 @@ footer .pipe:hover {
     color: #F4F1FA;
 }
 
-footer ul a{
-    border: black 3px solid;
+footer .nav-link {
+    border-bottom: 3px solid transparent;
     font-size: 1.25rem;
 }
 
-footer ul a:not(.pipe):hover{
+footer .nav-link:not(.pipe):hover{
     color: #00A86B;
-    border-bottom: #00A86B 3px solid;
+    border-bottom:  3px solid #00A86B;
 }
 
 footer a.nav-link {

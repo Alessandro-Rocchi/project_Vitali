@@ -454,12 +454,12 @@ button:disabled {
     color:#a87c43;
 }
 
-.breadcrumbs, #catalogue_page_title {
-    /*background-color:#1b1b1b10;*/
-    background-color: #d4efe29d;
+.breadcrumbs {
+    background-color: transparent;
 }
 
 #catalogue_page_title{
+    background-color: #d4efe29d;
     border-bottom: 2px solid #A87C43;
 }
 

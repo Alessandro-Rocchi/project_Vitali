@@ -11,7 +11,7 @@ p{
 }
 
 body{
-    background-color: #F4F1EA !important;
+    background-color: #F4F1EA;
 }
 
 /*HERO IMAGE*/
@@ -134,7 +134,7 @@ a[aria-expanded="false"] i {
 /*PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
 
 .card-title{
-    color: #faf1ea !important;
+    color: #faf1ea;
 }
 
 /*per lo zoom delle card*/
@@ -181,9 +181,7 @@ a[aria-expanded="false"] i {
    color: #1a1a1a;
 }
 
-body {
-    background-color: #faf1ea;    
-}
+
 
 #map { height: 500px; }
 
@@ -237,7 +235,7 @@ span.navbar-text {
     cursor: default;
 }
 
-.navbar-toggler #navbar_menu_icon {
+span .navbar-toggler {
     color: #faf1ea;
     font-size: clamp(1rem, 5vw, 3rem);
 }
@@ -265,18 +263,22 @@ span.navbar-text {
 }
 
 /*FOOTER*/
+footer {
+   background-color: #1A1A1A;
+}
+
 .pipe{
     cursor: default;
 }
 
-footer ul a{
-    border: black 3px solid !important;
+footer .nav-link{
+    border-bottom: 3px solid transparent;
     font-size: 1.25rem !important;
 }
 
-footer ul a:not(.pipe):hover{
-    color: #A92325 !important;
-    border-bottom: #A92325 3px solid !important;
+footer .nav-link:not(.pipe):hover{
+    color: #A92325;
+    border-bottom: #A92325 3px solid;
 }
 
 footer a.nav-link, footer h2{
@@ -449,20 +451,23 @@ footer a.nav-link, footer h2{
 
 
 /*ABOUT*/
-.about_card h1{
+.about_card h2{
     font-family: "Playfair", serif;
-    font-size: clamp();
-}
-
-.about_card:hover h1{
+    font-size: clamp(2rem, 4vw + 1.25rem, 3.5rem);
+    line-height: 1.2;
     color: #A92325;
 }
+
 
 /* 1. The container stays exactly the same size */
 .about_card {
   overflow: hidden; /* This is the "window" that stays still */
   display: block;   /* Ensures the anchor tag respects dimensions */
   position: relative;
+}
+
+.about_card:hover h2{
+    color: #fb404f;
 }
 
 /* 2. The image transition */
@@ -483,50 +488,6 @@ footer a.nav-link, footer h2{
   transform: none; 
 }
 
-/* TAG OBSOLETO - FARE CHECK SU PAGINE ABOUT PRIMA DI ELIMINARE
-#about_NV {
-    background-image: url(../img/generic_bg.png);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-position: center;
-    background-size: 100%;
-    transition: background-size 1s ease;
-}*/
-
-/* TAG OBSOLETO - FARE CHECK SU PAGINE ABOUT PRIMA DI ELIMINARE
-#about_our_team {
-    background-image: url(../img/generic_bg.png);
-    height: 300pt;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    background-position: center;
-    background-size: 100%;
-    transition: background-size 1s ease;
-
-}*/
-/*TAG OBSOLETO - FARE CHECK SU PAGINE ABOUT PRIMA DI ELIMINARE
-#about_our_team, #about_NV {
-    text-decoration: none ;
-    color:#1a1a1a
-}*/
-/*TAG OBSOLETO - FARE CHECK SU PAGINE ABOUT PRIMA DI ELIMINARE
-#about_our_team:hover h2, #about_NV:hover h2 {
-    transition: 0.5s ease;
-    color: #A92325;
-}
-
-#about_our_team:hover, #about_NV:hover {
-  background-size: 110%; 
-}
-
-#about_our_team h2, #about_NV h2 {
-    margin: 0;   
-    font-family: "Playfair", serif;
-    font-size: 40pt;
-    font-weight: 600;
-}*/
 
 .about_bg_image {
     background-image: url(../img/generic_bg.png);
@@ -536,11 +497,6 @@ footer a.nav-link, footer h2{
     height: 30vw;
 }
 
-.about_bg_image h1 {
-    font-family: "Playfair", serif;
-    font-size: clamp(2rem, 4vw + 1.25rem, 3.5rem);
-    line-height: 1.2;
-}
 
 
 /*ABOUT NOUVELLE VAGUE*/
@@ -743,63 +699,3 @@ footer a.nav-link, footer h2{
                 border-radius: 50px;
             }
 
-            /*FOOTER*/
-            .pipe{
-                cursor: default;
-            }
-
-            footer ul a{
-                border: black 3px solid !important;
-                font-size: 1.25rem !important;
-            }
-
-            ul a:not(.pipe):hover{
-                color: #A92325 !important;
-                border-bottom: #A92325 3px solid !important;
-            }
-
-            footer a.nav-link, footer h2{
-                color: #F4F1FA !important;
-            }
-
-
-            /*RESPONSIVE FOOTER*/
-            @media (max-width: 992px) {
-                .pipe-license{
-                    display: none !important;
-                }
-              
-            }
-
-            @media (max-width:440px){
-                .pipe-contacts{
-                    opacity: 0 !important;
-                }
-
-            }
-
-            @media (min-width: 1199px) and (max-width: 1282px){
-                .logo-footer{
-                    flex: 0 0 auto !important;
-                    width: 100% !important;
-                }
-
-                .links-footer{
-                    flex: 0 0 auto !important;
-                    width: 100% !important;
-                    padding-top: 1rem !important;
-                    padding-bottom: 1rem !important;
-                }
-
-                .links-footer .row ul{
-                    justify-content: center !important;
-                }
-
-                .logo-footer .logo-img.justify-content-center{
-                    justify-content: center !important;
-                }
-
-                .logo-footer .logo-text.text-center{
-                    text-align: center !important;
-                }
-            }
