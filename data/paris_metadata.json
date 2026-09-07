@@ -6,7 +6,7 @@
     "simple_description": "The private chapel of the Sorbonne University in Paris.",
     "medium_description": "A historic Parisian chapel completed in 1642 at the request of Cardinal Richelieu. It represents an important example of French Baroque architecture in the heart of the Latin Quarter.",
     "detailed_description": "The Chapelle de la Sorbonne is a masterpiece of French Baroque architecture, designed by the architect Jacques Lemercier and completed in 1642. It was commissioned by Cardinal Richelieu, whose remains still rest today in the mausoleum within the nave. The structure is distinguished by its elegant dome, which was one of the first of its kind to be built in Paris, and is one of the intellectual symbols of the city.",
-    "img_url": "img/img_movie/capelleDeLaSorbonneModern.png"
+    "image_url": "img/img_movie/capelleDeLaSorbonneModern.png"
   },
   {
     "name": "Chiesa di Saint Suplice",
@@ -15,7 +15,7 @@
     "simple_description": "A large and historic Catholic church in the Odéon district.",
     "medium_description": "The second largest church in Paris after Notre-Dame, with construction beginning in 1646. It is famous for its imposing twin-tower facade and the astronomical gnomon located inside.",
     "detailed_description": "The Église Saint-Sulpice is a vast religious building located in the 6th arrondissement of Paris, whose construction origins date back to 1646, although it took over a century and a half to complete. It is famous for its imposing asymmetrical facade designed by Jean-Nicolas Servandoni and for the magnificent frescoes by Eugène Delacroix. The church also houses an important astronomical meridian (the gnomon of Saint-Sulpice) and a monumental Cavaillé-Coll organ, among the finest in France.",
-    "img_url": "img/img_movie/saintSupliceModern.png"
+    "image_url": "img/img_movie/saintSupliceModern.png"
   },
   {
     "name": "Pont des Arts",
@@ -39,8 +39,7 @@
     "associated_movie": "A Bout De Soufflé",
     "simple_description": "Historic Gothic cathedral on the Île de la Cité.",
     "medium_description": "Notre-Dame de Paris is a majestic cathedral completed in 1345, a masterpiece of Gothic architecture. It is known worldwide for its gargoyles, rose windows, and flying buttresses.",
-    "detailed_description": "Notre-Dame de Paris is the spiritual and geographical heart of Paris, located on the Île de la Cité. Built over roughly two centuries and completed in 1345, it defined the canons of Gothic architecture with its pioneering introduction of flying buttresses and rib vaults. Its priceless artistic heritage includes sculptures, medieval stained glass windows, and sacred relics. Having survived revolutions and wars, it continues to be an immortal symbol of French culture and resilience.",
-    "img_url": "img/img_movie/notreDameModern.jpg"
+    "detailed_description": "Notre-Dame de Paris is the spiritual and geographical heart of Paris, located on the Île de la Cité. Built over roughly two centuries and completed in 1345, it defined the canons of Gothic architecture with its pioneering introduction of flying buttresses and rib vaults. Its priceless artistic heritage includes sculptures, medieval stained glass windows, and sacred relics. Having survived revolutions and wars, it continues to be an immortal symbol of French culture and resilience."
   },
   {
     "name": "Les Rives de Notre Dame, quai St Michel, Paris",
@@ -144,7 +143,8 @@
     "associated_movie": "Les 400 coups",
     "simple_description": "An address located along the famous Grands Boulevards of Paris.",
     "medium_description": "Located on the famous Boulevard Montmartre, in the vibrant heart of Paris, this address is close to the famous Passage Jouffroy. The area is historically known for its theaters and cafés.",
-    "detailed_description": "The address at number 12 Boulevard Montmartre is part of the string of 'Grands Boulevards' in Paris, arteries born from the demolition of the old city walls. The 19th century saw this boulevard flourish as a center of high society and theatrical entertainment. In the immediate vicinity of number 12 are the entrances to the evocative Parisian covered passages, such as Passage Jouffroy, veritable arcades that enclose the soul of 19th-century French commerce."
+    "detailed_description": "The address at number 12 Boulevard Montmartre is part of the string of 'Grands Boulevards' in Paris, arteries born from the demolition of the old city walls. The 19th century saw this boulevard flourish as a center of high society and theatrical entertainment. In the immediate vicinity of number 12 are the entrances to the evocative Parisian covered passages, such as Passage Jouffroy, veritable arcades that enclose the soul of 19th-century French commerce.",
+    "image_url": "img/img_movie/montMatreModern.png"
   },
   {
     "name": "Rue Puget 2",
@@ -152,7 +152,8 @@
     "associated_movie": "Les 400 coups",
     "simple_description": "A small street nestled in the Montmartre district.",
     "medium_description": "Located in the artistic 18th arrondissement, Rue Puget is a short street that reflects the classic bohemian charm of the Montmartre hill, adjacent to the famous eponymous cemetery.",
-    "detailed_description": "Number 2 Rue Puget is situated on a quiet, short street in the 18th arrondissement of Paris, right in the atmosphere of Montmartre. The street runs tightly against the protective walls of the famous Montmartre Cemetery, where countless French intellectual figures rest. Despite its secluded position away from the main tourist routes, the surrounding architecture perfectly reflects the residential character and the romantic, slightly decadent appearance typical of the Belle Époque."
+    "detailed_description": "Number 2 Rue Puget is situated on a quiet, short street in the 18th arrondissement of Paris, right in the atmosphere of Montmartre. The street runs tightly against the protective walls of the famous Montmartre Cemetery, where countless French intellectual figures rest. Despite its secluded position away from the main tourist routes, the surrounding architecture perfectly reflects the residential character and the romantic, slightly decadent appearance typical of the Belle Époque.",
+    "image_url": "img/img_movie/ruePugetModern.png"
   },
   {
     "name": "Rue Lepic 3",
@@ -160,7 +161,8 @@
     "associated_movie": "Les 400 coups",
     "simple_description": "A historic address on the famous winding street of Montmartre.",
     "medium_description": "At the beginning of Rue Lepic, a short walk from the Moulin Rouge, this address paves the way to the top of Montmartre. The street is known for its historic cafés and for having hosted great artists.",
-    "detailed_description": "Number 3 Rue Lepic marks the beginning of one of the most iconic and ancient streets in the Montmartre district, originally traced out in 1852 by Emperor Napoleon III to facilitate the ascent up the hill. Starting from Boulevard de Clichy, the address introduces pedestrians to the lively uphill path. Giants of art such as Vincent van Gogh have lived along Rue Lepic, making the entire artery a true open-air scenography, perfect for cinema."
+    "detailed_description": "Number 3 Rue Lepic marks the beginning of one of the most iconic and ancient streets in the Montmartre district, originally traced out in 1852 by Emperor Napoleon III to facilitate the ascent up the hill. Starting from Boulevard de Clichy, the address introduces pedestrians to the lively uphill path. Giants of art such as Vincent van Gogh have lived along Rue Lepic, making the entire artery a true open-air scenography, perfect for cinema.",
+    "image_url": "img/img_movie/rueLepicModern.jpg"
   },
   {
     "name": "Square d'Estienne d'Orves",
@@ -168,7 +170,8 @@
     "associated_movie": "Les 400 coups",
     "simple_description": "A scenic square in front of the Trinité Church.",
     "medium_description": "Formerly known as Square de la Trinité, it is a green space designed by architect Adolphe Alphand. It offers a magnificent perspective of the imposing Église de la Sainte-Trinité.",
-    "detailed_description": "The Square d'Estienne d'Orves is a charming tree-lined square located in the 9th arrondissement of Paris. It was created in 1866 as part of the great Haussmannian works to serve as an elegant frame for the adjacent Church of the Sainte-Trinité. Later renowned to honor the name of a hero of the French Resistance, the square is a refined urban hub featuring allegorical fountains surrounded by carefully modeled flower beds."
+    "detailed_description": "The Square d'Estienne d'Orves is a charming tree-lined square located in the 9th arrondissement of Paris. It was created in 1866 as part of the great Haussmannian works to serve as an elegant frame for the adjacent Church of the Sainte-Trinité. Later renowned to honor the name of a hero of the French Resistance, the square is a refined urban hub featuring allegorical fountains surrounded by carefully modeled flower beds.",
+    "image_url": "img/img_movie/estienneOrvesModern.png"
   },
   {
     "name": "Sacré-Cœur in Montmartre.",
@@ -176,7 +179,8 @@
     "associated_movie": "Les 400 coups",
     "simple_description": "A magnificent white basilica at the top of the Montmartre hill.",
     "medium_description": "Built between the late 19th century and 1914, the Basilica of the Sacred Heart is the highest point in Paris. Its Romano-Byzantine architecture offers a spectacular view over the entire city.",
-    "detailed_description": "The Sacré-Cœur Basilica is a grand Catholic place of worship that dominates the city from the summit of the Montmartre butte. Construction began in 1875 and the structure was completed in 1914. It is characterized by its luminous limestone, known for cleaning itself with rain, and by an eclectic style that combines Romanesque and Byzantine influences. From its monumental parvise, one can admire one of the most extraordinary and vast panoramas of the entire French capital."
+    "detailed_description": "The Sacré-Cœur Basilica is a grand Catholic place of worship that dominates the city from the summit of the Montmartre butte. Construction began in 1875 and the structure was completed in 1914. It is characterized by its luminous limestone, known for cleaning itself with rain, and by an eclectic style that combines Romanesque and Byzantine influences. From its monumental parvise, one can admire one of the most extraordinary and vast panoramas of the entire French capital.",
+    "image_url": "img/img_movie/sacreCoeurModern.png"
   },
   {
     "name": "Champs Elysées (60 avenue des Champs Elysées)",
@@ -184,7 +188,8 @@
     "associated_movie": "Les 400 coups",
     "simple_description": "An address on the most famous avenue in the world in Paris.",
     "medium_description": "At number 60 of the famous Avenue des Champs-Élysées, you are in the beating heart of Parisian luxury. The avenue extends from Place de la Concorde to the imposing Arc de Triomphe.",
-    "detailed_description": "Number 60 Avenue des Champs-Élysées is located along the majestic perspective axis that defines the triumph of Parisian urban planning. Originally traced out by André Le Nôtre in 1670, the avenue took its final shape in the 18th century, becoming the symbol of national grandeur. Hosting haute couture boutiques, historic automobile showrooms, restaurants, and luxury cafés, this stretch of the avenue embodies the undisputed prestige of the city, lending itself to countless cinematic shots."
+    "detailed_description": "Number 60 Avenue des Champs-Élysées is located along the majestic perspective axis that defines the triumph of Parisian urban planning. Originally traced out by André Le Nôtre in 1670, the avenue took its final shape in the 18th century, becoming the symbol of national grandeur. Hosting haute couture boutiques, historic automobile showrooms, restaurants, and luxury cafés, this stretch of the avenue embodies the undisputed prestige of the city, lending itself to countless cinematic shots.",
+    "image_url": "img/img_movie/champsElyseesModern.jpg"
   },
   {
     "name": "Palais de Chaillot",
@@ -208,7 +213,8 @@
     "associated_movie": "Cléo de 5 à 7",
     "simple_description": "A historic intellectual café in the Montparnasse district.",
     "medium_description": "Opened in 1898, Le Dôme was the first true gathering place for intellectuals in Montparnasse. Artists and writers who frequented it were nicknamed 'Dômiers'.",
-    "detailed_description": "The Café du Dôme is a true Parisian cultural institution inaugurated in 1898 at the corner of Boulevard du Montparnasse and Boulevard Raspail. At the beginning of the 20th century, it became the nerve center of intellectual life on the Rive Gauche, attracting prominent international painters, sculptors, poets, and writers of the Anglo-American and Eastern European scenes. Today, it still perfectly preserves its status as a legend of the golden age of French bohemian and cinematic art."
+    "detailed_description": "The Café du Dôme is a true Parisian cultural institution inaugurated in 1898 at the corner of Boulevard du Montparnasse and Boulevard Raspail. At the beginning of the 20th century, it became the nerve center of intellectual life on the Rive Gauche, attracting prominent international painters, sculptors, poets, and writers of the Anglo-American and Eastern European scenes. Today, it still perfectly preserves its status as a legend of the golden age of French bohemian and cinematic art.",
+    "image_url": "img/img_movie/cafeDuDomeModern.png"
   },
   {
     "name": "Parc Montsouris",
@@ -216,6 +222,7 @@
     "associated_movie": "Cléo de 5 à 7",
     "simple_description": "A large and peaceful English-style public park in the south of Paris.",
     "medium_description": "Designed by Adolphe Alphand at the request of Napoleon III in 1869, Parc Montsouris covers 15 hectares. It is known for its large artificial lake, waterfalls, and rich vegetation.",
-    "detailed_description": "Parc Montsouris is one of the four large urban parks commissioned by Emperor Napoleon III to offer green oxygen zones to the capital, officially opened in 1869. Located in the 14th arrondissement near the Cité Universitaire, it was designed by the brilliant engineer Jean-Charles Adolphe Alphand in a typical English landscape style, transforming an area of abandoned quarries. It is dominated by a vast central artificial lake that makes it a serene oasis as much appreciated by students as by filmmakers."
+    "detailed_description": "Parc Montsouris is one of the four large urban parks commissioned by Emperor Napoleon III to offer green oxygen zones to the capital, officially opened in 1869. Located in the 14th arrondissement near the Cité Universitaire, it was designed by the brilliant engineer Jean-Charles Adolphe Alphand in a typical English landscape style, transforming an area of abandoned quarries. It is dominated by a vast central artificial lake that makes it a serene oasis as much appreciated by students as by filmmakers.",
+    "image_url": "img/img_movie/parcMontsourisModer.png"
   }
 ]
