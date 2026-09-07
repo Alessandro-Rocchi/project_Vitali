@@ -39,7 +39,8 @@
     "associated_movie": "A Bout De Soufflé",
     "simple_description": "Historic Gothic cathedral on the Île de la Cité.",
     "medium_description": "Notre-Dame de Paris is a majestic cathedral completed in 1345, a masterpiece of Gothic architecture. It is known worldwide for its gargoyles, rose windows, and flying buttresses.",
-    "detailed_description": "Notre-Dame de Paris is the spiritual and geographical heart of Paris, located on the Île de la Cité. Built over roughly two centuries and completed in 1345, it defined the canons of Gothic architecture with its pioneering introduction of flying buttresses and rib vaults. Its priceless artistic heritage includes sculptures, medieval stained glass windows, and sacred relics. Having survived revolutions and wars, it continues to be an immortal symbol of French culture and resilience."
+    "detailed_description": "Notre-Dame de Paris is the spiritual and geographical heart of Paris, located on the Île de la Cité. Built over roughly two centuries and completed in 1345, it defined the canons of Gothic architecture with its pioneering introduction of flying buttresses and rib vaults. Its priceless artistic heritage includes sculptures, medieval stained glass windows, and sacred relics. Having survived revolutions and wars, it continues to be an immortal symbol of French culture and resilience.",
+    "image_url": "img/img_movie/notreDameModern.jpg"
   },
   {
     "name": "Les Rives de Notre Dame, quai St Michel, Paris",
