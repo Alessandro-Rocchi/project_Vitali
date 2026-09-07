@@ -32,6 +32,38 @@ async function init() {
     addGeoData(map, await loadGeoData(map));
     metadataJson = await loadJson();
 
+    searchBar._populateMarkerLabels = function () {
+        this.markerLabels = [];
+
+        if (!currentLayer) {
+            return;
+        }
+
+        currentLayer.eachLayer(function (layer) {
+            var name = layer.feature && layer.feature.properties && layer.feature.properties.name;
+            if (name && !this.markerLabels.includes(name)) {
+                this.markerLabels.push(name);
+            }
+        }, this);
+    };
+
+    searchBar._findMarkerByTitle = function (title) {
+        var matchingLayer = null;
+
+        if (!currentLayer) {
+            return matchingLayer;
+        }
+
+        currentLayer.eachLayer(function (layer) {
+            var name = layer.feature && layer.feature.properties && layer.feature.properties.name;
+            if (name === title) {
+                matchingLayer = layer;
+            }
+        });
+
+        return matchingLayer;
+    };
+
     panelControl.onAdd = function (map) {
         var div = L.DomUtil.create('div', 'custom-panel');
         div.innerHTML =`<div class="d-flex gap-2 align-items-center bg-transparent"> 
