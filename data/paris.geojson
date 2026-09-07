@@ -59,7 +59,8 @@
         "label": "Notre-Dame Cathedral, Paris, France",
         "director": "Jean-Luc Godard",
         "movie": "Breathless",
-        "production_year": "1960"
+        "production_year": "1960",
+        "poster_url": "img/img_movie/notreDameOld.png"
       },
       "bbox": [2.3499, 48.8529, 2.3499, 48.8529]
     },
@@ -215,7 +216,8 @@
         "label": "12 Boulevard Montmartre, Paris, France",
         "director": "François Truffaut",
         "movie": "The 400 Blows",
-        "production_year": "1959"
+        "production_year": "1959",
+        "poster_url": "img/img_movie/montMatreOld.jpg"
       },
       "bbox": [2.3422, 48.8719, 2.3422, 48.8719]
     },
@@ -227,7 +229,8 @@
         "label": "2 Rue Puget, Paris, France",
         "director": "François Truffaut",
         "movie": "The 400 Blows",
-        "production_year": "1959"
+        "production_year": "1959",
+        "poster_url": "img/img_movie/ruePugetOld.jpg"
       },
       "bbox": [2.3303, 48.8836, 2.3303, 48.8836]
     },
@@ -239,7 +242,8 @@
         "label": "3 Rue Lepic, Paris, France",
         "director": "François Truffaut",
         "movie": "The 400 Blows",
-        "production_year": "1959"
+        "production_year": "1959",
+        "poster_url": "img/img_movie/rueLepicOld.jpg"
       },
       "bbox": [2.3328, 48.8837, 2.3328, 48.8837]
     },
@@ -251,7 +255,8 @@
         "label": "Square d'Estienne d'Orves, Paris, France",
         "director": "François Truffaut",
         "movie": "The 400 Blows",
-        "production_year": "1959"
+        "production_year": "1959",
+        "poster_url": "img/img_movie/estienneOrvesOld.jpg"
       },
       "bbox": [2.3317, 48.8770, 2.3317, 48.8770]
     },
@@ -263,7 +268,8 @@
         "label": "Sacré-Cœur, Montmartre, Paris, France",
         "director": "François Truffaut",
         "movie": "The 400 Blows",
-        "production_year": "1959"
+        "production_year": "1959",
+        "poster_url": "img/img_movie/sacreCoeurOld.jpg"
       },
       "bbox": [2.3431, 48.8867, 2.3431, 48.8867]
     },
@@ -275,7 +281,8 @@
         "label": "60 Avenue des Champs-Élysées, Paris, France",
         "director": "François Truffaut",
         "movie": "The 400 Blows",
-        "production_year": "1959"
+        "production_year": "1959",
+        "poster_url": "img/img_movie/champsElyseesOld.jpg"
       },
       "bbox": [2.3060, 48.8705, 2.3060, 48.8705]
     },
@@ -311,7 +318,8 @@
         "label": "Café du Dôme - 108 Bd du Montparnasse, Paris, France",
         "director": "Agnès Varda",
         "movie": "Cléo from 5 to 7",
-        "production_year": "1962"
+        "production_year": "1962",
+        "poster_url": "img/img_movie/cafeDuDomeOld.png"
       },
       "bbox": [2.3289, 48.8425, 2.3289, 48.8425]
     },
@@ -323,7 +331,8 @@
         "label": "Parc Montsouris, Paris, France",
         "director": "Agnès Varda",
         "movie": "Cléo from 5 to 7",
-        "production_year": "1962"
+        "production_year": "1962",
+        "poster_url": "img/img_movie/parcMontsourisOld.png"
       },
       "bbox": [2.3380, 48.8225, 2.3380, 48.8225]
     }
