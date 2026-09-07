@@ -133,8 +133,9 @@ hr {
     background-size: cover;
     background-position: center;
     position: relative;
-    height: 60vh; /* Altezza di base per schermi desktop */
+    height: 50vh; /* Altezza di base per schermi desktop */
     min-height: 400px;
+    max-height: 550px;
     border-bottom: 12px solid var(--void-black);
     filter: sepia(0.8) hue-rotate(-10deg) saturate(2) contrast(1.5) brightness(0.4); 
 }
@@ -186,6 +187,22 @@ hr {
 
 .bi-chevron-down {
     color: var(--mech-yellow) !important;
+    position: absolute !important;
+    top: 0.3rem;
+    right: 0.75rem; 
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.75rem) !important;
+    margin: 0;
+    -webkit-text-stroke: 1px currentColor;
+}
+
+a[aria-expanded="true"] i {
+    transform: rotate(180deg);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+a[aria-expanded="false"] i {
+    transition: transform 0.3s ease;
 }
 
 /* --- ZOOM CARDS & IMAGES (L'EFFETTO BRUCIATO) --- */
@@ -608,7 +625,7 @@ footer ul a:not(.pipe):hover {
 @media (min-width: 767px) and (max-width: 928px) {
     .pretty-catch { display: block !important; }
 }
-@media (min-width: 1312px) {
+@media (min-width: 1408px) {
     .pretty-big-catch { display: none !important; }
 }
 @media (min-width: 796px) {

@@ -35,6 +35,7 @@ body{
     background-position: center top;
     background-size: cover;
     /*background-attachment: fixed;*/ /*per mantenere l'immagine fissa durante lo scroll, ma ho deciso di rimuoverlo per evitare problemi di visualizzazione della hero image*/
+    max-height: 550px;
 }
 
 .catchphrase h1{
@@ -152,7 +153,7 @@ a[aria-expanded="false"] i {
         display: block !important;
     }
 }
-@media (min-width: 1312px){
+@media (min-width: 1408px){
     .pretty-big-catch{
         display: none !important;
     }
