@@ -103,6 +103,17 @@ hr{
 
 /*CARDS IN HOME PAGE SOTTO LA HERO IMAGE*/
 
+.paper-card a{
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    color: #74181a;
+}
+
+.paper-card a:hover {
+    text-decoration: underline;
+}
+
 .paper-card:nth-child(1), .paper-card:nth-child(3) {
     background-color: #d32f2f;
     color:#1A1A1A;
@@ -199,18 +210,20 @@ a[aria-expanded="false"] i {
     box-shadow: 8px 8px 0px #F2A900;
     transition: 0.5s ease;
 }
+
+.inspo .zoom-card:hover {
+    box-shadow: 8px 8px 0px #00A86B;
+    transition: 0.5s ease;
+}
+
 .zoom-card:hover .img-fluid {
     transform: scale(1.1);
 }
 
 .zoom-card:hover .card-title{
-    color: #001e43;
     transition: 0.5s ease;
 }
-
-/*.zoom-card:hover .responsive-title-sm{   ho commentato perché l'aumentare del font weight in hover in certi casi fa saltare le parole alla riga sotto in maniera poco bella
-    font-weight: 500;
-}*/ 
+ 
 
 .responsive-title {
     font-size: clamp(1.5rem, 1.2rem + 2vw, 2.25rem);
@@ -231,6 +244,8 @@ a[aria-expanded="false"] i {
     filter: grayscale(1) brightness(100%);
     transition: transform 0.3s ease-in-out; 
 }
+
+
 
 
 
@@ -935,19 +950,19 @@ button:disabled {
 
 .closeTheme span{ 
     font-size: 2.5rem;
-    border:#A92325 2px solid;
+    border:#00A86B 2px solid;
     border-radius: 100%;
-    color: #A92325;
+    color: #00A86B;
 }
 
 .openTheme span{
     font-size: 2.5rem;
-    color: #A92325;
+    color: #00A86B;
 }
 
 .openTheme{
     display: none;
-    border:#A92325 2px solid;
+    border: #00A86B 2px solid;
     border-radius: 50px;
 }
 
@@ -1099,50 +1114,6 @@ button:disabled {
     transition: all 0.3s ease;
 }
 
-/*THEME*/
-.theme{
-    height: auto;
-}
-
-.closeTheme, .openTheme{
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    z-index: 1000;
-    cursor: pointer;
-}
-
-.closeTheme span{ 
-    font-size: 2.5rem;
-    border:#A92325 2px solid;
-    border-radius: 100%;
-    color: #A92325;
-}
-
-.openTheme span{
-    font-size: 2.5rem;
-    color: #A92325;
-}
-
-.openTheme{
-    display: none;
-    border:#A92325 2px solid;
-    border-radius: 50px;
-}
-
-.blur-background{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    z-index: -1;
-    border-radius: 50px;
-}/*------------------INIZIO CSS TOUR-------------------------*/
-
-/*set a background color to the body*/
 
 
 /*GOOGLE FONTS & ICONS*/
@@ -1268,49 +1239,6 @@ button:disabled {
 #backToFirst:hover span{
     color: #A92325 !important;
     transition: all 0.3s ease;
-}
-
-/*THEME*/
-.theme{
-    height: auto;
-}
-
-.closeTheme, .openTheme{
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    z-index: 1000;
-    cursor: pointer;
-}
-
-.closeTheme span{ 
-    font-size: 2.5rem;
-    border:#A92325 2px solid;
-    border-radius: 100%;
-    color: #A92325;
-}
-
-.openTheme span{
-    font-size: 2.5rem;
-    color: #A92325;
-}
-
-.openTheme{
-    display: none;
-    border:#A92325 2px solid;
-    border-radius: 50px;
-}
-
-.blur-background{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    z-index: -1;
-    border-radius: 50px;
 }
 
 /*FOOTER*/

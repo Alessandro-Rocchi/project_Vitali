@@ -185,6 +185,15 @@ hr {
     box-shadow: 0 0 25px rgba(217, 74, 30, 0.3); /* Alone fuoco */
 }
 
+.paper-card a{
+    color:#d94a1e;
+    text-decoration: none;
+}
+
+.paper-card a:hover{
+    text-decoration: underline;
+}
+
 .bi-chevron-down {
     color: var(--mech-yellow) !important;
     position: absolute !important;
@@ -343,21 +352,6 @@ button {
     transform: scale(1.1);
     box-shadow: 0 0 15px var(--mech-yellow);
 }
-
-/* --- THEME TOGGLE WIDGET --- */
-.closeTheme span, .openTheme {
-    border: 3px solid var(--void-black);
-    border-radius: 0 !important; 
-    color: var(--void-black);
-    background: var(--mech-yellow);
-    box-shadow: 4px 4px 0 var(--toxic-green);
-    transition: all 0.2s ease-out;
-}
-.openTheme:hover {
-    background: var(--furnace-fire);
-    transform: scale(1.1);
-}
-.openTheme span { color: var(--void-black); }
 
 /* --- FOOTER --- */
 footer {
@@ -711,22 +705,38 @@ button:disabled {
     right: 1rem;
     z-index: 1000;
     cursor: pointer;
-    /* Adattiamo le icone al tema brutalista */
+}
+
+/* 1. STILE BOTTONE CHIUSO (Tondo) */
+.closeTheme span {
+    font-size: 2.5rem; /* Dimensione corretta */
+    display: block;
+    
+    /* Colori e bordi Brutalisti */
+    background: var(--void-black);
+    border: 4px solid var(--iron-plate);
+    box-shadow: 6px 6px 0 var(--blood-rust);
+    color: var(--text-bone);
+}
+
+/* 2. STILE MENU APERTO (A pillola) */
+.openTheme {
+    display: none;
+    
+    /* Colori e bordi Brutalisti */
     background: var(--void-black);
     border: 4px solid var(--iron-plate);
     box-shadow: 6px 6px 0 var(--blood-rust);
 }
 
-.closeTheme:hover, .openTheme:hover {
+/* 3. EFFETTO HOVER BRUTALISTA (Spostamento meccanico e cambio colore) */
+.closeTheme:hover span, .openTheme:hover {
     background: var(--mech-yellow);
     transform: translate(4px, 4px);
     box-shadow: 0px 0px 0 #000;
 }
 
-.openTheme {
-    display: none;
-}
-
+/* 4. BLUR BACKGROUND PER IL MENU APERTO */
 .blur-background {
     position: absolute;
     top: 0;
@@ -738,16 +748,18 @@ button:disabled {
     z-index: -1;
 }
 
-/* Fix per i bottoni con icona del tema */
-.openTheme span, .closeTheme span {
+/* 5. STILE DELLE ICONE NEL MENU APERTO */
+.openTheme span {
+    font-size: 2.5rem; /* Dimensione corretta */
     color: var(--text-bone);
     display: block;
     padding: 5px;
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
-.openTheme span:hover, .closeTheme span:hover {
+/* 6. CAMBIO COLORE ICONE AL PASSAGGIO DEL MOUSE */
+.openTheme span:hover, .closeTheme:hover span {
     color: var(--void-black) !important;
 }
