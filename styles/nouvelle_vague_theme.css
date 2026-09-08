@@ -458,6 +458,45 @@ footer a.nav-link, footer h2{
     object-position: center;
 }
 
+.pagination button { 
+    padding: 8px 12px;
+    text-decoration: none;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;  
+    background-color: transparent;
+    margin: 0 4px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination .page-num:hover, .pagination .page-num.active { 
+    background-color: #A92325;
+    color: #EDEAE2 !important;
+    transition: 0.5s ease;
+}
+
+.pagination .arrow:hover {
+    background: #1a1a1a;
+    color: #edeae2 !important;
+}
+
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.pagination .page-ellipsis {
+    padding: 8px 6px;
+    color: #1a1a1a;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
 
 
 /*ABOUT*/

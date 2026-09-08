@@ -419,6 +419,45 @@ footer ul a:not(.pipe):hover {
     object-position: center;
 }
 
+.pagination button { 
+    padding: 8px 12px;
+    text-decoration: none;
+    border: 1px solid var(--primary-bright, #4caf50);
+    color: var(--primary, #2e7d32);  
+    background-color: transparent;
+    margin: 0 4px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination .page-num:hover, .pagination .page-num.active { 
+    background-color: var(--primary-bright, #4caf50);
+    color: #ffffff !important;
+    transition: 0.3s ease;
+}
+
+.pagination .arrow:hover {
+    background: var(--accent-brass, #ffd54f);
+    color: #1a1a1a !important;
+}
+
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.pagination .page-ellipsis {
+    padding: 8px 6px;
+    color: var(--primary, #2e7d32);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
 .desktop_filter_toggle { 
     background-color: var(--glass-bg); 
     color: var(--primary); 

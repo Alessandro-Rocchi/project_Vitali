@@ -1,26 +1,6 @@
 const pages = {
     catalogue: () => {
         
-        const pg = document.getElementById('pagination');
-        if (pg) {
-            const nums = [...pg.querySelectorAll('.page-num')];
-
-            pg.onclick = (e) => {
-                const btn = e.target.closest('button');
-                if (!btn) return;
-
-                const active = pg.querySelector('.active');
-                const nextIdx = btn.classList.contains('arrow') 
-                    ? nums.indexOf(active) + +btn.dataset.dir 
-                    : nums.indexOf(btn);
-
-                if (nums[nextIdx]) {
-                    active.classList.remove('active');
-                    nums[nextIdx].classList.add('active');
-                }
-            };
-        } 
-
         const desktopToggleBtn = document.getElementById("desktop_filter_toggle");
         const filterSidebar = document.getElementById("filters_menu");
             
@@ -31,9 +11,39 @@ const pages = {
             });
         }
 
+        const paginationContainer = document.getElementById('pagination');
+        if (paginationContainer) {
+            paginationContainer.addEventListener('click', (e) => {
+                const btn = e.target.closest('button');
+                if (!btn || btn.disabled) return;
+
+                const totalPages = Math.ceil(catalogueState.allLocations.length / catalogueState.itemsPerPage) || 1;
+                let targetPage = catalogueState.currentPage;
+
+                if (btn.classList.contains('arrow')) {
+                    const dir = parseInt(btn.dataset.dir, 10);
+                    targetPage += dir;
+                } else if (btn.dataset.page) {
+                    targetPage = parseInt(btn.dataset.page, 10);
+                }
+
+                if (targetPage >= 1 && targetPage <= totalPages && targetPage !== catalogueState.currentPage) {
+                    displayCataloguePage(targetPage);
+
+                    const titleOrCards = document.getElementById('catalogue_page_title') || document.getElementById('cardSection');
+                    if (titleOrCards) {
+                        titleOrCards.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        }
+
         loadJson().then(locations => {
             if (locations && locations.length > 0) {
-                renderCatalogueCards(locations);
+                catalogueState.allLocations = locations;
+                displayCataloguePage(1);
+            } else {
+                renderCatalogueCards([]);
             }
         });
     },
@@ -133,11 +143,133 @@ function loadJson() {
         });
 }
 
+const catalogueState = {
+    allLocations: [],
+    currentPage: 1,
+    itemsPerPage: 10
+};
+
+function displayCataloguePage(page) {
+    const totalItems = catalogueState.allLocations.length;
+    const totalPages = Math.ceil(totalItems / catalogueState.itemsPerPage) || 1;
+
+    if (page < 1) page = 1;
+    if (page > totalPages) page = totalPages;
+    catalogueState.currentPage = page;
+
+    const startIndex = (page - 1) * catalogueState.itemsPerPage;
+    const endIndex = Math.min(startIndex + catalogueState.itemsPerPage, totalItems);
+    const pageLocations = catalogueState.allLocations.slice(startIndex, endIndex);
+
+    renderCatalogueCards(pageLocations);
+
+    const countTitle = document.querySelector("#catalogue_page_title h2");
+    if (countTitle) {
+        if (totalItems === 0) {
+            countTitle.textContent = "0 luoghi mostrati";
+        } else {
+            countTitle.textContent = `${totalItems} luoghi mostrati (Pagina ${page} di ${totalPages})`;
+        }
+    }
+
+    renderPagination(totalPages, page);
+}
+
+function getPaginationRange(current, total) {
+    if (total <= 7) {
+        return Array.from({ length: total }, (_, i) => i + 1);
+    }
+
+    const pages = [];
+    const showLeftEllipsis = current > 4;
+    const showRightEllipsis = current < total - 3;
+
+    if (!showLeftEllipsis && showRightEllipsis) {
+        for (let i = 1; i <= 5; i++) pages.push(i);
+        pages.push('...');
+        pages.push(total);
+    } else if (showLeftEllipsis && !showRightEllipsis) {
+        pages.push(1);
+        pages.push('...');
+        for (let i = total - 4; i <= total; i++) pages.push(i);
+    } else {
+        pages.push(1);
+        pages.push('...');
+        pages.push(current - 1);
+        pages.push(current);
+        pages.push(current + 1);
+        pages.push('...');
+        pages.push(total);
+    }
+    return pages;
+}
+
+function renderPagination(totalPages, currentPage) {
+    const paginationContainer = document.getElementById('pagination');
+    if (!paginationContainer) return;
+
+    paginationContainer.innerHTML = '';
+
+    if (totalPages < 1) return;
+
+    // Freccia precedente
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'arrow';
+    prevBtn.dataset.dir = '-1';
+    prevBtn.innerHTML = '&laquo;';
+    prevBtn.setAttribute('aria-label', 'Pagina precedente');
+    if (currentPage <= 1) {
+        prevBtn.disabled = true;
+    }
+    paginationContainer.appendChild(prevBtn);
+
+    // Numeri di pagina ed ellissi scalabili
+    const pageRange = getPaginationRange(currentPage, totalPages);
+    pageRange.forEach(item => {
+        if (item === '...') {
+            const ellipsis = document.createElement('span');
+            ellipsis.className = 'page-ellipsis';
+            ellipsis.textContent = '...';
+            paginationContainer.appendChild(ellipsis);
+        } else {
+            const pageBtn = document.createElement('button');
+            pageBtn.className = `page-num${item === currentPage ? ' active' : ''}`;
+            pageBtn.dataset.page = item;
+            pageBtn.textContent = item;
+            pageBtn.setAttribute('aria-label', `Pagina ${item}`);
+            if (item === currentPage) {
+                pageBtn.setAttribute('aria-current', 'page');
+            }
+            paginationContainer.appendChild(pageBtn);
+        }
+    });
+
+    // Freccia successiva
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'arrow';
+    nextBtn.dataset.dir = '1';
+    nextBtn.innerHTML = '&raquo;';
+    nextBtn.setAttribute('aria-label', 'Pagina successiva');
+    if (currentPage >= totalPages) {
+        nextBtn.disabled = true;
+    }
+    paginationContainer.appendChild(nextBtn);
+}
+
 function renderCatalogueCards(locations) {
     const cardSection = document.getElementById("cardSection") || document.querySelector(".row_catalogue");
     if (!cardSection) return;
 
     cardSection.innerHTML = "";
+
+    if (!locations || locations.length === 0) {
+        cardSection.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <p class="lead">Nessun luogo disponibile.</p>
+            </div>
+        `;
+        return;
+    }
 
     locations.forEach(location => {
         const col = document.createElement("div");
@@ -159,11 +291,6 @@ function renderCatalogueCards(locations) {
         `;
         cardSection.appendChild(col);
     });
-
-    const countTitle = document.querySelector("#catalogue_page_title h2");
-    if (countTitle) {
-        countTitle.textContent = `${locations.length} luoghi mostrati`;
-    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {

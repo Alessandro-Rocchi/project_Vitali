@@ -487,6 +487,48 @@ footer ul a:not(.pipe):hover {
     object-position: center;
 }
 
+.pagination button { 
+    padding: 8px 12px;
+    text-decoration: none;
+    border: 2px solid var(--iron-plate);
+    color: var(--text-ash);  
+    background-color: var(--void-black);
+    margin: 0 4px;
+    border-radius: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Playfair Display", serif;
+}
+
+.pagination .page-num:hover, .pagination .page-num.active { 
+    background-color: var(--toxic-green);
+    color: var(--void-black) !important;
+    border-color: var(--toxic-green);
+    transition: 0.3s ease;
+}
+
+.pagination .arrow:hover {
+    background: var(--mech-yellow);
+    color: var(--void-black) !important;
+    border-color: var(--mech-yellow);
+}
+
+.pagination button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.pagination .page-ellipsis {
+    padding: 8px 6px;
+    color: var(--text-ash);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
 .desktop_filter_toggle { 
     background-color: var(--void-black); 
     color: var(--text-ash); 

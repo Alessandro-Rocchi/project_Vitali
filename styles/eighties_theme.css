@@ -507,6 +507,22 @@ span.navbar-text {
     color:#030a03 !important;
 }
 
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.pagination .page-ellipsis {
+    padding: 8px 6px;
+    color: #33FF33;
+    font-family: "VT323", Courier, monospace;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
 /*---------------FINE CSS CATALOGUE-------------------*/
 
 

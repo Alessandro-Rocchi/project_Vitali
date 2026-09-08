@@ -660,6 +660,21 @@ footer .nav-link:hover:not(.pipe) {
     color:#edeae2 !important;
 }
 
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.pagination .page-ellipsis {
+    padding: 8px 6px;
+    color: #1a1a1a;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
 /*--------------------FINE CSS CATALOGUE---------------------*/
 
 /*--------------------INIZIO CSS MAP---------------------*/
