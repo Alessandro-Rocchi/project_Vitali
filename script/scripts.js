@@ -31,6 +31,11 @@ const pages = {
             });
         }
 
+        loadJson().then(locations => {
+            if (locations && locations.length > 0) {
+                renderCatalogueCards(locations);
+            }
+        });
     },
     tour: () => {
             // Selezioniamo gli elementi dal DOM
@@ -114,8 +119,52 @@ const pages = {
     }
 };
 
+function loadJson() {
+    return fetch("data/paris_metadata.json")
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error("HTTP error " + response.status);
+            }
+            return response.json();
+        })
+        .catch(function(error) {
+            console.error("Fetch error metadata: ", error);
+            return [];
+        });
+}
 
+function renderCatalogueCards(locations) {
+    const cardSection = document.getElementById("cardSection") || document.querySelector(".row_catalogue");
+    if (!cardSection) return;
 
+    cardSection.innerHTML = "";
+
+    locations.forEach(location => {
+        const col = document.createElement("div");
+        col.className = "col-sm-12 col-md-6 col-lg-4 col-xl-3";
+
+        const imgUrl = location.image_url || "img/generic_bg.png";
+        const title = location.name || "Luogo";
+        const desc = location.simple_description || location.medium_description || "";
+
+        col.innerHTML = `
+            <div class="card border rounded h-100">
+                <img src="${imgUrl}" class="img-fluid" alt="${title}" onerror="this.onerror=null;this.src='img/generic_bg.png';">
+                <h5 class="ps-2 my-2 mx-1">${title}</h5>
+                <p class="ps-2 my-2 mx-1">${desc}</p>
+                <a href="map.html" class="card_link align-self-end mt-auto pe-2 my-2 mx-1 d-flex align-items-center">
+                    Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span>
+                </a>
+            </div>
+        `;
+        cardSection.appendChild(col);
+    });
+
+    const countTitle = document.querySelector("#catalogue_page_title h2");
+    if (countTitle) {
+        countTitle.textContent = `${locations.length} luoghi mostrati`;
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const currentPage = document.body.dataset.page;
