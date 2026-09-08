@@ -146,7 +146,7 @@ function loadJson() {
 const catalogueState = {
     allLocations: [],
     currentPage: 1,
-    itemsPerPage: 10
+    itemsPerPage: 9
 };
 
 function displayCataloguePage(page) {
@@ -163,12 +163,12 @@ function displayCataloguePage(page) {
 
     renderCatalogueCards(pageLocations);
 
-    const countTitle = document.querySelector("#catalogue_page_title h2");
-    if (countTitle) {
+    const catalogueTitle = document.querySelector("#catalogue_page_title h2");
+    if (catalogueTitle) {
         if (totalItems === 0) {
-            countTitle.textContent = "0 luoghi mostrati";
+            catalogueTitle.textContent = "0 locations shown";
         } else {
-            countTitle.textContent = `${totalItems} luoghi mostrati (Pagina ${page} di ${totalPages})`;
+            catalogueTitle.textContent = `${totalItems} locations shown (Page ${page} of ${totalPages})`;
         }
     }
 
@@ -217,13 +217,12 @@ function renderPagination(totalPages, currentPage) {
     prevBtn.className = 'arrow';
     prevBtn.dataset.dir = '-1';
     prevBtn.innerHTML = '&laquo;';
-    prevBtn.setAttribute('aria-label', 'Pagina precedente');
+    prevBtn.setAttribute('aria-label', 'Previous page');
     if (currentPage <= 1) {
         prevBtn.disabled = true;
     }
     paginationContainer.appendChild(prevBtn);
 
-    // Numeri di pagina ed ellissi scalabili
     const pageRange = getPaginationRange(currentPage, totalPages);
     pageRange.forEach(item => {
         if (item === '...') {
@@ -236,7 +235,7 @@ function renderPagination(totalPages, currentPage) {
             pageBtn.className = `page-num${item === currentPage ? ' active' : ''}`;
             pageBtn.dataset.page = item;
             pageBtn.textContent = item;
-            pageBtn.setAttribute('aria-label', `Pagina ${item}`);
+            pageBtn.setAttribute('aria-label', `Page ${item}`);
             if (item === currentPage) {
                 pageBtn.setAttribute('aria-current', 'page');
             }
@@ -249,7 +248,7 @@ function renderPagination(totalPages, currentPage) {
     nextBtn.className = 'arrow';
     nextBtn.dataset.dir = '1';
     nextBtn.innerHTML = '&raquo;';
-    nextBtn.setAttribute('aria-label', 'Pagina successiva');
+    nextBtn.setAttribute('aria-label', 'Next page');
     if (currentPage >= totalPages) {
         nextBtn.disabled = true;
     }
@@ -265,7 +264,8 @@ function renderCatalogueCards(locations) {
     if (!locations || locations.length === 0) {
         cardSection.innerHTML = `
             <div class="col-12 text-center py-5">
-                <p class="lead">Nessun luogo disponibile.</p>
+                <h3 class="mb-3">No locations available</h3>
+                <p class="lead">No locations are currently available for display.</p>
             </div>
         `;
         return;
@@ -273,10 +273,10 @@ function renderCatalogueCards(locations) {
 
     locations.forEach(location => {
         const col = document.createElement("div");
-        col.className = "col-sm-12 col-md-6 col-lg-4 col-xl-3";
+        col.className = "col-sm-12 col-md-6 col-lg-4 col-xl-4";
 
         const imgUrl = location.image_url || "img/generic_bg.png";
-        const title = location.name || "Luogo";
+        const title = location.name || "Location";
         const desc = location.simple_description || location.medium_description || "";
 
         col.innerHTML = `
@@ -285,7 +285,7 @@ function renderCatalogueCards(locations) {
                 <h5 class="ps-2 my-2 mx-1">${title}</h5>
                 <p class="ps-2 my-2 mx-1">${desc}</p>
                 <a href="map.html" class="card_link align-self-end mt-auto pe-2 my-2 mx-1 d-flex align-items-center">
-                    Vai alla mappa<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span>
+                    Go to the map<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span>
                 </a>
             </div>
         `;
