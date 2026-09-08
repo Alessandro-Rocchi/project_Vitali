@@ -26,6 +26,49 @@ body{
     background-color: #FAD1D1 !important;
 }
 
+/*NAVBAR*/
+
+.navbar {
+    background-color: #623e3e;
+}
+
+.navbar .navbar-text {
+    font-family: "Pinyon Script", cursive;
+    font-size: clamp(2rem, 2vw + 0.5rem, 3rem);
+    color: #f7c98d;
+}
+
+.navbar .nav-link {
+    font-size: clamp(0.75rem, 0.75vw + 0.75rem, 1.5rem);
+    padding-right: clamp(0.75rem, 2vw, 4rem);
+    padding-left: clamp(0.75rem, 2vw, 4rem);
+}
+
+.navbar .nav-link, .navbar .nav-link.active {
+    color: #fcdcb3;
+}
+
+.navbar .active {
+    border-bottom: 1px solid #fcdcb3;
+}
+
+.navbar .nav-link:not(.active) {
+    border-bottom: 1px solid transparent;
+}
+
+.navbar .nav-link:not(.active):hover {
+    border-bottom: 1px solid #fcdcb3;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler .material-symbols-outlined {
+    color: #fcdcb3;
+    font-size: clamp(1rem, 5vw, 3rem);
+}
+
 /*HERO IMAGE*/
 .hero-img {
     width:100%;
@@ -90,7 +133,6 @@ hr{
 }
 
 .paper-card {
-    /*background-color:rgba(255, 0, 60, 0.32);*/
     background-color: #D4EFE2;
     color:#1A1A1A;
     border-radius: 12px;
@@ -102,6 +144,15 @@ hr{
     background-size: 10% auto, 10% auto;
     background-repeat: no-repeat, no-repeat;
     border: 2px solid #A87C43;
+}
+
+.paper-card a {
+    color: #A87C43;
+    text-decoration: none;
+}
+
+.paper-card a:hover {
+    text-decoration: underline;
 }
 
 @media (min-width: 1400px){
@@ -153,7 +204,7 @@ a[aria-expanded="false"] i {
         display: block !important;
     }
 }
-@media (min-width: 1408px){
+@media (min-width: 1468px){
     .pretty-big-catch{
         display: none !important;
     }
@@ -417,21 +468,6 @@ button:disabled {
     background-color:#FAD1D1; 
 }
 
-/*
-.leaflet-container a.dropdown-item {
-      color: #1a1a1a;
-      text-decoration: none;
-}
-
-
-.leaflet-container a.dropdown-item:hover,
-.leaflet-container a.dropdown-item:focus {
-    background-color:#a87c43 !important;
-    color: #1a1a1a;
-    text-decoration: underline;
-}
-*/
-
 #filters_menu {
     background-color: #D4EFE2;
     border-radius: 5px;
@@ -456,6 +492,35 @@ button:disabled {
 
 .breadcrumbs {
     background-color: transparent;
+}
+
+footer {
+    background-color: #d4efe2;
+    color: #85673f;
+    border-top: 2px solid #a87c43;
+}
+
+footer h2 {
+    font-family: "Pinyon Script", cursive;
+}
+
+footer .nav-link {
+    color: #A87C43;
+    border-bottom: 3px solid transparent;
+    font-size: 1.25rem;
+}
+
+footer .pipe {
+    cursor: default;
+}
+
+footer .pipe:hover {
+    color: #A87C43;
+}
+
+footer .nav-link:hover:not(.pipe) {
+    border-bottom: 3px solid #A87C43;
+    color: #e2a759;
 }
 
 #catalogue_page_title{

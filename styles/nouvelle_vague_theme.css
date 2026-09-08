@@ -86,6 +86,16 @@ hr{
     box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.068);
 }
 
+.paper-card a{
+    color:#A92325;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.paper-card a:hover{
+    text-decoration: underline;
+}
+
 .bi-chevron-down {
     position: absolute !important;
     top: 0.3rem;

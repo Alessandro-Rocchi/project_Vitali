@@ -3,6 +3,7 @@ h1, h2, h3{
     font-size: clamp(15px, 1.1vw + 12px, 40px); /*non ho usato vh o vw per le dimensioni limite e per la proporzione usata nel valore centrale per evitare che il browser calcolasse dimensioni con la virgola e facesse saltare l'effetto pixellato del font*/
     font-optical-sizing: auto;
     font-style: normal;
+    color: #33FF33;
 }
 
 p{ 
@@ -21,14 +22,6 @@ body {
 .hero-img {
     display: none;
 }    
-
-h1 span{
-    font-family: "VT323", Courier, monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: clamp(15px, 1.1vw + 12px, 40px); /*non ho usato vh o vw per le dimensioni limite e per la proporzione usata nel valore centrale per evitare che il browser calcolasse dimensioni con la virgola e facesse saltare l'effetto pixellato del font*/
-
-}
 
 .catchphrase h1 {
     font-family: "VT323", Courier, monospace;
@@ -52,8 +45,7 @@ h1 span{
 
 @media (max-width: 992px) {
     .hero-img{
-        height: 40vh;
-        background-position: 35% center;
+        display: none;
     }
 
 }
@@ -91,17 +83,27 @@ hr{
    font-family: "VT323", Courier, monospace;
    text-decoration: none;
 }
-.paper-card a::before {
-    content: "["; 
+.paper-card h3::before {
+    content: "[ "; 
     color: #33FF33;
 }
 
-.paper-card a::after {
-    content: "]"; 
+.paper-card h3::after {
+    content: " ]"; 
     color: #33FF33;
 }
 .paper-card h3 {
     text-transform: capitalize;
+}
+
+.paper-card a{
+    background-color: #33FF33;
+    color:#030a03;
+}
+
+.paper-card a:hover{
+    background-color: #030a03;
+    color:#33FF33;
 }
 
 .bi-chevron-down {
@@ -187,14 +189,6 @@ filter: grayscale(1) brightness(60%);
 
 .zoom-card:hover .responsive-title-sm{
     font-weight: 800;
-}
-
-.responsive-title {
-    font-size: clamp(1.5rem, 1.2rem + 2vw, 2.25rem);
-}
-
-.responsive-title-sm{
-    font-size: clamp(0.75rem, 0.8rem + 1.5vw, 2rem) !important;
 }
 
 /*FINE PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
@@ -307,8 +301,8 @@ span.navbar-text {
     content: " ]";
 }
 
-.navbar-toggler #navbar_menu_icon {
-    color: #faf1ea;
+.navbar-toggler .material-symbols-outlined {
+    color: #33FF33;
     font-size: clamp(1rem, 5vw, 3rem);
 }
 
@@ -765,48 +759,6 @@ span.navbar-text {
                 border:#A92325 1px solid !important;
             }
 
-            /*THEME*/
-            .theme{
-                height: auto;
-            }
-
-            .closeTheme, .openTheme{
-                position: fixed;
-                bottom: 1rem;
-                right: 1rem;
-                z-index: 1000;
-                cursor: pointer;
-            }
-
-            .closeTheme span{ 
-                font-size: 2.5rem;
-                border:#A92325 2px solid;
-                border-radius: 100%;
-                color: #A92325;
-            }
-
-            .openTheme span{
-                font-size: 2.5rem;
-                color: #A92325;
-            }
-
-            .openTheme{
-                display: none;
-                border:#A92325 2px solid;
-                border-radius: 50px;
-            }
-
-            .blur-background{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                -webkit-backdrop-filter: blur(4px);
-                backdrop-filter: blur(4px);
-                z-index: -1;
-                border-radius: 50px;
-            }
 
 /*FOOTER*/
 .pipe{
@@ -815,12 +767,12 @@ span.navbar-text {
 
 /*PAGINA TOUR*/
 
-h1, h2, h3{
+/*h1, h2, h3{
     font-family: "VT323", monospace;
     font-optical-sizing: auto;
     font-style: normal;
     color: #33FF33;
-}
+}*/
 
 /*GOOGLE FONTS & ICONS*/
 .material-symbols-outlined {
@@ -1109,20 +1061,18 @@ button:disabled {
 
 .closeTheme span{ 
     font-size: 2.5rem;
-    border:#A92325 2px solid;
-    border-radius: 100%;
-    color: #A92325;
+    border:#33FF33 2px solid;
+    color: #33FF33;
 }
 
 .openTheme span{
     font-size: 2.5rem;
-    color: #A92325;
+    color: #33FF33;
 }
 
 .openTheme{
     display: none;
-    border:#A92325 2px solid;
-    border-radius: 50px;
+    border:#33FF33 2px solid;
 }
 
 .blur-background{
@@ -1199,12 +1149,12 @@ footer a.nav-link:hover{
     color: #33FF33;
 }
 
-footer a.nav-link::before{
+footer a.nav-link:not(.pipe)::before{
     content: "> ";
     opacity: 0;
 }
 
-footer a.nav-link:hover::before{
+footer a.nav-link:not(.pipe):hover::before{
     opacity: 100;
 }
 
