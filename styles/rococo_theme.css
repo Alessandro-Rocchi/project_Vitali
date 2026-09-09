@@ -69,6 +69,52 @@ body{
     font-size: clamp(1rem, 5vw, 3rem);
 }
 
+/*BREADCRUMBS*/
+.breadcrumbs a, .breadcrumbs p {
+    color: #a87c43;
+    text-decoration: none;
+}
+
+.breadcrumbs .disabled {
+    cursor: default;
+}
+
+.breadcrumbs a:not(.disabled):hover {
+    color: #e2a759;
+    text-decoration: underline;
+}
+
+/*FOOTER*/
+
+footer {
+    background-color: #d4efe2;
+    color: #85673f;
+    border-top: 2px solid #a87c43;
+}
+
+footer h2 {
+    font-family: "Pinyon Script", cursive;
+}
+
+footer .nav-link {
+    color: #A87C43;
+    border-bottom: 3px solid transparent;
+    font-size: 1.25rem;
+}
+
+footer .pipe {
+    cursor: default;
+}
+
+footer .pipe:hover {
+    color: #A87C43;
+}
+
+footer .nav-link:hover:not(.pipe) {
+    border-bottom: 3px solid #A87C43;
+    color: #e2a759;
+}
+
 /*HERO IMAGE*/
 .hero-img {
     width:100%;
@@ -413,6 +459,10 @@ button:disabled {
     color: #A87C43;
 }
 
+.openTheme span:not(.btn-chiudi):hover {
+    color: #e2a759;
+}
+
 .openTheme{
     display: none;
     border:#A87C43 2px solid;
@@ -463,6 +513,10 @@ button:disabled {
 
 /*--------------------INIZIO CSS CATALOGUE---------------------*/
 
+#catalogue_header {
+    background-color: #d4efe29d;
+    border-bottom: 2px solid #A87C43;
+}
 
 .page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
     background-color:#FAD1D1; 
@@ -473,6 +527,7 @@ button:disabled {
     border-radius: 5px;
     padding: 10px;
 }
+
 
 #filters_menu .card.card-body {
     background-color: transparent;
@@ -490,43 +545,7 @@ button:disabled {
     color:#a87c43;
 }
 
-.breadcrumbs {
-    background-color: transparent;
-}
 
-footer {
-    background-color: #d4efe2;
-    color: #85673f;
-    border-top: 2px solid #a87c43;
-}
-
-footer h2 {
-    font-family: "Pinyon Script", cursive;
-}
-
-footer .nav-link {
-    color: #A87C43;
-    border-bottom: 3px solid transparent;
-    font-size: 1.25rem;
-}
-
-footer .pipe {
-    cursor: default;
-}
-
-footer .pipe:hover {
-    color: #A87C43;
-}
-
-footer .nav-link:hover:not(.pipe) {
-    border-bottom: 3px solid #A87C43;
-    color: #e2a759;
-}
-
-#catalogue_page_title{
-    background-color: #d4efe29d;
-    border-bottom: 2px solid #A87C43;
-}
 
 .card_link{
     text-decoration: none;
@@ -535,10 +554,7 @@ footer .nav-link:hover:not(.pipe) {
 }
 
 #desktop_filter_toggle{
-    /*display: inline-flex;*/
-    background-color:#D4EFE2;
-    border-radius: 0px 8px 8px 0px;
-    
+    background-color:#D4EFE2;    
 }
 
 #desktop_filter_toggle span {
@@ -548,7 +564,7 @@ footer .nav-link:hover:not(.pipe) {
 
 #desktop_filter_toggle:hover{
     cursor: pointer;
-    background-color: #707070;
+    background-color: #abccbc;
     transition: all 0.5s ease;
 }
 
@@ -598,6 +614,15 @@ footer .nav-link:hover:not(.pipe) {
     }
 }
 
+.filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
 .row_catalogue .card{
     background-color:#D4EFE2 !important;
     border-radius: 4px !important;
@@ -608,8 +633,21 @@ footer .nav-link:hover:not(.pipe) {
     border: 2px solid #A87C43;
 }
 
+.row_catalogue .card h5 {
+    font-family: "Playfair", Times, serif;
+    font-size: clamp(); /*  INSERIRE MISURE*/
+}
+
 .row_catalogue .card h5, .row_catalogue .card p{
-    color:#1A1A1A !important;
+    color:#1A1A1A;
+}
+
+.btn-mobile-toggle {
+    background-color: #f7c98d;
+    border: 2px solid #A87C43;
+    border-radius: 50px;
+    padding: 0.75rem;
+    font-family: "Playfair", Times, sans-serif;
 }
 
 .card_arrow {
@@ -634,7 +672,6 @@ footer .nav-link:hover:not(.pipe) {
     object-fit: cover;
     object-position: center;
 }
-
 
 .pagination button { 
     padding: 8px 12px;

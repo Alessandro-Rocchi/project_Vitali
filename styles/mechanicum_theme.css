@@ -123,8 +123,9 @@ hr {
     box-shadow: 0 0 15px var(--mech-yellow);
 }
 
-.navbar-toggler #navbar_menu_icon, .navbar-toggler-icon {
-    color: var(--mech-yellow) !important;
+.navbar-toggler .material-symbols-outlined {
+    color: var(--mech-yellow);
+    font-size: clamp(1rem, 5vw, 3rem);
 }
 
 /* --- HERO IMAGES --- */
@@ -413,6 +414,10 @@ footer ul a:not(.pipe):hover {
     transition: all 0.2s ease-out;
 }
 
+.breadcrumbs a.disabled {
+    text-decoration: none;
+}
+
 .breadcrumbs a:hover:not(.disabled) {
     color: var(--text-bone);    
     background-color: var(--blood-rust);
@@ -478,7 +483,17 @@ footer ul a:not(.pipe):hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px var(--furnace-fire);
 }
-.card_arrow { color: var(--text-ash); }
+.card_arrow { 
+    color: #77736b; 
+}
+
+.card_link:hover .card_arrow {
+   color: var(--text-bone); 
+}
+
+.row_catalogue .card p {
+    color: #77736b;
+}
 
 .row_catalogue .card img {
     width: 100%;
@@ -573,6 +588,33 @@ footer ul a:not(.pipe):hover {
         padding: 1rem;
     }
 
+    .btn-desktop-toggle {
+        font-family: "Space Mono", monospace;
+        text-transform: uppercase;
+        font-weight: 900;
+        background: var(--void-black);
+        padding: 5px 15px;
+        border: 3px solid var(--iron-plate);
+        box-shadow: 3px 3px 0 var(--blood-rust);
+        transition: all 0.2s ease-out;
+    }
+
+    .btn-desktop-toggle span{
+        color: var(--mech-yellow);
+    }
+
+    .btn-desktop-toggle:hover {
+        color: var(--void-black) !important;
+        background-color: var(--furnace-fire);
+        border-color: var(--furnace-fire) !important;
+        transform: scale(1.05);
+        box-shadow: 0 0 15px var(--furnace-fire);
+    }
+
+    .btn-desktop-toggle:hover span {
+        color: var(--void-black);
+    }
+
     /* Animazione rotazione icona freccia */
     .btn-desktop-toggle #arrow_forward_ios {
         transition: transform 0.3s ease;
@@ -591,6 +633,15 @@ footer ul a:not(.pipe):hover {
         width: 100%;
         padding: 0;
     }
+}
+
+.filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
 /* Pannelli laterali mappa */

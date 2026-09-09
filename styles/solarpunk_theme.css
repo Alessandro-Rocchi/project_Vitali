@@ -371,6 +371,13 @@ footer ul a:not(.pipe):hover {
     color: var(--primary);
     font-weight: 600;
 }
+.breadcrumbs a.disabled {
+    text-decoration: none;
+}
+
+.breadcrumbs a:not(.disabled) {
+    text-decoration: underline;
+}
 
 .breadcrumbs a:hover:not(.disabled) {
     color: var(--secondary);    
@@ -405,12 +412,35 @@ footer ul a:not(.pipe):hover {
     box-shadow: var(--glass-shadow);
 }
 
-.card_link { color: var(--primary-bright); font-weight: bold; text-decoration: underline; text-decoration-color: transparent; transition: 0.3s;}
-.card_link:hover:not(.card_arrow){ 
+.card_link { 
+    color: var(--primary-bright); 
+    font-weight: bold; 
+    text-decoration: none; 
+    text-decoration-color: transparent; 
+    transition: 0.3s;
+}
+
+.card_link:not(span):hover{ 
     color: var(--secondary); 
     text-decoration-color: var(--secondary); 
 }
-.card_arrow { color: var(--accent-brass); }
+
+.card_arrow {
+    color: #a87c43 !important;
+    display: inline-block;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 1s linear, opacity 0.5s linear, margin-left 1s linear;
+    color: var(--accent-brass);
+}
+
+.card_link:hover .card_arrow {
+    width: auto; 
+    opacity: 1;
+    margin-left: 0.10rem;
+}
 
 .row_catalogue .card img {
     width: 100%;
@@ -458,13 +488,13 @@ footer ul a:not(.pipe):hover {
     user-select: none;
 }
 
-.desktop_filter_toggle { 
-    background-color: var(--glass-bg); 
+#desktop_filter_toggle { 
+    background-color: #d4af37; 
     color: var(--primary); 
     border: 2px solid var(--primary-bright);
     box-shadow: var(--glow-green);
 }
-.desktop_filter_toggle:hover { 
+#desktop_filter_toggle:hover { 
     background-color: var(--primary-bright); 
     color: #ffffff; 
 }
@@ -512,6 +542,27 @@ footer ul a:not(.pipe):hover {
         width: 100%;
         padding: 0;
     }
+}
+
+.filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.btn-mobile-toggle {
+    background-color: var(--glass-edge);
+    border: 2px solid #A87C43;
+    border-radius: 50px;
+    padding: 0.75rem;
+    font-family: "GFS Didot", Times, serif;
+}
+
+#catalogue_page_title {
+    border-bottom: 2px solid var(--glass-edge);
 }
 
 .custom-panel, .sub-panel-filter, .sub-panel-explore {
