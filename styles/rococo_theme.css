@@ -273,7 +273,7 @@ a[aria-expanded="false"] i {
 /*PER LE DUE CARD ESPLORA E SCOPRI DI PIU'*/
 
 .card-title{
-    color: #faf1ea!important;
+    color: #faf1ea;
 }
 
 /*per lo zoom delle card*/
@@ -483,6 +483,55 @@ button:disabled {
 
 /*--------------------FINE CSS TOUR---------------------*/
 
+/*--------------------INIZIO CSS ABOUT---------------------*/
+
+/*ABOUT*/
+.about_card h2{
+    font-family: "Playfair", serif;
+    font-size: clamp(2rem, 4vw + 1.25rem, 3.5rem);
+    line-height: 1.2;
+    color: #925e5e;
+}
+
+.about_card:hover h2 {
+    color: #A87C43;
+}
+
+
+/* 1. The container stays exactly the same size */
+.about_card {
+  overflow: hidden; /* This is the "window" that stays still */
+  display: block;   /* Ensures the anchor tag respects dimensions */
+  position: relative;
+  border: 2px solid #A87C43;
+}
+
+/* 2. The image transition */
+.about_card img {
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+}
+
+/* 3. TARGET ONLY THE IMAGE ON HOVER */
+/* Correct: The card is hovered, but ONLY the image scales */
+.about_card:hover img {
+  transform: scale(1.1);
+}
+
+/* Ensure the overlay doesn't zoom with the image */
+.about_card:hover .card-img-overlay {
+  transform: none; 
+}
+
+
+.about_bg_image {
+    background-image: url(../img/generic_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30vw;
+}
 
 /*--------------------INIZIO CSS ABOUT NOUVELLE VAGUE---------------------*/
 

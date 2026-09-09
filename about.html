@@ -27,7 +27,9 @@
     <body data-page="about">
 
         <div class="theme">
-                <div class="closeTheme"><span class="material-symbols-outlined p-1">palette</span></div>
+                <div class="closeTheme">
+                    <div class="blur-background"></div>
+                    <span class="material-symbols-outlined p-1">palette</span></div>
                 <div class="openTheme">
                     <div class="blur-background"></div>
                     <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/mechanicum_theme.css">settings</span>
@@ -42,36 +44,36 @@
 
         <!--navbar-->
         <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <span class="col-2 navbar-text">Les Rues du CSS</span>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="material-symbols-outlined" id="navbar_menu_icon">menu</span>
-                    </button>
-                    <div class="col-10 collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                        <ul class="navbar-nav mb-2 mb-lg-0">
-                            <li class="nav-item mx-3">
-                                <a class="nav-link" href="#">home</a>
-                            </li>
-                            <li class="nav-item mx-3">
-                                <a class="nav-link" aria-current="page" href="#">map</a>
-                            </li>
-                            <li class="nav-item mx-3">
-                                <a class="nav-link" href="#">catalogue</a>
-                            </li>
-                            <li class="nav-item mx-3">
-                                <a class="nav-link active" href="#">about</a>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="container-fluid">
+                <span class="col-auto navbar-text">Les Rues du CSS</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="material-symbols-outlined">menu</span>                
+                </button>
+                <div class="col-auto collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item mx-3">
+                            <a class="nav-link">home</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" aria-current="page" href="#">map</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">catalogue</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link active" href="#">about</a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
         <!--contenuto della pagina-->
         <section class="page_content py-4 m-0">
             <!--BREADCRUMBS-->
             <div class="breadcrumbs d-flex ps-4 py-3 gap-2">
                 <a href="">Home</a>
                 <p class="mb-0">/</p>
-                <a href="" class="disabled">About</a>
+                <a class="disabled">About</a>
             </div>
 
             <div class="container">
