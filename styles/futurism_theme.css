@@ -757,12 +757,11 @@ aside.bookmarks {
     top: 20px; /* Regola questa distanza in base alle tue esigenze */
     align-self: flex-start; /* Fondamentale per layout flex */
     height: auto;
-    
 }
 
 aside.bookmarks ol {
     line-height: 1.5;
-    background-color: #f2e6ce;
+    background-color: #F2A900;
     padding: 10px;
     border-radius: 8px;
     border: 2px solid #d32f2f;
@@ -775,17 +774,19 @@ aside.bookmarks ol li::marker{
     font-weight: 500;
 }
 
-aside.bookmarks ol li a:hover {
-    text-decoration: underline;
-    color: #d73b3e;
-}
-
 aside.bookmarks ol li a {
     text-decoration: none;
     color: #1a1a1a;
     font-family: "Inter", sans-serif;
     font-weight: 500;
 }
+
+aside.bookmarks ol li a:hover {
+    text-decoration: underline;
+    color: #74181a;
+    cursor: pointer;
+}
+
 
 aside.bookmarks ol li{
     margin-bottom: 15px;
@@ -801,18 +802,33 @@ aside.bookmarks ol li:first-child {
 
 #about_NV_text_content h2 {
     font-family: "Anton", sans-serif;
-    font-size: 32pt;
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);    
     font-weight: 400;
 }
 
-#about_NV_text_content {
-    font-size: 16pt;
+#about_NV_text_content h2:not(#revolution){
+    padding-top: 2.5rem;
+}
+
+#about_NV_text_content p{
+    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
+    line-height: 1.6;    
     font-weight: 400;
 }
 
-#about_NV_text_content b{
+#about_NV_text_content strong{
     font-weight: 600;
     color: #d73b3e;
+}
+
+#about_NV_text_content a {
+    color: #002FA7;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+#about_NV_text_content a:hover {
+    color: #009760;
 }
 
 /*ABOUT OUR TEAM*/
