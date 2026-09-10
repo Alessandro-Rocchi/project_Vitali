@@ -1,4 +1,4 @@
-h1, h2, h3{
+h1, h2, h3, h4, h5, a{
     font-family: "VT323", Courier, monospace;
     font-size: clamp(15px, 1.1vw + 12px, 40px); /*non ho usato vh o vw per le dimensioni limite e per la proporzione usata nel valore centrale per evitare che il browser calcolasse dimensioni con la virgola e facesse saltare l'effetto pixellato del font*/
     font-optical-sizing: auto;
@@ -374,6 +374,12 @@ span.navbar-text {
     background-color: transparent;
 }
 
+a.card_link::after {
+    content: " >";
+    white-space: pre;
+    font-family: "VT323";
+}
+
 .card_link:hover {
     color: #030a03;
     background-color: #33FF33;
@@ -464,13 +470,20 @@ span.navbar-text {
     color:#33FF33;
 }
 
-.card_arrow {
+.btn-mobile-toggle {
+    font-family: "VT323", Courier, monospace;
     color: #33FF33;
-    display: inline-block;
+    background-color: #030a03;
+    border: 2px solid #33FF33;
+    border-radius: 0px !important;
+    padding: 0.75rem;
 }
 
-.card_link:hover .card_arrow {
-    color: #030a03;
+.card_arrow {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    color: #33FF33;
 }
 
 #cards_area .card img {
@@ -1085,6 +1098,11 @@ button:disabled {
 .openTheme span{
     font-size: 2.5rem;
     color: #33FF33;
+}
+
+.openTheme span:not(.btn-chiudi):hover {
+    background-color: #33FF33;
+    color: #030a03;
 }
 
 .openTheme{
