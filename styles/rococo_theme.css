@@ -524,14 +524,14 @@ button:disabled {
   transform: none; 
 }
 
-
-.about_bg_image {
-    background-image: url(../img/generic_bg.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 30vw;
+#meet-team {
+    font-family: "Pinyon Script", Times, serif;
+    font-size: clamp(2rem, 4vw + 1.25rem, 4.5rem);
+    font-weight: 550;
+    line-height: 1.2;
+    color: #8b6432;
 }
+
 
 /*--------------------INIZIO CSS ABOUT NOUVELLE VAGUE---------------------*/
 
@@ -556,6 +556,29 @@ button:disabled {
 #about_NV_text_content b{
     font-weight: 600;
     color: #A87C43;
+}
+
+.card.id_team{
+    border:none;
+}
+
+.id_team{
+    box-shadow: 4px 4px 10px #1a1a1a62;
+}
+
+.id_team .card-body{
+    border-radius: 6px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: 3px #a87c43 solid;
+    border-top: 0px;
+    background-color:#d4efe2;
+}
+
+.id_team .card-body h3{
+    font-family: "Pinyon Script", Times, serif;
+    color:#a87c43;
+    font-weight: 600;
 }
 
 /*--------------------FINE CSS ABOUT NOUVELLE VAGUE---------------------*/

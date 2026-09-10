@@ -648,11 +648,11 @@ a.card_link::after {
     border-radius: 0;
 }
 
-.card.card.id_team h4{
+.card.card.id_team h3{
     text-transform: uppercase;
 }
 
-.card.id_team h4, p {
+.card.id_team h3, p {
     font-family: "VT323", monospace;
     font-size: clamp(15px, 1.1vw + 12px, 40px);
     color: #33FF33;

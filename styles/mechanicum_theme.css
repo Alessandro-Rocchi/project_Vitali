@@ -773,13 +773,18 @@ footer ul a:not(.pipe):hover {
   transform: none; 
 }
 
+/*ABOUT OUR TEAM*/
+#meet-team {
+    font-size: clamp(2rem, 4vw + 1.25rem, 3.5rem);
+}
 
-.about_bg_image {
-    background-image: url(../img/generic_bg.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 30vw;
+.card.id_team{
+    border:none;
+    box-shadow: 0 0 15px var(--furnace-fire);
+}
+
+.id_team .card-body{
+   background-color: var(--steel-gray);
 }
 
 /* ==========================================================================

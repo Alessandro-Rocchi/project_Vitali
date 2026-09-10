@@ -672,13 +672,27 @@ footer ul a:not(.pipe):hover {
   transform: none; 
 }
 
+#meet-team {
+    font-size: clamp(2rem, 4vw + 1.25rem, 3.5rem);
+    font-weight: 500;
+    line-height: 1.2;
+}
 
-.about_bg_image {
-    background-image: url(../img/generic_bg.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 30vw;
+.card.id_team{
+    border:none;
+}
+
+.id_team{
+    box-shadow: var(--glow-gold);
+}
+
+.id_team .card-body{
+    border-radius: 6px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: 3px var(--accent-brass) solid;
+    border-top: 0px;
+    background-color: var(--glass-bg);
 }
 
 /* ==========================================================================
