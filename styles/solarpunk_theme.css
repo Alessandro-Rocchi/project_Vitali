@@ -455,6 +455,7 @@ footer ul a:not(.pipe):hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    -webkit-user-select: none;
     user-select: none;
 }
 
@@ -655,6 +656,7 @@ button:disabled {
     border-radius: 100%;
     color: var(--primary-bright);
     background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     box-shadow: var(--glow-green);
     display: block;
@@ -665,6 +667,7 @@ button:disabled {
     border: 2px solid var(--primary-bright);
     border-radius: 50px;
     background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     box-shadow: var(--glow-green);
 }

@@ -520,6 +520,7 @@ span.navbar-text {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    -webkit-user-select: none;
     user-select: none;
 }
 
@@ -651,8 +652,8 @@ span.navbar-text {
         contrast(1.3)
         hue-rotate(95deg)
         saturate(300%);
-    image-rendering: pixelated; /* Chrome/Edge/Opera/Vivaldi*/
-    image-rendering: -webkit-optimize-contrast; /* Edge 79+ */
+    image-rendering: pixelated; 
+    image-rendering: -webkit-optimize-contrast; 
     image-rendering: crisp-edges;
 }
 

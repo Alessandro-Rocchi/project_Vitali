@@ -656,6 +656,7 @@ span.navbar-text {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    -webkit-user-select: none;
     user-select: none;
 }
 
