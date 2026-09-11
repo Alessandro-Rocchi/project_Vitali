@@ -1,17 +1,29 @@
+/**
+ * Map Scripts
+ *
+ * This file handles the main interactive map logic for the application.
+ * It uses Leaflet to render the map and custom panels for exploring, filtering,
+ * and searching cinema locations from a GeoJSON data source.
+ */
+
+// Global variables for Map and UI states
 var map = null;
 var panelControl = null;
 var filterPanel = null;
 var explorePanel = null;
 var searchBar = null;
 var currentLayer = null;
-var initialData = null;
-var metadataJson = null;
+var initialData = null; // Stores the initially loaded GeoJSON feature collection
+var metadataJson = null; // Stores additional location metadata from JSON
 var routingControl = null;
 var activeSubpanel = null;
-var selectedDirector = "Any";
-var selectedYearRange = "Any";
+var selectedDirector = "Any"; // Tracks the currently selected director for filtering
+var selectedYearRange = "Any"; // Tracks the currently selected year range for filtering
 
-
+/**
+ * Initializes the Leaflet map and sets up basic layers, controls, and UI elements.
+ * Fetches required GeoJSON and metadata, populates initial markers, and configures the search bar functionality.
+ */
 async function init() {
     map = L.map("map", { zoomControl: false }).setView([48.8566, 2.3522], 13);
 
@@ -108,6 +120,10 @@ async function init() {
 
 document.addEventListener('DOMContentLoaded', init, false);
 
+/**
+ * Asynchronously loads the main map data in GeoJSON format.
+ * @returns {Promise<Object|null>} A Promise that resolves to the GeoJSON data object or null if it fails.
+ */
 function loadGeoData() {
     return fetch("data/paris.geojson")
         .then(function(response){
@@ -122,6 +138,10 @@ function loadGeoData() {
         });
 }
 
+/**
+ * Asynchronously loads the additional metadata in JSON format.
+ * @returns {Promise<Array>} A Promise that resolves to the JSON metadata array or an empty array if it fails.
+ */
 function loadJson(){
     return fetch("data/paris_metadata.json")
         .then(function(response){
@@ -136,6 +156,11 @@ function loadJson(){
         });
 }
 
+/**
+ * Generates HTML content for a map popup based on a GeoJSON feature's properties.
+ * @param {Object} feature - The GeoJSON feature containing location data.
+ * @returns {string} The HTML string representing the popup card with details and image.
+ */
 function createPopupContent(feature) {
     var props = feature.properties || {};
     var safeName = (props.name || '').replace(/'/g, "\\'");
@@ -156,6 +181,11 @@ function createPopupContent(feature) {
             </div>`;
 }
 
+/**
+ * Adds the provided GeoJSON data to the Leaflet map as a new layer.
+ * Creates popups for each location feature and fits the map view to the layer's bounds.
+ * @param {Object} geojson - The GeoJSON feature collection to add to the map.
+ */
 function addGeoData(geojson) {
     if (!geojson) return;
     initialData = geojson;
@@ -171,6 +201,10 @@ function addGeoData(geojson) {
     }
 }
 
+/**
+ * Removes the currently active UI subpanel (Search, Filter, or Explore) from the map.
+ * Also resets the activeSubpanel state variable.
+ */
 function removeControlPanel() {
     if (searchBar && searchBar._map && searchBar._container) {
         searchBar.remove();
@@ -184,6 +218,11 @@ function removeControlPanel() {
     activeSubpanel = null;
 }
 
+/**
+ * Toggles the visibility of a specific map control panel.
+ * If the panel is already open, it is removed. Otherwise, it hides the current active panel and opens the requested one.
+ * @param {string} panelType - The type of panel to toggle ('search', 'filter', or 'explore').
+ */
 function toggleControl(panelType) {
 
     if (activeSubpanel === panelType) {
@@ -205,18 +244,33 @@ function toggleControl(panelType) {
     }
 }
 
+/**
+ * Triggers the toggle action for the Explore panel.
+ */
 function createExplore() {   
     toggleControl('explore');
 }
 
+/**
+ * Triggers the toggle action for the Search panel.
+ */
 function addSearchBar() {
     toggleControl('search');
 }
 
+/**
+ * Triggers the toggle action for the Filter panel.
+ */
 function createFilter() {   
     toggleControl('filter');
 }
 
+/**
+ * Handles the logic when a user searches for a specific location.
+ * Finds the matching feature on the map, centers the view on it, opens its popup, and loads its details in the sidebar.
+ * If filters are active and hide the searched feature, it will reset the filters to display the searched location.
+ * @param {string} query - The search string provided by the user.
+ */
 function handleSearch(query) {
     if (!query) return;
 
@@ -255,6 +309,12 @@ function handleSearch(query) {
     }
 }
 
+/**
+ * Creates the DOM element and logic for the custom filtering panel (Directors and Year range).
+ * Extracts unique directors from the initially loaded data to populate the filter dropdown.
+ * @param {Object} map - The Leaflet map instance.
+ * @returns {HTMLElement} The constructed DOM element for the filter panel.
+ */
 function createFilterPanelUI(map) {
     var registiSet = new Set();
     if (initialData && initialData.features) {
@@ -355,6 +415,11 @@ function createFilterPanelUI(map) {
     return div;
 };
 
+/**
+ * Draws a route on the map connecting the filtered features using Leaflet Routing Machine.
+ * Useful for visually grouping related locations, such as those directed by the same person.
+ * @param {Array} filteredFeatures - The array of GeoJSON features to be connected by the route.
+ */
 function disegnaPercorso(filteredFeatures) {
     if (routingControl !== null) {
         map.removeControl(routingControl);
@@ -382,6 +447,11 @@ function disegnaPercorso(filteredFeatures) {
     }).addTo(map);
 }
 
+/**
+ * Applies the currently selected filters (director and year range) to the map data.
+ * Rebuilds the GeoJSON layer to show only matching locations.
+ * Draws a routing path if a specific director is selected.
+ */
 function applyFilters() {
     if (currentLayer !== null) {
         map.removeLayer(currentLayer);
@@ -431,16 +501,29 @@ function applyFilters() {
     }
 }
 
+/**
+ * Updates the global state with the selected director and triggers the filter application.
+ * @param {string} choosendirector - The name of the director to filter by, or "Any".
+ */
 function Drawpoints(choosendirector) {
     selectedDirector = choosendirector || "Any";
     applyFilters();
 }
 
+/**
+ * Updates the global state with the selected year range and triggers the filter application.
+ * @param {string} yearRange - The year range to filter by (e.g., "1960-1969"), or "Any".
+ */
 function filterByYear(yearRange) {
     selectedYearRange = yearRange || "Any";
     applyFilters();
 }
 
+/**
+ * Populates the UI details pane (images, texts, descriptions) based on the selected location.
+ * Links data from the main GeoJSON layer and the supplemental metadata JSON array.
+ * @param {string} locationName - The exact or case-insensitive name of the location to detail.
+ */
 function showLocationDetails(locationName) {
     var text_info = document.getElementById('text-section');
     var img_panel = document.getElementById('img-section');
@@ -540,6 +623,12 @@ function showLocationDetails(locationName) {
     }
 }
 
+/**
+ * Creates the DOM element for the custom 'Explore' panel.
+ * Contains quick links to specific theme or director tours.
+ * @param {Object} map - The Leaflet map instance.
+ * @returns {HTMLElement} The constructed DOM element for the explore panel.
+ */
 function createExplorePanelUI(map) {
     var div = L.DomUtil.create('div', 'sub-panel-explore d-flex flex-column gap-2 bg-transparent border-0 p-0');
     

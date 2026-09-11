@@ -1,9 +1,23 @@
-let map = null;
-let tourLayers = [];
-let currentTourData = null;
-let currentTourIndex = 0; 
+/**
+ * Main application scripts for generic pages.
+ * Handles specialized logics for 'catalogue' rendering/pagination and 'tour' interactive maps.
+ * Also handles the global CSS theme toggling logic.
+ */
 
+// Global state variables, specifically for the Tour map and the Catalogue.
+let map = null; // Leaflet map instance for the tour page
+let tourLayers = []; // Array of layer objects added to the tour map
+let currentTourData = null; // Textual and step-by-step data for the active tour
+let currentTourIndex = 0; // Current step index within the active tour
+
+/**
+ * An object mapping page identifiers to their specific initialization functions.
+ */
 const pages = {
+    /**
+     * Initializes the logic for the Catalogue page.
+     * Sets up sidebar toggles, event delegation for pagination clicks, and fetches JSON data.
+     */
     catalogue: () => {
         const desktopToggleBtn = document.getElementById("desktop_filter_toggle");
         const filterSidebar = document.getElementById("filters_menu");
@@ -52,6 +66,11 @@ const pages = {
         });
     },
     
+    /**
+     * Initializes the logic for the Tour page.
+     * Parses URL parameters to determine the selected director, initializes the map,
+     * loads required GeoJSON and JSON metadata, and wires up pagination controls.
+     */
     tour: async () => {
         const urlParams = new URLSearchParams(window.location.search);
         const targetKeyword = urlParams.get('regista');
@@ -115,6 +134,10 @@ const pages = {
     }
 };
 
+/**
+ * Updates the enabled/disabled status of the 'Previous' and 'Next' buttons during a tour,
+ * and controls the visibility of the "Back to start" button based on the current step.
+ */
 function updateBtnStatus() {
     if (!currentTourData) return;
 
@@ -144,6 +167,9 @@ function updateBtnStatus() {
     }
 }
 
+/**
+ * Updates the width of the progress bar based on the current step relative to the total number of tour steps.
+ */
 function updateProgressBar() {
     const progress = document.querySelector('.progress-bar');
     if (progress && currentTourData) {
@@ -151,12 +177,20 @@ function updateProgressBar() {
     }
 }
 
+/**
+ * Triggers UI updates when moving to a new step in a tour (updates texts, buttons, and progress bar).
+ * @param {number} newIndex - The new step index in the tour.
+ */
 function showParagraph(newIndex) {
     updateLocationTexts(newIndex);
     updateBtnStatus();
     updateProgressBar();
 }
 
+/**
+ * Asynchronously loads the standard location metadata in JSON format.
+ * @returns {Promise<Array>} A Promise resolving to an array of metadata objects.
+ */
 function loadJson() {
     return fetch("data/paris_metadata.json")
         .then(function(response) {
@@ -169,6 +203,12 @@ function loadJson() {
         });
 }
 
+/**
+ * Loads textual narrative data for a specific tour from a JSON file.
+ * Automatically populates the header sections of the tour UI if data is found.
+ * @param {string} targetKeyword - The keyword (e.g., director's name) associated with the tour.
+ * @returns {Promise<Object|null>} A Promise resolving to the tour's textual data object, or null.
+ */
 async function loadTourTextData(targetKeyword) {
     try {
         const response = await fetch('data/tour_data.json'); 
@@ -199,6 +239,11 @@ async function loadTourTextData(targetKeyword) {
     }
 }
 
+/**
+ * Fetches the main GeoJSON file and filters it to include only features matching the target keyword (director).
+ * @param {string} targetKeyword - The director's name used to filter the locations.
+ * @returns {Promise<Object|null>} A Promise resolving to the filtered GeoJSON object, or null.
+ */
 function filteredLoadGeoData(targetKeyword) {
     return fetch("data/paris.geojson")
         .then(function(response){
@@ -218,6 +263,11 @@ function filteredLoadGeoData(targetKeyword) {
         });
 }
 
+/**
+ * Adds the filtered GeoJSON data to the tour map, binding popups and saving the layers in order.
+ * Triggers navigation to the first location if data is available.
+ * @param {Object} geojson - The GeoJSON feature collection to add.
+ */
 function addGeoData(geojson) {
     if (!geojson || geojson.features.length === 0) return;
     tourLayers = [];
@@ -233,6 +283,11 @@ function addGeoData(geojson) {
     }
 }
 
+/**
+ * Animates the map view to fly to a specific layer (location) corresponding to the given step index,
+ * and automatically opens its popup.
+ * @param {number} index - The index of the layer in the `tourLayers` array.
+ */
 function goToLocation(index) {
     if (!tourLayers[index]) return;
     const targetLayer = tourLayers[index];
@@ -240,6 +295,11 @@ function goToLocation(index) {
     targetLayer.openPopup();
 }
 
+/**
+ * Generates the HTML content for a popup in the tour map.
+ * @param {Object} feature - The GeoJSON feature associated with the popup.
+ * @returns {string} The HTML string for the popup card.
+ */
 function createPopupContent(feature) {
     var props = feature.properties || {};
     var safeName = (props.name || '').replace(/'/g, "\\'");
@@ -253,6 +313,10 @@ function createPopupContent(feature) {
             </div>`;
 }
 
+/**
+ * Updates the text section of the UI with narrative data for the current tour location.
+ * @param {number} index - The current index within the tour step array.
+ */
 function updateLocationTexts(index) {
     if (!currentTourData || !currentTourData.locations[index]) return;
     const currentLocation = currentTourData.locations[index];
@@ -265,12 +329,19 @@ function updateLocationTexts(index) {
     }
 }
 
+/**
+ * Global state for the catalogue page to manage pagination.
+ */
 const catalogueState = {
-    allLocations: [],
-    currentPage: 1,
-    itemsPerPage: 9
+    allLocations: [], // Array containing all loaded locations
+    currentPage: 1,   // The active page number
+    itemsPerPage: 9   // Number of cards to display per page
 };
 
+/**
+ * Calculates and displays a specific page of locations in the catalogue, rendering both cards and pagination controls.
+ * @param {number} page - The requested page number to display.
+ */
 function displayCataloguePage(page) {
     const totalItems = catalogueState.allLocations.length;
     const totalPages = Math.ceil(totalItems / catalogueState.itemsPerPage) || 1;
@@ -297,6 +368,13 @@ function displayCataloguePage(page) {
     renderPagination(totalPages, page);
 }
 
+/**
+ * Generates an array representing the pagination structure, placing ellipses where appropriate.
+ * Ensures the pagination UI doesn't grow infinitely large.
+ * @param {number} current - The current active page.
+ * @param {number} total - The total number of available pages.
+ * @returns {Array<number|string>} An array of page numbers and strings (like '...') for rendering.
+ */
 function getPaginationRange(current, total) {
     if (total <= 7) {
         return Array.from({ length: total }, (_, i) => i + 1);
@@ -326,6 +404,11 @@ function getPaginationRange(current, total) {
     return pages;
 }
 
+/**
+ * Renders the HTML buttons for the pagination block based on current state.
+ * @param {number} totalPages - The total calculated pages.
+ * @param {number} currentPage - The currently active page.
+ */
 function renderPagination(totalPages, currentPage) {
     const paginationContainer = document.getElementById('pagination');
     if (!paginationContainer) return;
@@ -375,6 +458,10 @@ function renderPagination(totalPages, currentPage) {
     paginationContainer.appendChild(nextBtn);
 }
 
+/**
+ * Renders HTML cards for the locations assigned to the current catalogue page.
+ * @param {Array} locations - A subset of metadata objects to display as cards.
+ */
 function renderCatalogueCards(locations) {
     const cardSection = document.getElementById("cardSection") || document.querySelector(".row_catalogue");
     if (!cardSection) return;
@@ -413,6 +500,11 @@ function renderCatalogueCards(locations) {
     });
 }
 
+/**
+ * Main initialization block when the DOM is fully loaded.
+ * Triggers the correct page function based on the body's data-page attribute,
+ * and sets up logic for the global theme switcher.
+ */
 document.addEventListener('DOMContentLoaded', () => {
     const currentPage = document.body.dataset.page;    
     const closeThemeBtn = document.querySelector('.closeTheme');
