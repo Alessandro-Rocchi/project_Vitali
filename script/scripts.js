@@ -69,7 +69,7 @@ const pages = {
     /**
      * Initializes the logic for the Tour page.
      * Parses URL parameters to determine the selected director, initializes the map,
-     * loads required GeoJSON and JSON metadata, and wires up pagination controls.
+     * loads required GeoJSON and JSON metadata, and wires up tour navigation controls.
      */
     tour: async () => {
         const urlParams = new URLSearchParams(window.location.search);
