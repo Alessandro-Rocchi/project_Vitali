@@ -310,14 +310,12 @@ document.addEventListener('DOMContentLoaded', () => {
         openThemeMenu.style.display = 'block';
     });
 
-
-    const btnTheme = document.querySelectorAll('.btn-tema');
-
-    btnTheme.forEach(bottone => {
-        bottone.addEventListener('click', (event) => {
+    openThemeMenu.addEventListener('click', (event) => {
+        const btnTema = event.target.closest('.btn-tema');
+        if (btnTema) {
             event.stopPropagation(); 
 
-            const choosenFile = bottone.getAttribute('data-file');
+            const choosenFile = btnTema.getAttribute('data-file');
 
             if (choosenFile) {
                 linkCSS.setAttribute('href', choosenFile);
@@ -326,16 +324,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             openThemeMenu.style.display = 'none';
             closeThemeBtn.style.display = 'block';
-        });
-    }); 
+            return;
+        }
 
-    const btnChiudiMenu = document.querySelector('.btn-chiudi');
-
-    btnChiudiMenu.addEventListener('click', (event) => {
-        event.stopPropagation(); 
-        // Nasconde il menu aperto e rimostra il bottone iniziale
-        openThemeMenu.style.display = 'none';
-        closeThemeBtn.style.display = 'block';
+        const btnChiudiMenu = event.target.closest('.btn-chiudi');
+        if (btnChiudiMenu) {
+            event.stopPropagation();
+            // Nasconde il menu aperto e rimostra il bottone iniziale
+            openThemeMenu.style.display = 'none';
+            closeThemeBtn.style.display = 'block';
+        }
     });
     
     if (pages[currentPage]) {
