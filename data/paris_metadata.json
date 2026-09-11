@@ -23,7 +23,8 @@
     "associated_movie": "Paris nous appartient",
     "simple_description": "A famous pedestrian bridge crossing the Seine.",
     "medium_description": "The Pont des Arts is a metal pedestrian bridge connecting the Institut de France to the Louvre Museum. Originally built in 1804, it is famous worldwide as a romantic and scenic location.",
-    "detailed_description": "The Pont des Arts, or Passerelle des Arts, was the first metal bridge built in Paris, originally inaugurated in 1804 under Napoleon Bonaparte. After being damaged by bombings and river collisions, it was rebuilt in the 1980s retaining a similar appearance to the original. It majestically connects the right and left banks of the Seine between the Louvre and the Institut de France, and is known in popular culture as the 'bridge of love locks', an unmissable destination for photographers and lovers."
+    "detailed_description": "The Pont des Arts, or Passerelle des Arts, was the first metal bridge built in Paris, originally inaugurated in 1804 under Napoleon Bonaparte. After being damaged by bombings and river collisions, it was rebuilt in the 1980s retaining a similar appearance to the original. It majestically connects the right and left banks of the Seine between the Louvre and the Institut de France, and is known in popular culture as the 'bridge of love locks', an unmissable destination for photographers and lovers.",
+    "image_url": "img/img_movie/pontDesArtsModern.png"
   },
   {
     "name": "Café le Presbourg",
@@ -31,7 +32,8 @@
     "associated_movie": "Paris nous appartient",
     "simple_description": "An iconic Parisian café located near the Arc de Triomphe.",
     "medium_description": "A historic venue strategically positioned at Place de l'Étoile. It was a favorite meeting place for intellectuals, artists, and protagonists of the French New Wave.",
-    "detailed_description": "Café le Presbourg is one of the iconic addresses of Parisian social and cultural life, set in the elegant surroundings of the Arc de Triomphe and Champs-Élysées district. A place of transit and pause for intellectuals and filmmakers throughout the twentieth century, it embodies the classic style of a French brasserie. Its vibrant atmosphere and period architecture make it the perfect stage for the dynamics and discussions that historically animated the Parisian cinema world."
+    "detailed_description": "Café le Presbourg is one of the iconic addresses of Parisian social and cultural life, set in the elegant surroundings of the Arc de Triomphe and Champs-Élysées district. A place of transit and pause for intellectuals and filmmakers throughout the twentieth century, it embodies the classic style of a French brasserie. Its vibrant atmosphere and period architecture make it the perfect stage for the dynamics and discussions that historically animated the Parisian cinema world.",
+    "image_url": "img/img_movie/cafeLePresbourgModern.png"
   },
   {
     "name": "Notre Dame",
@@ -225,5 +227,13 @@
     "medium_description": "Designed by Adolphe Alphand at the request of Napoleon III in 1869, Parc Montsouris covers 15 hectares. It is known for its large artificial lake, waterfalls, and rich vegetation.",
     "detailed_description": "Parc Montsouris is one of the four large urban parks commissioned by Emperor Napoleon III to offer green oxygen zones to the capital, officially opened in 1869. Located in the 14th arrondissement near the Cité Universitaire, it was designed by the brilliant engineer Jean-Charles Adolphe Alphand in a typical English landscape style, transforming an area of abandoned quarries. It is dominated by a vast central artificial lake that makes it a serene oasis as much appreciated by students as by filmmakers.",
     "image_url": "img/img_movie/parcMontsourisModer.png"
+  },
+  {
+    "name": "Arc de Triomphe",
+    "year": "1836",
+    "simple_description": "An iconic monumental arch standing at the western end of the Champs-Élysées.",
+    "medium_description": "Commissioned by Napoleon in 1806 to honor French military victories, this Neoclassical monument stands at the center of Place de l'Étoile. It shelters the Tomb of the Unknown Soldier and serves as the monumental anchor of Paris's historic axis.",
+    "detailed_description": "The Arc de Triomphe is one of the most celebrated monuments in France, commissioned by Napoleon Bonaparte in 1806 following the victory at Austerlitz and inaugurated in 1836 under King Louis-Philippe. Designed in a monumental Neoclassical style by architect Jean Chalgrin, it commands the center of Place Charles de Gaulle (historically Place de l'Étoile), from which twelve grand avenues radiate outwards. The structure is renowned for its high-relief sculptural groups, notably François Rude's 'La Marseillaise', celebrating the French Revolutionary and Imperial campaigns. Beneath its arch lies the Tomb of the Unknown Soldier and the eternal flame rekindled daily since 1923, making it both a primary site of national remembrance and a defining visual landmark of Parisian cinema.",
+    "image_url": "img/img_movie/arcDeTriompheModern.png"
   }
 ]

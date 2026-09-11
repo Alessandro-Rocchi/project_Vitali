@@ -8,8 +8,9 @@ var initialData = null;
 var metadataJson = null;
 var routingControl = null;
 var activeSubpanel = null;
-var selectedDirector = "Tutti";
-var selectedYearRange = "Tutti";
+var selectedDirector = "Any";
+var selectedYearRange = "Any";
+
 
 async function init() {
     map = L.map("map", { zoomControl: false }).setView([48.8566, 2.3522], 13);
@@ -47,7 +48,6 @@ async function init() {
         addGeoData(geoData);
     }
 
-    // Personalizzazione di PinSearch per popolare la ricerca e centrare/aprire il marker
     searchBar._populateMarkerLabels = function () {
         this.markerLabels = [];
         var dataset = initialData || currentLayer;
@@ -185,6 +185,7 @@ function removeControlPanel() {
 }
 
 function toggleControl(panelType) {
+
     if (activeSubpanel === panelType) {
         removeControlPanel();
         return;
@@ -236,8 +237,8 @@ function handleSearch(query) {
         });
 
         if (foundInAll) {
-            selectedDirector = "Tutti";
-            selectedYearRange = "Tutti";
+            selectedDirector = "Any";
+            selectedYearRange = "Any";
             applyFilters();
             currentLayer.eachLayer(function(layer) {
                 if (layer.feature && layer.feature.properties && layer.feature.properties.name.toLowerCase() === query.toLowerCase()) {
@@ -270,8 +271,9 @@ function createFilterPanelUI(map) {
         return `<li><a class="dropdown-item filtro-regista" href="#" data-regista="${regista}">${regista}</a></li>`;
     }).join('');
 
-    var directorBtnLabel = (selectedDirector !== "Tutti") ? selectedDirector : "Director";
-    var yearBtnLabel = (selectedYearRange !== "Tutti") ? selectedYearRange : "Year";
+
+    var directorBtnLabel = (selectedDirector !== "Any") ? selectedDirector : "Director";
+    var yearBtnLabel = (selectedYearRange !== "Any") ? selectedYearRange : "Year";
 
     var div = L.DomUtil.create('div', 'sub-panel-filter');
     div.innerHTML = `<div class="d-flex gap-2 align-items-center bg-transparent"> 
@@ -280,7 +282,7 @@ function createFilterPanelUI(map) {
                                 ${directorBtnLabel}
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item filtro-regista" href="#" data-regista="Tutti">Tutti i Film</a></li>
+                                <li><a class="dropdown-item filtro-regista" href="#" data-regista="Any">Any Director</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 ${listaLiHTML}
                             </ul>
@@ -290,7 +292,7 @@ function createFilterPanelUI(map) {
                                 ${yearBtnLabel}
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item filtro-year" href="#" data-year="Tutti">Tutti gli Anni</a></li>
+                                <li><a class="dropdown-item filtro-year" href="#" data-year="Any">Any Year</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item filtro-year" href="#" data-year="1950-1959">1950-1959</a></li>
                                 <li><a class="dropdown-item filtro-year" href="#" data-year="1960-1969">1960-1969</a></li>
@@ -311,16 +313,15 @@ function createFilterPanelUI(map) {
                     if (otherDd) otherDd.hide();
                 }
             });
-            var dd = bootstrap.Dropdown.getOrCreateInstance(dropdownToggle);
         }
 
         var clickedDirector = e.target.closest('.filtro-regista');
         if (clickedDirector) {
             e.preventDefault(); 
-            var choosendirector = clickedDirector.getAttribute('data-regista') || "Tutti";
+            var choosendirector = clickedDirector.getAttribute('data-regista') || "Any";
             var btnDir = document.getElementById('btn-filterdirector');
             if (btnDir) {
-                btnDir.innerText = (choosendirector === "Tutti") ? "Director" : choosendirector;
+                btnDir.innerText = (choosendirector === "Any") ? "Director" : choosendirector;
             }
             
             var menu = clickedDirector.closest('.dropdown');
@@ -335,10 +336,10 @@ function createFilterPanelUI(map) {
         var clickedYear = e.target.closest('.filtro-year');
         if (clickedYear) {
             e.preventDefault();
-            var choosenYear = clickedYear.getAttribute('data-year') || "Tutti";
+            var choosenYear = clickedYear.getAttribute('data-year') || "Any";
             var btnYear = document.getElementById('btn-filterYear');
             if (btnYear) {
-                btnYear.innerText = (choosenYear === "Tutti") ? "Year" : choosenYear;
+                btnYear.innerText = (choosenYear === "Any") ? "Year" : choosenYear;
             }
             // Chiudi manualmente il menu dropdown
             var menu = clickedYear.closest('.dropdown');
@@ -392,10 +393,10 @@ function applyFilters() {
     
     currentLayer = L.geoJSON(initialData, {
         filter: function(feature) {
-            var matchDirector = (selectedDirector === "Tutti" || feature.properties.director === selectedDirector);
+            var matchDirector = (selectedDirector === "Any" || feature.properties.director === selectedDirector);
             
             var matchYear = true;
-            if (selectedYearRange !== "Tutti") {
+            if (selectedYearRange !== "Any") {
                 var year = parseInt(feature.properties.production_year, 10);
                 var parts = selectedYearRange.split('-');
                 if (parts.length === 2) {
@@ -420,7 +421,7 @@ function applyFilters() {
         map.fitBounds(currentLayer.getBounds());
     }
 
-    if (selectedDirector !== "Tutti") {
+    if (selectedDirector !== "Any") {
         disegnaPercorso(filteredFeatures);
     } else {
         if (routingControl !== null) {
@@ -431,12 +432,12 @@ function applyFilters() {
 }
 
 function Drawpoints(choosendirector) {
-    selectedDirector = choosendirector || "Tutti";
+    selectedDirector = choosendirector || "Any";
     applyFilters();
 }
 
 function filterByYear(yearRange) {
-    selectedYearRange = yearRange || "Tutti";
+    selectedYearRange = yearRange || "Any";
     applyFilters();
 }
 
@@ -557,7 +558,7 @@ function createExplorePanelUI(map) {
             </div>
         </a>
 
-        <a href="about_nouvelle_vague.html#innovation" class="text-decoration-none text-dark link-esplora">
+        <a href="tour.html?regista=Jean-Luc Godard" class="text-decoration-none text-dark link-esplora">
             <div class="card border-0 shadow rounded-3 bg-white" style="width: 260px; transition: transform 0.2s, background-color 0.2s;">
                 <div class="row g-0 align-items-center p-2">
                     <div class="col-3 text-center text-success">
