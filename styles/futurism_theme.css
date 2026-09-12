@@ -752,9 +752,14 @@ span.navbar-text {
 
 /*ABOUT NOUVELLE VAGUE*/
 
+@media (min-width: 991px){
+    aside.bookmarks {
+        position: sticky; 
+        top: 20px; /* Regola questa distanza in base alle tue esigenze */
+    }
+}
+
 aside.bookmarks {
-    position: sticky;
-    top: 20px; /* Regola questa distanza in base alle tue esigenze */
     align-self: flex-start; /* Fondamentale per layout flex */
     height: auto;
 }

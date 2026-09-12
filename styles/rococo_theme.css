@@ -561,19 +561,17 @@ button:disabled {
 /* ==========================================================================
    MENU ASIDE (BOOKMARKS) - STILE ROCOCÒ
    ========================================================================== */
-
-aside.bookmarks {
-    position: sticky;
-    top: 20px; /* Regola questa distanza in base alle tue esigenze */
-    align-self: flex-start; /* Fondamentale per layout flex */
-    height: auto;
+@media (min-width: 991px){
+    aside.bookmarks {
+        position: sticky; 
+        top: 20px; /* Regola questa distanza in base alle tue esigenze */
+    }
 }
+
 aside.bookmarks {
     background-color: #D4EFE2; /* Sfondo menta pastello */
     padding: 1.8rem 1.5rem 1.5rem 2.2rem;
     border-radius: 12px;
-    position: sticky;
-    top: 20px; /* Regola questa distanza in base alle tue esigenze */
     align-self: flex-start; /* Fondamentale per layout flex */
     height: auto;
     
@@ -660,6 +658,24 @@ aside.bookmarks a:hover {
     font-weight: 400;
 }
 
+
+#about_NV_text_content strong {
+    color: #623e3e; 
+    font-weight: 700;
+}
+
+#about_NV_text_content a {
+    color: #A87C43;
+    text-decoration: none;
+    border-bottom: 1px dashed #A87C43; 
+    transition: all 0.3s ease;
+}
+
+#about_NV_text_content a:hover {
+    color: #e2a759; 
+    border-bottom: 1px solid #e2a759; 
+    text-shadow: 0 0 5px rgba(226, 167, 89, 0.4); /* Leggero bagliore dorato */
+}
 
 
 

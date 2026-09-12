@@ -695,6 +695,138 @@ footer ul a:not(.pipe):hover {
     background-color: var(--glass-bg);
 }
 
+/*ABOUT NOUVELLE VAGUE*/
+
+@media (min-width: 991px){
+    aside.bookmarks {
+        position: sticky; 
+        top: 20px; /* Regola questa distanza in base alle tue esigenze */
+    }
+}
+
+aside.bookmarks {
+    align-self: flex-start; /* Fondamentale per layout flex */
+    height: auto;
+}
+
+/* ==========================================================================
+   MENU ASIDE - STILE SOLARPUNK (Serra Cartografica)
+   ========================================================================== */
+
+aside.bookmarks {
+    /* 1. Effetto Vetro (Glassmorphism) ereditato dalle tue card */
+    line-height: 1.5;
+    padding: 10px;
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem 1.5rem 1.5rem 2rem !important;
+    
+    /* 2. Bordo strutturale bio-tech e Ombreggiatura */
+    border-left: 4px solid var(--primary-bright); 
+    box-shadow: var(--glass-shadow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+aside.bookmarks:hover {
+    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.15);
+    border-left: 4px solid var(--secondary); /* Al passaggio diventa oro mattutino */
+}
+
+aside.bookmarks ol {
+    list-style: none; /* Togliamo i numeri base */
+    counter-reset: solarpunk-counter; /* Creiamo un contatore custom */
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+aside.bookmarks ol li {
+    counter-increment: solarpunk-counter;
+    margin-bottom: 0.85rem;
+    position: relative;
+    padding-left: 2.2rem;
+}
+
+/* 5. Stile per i Numeri (stile codice / terminale verde) */
+aside.bookmarks ol li::before {
+    content: counter(solarpunk-counter, decimal-leading-zero) "."; /* Formato 01, 02 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-bright);
+    font-family: "Space Mono", monospace;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-shadow: var(--glow-green);
+}
+
+/* 6. Stile Link del Menu */
+aside.bookmarks a {
+    color: var(--text-muted); /* Color salvia */
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* 7. Hover dinamico e luminoso */
+aside.bookmarks a:hover {
+    color: var(--secondary);
+    transform: translateX(6px); /* Scorrimento in avanti fluido */
+    text-shadow: var(--glow-gold);
+}
+
+
+/* ==========================================================================
+   STILE TESTO PRINCIPALE (GRASSETTI E LINK SOLARPUNK)
+   ========================================================================== */
+
+/* Elementi Strong - Radicati a terra */
+#about_NV_text_content strong {
+    color: var(--primary); /* Verde foresta scuro per non appesantire */
+    font-weight: 800;
+}
+
+#about_NV_text_content h2 {
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);    
+    font-weight: 400;
+}
+
+#about_NV_text_content h2:not(#revolution){
+    padding-top: 2.5rem;
+}
+
+#about_NV_text_content p{
+    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
+    line-height: 1.6;    
+    font-weight: 400;
+}
+
+/* Link nel testo - Gialli e sottolineati di default */
+#about_NV_text_content a {
+    color: var(--secondary);
+    text-decoration: underline; 
+    text-decoration-color: rgba(245, 166, 35, 0.6); /* Sottolineatura giallo-oro leggermente trasparente */
+    text-underline-offset: 4px; /* Stacca la linea dal testo per un look più pulito */
+    transition: all 0.3s ease;
+}
+
+/* Hover dei Link - Effetto bagliore solare/neon */
+#about_NV_text_content a:hover {
+    color: #f5a623; /* Diventa leggermente più chiaro/dorato al passaggio */
+    text-decoration-color: var(--accent-brass);
+    text-decoration-thickness: 2px; /* La linea diventa un po' più spessa */
+    
+    /* Il bagliore! Usiamo due livelli di text-shadow per creare un vero effetto "Glow" */
+    text-shadow: 
+        0 0 8px rgba(245, 166, 35, 0.8),
+        0 0 15px rgba(245, 166, 35, 0.4);
+}
+
 /* ==========================================================================
    FIX FUNZIONALITÀ TOUR.HTML E JS (Logica di visualizzazione)
    ========================================================================== */
@@ -790,7 +922,7 @@ button:disabled {
     cursor: pointer;
 }
 
-.openTheme span:hover, .closeTheme span:hover {
+.openTheme span:not(.btn-chiudi):hover {
     color: var(--secondary);
 }
 
