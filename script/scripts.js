@@ -111,9 +111,9 @@ const pages = {
     // TOUR PAGE CONTROLLER (tour.html)
     // -------------------------------------------------------------------------
     tour: async () => {
-        // Extract 'regista' query parameter from current URL (e.g. tour.html?regista=Jean-Luc+Godard)
+        // Extract 'keyword' query parameter from current URL (e.g. tour.html?keyword=Jean-Luc+Godard)
         const urlParams = new URLSearchParams(window.location.search);
-        const targetKeyword = urlParams.get('regista');
+        const targetKeyword = urlParams.get('keyword') || 'Jean-Luc Godard';
         
         // Instantiate Leaflet map centered on Paris coordinates [lat, lng] at zoom level 13
         // Default zoom control disabled to position it cleanly in bottom-right
@@ -186,6 +186,43 @@ const pages = {
 
         // Initialize button enabled/disabled states based on initial stop index
         updateBtnStatus();
+
+        const tourOptions = document.querySelectorAll('.tour-option');
+        const dropdownButton = document.getElementById('tourDropdownMenuButton');
+
+        if (tourOptions.length > 0) {
+            tourOptions.forEach(option => {
+                option.addEventListener('click', async (event) => {
+                    const newKeyword = event.target.getAttribute('data-keyword');
+                    if (!newKeyword) return;
+
+                    if (dropdownButton) {
+                        dropdownButton.textContent = newKeyword; // Update dropdown button text to reflect selected director
+                    }
+
+                    if (typeof currentLayer !== 'undefined' && currentLayer) {
+                        map.removeLayer(currentLayer);
+                    }
+                    tourLayers = []; 
+                    
+                    const newGeoData = await filteredLoadGeoData(newKeyword);
+                    if (newGeoData) {
+                        addGeoData(newGeoData);
+                    }
+                    
+                    currentTourData = await loadTourTextData(newKeyword);
+                    currentTourIndex = 0; 
+
+                    if (currentTourData && currentTourData.locations.length > 0) {
+                        showParagraph(0);
+                    }
+                    
+                    const newUrl = new URL(window.location);
+                    newUrl.searchParams.set('regista', newKeyword);
+                    window.history.pushState({}, '', newUrl);
+                });
+            });
+        }
     }
 };
 
@@ -396,9 +433,9 @@ function createPopupContent(feature) {
     return `<div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">${props.name || 'Location'}</h5>
-                    <p class="card-text mb-1"><b>Director:</b> ${props.director || 'N/A'}</p>
-                    <p class="card-text mb-1"><b>Year:</b> ${props.production_year || 'N/A'}</p>
-                    <p class="card-text mb-2"><b>Associated Film:</b> ${props.movie || 'N/A'}</p>
+                    <p class="card-text m-0"><b>Director:</b> ${props.director || 'N/A'}</p>
+                    <p class="card-text m-0"><b>Year:</b> ${props.production_year || 'N/A'}</p>
+                    <p class="card-text m-0"><b>Associated Film:</b> ${props.movie || 'N/A'}</p>
                 </div>
             </div>`;
 }
