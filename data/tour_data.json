@@ -62,5 +62,151 @@
                             "text": "The Louvre is the largest and most famous art museum exhibition in the world, located along the right bank of the Seine. Originally built as a 12th-century medieval fortress and later used as the main residence for French kings, it officially opened as a public museum in 1793. It houses priceless masterpieces like Leonardo da Vinci's Mona Lisa and features galleries that cover millennia of civilization. The modern glass Pyramid at its entrance creates an extraordinary architectural contrast with the classical structures."
                         }
         ]
+    },
+    {
+        "tour_id": 2,
+        "tour_name": "Nouvelle Vague Tour: Agnès Varda",
+        "keywords": "Agnès Varda",
+        "description": "Step into the sensitive, poetic, and groundbreaking world of Agnès Varda, a central figure of the French New Wave and the Left Bank cinema. This tour guides you through the authentic Parisian locations featured in her masterpiece Cléo de 5 à 7. From the bustling commercial arcades of Rue de Rivoli and the vibrant intellectual haven of Café du Dôme in Montparnasse, to the serene landscapes and weeping willows of Parc Montsouris, discover the streets and open spaces that chronicled Cléo's real-time journey through Paris.",
+        "pills" : ["1 Hour", "Accessible", "Day"],
+        "locations": [
+                        {
+                            "location_id": 1,
+                            "location_name": "128 Rue de Rivoli",
+                            "text": "Number 128 Rue de Rivoli is part of one of the longest, most central, and most historic arteries in the city of Paris. The street was designed and initiated in 1802 with the characteristic structure of uniform arcades and colonnades alongside the Tuileries Gardens and the Louvre. This commercial stretch connects the city's main monumental axes and reflects the splendor of the imperial era through the unmistakable alignment of its imposing stone facades."
+                        },
+                        {
+                            "location_id": 2,
+                            "location_name": "Café du Dôme",
+                            "text": "The Café du Dôme is a true Parisian cultural institution inaugurated in 1898 at the corner of Boulevard du Montparnasse and Boulevard Raspail. At the beginning of the 20th century, it became the nerve center of intellectual life on the Rive Gauche, attracting prominent international painters, sculptors, poets, and writers of the Anglo-American and Eastern European scenes. Today, it still perfectly preserves its status as a legend of the golden age of French bohemian and cinematic art."
+                        },
+                        {
+                            "location_id": 3,
+                            "location_name": "Parc Montsouris",
+                            "text": "Parc Montsouris is one of the four large urban parks commissioned by Emperor Napoleon III to offer green oxygen zones to the capital, officially opened in 1869. Located in the 14th arrondissement near the Cité Universitaire, it was designed by the brilliant engineer Jean-Charles Adolphe Alphand in a typical English landscape style, transforming an area of abandoned quarries. It is dominated by a vast central artificial lake that makes it a serene oasis as much appreciated by students as by filmmakers."
+                        }
+        ]
+    },
+    {
+        "tour_id": 3,
+        "tour_name": "Top 10 Locations in Paris",
+        "keywords": "Top 10 locations",
+        "description": "Discover the definitive Parisian cinematic journey through the 10 most iconic and breathtaking locations of the French capital, immortalized by the masters of the Nouvelle Vague. From the sacred Gothic grandeur of Notre-Dame and the immortal art treasures of the Louvre, across the romantic arches of the Pont des Arts and the sweeping splendor of Place de la Concorde and the Champs-Élysées, to the monumental heights of the Arc de Triomphe, the Eiffel Tower vistas from Palais de Chaillot, the bohemian sanctuaries of Montmartre's Sacré-Cœur and Montparnasse's Café du Dôme, and the architectural grace of Saint-Sulpice. This curated tour celebrates the timeless urban tapestry where history, architecture, and cinema converge.",
+        "pills" : ["2.5 Hours", "Accessible", "Day"],
+        "locations": [
+                        {
+                            "location_id": 1,
+                            "location_name": "Notre Dame",
+                            "text": "Notre-Dame de Paris is the spiritual and geographical heart of Paris, located on the Île de la Cité. Built over roughly two centuries and completed in 1345, it defined the canons of Gothic architecture with its pioneering introduction of flying buttresses and rib vaults. Its priceless artistic heritage includes sculptures, medieval stained glass windows, and sacred relics. Having survived revolutions and wars, it continues to be an immortal symbol of French culture and resilience."
+                        },
+                        {
+                            "location_id": 2,
+                            "location_name": "Pont des Arts",
+                            "text": "The Pont des Arts, or Passerelle des Arts, was the first metal bridge built in Paris, originally inaugurated in 1804 under Napoleon Bonaparte. After being damaged by bombings and river collisions, it was rebuilt in the 1980s retaining a similar appearance to the original. It majestically connects the right and left banks of the Seine between the Louvre and the Institut de France, and is known in popular culture as the 'bridge of love locks', an unmissable destination for photographers and lovers."
+                        },
+                        {
+                            "location_id": 3,
+                            "location_name": "The Louvre Museum, Paris",
+                            "text": "The Louvre Museum is the largest art museum exhibition in the world, nestled in the heart of Paris along the right bank of the Seine. Originally a medieval fortress in the 12th century, it was transformed into the main residence of the French kings, before becoming a public museum in 1793 during the French Revolution. Its countless galleries cover millennia of history and civilization, and its modern glass Pyramid now creates an extraordinary contrast between classical and contemporary architecture."
+                        },
+                        {
+                            "location_id": 4,
+                            "location_name": "Place de la Concorde",
+                            "text": "Place de la Concorde is the largest and most monumental square in Paris, designed by architect Ange-Jacques Gabriel and originally conceived as Place Louis XV. It became one of the main stages of the French Revolution, where the beheadings of Louis XVI and Marie Antoinette were carried out. At its center stands the Luxor Obelisk, an Egyptian artifact over 3,000 years old donated to France in the 19th century. Concluding the Champs-Élysées, it offers spectacular perspectives of the Tuileries Gardens, the Arc de Triomphe, and the Seine."
+                        },
+                        {
+                            "location_id": 5,
+                            "location_name": "Champs Elysées (60 avenue des Champs Elysées)",
+                            "text": "Number 60 Avenue des Champs-Élysées is located along the majestic perspective axis that defines the triumph of Parisian urban planning. Originally traced out by André Le Nôtre in 1670, the avenue took its final shape in the 18th century, becoming the symbol of national grandeur. Hosting haute couture boutiques, historic automobile showrooms, restaurants, and luxury cafés, this stretch of the avenue embodies the undisputed prestige of the city, lending itself to countless cinematic shots."
+                        },
+                        {
+                            "location_id": 6,
+                            "location_name": "Arc de Triomphe",
+                            "text": "The Arc de Triomphe is one of the most celebrated monuments in France, commissioned by Napoleon Bonaparte in 1806 following the victory at Austerlitz and inaugurated in 1836 under King Louis-Philippe. Designed in a monumental Neoclassical style by architect Jean Chalgrin, it commands the center of Place Charles de Gaulle (historically Place de l'Étoile), from which twelve grand avenues radiate outwards. The structure is renowned for its high-relief sculptural groups, notably François Rude's 'La Marseillaise', celebrating the French Revolutionary and Imperial campaigns. Beneath its arch lies the Tomb of the Unknown Soldier and the eternal flame rekindled daily since 1923, making it both a primary site of national remembrance and a defining visual landmark of Parisian cinema."
+                        },
+                        {
+                            "location_id": 7,
+                            "location_name": "Palais de Chaillot",
+                            "text": "The Palais de Chaillot is a majestic architectural complex located in the 16th arrondissement, at the peak of the Chaillot hill. It was built for the 1937 International Exhibition. Composed of two large curved wings separated by a monumental esplanade, it offers by far the most famous and emblematic framing of the Eiffel Tower on the other bank of the Seine. It houses prestigious museums inside, such as the Cité de l'Architecture et du Patrimoine."
+                        },
+                        {
+                            "location_id": 8,
+                            "location_name": "Sacré-Cœur in Montmartre.",
+                            "text": "The Sacré-Cœur Basilica is a grand Catholic place of worship that dominates the city from the summit of the Montmartre butte. Construction began in 1875 and the structure was completed in 1914. It is characterized by its luminous limestone, known for cleaning itself with rain, and by an eclectic style that combines Romanesque and Byzantine influences. From its monumental parvise, one can admire one of the most extraordinary and vast panoramas of the entire French capital."
+                        },
+                        {
+                            "location_id": 9,
+                            "location_name": "Chiesa di Saint Suplice",
+                            "text": "The Église Saint-Sulpice is a vast religious building located in the 6th arrondissement of Paris, whose construction origins date back to 1646, although it took over a century and a half to complete. It is famous for its imposing asymmetrical facade designed by Jean-Nicolas Servandoni and for the magnificent frescoes by Eugène Delacroix. The church also houses an important astronomical meridian (the gnomon of Saint-Sulpice) and a monumental Cavaillé-Coll organ, among the finest in France."
+                        },
+                        {
+                            "location_id": 10,
+                            "location_name": "Café du Dôme",
+                            "text": "The Café du Dôme is a true Parisian cultural institution inaugurated in 1898 at the corner of Boulevard du Montparnasse and Boulevard Raspail. At the beginning of the 20th century, it became the nerve center of intellectual life on the Rive Gauche, attracting prominent international painters, sculptors, poets, and writers of the Anglo-American and Eastern European scenes. Today, it still perfectly preserves its status as a legend of the golden age of French bohemian and cinematic art."
+                        }
+        ]
+    },
+    {
+        "tour_id": 4,
+        "tour_name": "Cinematic Churches of Paris",
+        "keywords": "Cinematic Churches",
+        "description": "Explore Paris through its most monumental and cinematic places of worship, where sacred architecture became an expressive canvas for Nouvelle Vague filmmakers. This tour takes you from the medieval Gothic majesty of Notre-Dame on the Île de la Cité (À bout de souffle) and the Baroque elegance of the Chapelle de la Sorbonne in the Latin Quarter (Paris nous appartient), to the grand twin towers and Delacroix frescoes of Église Saint-Sulpice (Paris nous appartient), and ascending finally to the panoramic heights of the Sacré-Cœur Basilica dominating Montmartre (Les 400 coups). Discover the dramatic atmospheres, spiritual history, and timeless visual power of Paris's greatest cinematic sanctuaries.",
+        "pills" : ["1.5 Hours", "Accessible", "Day"],
+        "locations": [
+                        {
+                            "location_id": 1,
+                            "location_name": "Notre Dame",
+                            "text": "Notre-Dame de Paris is the spiritual and geographical heart of Paris, located on the Île de la Cité. Built over roughly two centuries and completed in 1345, it defined the canons of Gothic architecture with its pioneering introduction of flying buttresses and rib vaults. Its priceless artistic heritage includes sculptures, medieval stained glass windows, and sacred relics. Having survived revolutions and wars, it continues to be an immortal symbol of French culture and resilience."
+                        },
+                        {
+                            "location_id": 2,
+                            "location_name": "Capelle de la Sorbonne",
+                            "text": "The Chapelle de la Sorbonne is a masterpiece of French Baroque architecture, designed by the architect Jacques Lemercier and completed in 1642. It was commissioned by Cardinal Richelieu, whose remains still rest today in the mausoleum within the nave. The structure is distinguished by its elegant dome, which was one of the first of its kind to be built in Paris, and is one of the intellectual symbols of the city."
+                        },
+                        {
+                            "location_id": 3,
+                            "location_name": "Chiesa di Saint Suplice",
+                            "text": "The Église Saint-Sulpice is a vast religious building located in the 6th arrondissement of Paris, whose construction origins date back to 1646, although it took over a century and a half to complete. It is famous for its imposing asymmetrical facade designed by Jean-Nicolas Servandoni and for the magnificent frescoes by Eugène Delacroix. The church also houses an important astronomical meridian (the gnomon of Saint-Sulpice) and a monumental Cavaillé-Coll organ, among the finest in France."
+                        },
+                        {
+                            "location_id": 4,
+                            "location_name": "Sacré-Cœur in Montmartre.",
+                            "text": "The Sacré-Cœur Basilica is a grand Catholic place of worship that dominates the city from the summit of the Montmartre butte. Construction began in 1875 and the structure was completed in 1914. It is characterized by its luminous limestone, known for cleaning itself with rain, and by an eclectic style that combines Romanesque and Byzantine influences. From its monumental parvise, one can admire one of the most extraordinary and vast panoramas of the entire French capital."
+                        }
+        ]
+    },
+    {
+        "tour_id": 5,
+        "tour_name": "Hidden Gems of Paris",
+        "keywords": "Hidden Gems",
+        "description": "Venture off the beaten track to explore the secret, intimate, and picturesque corners of Paris cherished by the directors of the French New Wave. From the bustling aromas of the pedestrian street market at Place de Lévis (La Boulangère de Monceau) and the tranquil elegance of Square d'Estienne d'Orves with its fountains, to the historic glass-roofed covered passages tucked away behind Boulevard Montmartre and the quiet, bohemian Belle Époque seclusion of Rue Puget bordering the Montmartre Cemetery (Les 400 coups), concluding with the wild, idyllic river oasis of Île des Corbeaux along the Marne (Bande à part). Discover Paris through its authentic neighborhood rhythms, secluded alleyways, and peaceful escapes far from the bustling crowds.",
+        "pills" : ["2 Hours", "Accessible", "Day"],
+        "locations": [
+                        {
+                            "location_id": 1,
+                            "location_name": "street market in Pl. de Levis",
+                            "text": "The street market that winds around Place de Lévis, in the 17th arrondissement of Paris, is one of the city's most beloved commercial and culinary promenades. Having transformed from a simple rural road in the 19th century into a modern pedestrian zone, the street retains the vibrant atmosphere of the classic Parisian 'marché de quartier' (neighborhood market). Visitors flock there for the abundance of artisan shops, fromageries, boulangeries, and stalls of prime produce, which fully represent the French art of living."
+                        },
+                        {
+                            "location_id": 2,
+                            "location_name": "Square d'Estienne d'Orves",
+                            "text": "The Square d'Estienne d'Orves is a charming tree-lined square located in the 9th arrondissement of Paris. It was created in 1866 as part of the great Haussmannian works to serve as an elegant frame for the adjacent Church of the Sainte-Trinité. Later renowned to honor the name of a hero of the French Resistance, the square is a refined urban hub featuring allegorical fountains surrounded by carefully modeled flower beds."
+                        },
+                        {
+                            "location_id": 3,
+                            "location_name": "boulevard Montmartre 12",
+                            "text": "The address at number 12 Boulevard Montmartre is part of the string of 'Grands Boulevards' in Paris, arteries born from the demolition of the old city walls. The 19th century saw this boulevard flourish as a center of high society and theatrical entertainment. In the immediate vicinity of number 12 are the entrances to the evocative Parisian covered passages, such as Passage Jouffroy, veritable arcades that enclose the soul of 19th-century French commerce."
+                        },
+                        {
+                            "location_id": 4,
+                            "location_name": "Rue Puget 2",
+                            "text": "Number 2 Rue Puget is situated on a quiet, short street in the 18th arrondissement of Paris, right in the atmosphere of Montmartre. The street runs tightly against the protective walls of the famous Montmartre Cemetery, where countless French intellectual figures rest. Despite its secluded position away from the main tourist routes, the surrounding architecture perfectly reflects the residential character and the romantic, slightly decadent appearance typical of the Belle Époque."
+                        },
+                        {
+                            "location_id": 5,
+                            "location_name": "Ile des Corbeaux at Saint-Maurice",
+                            "text": "Île des Corbeaux is a quiet and small river islet located on the Marne River, falling within the administrative territory of the municipality of Saint-Maurice, not far from the Bois de Vincennes, on the outskirts of Paris. The name evokes rural and wild atmospheres in stark contrast to urban expansion. Over time, these river islands have attracted Parisians looking for nature, offering idyllic landscapes and enchanting paths far from the urban frenzy."
+                        }
+        ]
     }
 ]

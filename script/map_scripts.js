@@ -850,7 +850,7 @@ function createExplorePanelUI(map) {
             </div>
         </a>
 
-        <a href="tour.html?regista=Jean-Luc Godard" class="text-decoration-none text-dark link-esplora">
+        <a href="tour.html?keyword=Jean-Luc Godard" class="text-decoration-none text-dark link-esplora">
             <div class="card border-0 shadow rounded-3 bg-white" style="width: 260px; transition: transform 0.2s, background-color 0.2s;">
                 <div class="row g-0 align-items-center p-2">
                     <div class="col-3 text-center text-success">

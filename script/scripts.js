@@ -19,7 +19,7 @@
 // =============================================================================
 
 // Leaflet Map instance dedicated to the tour view
-let map = null;
+let mapTour = null;
 
 // Sequentially ordered array of Leaflet marker layers representing tour stops
 let tourLayers = [];
@@ -40,7 +40,6 @@ let currentTourIndex = 0;
  * Automatically executed when the DOM is fully loaded.
  */
 const pages = {
-
     // -------------------------------------------------------------------------
     // CATALOGUE PAGE CONTROLLER (catalogue.html)
     // -------------------------------------------------------------------------
@@ -111,29 +110,28 @@ const pages = {
     // TOUR PAGE CONTROLLER (tour.html)
     // -------------------------------------------------------------------------
     tour: async () => {
-        // Extract 'regista' query parameter from current URL (e.g. tour.html?regista=Jean-Luc+Godard)
+        // Extract 'keyword' query parameter from current URL (e.g. tour.html?keyword=Jean-Luc+Godard)
         const urlParams = new URLSearchParams(window.location.search);
-        const targetKeyword = urlParams.get('regista');
+        const targetKeyword = urlParams.get('keyword') || 'Jean-Luc Godard';
         
         // Instantiate Leaflet map centered on Paris coordinates [lat, lng] at zoom level 13
         // Default zoom control disabled to position it cleanly in bottom-right
-        map = L.map("map", { zoomControl: false }).setView([48.8566, 2.3522], 13);
+        mapTour = L.map("map", { zoomControl: false }).setView([48.8566, 2.3522], 13);
             
         // Add zoom controls to bottom-right corner
-        L.control.zoom({ position: 'bottomright' }).addTo(map);
-
+        L.control.zoom({ position: 'bottomright' }).addTo(mapTour);
         // Add OpenStreetMap raster tile layer with zoom bounds and copyright attribution
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             minZoom: 12,
             maxZoom: 17,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
+        }).addTo(mapTour);
 
         // Fetch GeoJSON film locations filtered for the selected director
         const filteredGeoData = await filteredLoadGeoData(targetKeyword);
         if (filteredGeoData) {
             // Render filtered location pins on map and store layer references
-            addGeoData(filteredGeoData);
+            addGeoDataTour(filteredGeoData);
         }
         
         // Fetch textual narrative content and tour metadata for this director
@@ -186,6 +184,43 @@ const pages = {
 
         // Initialize button enabled/disabled states based on initial stop index
         updateBtnStatus();
+
+        const tourOptions = document.querySelectorAll('.tour-option');
+        const dropdownButton = document.getElementById('tourDropdownMenuButton');
+
+        if (tourOptions.length > 0) {
+            tourOptions.forEach(option => {
+                option.addEventListener('click', async (event) => {
+                    const newKeyword = event.target.getAttribute('data-keyword');
+                    if (!newKeyword) return;
+
+                    if (dropdownButton) {
+                        dropdownButton.textContent = newKeyword; // Update dropdown button text to reflect selected director
+                    }
+
+                    if (typeof currentLayer !== 'undefined' && currentLayer) {
+                        mapTour.removeLayer(currentLayer);
+                    }
+                    tourLayers = []; 
+                    
+                    const newGeoData = await filteredLoadGeoData(newKeyword);
+                    if (newGeoData) {
+                        addGeoDataTour(newGeoData);
+                    }
+                    
+                    currentTourData = await loadTourTextData(newKeyword);
+                    currentTourIndex = 0; 
+
+                    if (currentTourData && currentTourData.locations.length > 0) {
+                        showParagraph(0);
+                    }
+                    
+                    const newUrl = new URL(window.location);
+                    newUrl.searchParams.set('regista', newKeyword);
+                    window.history.pushState({}, '', newUrl);
+                });
+            });
+        }
     }
 };
 
@@ -354,17 +389,17 @@ function filteredLoadGeoData(targetKeyword) {
  * stores marker layers into the ordered tourLayers array, and navigates to stop 0.
  * @param {Object} geojson - Filtered GeoJSON feature collection.
  */
-function addGeoData(geojson) {
+function addGeoDataTour(geojson) {
     if (!geojson || geojson.features.length === 0) return;
     tourLayers = []; // Reset tour layers array
 
     // Instantiate GeoJSON layer and collect markers sequentially
     const currentLayer = L.geoJSON(geojson, {
         onEachFeature: function (feature, layer) {
-            layer.bindPopup(createPopupContent(feature)); // Bind card popup
+            layer.bindPopup(createPopupContentTour(feature)); // Bind card popup
             tourLayers.push(layer); // Store layer reference in sequential tour order
         }
-    }).addTo(map);
+    }).addTo(mapTour);
 
     // If locations were loaded, fly camera directly to the first stop
     if (tourLayers.length > 0) {
@@ -381,7 +416,7 @@ function goToLocation(index) {
     if (!tourLayers[index]) return;
     const targetLayer = tourLayers[index];
     // Smooth flight animation to marker coordinates at zoom 16 over 1.5 seconds
-    map.flyTo(targetLayer.getLatLng(), 16, { animate: true, duration: 1.5 });
+    mapTour.flyTo(targetLayer.getLatLng(), 16, { animate: true, duration: 1.5 });
     targetLayer.openPopup(); // Display marker popup card
 }
 
@@ -390,15 +425,15 @@ function goToLocation(index) {
  * @param {Object} feature - GeoJSON feature representing a film location.
  * @returns {string} HTML markup for the popup card.
  */
-function createPopupContent(feature) {
+function createPopupContentTour(feature) {
     var props = feature.properties || {};
     var safeName = (props.name || '').replace(/'/g, "\\'");
     return `<div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">${props.name || 'Location'}</h5>
-                    <p class="card-text mb-1"><b>Director:</b> ${props.director || 'N/A'}</p>
-                    <p class="card-text mb-1"><b>Year:</b> ${props.production_year || 'N/A'}</p>
-                    <p class="card-text mb-2"><b>Associated Film:</b> ${props.movie || 'N/A'}</p>
+                    <p class="card-text m-0"><b>Director:</b> ${props.director || 'N/A'}</p>
+                    <p class="card-text m-0"><b>Year:</b> ${props.production_year || 'N/A'}</p>
+                    <p class="card-text m-0"><b>Associated Film:</b> ${props.movie || 'N/A'}</p>
                 </div>
             </div>`;
 }
