@@ -927,6 +927,46 @@ aside.bookmarks a:hover {
     z-index: 1;
 }
 
+#map h5.card-title {
+    color: #623e3e;
+    font-family: "Playfair", Times, serif;
+}
+
+#map .leaflet-popup-content-wrapper {
+    border: 2px solid #A87C43;
+    outline: 1px solid #A87C43;
+    outline-offset: -7px;
+}
+
+#map .card {
+    border: none;
+}
+
+#map .card .btn {
+    color: #EDEAE2;
+    background-color: #A87C43;
+    border: 2px solid transparent;
+}
+
+#map .card .btn:hover {
+    background-color: transparent;
+    color: #925e5e;
+    border: 2px solid #925e5e;
+}
+
+#map .leaflet-popup-close-button span{
+    font-size: 1.5rem;
+}
+
+.leaflet-popup-content {
+  display: flex;
+  justify-content: center;
+}
+
+.leaflet-popup-content .card {
+  max-width: 100%; /* Prevents the card from overflowing the popup */
+}
+
 #head-info #title-sect {
     font-family: "Playfair Display", serif;
     color: #A87C43;
@@ -935,13 +975,15 @@ aside.bookmarks a:hover {
 }
 
 #info-panel {
-    background-color: #D4EFE2;
+    /*background-color: #D4EFE2;
     border: 2px solid #A87C43;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);*/
     color: #1A1A1A;
+    height: 40vh;
 }
 
 #info-panel #text-section {
+    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
     color: #1A1A1A;
 }

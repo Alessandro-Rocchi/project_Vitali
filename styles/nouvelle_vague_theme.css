@@ -191,9 +191,73 @@ a[aria-expanded="false"] i {
    color: #1a1a1a;
 }
 
+/*MAP*/
 
+#map { 
+    height: 500px; 
+}
 
-#map { height: 500px; }
+#map h5.card-title {
+    color: #1A1A1A;
+    font-family: "Playfair", Times, serif;
+}
+
+#map .card {
+    border: none;
+}
+
+#map .card .btn {
+    color: #EDEAE2;
+    background-color: #d32f2f;
+    border: 2px solid transparent;
+}
+
+#map .card .btn:hover {
+    background-color: transparent;
+    color: #A92325;
+    border: 2px solid #A92325;
+}
+
+#map .leaflet-popup-close-button span{
+    font-size: 1.5rem;
+}
+
+.leaflet-popup-content {
+  display: flex;
+  justify-content: center;
+}
+
+.leaflet-popup-content .card {
+  max-width: 100%; /* Prevents the card from overflowing the popup */
+}
+
+ #head-info {
+    font-family: "Playfair", Times, serif;
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+ }
+
+#info-panel {
+    height: 40vh;
+}
+
+#info-panel #text-section {
+    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
+}
+
+#info-panel #text-section #btn-scopri {
+    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
+    color: #002FA7;
+    text-decoration: underline !important;
+}
+
+#info-panel #text-section #btn-scopri:hover {
+    color: #e63946;
+}
+
+#info-panel img {
+
+}
 
 /*NAVBAR*/
 
