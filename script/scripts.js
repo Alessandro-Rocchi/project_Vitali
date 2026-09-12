@@ -19,7 +19,7 @@
 // =============================================================================
 
 // Leaflet Map instance dedicated to the tour view
-let map = null;
+let mapTour = null;
 
 // Sequentially ordered array of Leaflet marker layers representing tour stops
 let tourLayers = [];
@@ -40,7 +40,6 @@ let currentTourIndex = 0;
  * Automatically executed when the DOM is fully loaded.
  */
 const pages = {
-
     // -------------------------------------------------------------------------
     // CATALOGUE PAGE CONTROLLER (catalogue.html)
     // -------------------------------------------------------------------------
@@ -117,23 +116,22 @@ const pages = {
         
         // Instantiate Leaflet map centered on Paris coordinates [lat, lng] at zoom level 13
         // Default zoom control disabled to position it cleanly in bottom-right
-        map = L.map("map", { zoomControl: false }).setView([48.8566, 2.3522], 13);
+        mapTour = L.map("map", { zoomControl: false }).setView([48.8566, 2.3522], 13);
             
         // Add zoom controls to bottom-right corner
-        L.control.zoom({ position: 'bottomright' }).addTo(map);
-
+        L.control.zoom({ position: 'bottomright' }).addTo(mapTour);
         // Add OpenStreetMap raster tile layer with zoom bounds and copyright attribution
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             minZoom: 12,
             maxZoom: 17,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
+        }).addTo(mapTour);
 
         // Fetch GeoJSON film locations filtered for the selected director
         const filteredGeoData = await filteredLoadGeoData(targetKeyword);
         if (filteredGeoData) {
             // Render filtered location pins on map and store layer references
-            addGeoData(filteredGeoData);
+            addGeoDataTour(filteredGeoData);
         }
         
         // Fetch textual narrative content and tour metadata for this director
@@ -201,13 +199,13 @@ const pages = {
                     }
 
                     if (typeof currentLayer !== 'undefined' && currentLayer) {
-                        map.removeLayer(currentLayer);
+                        mapTour.removeLayer(currentLayer);
                     }
                     tourLayers = []; 
                     
                     const newGeoData = await filteredLoadGeoData(newKeyword);
                     if (newGeoData) {
-                        addGeoData(newGeoData);
+                        addGeoDataTour(newGeoData);
                     }
                     
                     currentTourData = await loadTourTextData(newKeyword);
@@ -391,17 +389,17 @@ function filteredLoadGeoData(targetKeyword) {
  * stores marker layers into the ordered tourLayers array, and navigates to stop 0.
  * @param {Object} geojson - Filtered GeoJSON feature collection.
  */
-function addGeoData(geojson) {
+function addGeoDataTour(geojson) {
     if (!geojson || geojson.features.length === 0) return;
     tourLayers = []; // Reset tour layers array
 
     // Instantiate GeoJSON layer and collect markers sequentially
     const currentLayer = L.geoJSON(geojson, {
         onEachFeature: function (feature, layer) {
-            layer.bindPopup(createPopupContent(feature)); // Bind card popup
+            layer.bindPopup(createPopupContentTour(feature)); // Bind card popup
             tourLayers.push(layer); // Store layer reference in sequential tour order
         }
-    }).addTo(map);
+    }).addTo(mapTour);
 
     // If locations were loaded, fly camera directly to the first stop
     if (tourLayers.length > 0) {
@@ -418,7 +416,7 @@ function goToLocation(index) {
     if (!tourLayers[index]) return;
     const targetLayer = tourLayers[index];
     // Smooth flight animation to marker coordinates at zoom 16 over 1.5 seconds
-    map.flyTo(targetLayer.getLatLng(), 16, { animate: true, duration: 1.5 });
+    mapTour.flyTo(targetLayer.getLatLng(), 16, { animate: true, duration: 1.5 });
     targetLayer.openPopup(); // Display marker popup card
 }
 
@@ -427,7 +425,7 @@ function goToLocation(index) {
  * @param {Object} feature - GeoJSON feature representing a film location.
  * @returns {string} HTML markup for the popup card.
  */
-function createPopupContent(feature) {
+function createPopupContentTour(feature) {
     var props = feature.properties || {};
     var safeName = (props.name || '').replace(/'/g, "\\'");
     return `<div class="card" style="width: 18rem;">
