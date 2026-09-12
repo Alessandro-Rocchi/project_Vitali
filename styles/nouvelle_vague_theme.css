@@ -237,10 +237,6 @@ a[aria-expanded="false"] i {
     padding-bottom: 1.5rem;
  }
 
-#info-panel {
-    height: 40vh;
-}
-
 #info-panel #text-section {
     font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
 }

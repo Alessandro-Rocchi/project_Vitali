@@ -31,7 +31,10 @@
     <body data-page="map">
 
         <div class="theme">
-            <div class="closeTheme"><span class="material-symbols-outlined p-1">palette</span></div>
+            <div class="closeTheme">
+                <div class="blur-background"></div>
+                <span class="material-symbols-outlined p-1">palette</span>
+            </div>
             <div class="openTheme">
                 <div class="blur-background"></div>
                 <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/mechanicum_theme.css">settings</span>
@@ -73,19 +76,22 @@
         <div>
             <div id="map" class="rounded-2"></div>
         </div>
-        <div id="head-info" class="container-fluid">
-            <div class="row">
-                <h3 class="col-12 text-center" id="title-sect">Select a place on the map and click View Details to see more details here</h3>
-            </div>
-        </div>
-        <div id="info-panel" class="container-fluid custom-panel rounded-2 mb-4">
-            <div class="row">
-                <div id ="img-div" class="col-3" >
-                    <img id="img-section" src="" class="img-fluid rounded shadow" alt="">
+        <div class="container">
+            <div id="head-info" class="container-fluid">
+                <div class="row">
+                    <h3 class="col-12 text-center" id="title-sect">Select a place on the map and click View Details to see more details here</h3>
                 </div>
-                <div id="text-section" class="col-9"></div>
+            </div>
+            <div id="info-panel" class="container-fluid custom-panel rounded-2 mb-4">
+                <div class="row">
+                    <div id ="img-div" class="col-3" >
+                        <img id="img-section" src="" class="img-fluid rounded shadow" alt="">
+                    </div>
+                    <div id="text-section" class="col-9"></div>
+                </div>
             </div>
         </div>
+        
          <!--FOOTER-->
         <footer class="container-fluid col-12">
             <div class="row py-5 ps-2 py-sm-3">
