@@ -1,0 +1,66 @@
+[
+    {
+        "tour_id": 1,
+        "tour_name": "Nouvelle Vague Tour: Jean-Luc Godard",
+        "keywords": "Jean-Luc Godard",
+        "description": "Step into the rebellious and innovative world of Jean-Luc Godard, a pioneer of the French New Wave. This tour guides you through the iconic Parisian locations that defined his cinematic masterpieces. From the historic grandeur of Notre-Dame and the bustling Champs-Élysées featured in À bout de souffle, to the monumental Louvre Museum and the placid banks of the Marne immortalized in Bande à part, discover the bohemian cafés, metro stations, and timeless streets that served as the authentic, raw backdrop for a filmmaking revolution.",
+        "pills" : ["1 Hour", "Accessible", "Day"],
+        "locations": [
+                        {
+                            "location_id": 1,
+                            "location_name": "Notre Dame",
+                            "text": "Notre-Dame de Paris is a majestic cathedral located on the Île de la Cité, completed in 1345 after roughly two centuries of construction. It defined the canons of Gothic architecture through the pioneering introduction of rib vaults and flying buttresses. It is the spiritual and geographical heart of Paris, housing a priceless artistic heritage of sculptures, medieval stained glass windows, and sacred relics. Having survived wars and revolutions, it remains an immortal symbol of French culture and resilience, known worldwide for its gargoyles and rose windows."
+                        },
+                        {
+                            "location_id": 2,
+                            "location_name": "Les Rives de Notre Dame, quai St Michel, Paris",
+                            "text": "The Quai Saint-Michel is a famous, historic street running along the left bank (Rive Gauche) of the Seine, with its current layout largely dating back to medieval urban works. It is important because it offers an uninterrupted and picturesque panoramic view of the Île de la Cité and the Notre-Dame Cathedral. The banks are also populated by the traditional 'bouquinistes' (open-air booksellers), which define the bohemian and literary soul of the French capital."
+                        },
+                        {
+                            "id": 3,
+                            "location_name": "The entrances to the George V Métro station",
+                            "text": "Inaugurated on August 13, 1900, on Line 1, this station is situated under the Avenue des Champs-Élysées in the 8th arrondissement. Originally named 'Alma', it was renamed in 1920 to honor the King of England, George V. It is significant as its entrances perfectly reflect the functional and iconic aesthetics of Parisian public transport, opening directly onto the wide sidewalks where global tourism and high society intertwine."
+                        },
+                        {
+                            "id": 4,
+                            "location_name": "Place de la Concorde",
+                            "text": "Completed in 1772 and originally designed by architect Ange-Jacques Gabriel as Place Louis XV, this is the largest and most monumental public square in Paris. It is historically crucial as one of the main stages of the French Revolution, where Marie Antoinette and Louis XVI were beheaded. Located at the end of the Champs-Élysées, it offers spectacular perspectives of the Seine, the Arc de Triomphe, and the Tuileries Gardens, and features an ancient Egyptian artifact, the Luxor Obelisk, at its center."
+                        },
+                        {
+                            "id": 5,
+                            "location_name": "Le Select, 99 boulevard Montparnasse",
+                            "text": "Opened in 1923, Le Select is a famous Parisian brasserie and café located in the Montparnasse district. It is culturally important because it served as the headquarters for the 'Lost Generation' in the 1920s and 30s, hosting prominent artistic and literary figures like Pablo Picasso, F. Scott Fitzgerald, and Ernest Hemingway. Unlike other venues, it has kept its original 1920s decor and booths intact, remaining a true temple of the bohemian spirit."
+                        },
+                        {
+                            "id": 6,
+                            "location_name": "Metro: Raspail",
+                            "text": "Inaugurated in 1906, this underground metro station serves lines 4 and 6 and is strategically positioned in the 14th arrondissement's Montparnasse district. Taking its name from the politician and chemist François-Vincent Raspail, it features the classic beveled white tiles typical of the historic metro network. It is a vital transit vein for accessing the historic sites of the Rive Gauche."
+                        },
+                        {
+                            "id": 7,
+                            "location_name": "The Marne",
+                            "text": "The Marne is a major right tributary of the Seine, approximately 514 km long, joining at the eastern gates of Paris. Beyond shaping the French countryside landscapes, it holds profound historical significance as the front line for the First World War's Battles of the Marne in 1914 and 1918. Its tree-lined and placid banks remain a classic backdrop for French cinema and have inspired countless impressionist painters."
+                        },
+                        {
+                            "id": 8,
+                            "location_name": "Ile des Corbeaux at Saint-Maurice",
+                            "text": "The Island of the Crows (Île des Corbeaux) is a small, picturesque river islet located on the Marne River, falling within the municipality of Saint-Maurice near the Bois de Vincennes. Its importance lies in its rural and wild atmosphere, which provides a stark contrast to urban expansion. It offers enchanting paths and idyllic landscapes for Parisians looking to escape the urban frenzy."
+                        },
+                        {
+                            "id": 9,
+                            "location_name": "Column de Juillet, Paris",
+                            "text": "The July Column is an imposing, monumental bronze pillar located in the center of Place de la Bastille. Built under the reign of Louis Philippe between 1835 and 1840, it commemorates the 'Trois Glorieuses' (the three days of the July Revolution of 1830) and honors its victims. Surmounted by Auguste Dumont's gilded sculpture of the 'Spirit of Freedom', it stands as a dominant symbol of the republican spirit."
+                        },
+                        {
+                            "id": 10,
+                            "location_name": "Quai de Conti",
+                            "text": "The Quai de Conti is an iconic historic riverside promenade in the 6th arrondissement, running along the left bank of the Seine with origins dating back to 1313. It is a walk of immense architectural value and a hub of academic and cultural life. The street is dominated by two prestigious institutions: the Monnaie de Paris (Paris Mint) and the Institut de France, capturing the pure essence of Parisian elegance and high culture."
+                        },
+                        {
+                            "id": 11,
+                            "location_name": "The Louvre Museum, Paris",
+                            "text": "The Louvre is the largest and most famous art museum exhibition in the world, located along the right bank of the Seine. Originally built as a 12th-century medieval fortress and later used as the main residence for French kings, it officially opened as a public museum in 1793. It houses priceless masterpieces like Leonardo da Vinci's Mona Lisa and features galleries that cover millennia of civilization. The modern glass Pyramid at its entrance creates an extraordinary architectural contrast with the classical structures."
+                        }
+        ]
+    }
+]
