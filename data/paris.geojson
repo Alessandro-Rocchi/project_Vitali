@@ -378,29 +378,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    2.3039,
-                    48.8794
-                ]
-            },
-            "properties": {
-                "name": "Boulevard de Courcelles",
-                "label": "Boulevard de Courcelles, Paris, France",
-                "director": "Éric Rohmer",
-                "movie": "La Boulangère de Monceau",
-                "production_year": "1962"
-            },
-            "bbox": [
-                2.3039,
-                48.8794,
-                2.3039,
-                48.8794
-            ]
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     2.3422,
                     48.8719
                 ]
