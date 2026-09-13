@@ -44,6 +44,11 @@ body{
     padding-left: clamp(0.75rem, 2vw, 4rem);
 }
 
+#logo-link{
+    text-decoration: none;
+}
+
+
 .navbar .nav-link, .navbar .nav-link.active {
     color: #fcdcb3;
 }
@@ -928,14 +933,25 @@ aside.bookmarks a:hover {
 }
 
 #map h5.card-title {
-    color: #623e3e;
+    color: #a87c43;
     font-family: "Playfair", Times, serif;
+    font-weight: 800 ;
 }
 
 #map .leaflet-popup-content-wrapper {
     border: 2px solid #A87C43;
-    outline: 1px solid #A87C43;
-    outline-offset: -7px;
+    /*outline: 1px solid #A87C43;
+    outline-offset: -7px;*/
+    background-color: #D4EFE2;
+}
+
+.leaflet-popup-content .card .card-body{
+    background-color: #D4EFE2;
+}
+
+.leaflet-popup-tip{
+    background-color: #D4EFE2;
+    border: 2px solid #A87C43;
 }
 
 #map .card {
@@ -955,7 +971,12 @@ aside.bookmarks a:hover {
 }
 
 #map .leaflet-popup-close-button span{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    color: #A87C43;
+}
+
+#map .leaflet-popup-close-button span:hover{
+    color: #925e5e;
 }
 
 .leaflet-popup-content {
@@ -967,6 +988,19 @@ aside.bookmarks a:hover {
   max-width: 100%; /* Prevents the card from overflowing the popup */
 }
 
+#info-panel #text-section #btn-scopri{
+    color: #a87c43;
+}
+
+#info-panel #text-section #btn-scopri:hover {
+    color: #e2a759;
+}
+
+#info-panel #img-div img{
+    max-height: 400px;
+    margin: auto;
+}
+
 #head-info #title-sect {
     font-family: "Playfair Display", serif;
     color: #A87C43;
@@ -975,10 +1009,11 @@ aside.bookmarks a:hover {
 }
 
 #info-panel {
-    /*background-color: #D4EFE2;
+    background-color: #D4EFE2;
     border: 2px solid #A87C43;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);*/
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     color: #1A1A1A;
 }
 

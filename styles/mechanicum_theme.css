@@ -95,6 +95,11 @@ hr {
     text-shadow: 3px 3px 0 var(--void-black);
 }
 
+#logo-link{
+    text-decoration: none;
+}
+
+
 .navbar-nav .nav-link {
     font-family: "Space Mono", monospace;
     font-weight: 900;
@@ -456,6 +461,7 @@ footer ul a:not(.pipe):hover {
     border-top: 8px solid var(--blood-rust);
     background: var(--steel-gray);
     box-shadow: var(--brutal-shadow);
+    padding: 20px;
     border-radius: 0 !important;
 }
 
@@ -476,6 +482,52 @@ footer ul a:not(.pipe):hover {
     transition: all 0.2s ease-out;
     text-decoration: none;
 }
+
+.leaflet-popup-content-wrapper .card{
+    border: none;
+}
+
+.leaflet-popup-content-wrapper{
+    background-color: var(--steel-gray);
+    border-radius: 0;
+}
+
+.leaflet-popup-content-wrapper .card .card-body{
+    background-color: var(--steel-gray);
+}
+
+.leaflet-popup-tip{
+    background-color: var(--steel-gray);
+}
+
+.leaflet-popup-content .card .card-body h5{
+    color: var(--mech-yellow);
+}
+
+#map .card .card-body{
+    padding:10px 10px;
+}
+
+#map .card .card-body button{
+    background: var(--blood-rust);
+    color: #ffffff;
+    border: none;
+    margin-top: 10px;
+    box-shadow: 3px 3px 0 var(--toxic-green);
+}
+
+#map .card .card-body button:hover{
+    background-color: var(--furnace-fire);
+    color: var(--void-black) !important;
+    box-shadow: 0 0 15px var(--furnace-fire);
+}
+
+#info-panel #img-div img{
+    border-radius: 0 !important;
+    max-height: 400px;
+    margin: auto;
+}
+
 .card_link:hover { 
     color: var(--text-bone); 
     background: var(--furnace-fire); 
@@ -483,6 +535,7 @@ footer ul a:not(.pipe):hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px var(--furnace-fire);
 }
+
 .card_arrow { 
     color: #77736b; 
 }

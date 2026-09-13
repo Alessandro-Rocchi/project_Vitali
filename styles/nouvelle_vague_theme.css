@@ -193,23 +193,35 @@ a[aria-expanded="false"] i {
 
 /*MAP*/
 
-#map { 
-    height: 500px; 
+#map {
+    height: 65vh;
+    min-height: 450px;
+    width: 95%;
+    margin: 1.5rem auto;
+    border: 2px solid #A92325;
+    box-shadow: 0 8px 32px rgba(27, 94, 32, 0.1);
+    z-index: 1; /* Rimane sotto la navbar */
 }
 
 #map h5.card-title {
     color: #1A1A1A;
     font-family: "Playfair", Times, serif;
+    font-weight: 600;
 }
 
 #map .card {
     border: none;
 }
 
+#map .card .card-body{
+    padding:10px 10px;
+}
+
 #map .card .btn {
     color: #EDEAE2;
     background-color: #d32f2f;
     border: 2px solid transparent;
+    margin-top: 10px;
 }
 
 #map .card .btn:hover {
@@ -231,11 +243,11 @@ a[aria-expanded="false"] i {
   max-width: 100%; /* Prevents the card from overflowing the popup */
 }
 
- #head-info {
-    font-family: "Playfair", Times, serif;
-    padding-top: 3rem;
-    padding-bottom: 1.5rem;
- }
+#head-info {
+font-family: "Playfair", Times, serif;
+padding-top: 3rem;
+padding-bottom: 1.5rem;
+}
 
 #info-panel #text-section {
     font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
@@ -251,8 +263,17 @@ a[aria-expanded="false"] i {
     color: #e63946;
 }
 
-#info-panel img {
+#info-panel {
+    border: 1px solid #a923254c;
+    background-color: #EDEAE2;
+    padding: 20px;
+    box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.068) ;
+}
 
+
+#info-panel #img-div img{
+    max-height: 400px;
+    margin: auto;
 }
 
 /*NAVBAR*/
@@ -270,6 +291,9 @@ a[aria-expanded="false"] i {
     font-size: clamp(1.25rem, 2vw + 1rem, 2rem);
 }
 
+#logo-link{
+    text-decoration: none;
+}
 
 span.navbar-text {
   white-space: nowrap;

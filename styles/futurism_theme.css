@@ -246,10 +246,85 @@ a[aria-expanded="false"] i {
 }
 
 
+/*MAP*/
 
+#map {
+    height: 65vh;
+    min-height: 450px;
+    width: 95%;
+    margin: 1.5rem auto;
+    border: 2px solid #F2A900;
+    box-shadow: 6px -6px 0px #d32f2f;
+    z-index: 1; /* Rimane sotto la navbar */
+}
 
+#map .card .card-body{
+    padding:10px 10px;
+}
 
-#map { height: 500px; }
+#map .card .card-body button{
+    margin-top: 10px;
+    border-radius: 6px !important;
+    background-color: #F2A900;
+    border: 2px solid #F2A900;
+    color:#1A1A1A;
+    transition: 0.5s ease;
+    transform: rotate(3.5deg);
+}
+
+#map .card .card-body button:hover{
+    margin-top: 10px;
+    border-radius: 6px !important;
+    color: #F2A900;
+    background-color:transparent;
+    border: 2px solid #F2A900;
+    transition: 0.5s ease;
+    transform: rotate(0deg);
+}
+
+.leaflet-popup-content .card{
+    max-width: 100%;
+    border: 0;
+    background-color: transparent;
+}
+
+.leaflet-popup-content-wrapper{
+    background-color:#0047AB;
+    box-shadow: -6px -6px 0px #d32f2f;
+    transform: rotate(-3.5deg);
+}
+
+.leaflet-popup-content .card .card-body, .leaflet-popup-tip{
+    background-color:#0047AB;
+}
+
+.leaflet-popup-content .card .card-body p, .leaflet-container a.leaflet-popup-close-button{
+    color: #faf1ea;
+}
+
+.leaflet-container a.leaflet-popup-close-button{
+    right: 0.5rem !important;
+    color:#00A86B;
+    font-weight: 600;
+}
+
+.leaflet-popup-content .card{
+    max-width: 100%;
+    border: 0;
+}
+
+#info-panel #img-div img{
+    max-height: 400px;
+    margin: auto;
+}
+
+#info-panel {
+    background-color: #00A86B;
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    box-shadow: -6px 6px 0px #F2A900;
+;
+}
 
 /*NAVBAR*/
 
@@ -266,6 +341,9 @@ a[aria-expanded="false"] i {
     font-size: clamp(1.25rem, 2vw + 1rem, 2rem);
 }
 
+#logo-link{
+    text-decoration: none;
+}
 
 span.navbar-text {
   white-space: nowrap;

@@ -98,6 +98,10 @@ hr {
     text-shadow: 2px 2px 10px rgba(76, 175, 80, 0.2);
 }
 
+#logo-link{
+    text-decoration: none;
+}
+
 .navbar-nav .nav-link {
     font-family: "Space Mono", monospace;
     font-weight: bold;
@@ -409,7 +413,37 @@ footer ul a:not(.pipe):hover {
     background: var(--glass-bg);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
+    padding: 20px;
     box-shadow: var(--glass-shadow);
+}
+
+.leaflet-popup-content-wrapper .card{
+    border: none;
+}
+
+#map .card .card-body button{
+    background: linear-gradient(135deg, var(--primary), var(--primary-bright));
+    color: #ffffff;
+    border: none;
+    margin-top: 10px;
+}
+
+#map .card .card-body button:hover{
+    background: linear-gradient(135deg, var(--secondary), var(--accent-brass));
+    box-shadow: var(--glow-gold);
+}
+
+#map .card .card-body{
+    padding:10px 10px;
+}
+
+#info-panel #img-div img{
+    max-height: 400px;
+    margin: auto;
+}
+
+#map .leaflet-popup-content .card{
+    padding: 0px !important;
 }
 
 .card_link { 

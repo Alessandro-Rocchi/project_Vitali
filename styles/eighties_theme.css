@@ -202,7 +202,109 @@ filter: grayscale(1) brightness(60%);
     filter: grayscale(1) brightness(60%);
 }
 
-#map { height: 500px; }
+/*  MAP*/
+
+#map {
+    height: 65vh;
+    min-height: 450px;
+    width: 95%;
+    margin: 1.5rem auto;
+    border: 3px solid #33FF33;
+    z-index: 1; /* Rimane sotto la navbar */
+}
+
+#map .card .card-text b{
+    font-weight: 400;
+}
+
+#map .card .card-body button{
+    background-color: #030a03;
+    font-family: "VT323", Courier, monospace;
+    font-weight: 400 !important;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    color: #33FF33;
+    padding: 0px 10px !important;
+    border: 2px solid #33FF33;
+    border-radius: 0 !important;
+}
+
+#map .card .card-body button:hover{
+    background-color: #33FF33;
+    color: #030a03;
+    border: 2px solid #33FF33;
+}
+
+.leaflet-popup-content-wrapper{
+    background-color:#030a03;
+    border-radius: 0;
+}
+
+.leaflet-popup-content .card .card-body, .leaflet-popup-tip{
+    background-color:#030a03;
+}
+
+.leaflet-popup-content .card-body p{
+    margin: 0 !important;
+}
+
+.leaflet-popup-content .card{
+    max-width: 100%;
+    border: 0;
+}
+
+.leaflet-popup-content{
+    display: flex;
+    justify-content: center;
+}
+
+.leaflet-popup-close-button span{
+    color: #33FF33;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+}
+
+#info-panel #text-section span{
+    color: #33FF33;
+    font-family: "VT323", Courier, monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+}
+
+#info-panel #img-div img{
+    border-radius: 0 !important;
+    max-height: 400px;
+    margin: auto;
+}
+
+#info-panel #text-section #btn-scopri{
+    background-color: #33FF33;
+    color: #030a03;
+    font-family: "VT323", Courier, monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    border-radius: 0 !important;
+    border: 2px solid #33FF33;
+    padding: 0px 10px !important;
+    font-weight: 400 !important;
+}
+
+#info-panel #text-section #btn-scopri::before{
+    content: "> "; 
+    color: #030a03;
+    font-family: "VT323", Courier, monospace;
+}
+
+#info-panel #text-section #btn-scopri:hover{
+    background-color: #030a03;
+    color: #33FF33;
+    border: 2px solid #33FF33;
+}
+
+#info-panel #text-section #btn-scopri:hover::before{
+    color: #33FF33;
+}
+
+#head-info #title-sect{
+    color: #030a03;
+    background-color: #33FF33;
+}
 
 /*NAVBAR*/
 
@@ -253,6 +355,10 @@ filter: grayscale(1) brightness(60%);
 .navbar-text {
     font-family: "VT323", monospace;
     text-transform: uppercase;
+}
+
+#logo-link{
+    text-decoration: none;
 }
 
 
