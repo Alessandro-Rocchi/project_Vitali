@@ -36,6 +36,33 @@ body::before {
     z-index: -1; /* Lo mette dietro a tutto il testo */
 }
 
+/*SCROLLBAR*/
+
+/* Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #d32f2f #1a1a1a; /* Pollice rosso[cite: 1], traccia nera[cite: 1] */
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Sfondo nero industriale[cite: 1] */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d32f2f; /* Colore rosso futurista[cite: 1] */
+    border-radius: 0px; /* Bordi netti e geometrici */
+    border: 2px solid #1a1a1a; /* Bordo per staccare visivamente */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #F2A900; /* Giallo cromo all'hover per dinamismo[cite: 1] */
+}
+
 /*HERO IMAGE*/
 .hero-img {
     width:100%;
@@ -260,6 +287,15 @@ a[aria-expanded="false"] i {
 
 #map .card .card-body{
     padding:10px 10px;
+}
+
+.search-input-container .search-input{
+    border: 2px solid #F2A900;
+    border-radius: 6px;
+    background-color: #00A86B;
+    color:#faf1ea;
+    height: 40px !important;
+    width: 220px !important;
 }
 
 #map .card .card-body button{

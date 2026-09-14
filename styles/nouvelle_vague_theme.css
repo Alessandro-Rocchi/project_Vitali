@@ -276,6 +276,31 @@ padding-bottom: 1.5rem;
     margin: auto;
 }
 
+/*SCROLLBAR*/
+/* Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #A92325 #EDEAE2; /* Pollice rosso scuro[cite: 2], traccia chiara[cite: 2] */
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #EDEAE2; /* Sfondo chiaro come le paper-card[cite: 2] */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #A92325; /* Colore rosso elegante[cite: 2] */
+    border-radius: 8px; /* Curve morbide */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #d73b3e; /* Rosso più acceso all'hover[cite: 2] */
+}
+
 /*NAVBAR*/
 
 .navbar{
