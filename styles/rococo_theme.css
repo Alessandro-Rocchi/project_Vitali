@@ -371,11 +371,15 @@ a[aria-expanded="false"] i {
 .background-image {
     width:100%;
     height:50vh;
-    background: url('../img/saint_sulpiere.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/saint_sulpiere.png');
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size:cover;
     background-attachment: fixed;
+}
+
+.background-image h2 {
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
 }
 
 /*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/          
@@ -430,6 +434,28 @@ a[aria-expanded="false"] i {
     font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
+#tourDropdownMenuButton {
+    border-radius: 8px !important;
+    background-color: transparent;
+    border: 2px solid #925e5e;
+    color: #925e5e;
+}
+
+#tourDropdownMenuButton:hover {
+    background-color: #925e5e;
+    color: #abccbc;
+}
+
+/*TOUR MAP*/
+
+.tour-container #map {
+    margin: 0 0 0.5rem 0;
+}
+
+.tour-container h3 {
+   color: #85673f;
+}
+
 /*PARAGRAPHS*/
 .paragraph{
     display: none !important;
@@ -460,6 +486,10 @@ button:disabled {
 }
 
 /*BACK TO FIRST BUTTON*/
+#backToFirstContainer {
+    margin: 1rem 0; 
+}
+
 #backToFirst {
     color: #F4F1FA !important;
     background-color:#A87C43 !important;
@@ -470,6 +500,17 @@ button:disabled {
     color: #A87C43 !important;
     background-color:#D4EFE2 !important;
     border:#A87C43 1px solid !important;
+}
+
+.tour-container #btn-prev , .tour-container #btn-next {
+    background-color: transparent;
+    color: #623e3e;
+    border-color: #623e3e;
+}
+
+.tour-container #btn-prev:hover , .tour-container #btn-next:hover {
+   background-color: #623e3e;
+    color: #abccbc;
 }
 
 /*THEME*/

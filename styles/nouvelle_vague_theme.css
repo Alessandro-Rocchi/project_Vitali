@@ -806,123 +806,159 @@ aside.bookmarks ol li:first-child {
                 margin:0;
             }
 
-            /*set a background color to the body*/
+/*set a background color to the body*/
 
-            h1, h2, h3{
-                font-family: "Playfair Display", serif;
-                font-optical-sizing: auto;
-                font-style: normal;
-            }
+h1, h2, h3{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
-            /*GOOGLE FONTS & ICONS*/
-            .material-symbols-outlined {
-                font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
-            }
+/*GOOGLE FONTS & ICONS*/
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
 
-            /*HERO IMAGE*/
-            .background-image {
-                width:100%;
-                height:50vh;
-                background: url('../img/saint_sulpiere.png');
-                background-repeat: no-repeat;
-                background-position: bottom center;
-                background-size:cover;
-                background-attachment: fixed;
-            }
+/*TOUR PAGE*/
 
-            /*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/          
+/*HERO IMAGE*/
+.background-image {
+    width:100%;
+    height:50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/saint_sulpiere.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size:cover;
+    background-attachment: fixed;
+}
 
-            @media (max-width: 992px) {
-                header#prova{
-                    height: 40vh;
-                    background-position: left bottom !important;
-                }
-                .catchphrase{
-                    font-size: 2.7rem !important;
-                }
-            }
+.background-image h2 {
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+}
 
-            @media (max-width: 768px) {
+/*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/          
 
-                header#prova{
-                    height: 30vh;
-                    background-position: left bottom !important;
-                }
-            }
+@media (max-width: 992px) {
+    header#prova{
+        height: 40vh;
+        background-position: left bottom !important;
+    }
+    .catchphrase{
+        font-size: 2.7rem !important;
+    }
+}
 
+@media (max-width: 768px) {
 
-            @media (max-width: 577px) {
-                .catchphrase{
-                    font-size: 2rem !important;
-                }
-                header > .row{
-                    height: 60% !important;
-                }        
-            }
-
-            /*FINE HERO IMAGE*/
-
-            button{
-                border-radius: 50px !important;
-            }
+    header#prova{
+        height: 30vh;
+        background-position: left bottom !important;
+    }
+}
 
 
-            /*PILLS*/
-            .pill{
-                color: #F4F1FA;
-                border-radius: 50px;
-                display: inline-flex;
-                align-items: center;
-                background-color:  #A92325;
-                font-size: clamp(0.8rem, 1.3vw, 1.2rem);
+@media (max-width: 577px) {
+    .catchphrase{
+        font-size: 2rem !important;
+    }
+    header > .row{
+        height: 60% !important;
+    }        
+}
 
-            }
+/*FINE HERO IMAGE*/
 
-            .pill .material-symbols-outlined{
-                font-size: clamp(1rem, 2vw, 1.5rem);
-            }
+button{
+    border-radius: 50px !important;
+}
 
-            /*PARAGRAPHS*/
-            .paragraph{
-                display: none !important;
-            }
 
-            .active{
-                display: block !important;
-                animation: fade 1s ease forwards;
-            }
+/*PILLS*/
+.pill{
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    background-color:  #A92325;
+    font-size: clamp(0.8rem, 1.3vw, 1.2rem);
 
-            @keyframes fade {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
+}
 
-            button:disabled {
-                pointer-events: auto !important;
-                cursor: not-allowed !important;
-            }
+.pill .material-symbols-outlined{
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: #EDEAE2;
+}
 
-            /*PROGRESS BAR*/
-            .progress-bar {
-                background-color: #A92325 !important;
-            }
+.pill span {
+    color: #F4F1EA;
+}
 
-            /*BACK TO FIRST BUTTON*/
-            #backToFirst {
-                color: #F4F1FA !important;
-                background-color:#A92325 !important;
-                border:#A92325 1px solid !important;
-            }
+#tourDropdownMenuButton {
+    border-radius: 8px !important;
+    background-color: transparent;
+    border: 2px solid #A92325;
+    color: #A92325;
+}
 
-            #backToFirst:hover {
-                color: #A92325 !important;
-                background-color:#F4F1FA !important;
-                border:#A92325 1px solid !important;
-            }
+#tourDropdownMenuButton:hover {
+    background-color: #A92325;
+    color: #EDEAE2;
+}
+
+/*TOUR MAP*/
+
+.tour-container #map {
+    margin: 0 0 0.5rem 0;
+}
+
+.tour-container h3 {
+   color: #A92325;
+}
+
+/*PARAGRAPHS*/
+.paragraph{
+    display: none !important;
+}
+
+.active{
+    display: block !important;
+    animation: fade 1s ease forwards;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+button:disabled {
+    pointer-events: auto !important;
+    cursor: not-allowed !important;
+}
+
+/*PROGRESS BAR*/
+.progress-bar {
+    background-color: #A92325 !important;
+}
+
+/*BACK TO FIRST BUTTON*/
+#backToFirstContainer {
+    margin: 1rem 0; 
+}
+
+#backToFirst {
+    color: #F4F1FA !important;
+    background-color:#A92325 !important;
+    border:#A92325 1px solid !important;
+}
+
+#backToFirst:hover {
+    color: #A92325 !important;
+    background-color:#F4F1FA !important;
+    border:#A92325 1px solid !important;
+}
 
 /*THEME*/
 .theme{

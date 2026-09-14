@@ -269,6 +269,21 @@ a[aria-expanded="false"] i {
     filter: sepia(0) hue-rotate(0) saturate(1.3) contrast(1.1);
 }
 
+/*TOUR*/
+
+.background-image {
+    width:100%;
+    height:50vh;
+    background: linear-gradient(to bottom, rgba(27, 94, 32, 0.3), rgba(245, 166, 35, 0.25)), url('../img/saint_sulpiere.png');    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+.background-image h2 {
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+}
+
 /* --- PILLS, BUTTONS & PROGRESS BAR --- */
 button {
     border-radius: 50px !important;
@@ -280,7 +295,7 @@ button {
     border-radius: 50px;
     display: inline-flex;
     align-items: center;
-    background: linear-gradient(135deg, var(--primary), var(--primary-bright));
+    background: var(--primary-bright);
     box-shadow: var(--glow-green);
     font-size: clamp(0.8rem, 1.3vw, 1.2rem);
     border: 2px solid transparent;
@@ -301,6 +316,32 @@ button {
     box-shadow: 0 0 15px var(--primary-bright);
 }
 
+#tourDropdownMenuButton {
+    border-radius: 8px !important;
+    background-color: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+
+#tourDropdownMenuButton:hover {
+    background-color: var(--accent-brass);
+    color: #EDEAE2;
+}
+
+/*TOUR MAP*/
+
+.tour-container #map {
+    margin: 0 0 0.5rem 0;
+}
+
+.tour-container h3 {
+   color: #1b5e20;
+}
+
+#backToFirstContainer {
+    margin: 1rem 0; 
+}
+
 #backToFirst {
     color: #ffffff !important;
     background: linear-gradient(135deg, var(--primary), var(--primary-bright)) !important;
@@ -313,6 +354,8 @@ button {
     background: linear-gradient(135deg, var(--secondary), var(--accent-brass)) !important;
     box-shadow: var(--glow-gold);
 }
+
+
 
 /* --- FOOTER: LA RADICE PROFONDA --- */
 /* Invece del nero, usiamo un verde foresta scurissimo con testi in oro e menta */
@@ -892,7 +935,7 @@ button:disabled {
 }
 
 /* Fix per i Bottoni Previous/Next (Li trasformiamo in leve di ferro) */
-.btn-outline-secondary {
+.tour-container #btn-next, .tour-container #btn-prev {
     color: var(--text-bone) !important;
     background: var(--void-black) !important;
     border: 4px solid var(--iron-plate) !important;
@@ -909,7 +952,7 @@ button:disabled {
     color: var(--void-black) !important;
     border-color: var(--void-black) !important;
     transform: translate(4px, 4px);
-    box-shadow: 0px 0px 0 #000 !important;
+    box-shadow: var(--glow-gold);
 }
 
 /* Fix della struttura del Menu dei Temi in basso a destra */
