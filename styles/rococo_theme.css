@@ -26,6 +26,39 @@ body{
     background-color: #FAD1D1 !important;
 }
 
+/*SCROLLBAR*/
+
+html::-webkit-scrollbar {
+    width: 14px; /* Leggermente più fine di quella anni '80 per maggiore eleganza */
+}
+
+/* Il "binario" (track) in cui scorre la barra */
+html::-webkit-scrollbar-track {
+    background-color: #FAD1D1; /* Riprende il rosa cipria del body per mimetizzarsi dolcemente */
+    border-left: 1px solid #A87C43; /* Una sottilissima linea dorata per separarla dal contenuto */
+    box-shadow: inset 0 0 6px rgba(98, 62, 62, 0.15); /* Un'ombra interna che crea l'effetto di una scanalatura nel muro */
+}
+
+/* Il cursore (thumb) - L'elemento che si muove */
+html::-webkit-scrollbar-thumb {
+    background-color: #A87C43; /* Base color oro antico/bronzo */
+    
+    /* Questo gradiente crea un effetto 3D metallico "a cilindro" o "bombato" */
+    background-image: linear-gradient(90deg, #85673f 0%, #A87C43 20%, #e2a759 50%, #A87C43 80%, #85673f 100%);
+    
+    border: 2px solid #FAD1D1; /* Aggiungendo un bordo uguale allo sfondo del track, il cursore sembra rimpicciolirsi e fluttuare elegantemente */
+    border-radius: 20px; /* Curve morbide e sinuose, tipiche dell'epoca */
+}
+
+/* Il cursore in hover (quando ci passi sopra col mouse) */
+html::-webkit-scrollbar-thumb:hover {
+    /* Il metallo diventa più luminoso, come se riflettesse la luce */
+    background-image: linear-gradient(90deg, #A87C43 0%, #e2a759 30%, #fcdcb3 50%, #e2a759 70%, #A87C43 100%);
+    
+    /* Tocco lezioso: il bordino attorno diventa verde menta al passaggio del mouse! */
+    border: 2px solid #D4EFE2; 
+}
+
 /*NAVBAR*/
 
 .navbar {
