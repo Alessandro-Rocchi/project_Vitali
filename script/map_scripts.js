@@ -259,7 +259,7 @@ function createPopupContent(feature) {
     var props = feature.properties || {};
     // Escape single quotes in location name to safely embed inside inline onclick handler
     var safeName = (props.name || '').replace(/'/g, "\\'");
-    
+
     // Conditionally include poster image if poster_url exists in feature properties
     var posterHtml = props.poster_url 
         ? `<img src="${props.poster_url}" class="card-img-top" alt="${props.name || 'Movie image'}">`
@@ -270,9 +270,7 @@ function createPopupContent(feature) {
                 ${posterHtml}
                 <div class="card-body">
                     <h5 class="card-title">${props.name || 'Location'}</h5>
-                    <p class="card-text mb-1"><b>Director:</b> ${props.director || 'N/A'}</p>
-                    <p class="card-text mb-1"><b>Year:</b> ${props.production_year || 'N/A'}</p>
-                    <p class="card-text mb-2"><b>Associated Film:</b> ${props.movie || 'N/A'}</p>
+                    <p class="card-text mb-2"><b>Associated Movies:</b>${props.movies && props.movies.length > 0 ? props.movies.join(', ') : 'N/A'}</p>
                     <button class="btn btn-primary" onclick="showLocationDetails('${safeName}')">View Details</button>
                 </div>
             </div>`;
@@ -572,7 +570,7 @@ function createFilterPanelUI(map) {
  * Active when a specific director is selected, visualizing the cinematic trail across Paris.
  * @param {Array<Object>} filteredFeatures - Array of GeoJSON feature objects to connect.
  */
-function disegnaPercorso(filteredFeatures) {
+function drawPath(filteredFeatures) {
     // Remove existing routing line/control if present
     if (routingControl !== null) {
         map.removeControl(routingControl);
@@ -662,7 +660,7 @@ function applyFilters() {
 
     // If a specific director is selected, draw their cinematic path; otherwise clear any route
     if (selectedDirector !== "Any") {
-        disegnaPercorso(filteredFeatures);
+        drawPath(filteredFeatures);
     } else {
         if (routingControl !== null) {
             map.removeControl(routingControl);
@@ -707,33 +705,25 @@ function showLocationDetails(locationName) {
     var text_info = document.getElementById('text-section');
     var img_panel = document.getElementById('img-section');
     var title_sect = document.getElementById('title-sect');
+    
 
     // Ensure spatial data is loaded
     if (!initialData || !initialData.features) {
         return;
     }
 
-    // Find corresponding feature in GeoJSON dataset (exact or case-insensitive match)
-    var filmGeoJson = initialData.features.find(function(f) {
-        return f.properties.name === locationName || (f.properties.name && f.properties.name.toLowerCase() === locationName.toLowerCase());
-    });
-
-    if (!filmGeoJson) {
-        console.error("Location not found in GeoJSON:", locationName);
-        return;
-    }
-
     // Find complementary rich textual metadata in metadataJson
-    var Locationtexts = null;
+    var locationTexts = null;
     if (metadataJson && metadataJson.length > 0) {
-        Locationtexts = metadataJson.find(function(elemento) {
+        locationTexts = metadataJson.find(function(elemento) {
             return elemento.name === locationName || (elemento.name && elemento.name.toLowerCase() === locationName.toLowerCase()); 
         });
     }
 
     // Determine location title and image URL with fallback priorities
-    var locTitle = (Locationtexts && Locationtexts.name) || (filmGeoJson.properties && filmGeoJson.properties.name) || locationName;
-    var url_Img = (Locationtexts && Locationtexts.image_url) || (filmGeoJson.properties && filmGeoJson.properties.poster_url) || '';
+    var locTitle = (locationTexts && locationTexts.name) || locationName;
+    var url_Img = (locationTexts && locationTexts.image_url) || '';
+    
 
     // Update section title text
     if (title_sect) {
@@ -755,11 +745,12 @@ function showLocationDetails(locationName) {
 
     if (!text_info) return;
 
+
     // Populate textual description with progressive disclosure toggle
-    if (Locationtexts) {
-        var text_short = Locationtexts.simple_description || '';
-        var text_medium = Locationtexts.medium_description || '';
-        var text_long = Locationtexts.detailed_description || '';
+    if (locationTexts) {
+        var text_short = locationTexts.simple_description || '';
+        var text_medium = locationTexts.medium_description || '';
+        var text_long = locationTexts.detailed_description || '';
 
         // If all three description tiers exist, construct tiered spans with toggle button
         if (text_short && text_medium && text_long) {
@@ -815,6 +806,60 @@ function showLocationDetails(locationName) {
     if (headInfo) {
         headInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
+
+    const buttonRow = document.getElementById('button-row');
+    if (buttonRow) {
+        buttonRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    locationTexts.associated_movie.forEach(function(elemento){
+        return buttonRow.innerHTML += `<button class="button" href="#" onClick="showFilmDetails('${elemento.film_name}')"data-film=${elemento.film_name}>${elemento.film_name}</button>`;
+    })
+}
+
+function showFilmDetails(filmTitle) {
+    var text_film_info = document.getElementById('text-film-section');
+    var img_film_panel = document.getElementById('img-film-section');
+
+    if (!text_film_info) return;
+
+    var filmMetadata = null;
+
+    if (metadataJson && metadataJson.length > 0) {
+        for(var i = 0; i < metadataJson.length; i++){
+            var movies = metadataJson[i].associated_movie || [];
+            filmMetadata = movies.find(function(film){
+                return film.film_name && film.film_name.toLowerCase() === filmTitle.toLowerCase();
+            });
+            if (filmMetadata) break;
+        }
+    }
+    
+    img_film_url = (filmMetadata && filmMetadata.film_poster_url) || '';
+
+    // Update the film image panel with poster if available, otherwise hide it 
+    if (img_film_panel) {
+        if (img_film_url) {
+            img_film_panel.src = img_film_url;
+            img_film_panel.alt = filmTitle;
+            img_film_panel.style.display = 'block';
+        } else {
+            img_film_panel.removeAttribute('src');
+            img_film_panel.alt = '';
+            img_film_panel.style.display = 'none';
+        }
+    }
+
+    if(text_film_info) {
+        if (filmTitle || filmMetadata.film_scene_description) {
+            text_film_info.innerHTML = `<p><b>Movie:</b> ${filmTitle || 'N/A'}</p>
+                                        <p><b>Scene Description:</b> ${filmMetadata.film_scene_description || 'N/A'}</p>
+                                        <p><b>Director:</b> ${filmMetadata.director || 'N/A'}</p>`;
+        } else {
+            text_film_info.innerHTML = '<p>Movie details not available.</p>';
+        }
+    }
+
 }
 
 

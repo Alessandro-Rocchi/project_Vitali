@@ -2,7 +2,15 @@
   {
     "name": "Capelle de la Sorbonne",
     "year": "1642",
-    "associated_movie": "Paris nous appartient",
+    "associated_movie": [
+      {
+        "film_id": 1,
+        "film_name": "Paris nous appartient",
+        "director": "Jacques Rivette",
+        "production_year": 1961,
+        "film_poster_url": "img/img_movie/parisNousAppartientModern.png"
+      }
+    ],
     "simple_description": "The private chapel of the Sorbonne University in Paris.",
     "medium_description": "A historic Parisian chapel completed in 1642 at the request of Cardinal Richelieu. It represents an important example of French Baroque architecture in the heart of the Latin Quarter.",
     "detailed_description": "The Chapelle de la Sorbonne is a masterpiece of French Baroque architecture, designed by the architect Jacques Lemercier and completed in 1642. It was commissioned by Cardinal Richelieu, whose remains still rest today in the mausoleum within the nave. The structure is distinguished by its elegant dome, which was one of the first of its kind to be built in Paris, and is one of the intellectual symbols of the city.",
@@ -11,7 +19,15 @@
   {
     "name": "Chiesa di Saint Suplice",
     "year": "1646",
-    "associated_movie": "Paris nous appartient",
+    "associated_movie": [
+      {
+        "film_id": 1,
+        "film_name": "Paris nous appartient",
+        "director": "Jacques Rivette",
+        "production_year": 1961,
+        "film_poster_url": "img/img_movie/parisNousAppartientModern.png"
+      }
+    ],
     "simple_description": "A large and historic Catholic church in the Odéon district.",
     "medium_description": "The second largest church in Paris after Notre-Dame, with construction beginning in 1646. It is famous for its imposing twin-tower facade and the astronomical gnomon located inside.",
     "detailed_description": "The Église Saint-Sulpice is a vast religious building located in the 6th arrondissement of Paris, whose construction origins date back to 1646, although it took over a century and a half to complete. It is famous for its imposing asymmetrical facade designed by Jean-Nicolas Servandoni and for the magnificent frescoes by Eugène Delacroix. The church also houses an important astronomical meridian (the gnomon of Saint-Sulpice) and a monumental Cavaillé-Coll organ, among the finest in France.",
@@ -38,7 +54,24 @@
   {
     "name": "Notre Dame",
     "year": "1345",
-    "associated_movie": "À bout de souffle",
+    "associated_movie": [ 
+      {
+        "film_id": 1,
+        "film_name": "À bout de souffle",
+        "director": "Jean-Luc Godard",
+        "production_year": 1960,
+        "film_scene_description": "A famous scene where the protagonists walk along the Seine with Notre-Dame in the background.",
+        "film_poster_url": "img/img_movie/notreDameOld.png"
+      },
+      {
+        "film_id": 2,
+        "film_name": "Sticaz",
+        "director": "Jean-Luc Godard",
+        "production_year": 1960,
+        "film_scene_description": "A famous scene where the protagonists walk along the Seine with Notre-Dame in the background.",
+        "film_poster_url": "img/img_movie/notreDameOld.png"
+      }
+    ],
     "simple_description": "Historic Gothic cathedral on the Île de la Cité.",
     "medium_description": "Notre-Dame de Paris is a majestic cathedral completed in 1345, a masterpiece of Gothic architecture. It is known worldwide for its gargoyles, rose windows, and flying buttresses.",
     "detailed_description": "Notre-Dame de Paris is the spiritual and geographical heart of Paris, located on the Île de la Cité. Built over roughly two centuries and completed in 1345, it defined the canons of Gothic architecture with its pioneering introduction of flying buttresses and rib vaults. Its priceless artistic heritage includes sculptures, medieval stained glass windows, and sacred relics. Having survived revolutions and wars, it continues to be an immortal symbol of French culture and resilience.",

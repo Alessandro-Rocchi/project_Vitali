@@ -16,7 +16,7 @@
                 "director": "Jacques Rivette",
                 "movie": "Paris nous appartient",
                 "production_year": "1961",
-                "poster_url": "img/img_movie/capelleDeLaSorbonneOld.png"
+                "poster_url": "img/img_movie/capelleDeLaSorbonneModern.png"
             },
             "bbox": [
                 2.3433,
@@ -40,7 +40,7 @@
                 "director": "Jacques Rivette",
                 "movie": "Paris nous appartient",
                 "production_year": "1961",
-                "poster_url": "img/img_movie/saintSupliceOld.png"
+                "poster_url": "img/img_movie/saintSupliceModern.png"
             },
             "bbox": [
                 2.3333,
@@ -64,7 +64,7 @@
                 "director": "Jacques Rivette",
                 "movie": "Paris nous appartient",
                 "production_year": "1961",
-                "poster_url": "img/img_movie/pontDesArtsOld.png"
+                "poster_url": "img/img_movie/pontDesArtsModern.png"
             },
             "bbox": [
                 2.3375,
@@ -86,7 +86,7 @@
                 "name": "Café le Presbourg",
                 "label": "Café le Presbourg, Paris, France",
                 "director": "Jacques Rivette",
-                "movie": "Paris nous appartient",
+                "movie": ["Paris nous appartient"],
                 "production_year": "1961"
             },
             "bbox": [
@@ -108,10 +108,8 @@
             "properties": {
                 "name": "Notre Dame",
                 "label": "Notre-Dame Cathedral, Paris, France",
-                "director": "Jean-Luc Godard",
-                "movie": "À bout de souffle",
-                "production_year": "1960",
-                "poster_url": "img/img_movie/notreDameOld.png"
+                "movies": ["À bout de souffle"],
+                "poster_url": "img/img_movie/notreDameModern.jpg"
             },
             "bbox": [
                 2.3499,
@@ -388,7 +386,7 @@
                 "director": "François Truffaut",
                 "movie": "Les 400 coups",
                 "production_year": "1959",
-                "poster_url": "img/img_movie/montMatreOld.jpg"
+                "poster_url": "img/img_movie/montMatreModern.jpg"
             },
             "bbox": [
                 2.3422,
@@ -412,7 +410,7 @@
                 "director": "François Truffaut",
                 "movie": "Les 400 coups",
                 "production_year": "1959",
-                "poster_url": "img/img_movie/ruePugetOld.jpg"
+                "poster_url": "img/img_movie/ruePugetModern.jpg"
             },
             "bbox": [
                 2.3303,
@@ -436,7 +434,7 @@
                 "director": "François Truffaut",
                 "movie": "Les 400 coups",
                 "production_year": "1959",
-                "poster_url": "img/img_movie/rueLepicOld.jpg"
+                "poster_url": "img/img_movie/rueLepicModern.jpg"
             },
             "bbox": [
                 2.3328,
@@ -460,7 +458,7 @@
                 "director": "François Truffaut",
                 "movie": "Les 400 coups",
                 "production_year": "1959",
-                "poster_url": "img/img_movie/estienneOrvesOld.jpg"
+                "poster_url": "img/img_movie/estienneOrvesModern.jpg"
             },
             "bbox": [
                 2.3317,
@@ -484,7 +482,7 @@
                 "director": "François Truffaut",
                 "movie": "Les 400 coups",
                 "production_year": "1959",
-                "poster_url": "img/img_movie/sacreCoeurOld.jpg"
+                "poster_url": "img/img_movie/sacreCoeurModern.jpg"
             },
             "bbox": [
                 2.3431,
@@ -508,7 +506,7 @@
                 "director": "François Truffaut",
                 "movie": "Les 400 coups",
                 "production_year": "1959",
-                "poster_url": "img/img_movie/champsElyseesOld.jpg"
+                "poster_url": "img/img_movie/champsElyseesModern.jpg"
             },
             "bbox": [
                 2.306,
@@ -578,7 +576,7 @@
                 "director": "Agnès Varda",
                 "movie": "Cléo de 5 à 7",
                 "production_year": "1962",
-                "poster_url": "img/img_movie/cafeDuDomeOld.png"
+                "poster_url": "img/img_movie/cafeDuDomeModern.png"
             },
             "bbox": [
                 2.3289,
@@ -602,7 +600,7 @@
                 "director": "Agnès Varda",
                 "movie": "Cléo de 5 à 7",
                 "production_year": "1962",
-                "poster_url": "img/img_movie/parcMontsourisOld.png"
+                "poster_url": "img/img_movie/parcMontsourisModern.png"
             },
             "bbox": [
                 2.338,
@@ -632,7 +630,7 @@
                 "director": "Jacques Rivette",
                 "movie": "Paris nous appartient",
                 "production_year": 1961,
-                "poster_url": "img/img_movie/arcDeTriompheOld.png"
+                "poster_url": "img/img_movie/arcDeTriompheModern.png"
             }
         }
     ]
