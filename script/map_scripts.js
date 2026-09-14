@@ -808,40 +808,38 @@ function showLocationDetails(locationName) {
     }
 
     const buttonRow = document.getElementById('button-row');
-    if (buttonRow) {
-        buttonRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
+        if (buttonRow && locationTexts && Array.isArray(locationTexts.associated_movie)) {
+            buttonRow.innerHTML = '';
 
-    locationTexts.associated_movie.forEach(function(elemento){
-        return buttonRow.innerHTML += `<button class="button" href="#" onClick="showFilmDetails('${elemento.film_name}')"data-film=${elemento.film_name}>${elemento.film_name}</button>`;
-    })
+            locationTexts.associated_movie.forEach(function(elemento) {
+                if (!elemento || !elemento.film_name) return;
+
+                var btn = document.createElement('button');
+                btn.className = 'button';
+                btn.textContent = elemento.film_name;
+
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showFilmDetails(elemento);
+                });
+
+                buttonRow.appendChild(btn);
+            });
+        }
 }
 
-function showFilmDetails(filmTitle) {
+function showFilmDetails(film) {
     var text_film_info = document.getElementById('text-film-section');
     var img_film_panel = document.getElementById('img-film-section');
 
     if (!text_film_info) return;
 
-    var filmMetadata = null;
+    var img_film_url = film.film_poster_url || '';
 
-    if (metadataJson && metadataJson.length > 0) {
-        for(var i = 0; i < metadataJson.length; i++){
-            var movies = metadataJson[i].associated_movie || [];
-            filmMetadata = movies.find(function(film){
-                return film.film_name && film.film_name.toLowerCase() === filmTitle.toLowerCase();
-            });
-            if (filmMetadata) break;
-        }
-    }
-    
-    img_film_url = (filmMetadata && filmMetadata.film_poster_url) || '';
-
-    // Update the film image panel with poster if available, otherwise hide it 
     if (img_film_panel) {
         if (img_film_url) {
             img_film_panel.src = img_film_url;
-            img_film_panel.alt = filmTitle;
+            img_film_panel.alt = film.film_name || '';
             img_film_panel.style.display = 'block';
         } else {
             img_film_panel.removeAttribute('src');
@@ -850,16 +848,17 @@ function showFilmDetails(filmTitle) {
         }
     }
 
-    if(text_film_info) {
-        if (filmTitle || filmMetadata.film_scene_description) {
-            text_film_info.innerHTML = `<p><b>Movie:</b> ${filmTitle || 'N/A'}</p>
-                                        <p><b>Scene Description:</b> ${filmMetadata.film_scene_description || 'N/A'}</p>
-                                        <p><b>Director:</b> ${filmMetadata.director || 'N/A'}</p>`;
+    if (text_film_info) {
+        if (film) {
+            text_film_info.innerHTML = `
+                <p><b>Movie:</b> ${film.film_name || 'N/A'}</p>
+                <p><b>Scene Description:</b> ${film.film_scene_description || 'N/A'}</p>
+                <p><b>Director:</b> ${film.director || 'N/A'}</p>
+            `;
         } else {
             text_film_info.innerHTML = '<p>Movie details not available.</p>';
         }
     }
-
 }
 
 
