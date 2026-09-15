@@ -21,6 +21,9 @@
 // Leaflet Map instance dedicated to the tour view
 let mapTour = null;
 
+// Leaflet GeoJSON layer currently displayed on the map for the active tour
+let currentTourLayer = null;
+
 // Sequentially ordered array of Leaflet marker layers representing tour stops
 let tourLayers = [];
 
@@ -110,7 +113,7 @@ const pages = {
     // TOUR PAGE CONTROLLER (tour.html)
     // -------------------------------------------------------------------------
     tour: async () => {
-        // Extract 'keyword' query parameter from current URL (e.g. tour.html?keyword=Jean-Luc+Godard)
+        // Extract 'keyword' query parameter from current URL (keyword is the only supported parameter)
         const urlParams = new URLSearchParams(window.location.search);
         const targetKeyword = urlParams.get('keyword') || 'Jean-Luc Godard';
         
@@ -127,28 +130,12 @@ const pages = {
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(mapTour);
 
-        // Fetch GeoJSON film locations filtered for the selected director
-        const filteredGeoData = await filteredLoadGeoData(targetKeyword);
-        if (filteredGeoData) {
-            // Render filtered location pins on map and store layer references
-            addGeoDataTour(filteredGeoData);
-        }
-        
-        // Fetch textual narrative content and tour metadata for this director
-        currentTourData = await loadTourTextData(targetKeyword); 
-        currentTourIndex = 0; // Initialize tour at first stop
-
-        // If tour data contains locations, render initial location story paragraph
-        if (currentTourData && currentTourData.locations.length > 0) {
-            showParagraph(0);
-        }
+        // Load and render active tour
+        await loadAndDisplayTour(targetKeyword);
 
         // Select navigation buttons for both desktop and mobile layouts
         const prevButtons = document.querySelectorAll('#btn-prev, #btn-prev-mobile');
         const nextButtons = document.querySelectorAll('#btn-next, #btn-next-mobile');
-
-        // Initialize progress bar visual fill
-        updateProgressBar();
 
         // Attach click listeners to Next buttons: advance stop, fly map camera, update story text
         nextButtons.forEach(button => {
@@ -182,42 +169,14 @@ const pages = {
             });
         }
 
-        // Initialize button enabled/disabled states based on initial stop index
-        updateBtnStatus();
-
+        // Attach click listeners to tour dropdown options
         const tourOptions = document.querySelectorAll('.tour-option');
-        const dropdownButton = document.getElementById('tourDropdownMenuButton');
-
         if (tourOptions.length > 0) {
             tourOptions.forEach(option => {
                 option.addEventListener('click', async (event) => {
                     const newKeyword = event.target.getAttribute('data-keyword');
                     if (!newKeyword) return;
-
-                    if (dropdownButton) {
-                        dropdownButton.textContent = newKeyword; // Update dropdown button text to reflect selected director
-                    }
-
-                    if (typeof currentLayer !== 'undefined' && currentLayer) {
-                        mapTour.removeLayer(currentLayer);
-                    }
-                    tourLayers = []; 
-                    
-                    const newGeoData = await filteredLoadGeoData(newKeyword);
-                    if (newGeoData) {
-                        addGeoDataTour(newGeoData);
-                    }
-                    
-                    currentTourData = await loadTourTextData(newKeyword);
-                    currentTourIndex = 0; 
-
-                    if (currentTourData && currentTourData.locations.length > 0) {
-                        showParagraph(0);
-                    }
-                    
-                    const newUrl = new URL(window.location);
-                    newUrl.searchParams.set('regista', newKeyword);
-                    window.history.pushState({}, '', newUrl);
+                    await loadAndDisplayTour(newKeyword);
                 });
             });
         }
@@ -354,8 +313,8 @@ async function loadTourTextData(targetKeyword) {
 
 /**
  * Fetches GeoJSON file and filters features array to include only locations
- * associated with the specified director.
- * @param {string} targetKeyword - Director name used for filtering.
+ * associated with the specified tour keyword.
+ * @param {string} targetKeyword - Tour keyword used for filtering.
  * @returns {Promise<Object|null>} Filtered GeoJSON object or null on error.
  */
 function filteredLoadGeoData(targetKeyword) {
@@ -365,10 +324,11 @@ function filteredLoadGeoData(targetKeyword) {
             return response.json();
         })
         .then(data => {
-            // Filter features matching the requested director
+            // Filter features matching the requested tour keyword
             const filteredFeatures = data.features.filter(feature => 
-                    feature.properties.director && 
-                    feature.properties.director === targetKeyword
+                    feature.properties &&
+                    feature.properties.keywords && 
+                    feature.properties.keywords.includes(targetKeyword)
             );
             // Return shallow copy of GeoJSON with filtered features array
             return { ...data, features: filteredFeatures };
@@ -377,6 +337,98 @@ function filteredLoadGeoData(targetKeyword) {
             console.error("Fetch error GeoJSON: ", error);
             return null;
         });
+}
+
+/**
+ * Normalizes location names for robust matching between tour data and GeoJSON.
+ * @param {string} str - String to normalize.
+ * @returns {string} Normalized lowercase alphanumeric string.
+ */
+function normalizeTourName(str) {
+    return (str || '')
+        .toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]/g, '')
+        .trim();
+}
+
+/**
+ * Evaluates whether a GeoJSON feature name matches a tour location name.
+ * @param {string} featName - Feature location name.
+ * @param {string} locName - Tour narrative location name.
+ * @returns {boolean} True if matched.
+ */
+function matchTourLocation(featName, locName) {
+    const f = normalizeTourName(featName);
+    const l = normalizeTourName(locName);
+    if (f === l) return true;
+    if (f.includes('louvre') && l.includes('louvre')) return true;
+    return false;
+}
+
+/**
+ * Sorts filtered GeoJSON features to strictly match the sequence of tour locations in tour_data.json.
+ * @param {Array<Object>} features - Filtered GeoJSON features array.
+ * @param {Array<Object>} tourLocations - Sequential tour locations array.
+ * @returns {Array<Object>} Sorted GeoJSON features array.
+ */
+function sortFeaturesByTourOrder(features, tourLocations) {
+    if (!features || !tourLocations) return features;
+    return [...features].sort((a, b) => {
+        const nameA = a.properties && a.properties.name;
+        const nameB = b.properties && b.properties.name;
+        const idxA = tourLocations.findIndex(loc => matchTourLocation(nameA, loc.location_name));
+        const idxB = tourLocations.findIndex(loc => matchTourLocation(nameB, loc.location_name));
+        return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
+    });
+}
+
+/**
+ * Central controller to load, sort, and render an entire tour by keyword.
+ * Updates narrative texts, sorts and maps GeoJSON markers, and syncs URL query params.
+ * @param {string} keyword - Tour keyword identifying the tour.
+ */
+async function loadAndDisplayTour(keyword) {
+    const targetKeyword = keyword || 'Jean-Luc Godard';
+
+    // Update dropdown toggle button label
+    const dropdownButton = document.getElementById('tourDropdownMenuButton');
+    if (dropdownButton) {
+        dropdownButton.textContent = targetKeyword;
+    }
+
+    // Clean up previously active tour markers layer
+    if (currentTourLayer && mapTour) {
+        mapTour.removeLayer(currentTourLayer);
+        currentTourLayer = null;
+    }
+    tourLayers = [];
+
+    // 1. Fetch textual narrative content and tour metadata
+    currentTourData = await loadTourTextData(targetKeyword);
+    currentTourIndex = 0;
+
+    // 2. Fetch GeoJSON locations filtered by keyword and ordered by tour sequence
+    const geoData = await filteredLoadGeoData(targetKeyword);
+    if (geoData && currentTourData && currentTourData.locations) {
+        geoData.features = sortFeaturesByTourOrder(geoData.features, currentTourData.locations);
+    }
+
+    // 3. Render markers on map
+    if (geoData) {
+        addGeoDataTour(geoData);
+    }
+
+    // 4. If tour data contains locations, render initial location story paragraph
+    if (currentTourData && currentTourData.locations.length > 0) {
+        showParagraph(0);
+    }
+
+    // 5. Update browser URL using keyword as the sole parameter
+    const newUrl = new URL(window.location);
+    newUrl.searchParams.set('keyword', targetKeyword);
+    newUrl.searchParams.delete('regista');
+    window.history.pushState({}, '', newUrl);
 }
 
 
@@ -390,13 +442,25 @@ function filteredLoadGeoData(targetKeyword) {
  * @param {Object} geojson - Filtered GeoJSON feature collection.
  */
 function addGeoDataTour(geojson) {
-    if (!geojson || geojson.features.length === 0) return;
+    if (!geojson || !geojson.features || geojson.features.length === 0) return;
     tourLayers = []; // Reset tour layers array
 
+    if (currentTourLayer && mapTour) {
+        mapTour.removeLayer(currentTourLayer);
+        currentTourLayer = null;
+    }
+
     // Instantiate GeoJSON layer and collect markers sequentially
-    const currentLayer = L.geoJSON(geojson, {
+    currentTourLayer = L.geoJSON(geojson, {
         onEachFeature: function (feature, layer) {
             layer.bindPopup(createPopupContentTour(feature)); // Bind card popup
+            const stopIndex = tourLayers.length;
+            // Clicking a marker synchronizes the narrative story and navigation state
+            layer.on('click', function () {
+                currentTourIndex = stopIndex;
+                showParagraph(stopIndex);
+                goToLocation(stopIndex);
+            });
             tourLayers.push(layer); // Store layer reference in sequential tour order
         }
     }).addTo(mapTour);
@@ -428,12 +492,15 @@ function goToLocation(index) {
 function createPopupContentTour(feature) {
     var props = feature.properties || {};
     var safeName = (props.name || '').replace(/'/g, "\\'");
+    var director = props.director || (currentTourData && currentTourData.keywords) || 'N/A';
+    var year = props.production_year || 'N/A';
+    var movie = (props.movies && props.movies.join(', ')) || props.movie || 'N/A';
     return `<div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">${props.name || 'Location'}</h5>
-                    <p class="card-text m-0"><b>Director:</b> ${props.director || 'N/A'}</p>
-                    <p class="card-text m-0"><b>Year:</b> ${props.production_year || 'N/A'}</p>
-                    <p class="card-text m-0"><b>Associated Film:</b> ${props.movie || 'N/A'}</p>
+                    <p class="card-text m-0"><b>Director:</b> ${director}</p>
+                    <p class="card-text m-0"><b>Year:</b> ${year}</p>
+                    <p class="card-text m-0"><b>Associated Film:</b> ${movie}</p>
                 </div>
             </div>`;
 }
