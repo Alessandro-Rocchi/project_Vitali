@@ -493,16 +493,16 @@ button:disabled {
 #backToFirst {
     color: #F4F1FA !important;
     background-color:#A87C43 !important;
-    border:#A87C43 1px solid !important;
+    border:#A87C43 2px solid !important;
 }
 
 #backToFirst:hover {
     color: #A87C43 !important;
     background-color:#D4EFE2 !important;
-    border:#A87C43 1px solid !important;
+    border:#A87C43 2px solid !important;
 }
 
-.tour-container #btn-prev , .tour-container #btn-next {
+.tour-container #btn-prev , .tour-container #btn-next, button#btn-next-mobile, button#btn-prev-mobile {
     background-color: transparent;
     color: #623e3e;
     border-color: #623e3e;
@@ -511,6 +511,22 @@ button:disabled {
 .tour-container #btn-prev:hover , .tour-container #btn-next:hover {
    background-color: #623e3e;
     color: #abccbc;
+}
+
+@media (max-width: 992px){
+    #backToFirstRow{
+        margin: 0 0 0.5rem 0 !important;
+    }
+
+    #backToFirstCol{
+        width: 97%;
+        margin: auto;
+        padding-right:0px;
+    }
+ 
+    .tour-container #map{
+        margin: auto auto 0.5rem auto;
+    }
 }
 
 /*THEME*/
@@ -1060,6 +1076,13 @@ aside.bookmarks a:hover {
 
 .leaflet-popup-content .card {
   max-width: 100%; /* Prevents the card from overflowing the popup */
+}
+
+.leaflet-popup-content .card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
 }
 
 #info-panel #text-section #btn-scopri{

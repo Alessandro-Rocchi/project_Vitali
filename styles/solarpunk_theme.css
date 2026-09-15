@@ -355,7 +355,9 @@ button {
     box-shadow: var(--glow-gold);
 }
 
-
+#backToFirst span{
+    color: inherit;
+}
 
 /* --- FOOTER: LA RADICE PROFONDA --- */
 /* Invece del nero, usiamo un verde foresta scurissimo con testi in oro e menta */
@@ -487,6 +489,13 @@ footer ul a:not(.pipe):hover {
 
 #map .leaflet-popup-content .card{
     padding: 0px !important;
+}
+
+.leaflet-popup-content .card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
 }
 
 .card_link { 
@@ -644,12 +653,11 @@ footer ul a:not(.pipe):hover {
 }
 
 .custom-panel, .sub-panel-filter, .sub-panel-explore {
-    background: var(--glass-bg);
+    background: rgba(255, 255, 255, 0.1);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
     box-shadow: 0 10px 40px rgba(27, 94, 32, 0.15);
-    border-radius: 16px;
+    border-radius: 20px;
 }
 
 /* --- SCROLLBAR ECOLOGICA BIO-LUMINESCENTE --- */
@@ -934,26 +942,37 @@ button:disabled {
     transform: none !important;
 }
 
-/* Fix per i Bottoni Previous/Next (Li trasformiamo in leve di ferro) */
-.tour-container #btn-next, .tour-container #btn-prev {
-    color: var(--text-bone) !important;
-    background: var(--void-black) !important;
-    border: 4px solid var(--iron-plate) !important;
-    box-shadow: 4px 4px 0 var(--blood-rust) !important;
-    font-family: "Space Mono", monospace !important;
-    text-transform: uppercase;
-    font-weight: 900;
-    transition: 0s !important;
-    border-radius: 0 !important;
+/* Fix per i Bottoni Previous/Next */
+.tour-container #btn-next, .tour-container #btn-prev, button#btn-next-mobile, button#btn-prev-mobile {
+    color: #ffffff !important;
+    background: var(--primary-bright) !important;
+    border-radius: 6px !important;
+    border:0;
 }
 
-.btn-outline-secondary:hover:not(:disabled) {
-    background: var(--blood-rust) !important;
-    color: var(--void-black) !important;
-    border-color: var(--void-black) !important;
-    transform: translate(4px, 4px);
+.tour-container #btn-next:hover, .tour-container #btn-prev:hover, button#btn-next-mobile:hover, button#btn-prev-mobile:hover {
+    transform: scale(1.1);
+    background: var(--accent-brass) !important;
     box-shadow: var(--glow-gold);
+    border-radius: 6px !important;
 }
+
+@media (max-width: 992px){
+    #backToFirstRow{
+        margin: 0 0 0.5rem 0 !important;
+    }
+
+    #backToFirstCol{
+        width: 97%;
+        margin: auto;
+        padding-right:0px;
+    }
+ 
+    .tour-container #map{
+        margin: auto auto 0.5rem auto;
+    }
+}
+
 
 /* Fix della struttura del Menu dei Temi in basso a destra */
 .theme {

@@ -324,6 +324,13 @@ a[aria-expanded="false"] i {
     background-color: transparent;
 }
 
+.leaflet-popup-content .card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+}
+
 .leaflet-popup-content-wrapper{
     background-color:#0047AB;
     box-shadow: -6px -6px 0px #d32f2f;
@@ -1146,15 +1153,31 @@ button:disabled {
     border:#F2A900 1px solid !important;
 }
 
-.tour-container #btn-prev , .tour-container #btn-next {
+.tour-container #btn-prev , .tour-container #btn-next, button#btn-next-mobile, button#btn-prev-mobile {
     background-color: transparent;
     color: #00A86B;
     border-color: #00A86B;
 }
 
-.tour-container #btn-prev:hover , .tour-container #btn-next:hover {
-   background-color: #00A86B;
+.tour-container #btn-prev:hover , .tour-container #btn-next:hover, button#btn-next-mobile:hover, button#btn-prev-mobile:hover {
+    background-color: #00A86B;
     color: #EDEAE2;
+}
+
+@media (max-width: 992px){
+    #backToFirstRow{
+        margin: 0 0 0.5rem 0 !important;
+    }
+
+    #backToFirstCol{
+        width: 97%;
+        margin: auto;
+        padding-right:0px;
+    }
+ 
+    .tour-container #map{
+        margin: auto auto 0.5rem auto;
+    }
 }
 
 /*THEME*/

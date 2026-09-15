@@ -328,6 +328,30 @@ button {
     color: var(--furnace-fire);
 }
 
+#tourDropdownMenuButton{
+    background-color: var(--iron-plate);
+    border: none;
+    box-shadow: var(--brutal-shadow);
+    color: var(--text-bone);
+}
+
+#tourDropdownMenuButton:hover{
+    background: var(--furnace-fire);
+    color: var(--steel-gray);
+    box-shadow: 0 0 15px var(--furnace-fire);
+}
+
+.dropdown .dropdown-menu{
+    border-radius: 0 !important;
+    background: var(--text-ash);
+}
+
+.dropdown .dropdown-menu li:hover .dropdown-item{
+    background: var(--iron-plate);
+    color: var(--furnace-fire)
+}
+
+
 /* Barra di avanzamento */
 .progress {
     border-radius: 0 !important;
@@ -347,6 +371,7 @@ button {
     background: var(--blood-rust) !important;
     border: 3px solid var(--void-black) !important;
     box-shadow: 4px 4px 0 var(--toxic-green-bright);
+    margin-bottom: 15px;
     border-radius: 0 !important;
     font-weight: 900;
     transition: all 0.2s ease-out;
@@ -357,6 +382,22 @@ button {
     color: var(--void-black) !important;
     transform: scale(1.1);
     box-shadow: 0 0 15px var(--mech-yellow);
+}
+
+@media (max-width: 992px){
+    #backToFirstRow{
+        margin: 0 0 0.5rem 0 !important;
+    }
+
+    #backToFirstCol{
+        width: 97%;
+        margin: auto;
+        padding-right:0px;
+    }
+ 
+    .tour-container #map{
+        margin: auto auto 0.5rem auto;
+    }
 }
 
 /* --- FOOTER --- */
@@ -485,6 +526,13 @@ footer ul a:not(.pipe):hover {
 
 .leaflet-popup-content-wrapper .card{
     border: none;
+}
+
+.leaflet-popup-content .card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
 }
 
 .leaflet-popup-content-wrapper{

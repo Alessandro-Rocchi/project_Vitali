@@ -327,6 +327,13 @@ filter: grayscale(1) brightness(60%);
     border-radius: 0;
 }
 
+.leaflet-popup-content .card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+}
+
 .leaflet-popup-content .card .card-body, .leaflet-popup-tip{
     background-color:#030a03;
 }
