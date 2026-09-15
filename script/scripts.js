@@ -498,8 +498,6 @@ function createPopupContentTour(feature) {
     return `<div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">${props.name || 'Location'}</h5>
-                    <p class="card-text m-0"><b>Director:</b> ${director}</p>
-                    <p class="card-text m-0"><b>Year:</b> ${year}</p>
                     <p class="card-text m-0"><b>Associated Film:</b> ${movie}</p>
                 </div>
             </div>`;
