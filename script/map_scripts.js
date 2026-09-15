@@ -185,9 +185,9 @@ async function init() {
         var div = L.DomUtil.create('div', 'custom-panel');
         // Render three action buttons triggering subpanel toggles
         div.innerHTML = `<div class="d-flex gap-2 align-items-center bg-transparent"> 
-                            <button class="btn btn-light shadow-sm" type="button" onclick="addSearchBar()" id="btn-search"> Cerca </button> 
-                            <button class="btn btn-light shadow-sm" type="button" onclick="createFilter()" id="btn-filter"> Filtri </button> 
-                            <button class="btn btn-light shadow-sm" type="button" onclick="createExplore()" id="btn-explore"> Esplora </button> 
+                            <button class="btn btn-light shadow-sm" type="button" onclick="addSearchBar()" id="btn-search"> Search </button> 
+                            <button class="btn btn-light shadow-sm" type="button" onclick="createFilter()" id="btn-filter"> Filters </button> 
+                            <button class="btn btn-light shadow-sm" type="button" onclick="createExplore()" id="btn-explore"> Explore </button> 
                         </div>`;
         // Prevent click events from propagating to the map canvas underneath (avoids accidental clicks/drags)
         L.DomEvent.disableClickPropagation(div);
@@ -285,6 +285,23 @@ function addGeoData(geojson) {
     if (!geojson) return;
     // Cache the original dataset for subsequent client-side filter operations
     initialData = geojson;
+
+    // Enrich features with director and production_year from metadataJson for filter compatibility
+    if (metadataJson && initialData.features) {
+        initialData.features.forEach(function(f) {
+            if (!f.properties.director || !f.properties.production_year) {
+                var meta = metadataJson.find(function(m) {
+                    var mName = (m.name || '').toLowerCase();
+                    var fName = (f.properties && f.properties.name || '').toLowerCase();
+                    return mName === fName || (mName.includes('louvre') && fName.includes('louvre'));
+                });
+                if (meta && meta.associated_movie && meta.associated_movie[0]) {
+                    if (!f.properties.director) f.properties.director = meta.associated_movie[0].director;
+                    if (!f.properties.production_year) f.properties.production_year = meta.associated_movie[0].production_year.toString();
+                }
+            }
+        });
+    }
 
     // Create Leaflet GeoJSON layer and bind a popup to each marker feature
     currentLayer = L.geoJSON(geojson, {
@@ -880,15 +897,15 @@ function createExplorePanelUI(map) {
     
     // Render thematic card links with Bootstrap icons and styled headers
     div.innerHTML = `
-        <a href="about_nouvelle_vague.html#revolution" class="text-decoration-none text-dark link-esplora">
+        <a href="tour.html?keyword=Top 10 locations" class="text-decoration-none text-dark link-esplora">
             <div class="card border-0 shadow rounded-3 bg-white" style="width: 260px; transition: transform 0.2s, background-color 0.2s;">
                 <div class="row g-0 align-items-center p-2">
                     <div class="col-3 text-center text-primary">
                         <i class="bi bi-camera-reels fs-4"></i>
                     </div>
                     <div class="col-9">
-                        <h6 class="mb-0 fw-bold" style="font-size: 0.85rem;">Il Movimento</h6>
-                        <small class="text-muted" style="font-size: 0.75rem;">Storia e Manifesto</small>
+                        <h6 class="mb-0 fw-bold" style="font-size: 0.85rem;">Top 10 Locations in Paris</h6>
+                        <small class="text-muted" style="font-size: 0.75rem;">Vist the best of Paris</small>
                     </div>
                 </div>
             </div>
@@ -902,21 +919,21 @@ function createExplorePanelUI(map) {
                     </div>
                     <div class="col-9">
                         <h6 class="mb-0 fw-bold" style="font-size: 0.85rem;">Jean-Luc Godard</h6>
-                        <small class="text-muted" style="font-size: 0.75rem;">Biografia e Stile</small>
+                        <small class="text-muted" style="font-size: 0.75rem;">Style and Legacy</small>
                     </div>
                 </div>
             </div>
         </a>
 
-        <a href="about_nouvelle_vague.html#cannes" class="text-decoration-none text-dark link-esplora">
+        <a href="tour.html?keyword=Agnès Varda" class="text-decoration-none text-dark link-esplora">
             <div class="card border-0 shadow rounded-3 bg-white" style="width: 260px; transition: transform 0.2s, background-color 0.2s;">
                 <div class="row g-0 align-items-center p-2">
                     <div class="col-3 text-center text-danger">
                         <i class="bi bi-film fs-4"></i>
                     </div>
                     <div class="col-9">
-                        <h6 class="mb-0 fw-bold" style="font-size: 0.85rem;">François Truffaut</h6>
-                        <small class="text-muted" style="font-size: 0.75rem;">I Grandi Capolavori</small>
+                        <h6 class="mb-0 fw-bold" style="font-size: 0.85rem;">Agnès Varda</h6>
+                        <small class="text-muted" style="font-size: 0.75rem;">Style and Legacy</small>
                     </div>
                 </div>
             </div>

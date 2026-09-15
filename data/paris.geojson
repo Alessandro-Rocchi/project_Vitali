@@ -13,9 +13,12 @@
             "properties": {
                 "name": "Capelle de la Sorbonne",
                 "label": "Sorbonne Chapel, Paris, France",
-                "director": "Jacques Rivette",
-                "movie": "Paris nous appartient",
-                "production_year": "1961",
+                "keywords": [
+                    "Cinematic Churches"
+                ],
+                "movies": [
+                    "Paris nous appartient"
+                ],
                 "poster_url": "img/img_movie/capelleDeLaSorbonneModern.png"
             },
             "bbox": [
@@ -37,9 +40,13 @@
             "properties": {
                 "name": "Chiesa di Saint Suplice",
                 "label": "Church of Saint-Sulpice, Paris, France",
-                "director": "Jacques Rivette",
-                "movie": "Paris nous appartient",
-                "production_year": "1961",
+                "keywords": [
+                    "Top 10 locations",
+                    "Cinematic Churches"
+                ],
+                "movies": [
+                    "Paris nous appartient"
+                ],
                 "poster_url": "img/img_movie/saintSupliceModern.png"
             },
             "bbox": [
@@ -61,9 +68,12 @@
             "properties": {
                 "name": "Pont des Arts",
                 "label": "Pont des Arts, Paris, France",
-                "director": "Jacques Rivette",
-                "movie": "Paris nous appartient",
-                "production_year": "1961",
+                "keywords": [
+                    "Top 10 locations"
+                ],
+                "movies": [
+                    "Paris nous appartient"
+                ],
                 "poster_url": "img/img_movie/pontDesArtsModern.png"
             },
             "bbox": [
@@ -85,9 +95,11 @@
             "properties": {
                 "name": "Café le Presbourg",
                 "label": "Café le Presbourg, Paris, France",
-                "director": "Jacques Rivette",
-                "movie": ["Paris nous appartient"],
-                "production_year": "1961"
+                "keywords": [],
+                "movies": [
+                    "Paris nous appartient"
+                ],
+                "poster_url": "img/img_movie/cafeLePresbourgModern.png"
             },
             "bbox": [
                 2.2961,
@@ -108,7 +120,14 @@
             "properties": {
                 "name": "Notre Dame",
                 "label": "Notre-Dame Cathedral, Paris, France",
-                "movies": ["À bout de souffle"],
+                "keywords": [
+                    "Jean-Luc Godard",
+                    "Top 10 locations",
+                    "Cinematic Churches"
+                ],
+                "movies": [
+                    "À bout de souffle"
+                ],
                 "poster_url": "img/img_movie/notreDameModern.jpg"
             },
             "bbox": [
@@ -130,9 +149,13 @@
             "properties": {
                 "name": "Les Rives de Notre Dame, quai St Michel, Paris",
                 "label": "Quai Saint-Michel, Paris, France",
-                "director": "Jean-Luc Godard",
-                "movie": "À bout de souffle",
-                "production_year": "1960"
+                "keywords": [
+                    "Jean-Luc Godard"
+                ],
+                "movies": [
+                    "À bout de souffle"
+                ],
+                "poster_url": ""
             },
             "bbox": [
                 2.345,
@@ -153,9 +176,13 @@
             "properties": {
                 "name": "The entrances to the George V Métro station",
                 "label": "George V Metro Station, Paris, France",
-                "director": "Jean-Luc Godard",
-                "movie": "À bout de souffle",
-                "production_year": "1960"
+                "keywords": [
+                    "Jean-Luc Godard"
+                ],
+                "movies": [
+                    "À bout de souffle"
+                ],
+                "poster_url": ""
             },
             "bbox": [
                 2.3006,
@@ -176,9 +203,14 @@
             "properties": {
                 "name": "Place de la Concorde",
                 "label": "Place de la Concorde, Paris, France",
-                "director": "Jean-Luc Godard",
-                "movie": "À bout de souffle",
-                "production_year": "1960"
+                "keywords": [
+                    "Jean-Luc Godard",
+                    "Top 10 locations"
+                ],
+                "movies": [
+                    "À bout de souffle"
+                ],
+                "poster_url": ""
             },
             "bbox": [
                 2.3219,
@@ -199,9 +231,13 @@
             "properties": {
                 "name": "Le Select, 99 boulevard Montparnasse",
                 "label": "Le Select - 99 Bd du Montparnasse, Paris, France",
-                "director": "Jean-Luc Godard",
-                "movie": "À bout de souffle",
-                "production_year": "1960"
+                "keywords": [
+                    "Jean-Luc Godard"
+                ],
+                "movies": [
+                    "À bout de souffle"
+                ],
+                "poster_url": ""
             },
             "bbox": [
                 2.3283,
@@ -222,9 +258,13 @@
             "properties": {
                 "name": "metro: Raspail",
                 "label": "Raspail Metro Station, Paris, France",
-                "director": "Jean-Luc Godard",
-                "movie": "À bout de souffle",
-                "production_year": "1960"
+                "keywords": [
+                    "Jean-Luc Godard"
+                ],
+                "movies": [
+                    "À bout de souffle"
+                ],
+                "poster_url": ""
             },
             "bbox": [
                 2.3308,
@@ -245,9 +285,13 @@
             "properties": {
                 "name": "the Marne",
                 "label": "The Marne River, France",
-                "director": "Jean-Luc Godard",
-                "movie": "Bande à part",
-                "production_year": "1964"
+                "keywords": [
+                    "Jean-Luc Godard"
+                ],
+                "movies": [
+                    "Bande à part"
+                ],
+                "poster_url": ""
             },
             "bbox": [
                 2.42,
@@ -268,9 +312,14 @@
             "properties": {
                 "name": "Ile des Corbeaux at Saint-Maurice",
                 "label": "Île des Corbeaux, Saint-Maurice, France",
-                "director": "Jean-Luc Godard",
-                "movie": "Bande à part",
-                "production_year": "1964"
+                "keywords": [
+                    "Jean-Luc Godard",
+                    "Hidden Gems"
+                ],
+                "movies": [
+                    "Bande à part"
+                ],
+                "poster_url": ""
             },
             "bbox": [
                 2.433,
@@ -291,9 +340,13 @@
             "properties": {
                 "name": "Column de Juillet, Paris",
                 "label": "July Column, Place de la Bastille, Paris, France",
-                "director": "Jean-Luc Godard",
-                "movie": "Bande à part",
-                "production_year": "1964"
+                "keywords": [
+                    "Jean-Luc Godard"
+                ],
+                "movies": [
+                    "Bande à part"
+                ],
+                "poster_url": ""
             },
             "bbox": [
                 2.369,
@@ -314,9 +367,13 @@
             "properties": {
                 "name": "quai de Conti",
                 "label": "Quai de Conti, Paris, France",
-                "director": "Jean-Luc Godard",
-                "movie": "Bande à part",
-                "production_year": "1964"
+                "keywords": [
+                    "Jean-Luc Godard"
+                ],
+                "movies": [
+                    "Bande à part"
+                ],
+                "poster_url": ""
             },
             "bbox": [
                 2.3385,
@@ -335,11 +392,16 @@
                 ]
             },
             "properties": {
-                "name": "Louvre’s",
+                "name": "The Louvre Museum, Paris",
                 "label": "Louvre Museum, Paris, France",
-                "director": "Jean-Luc Godard",
-                "movie": "Bande à part",
-                "production_year": "1964"
+                "keywords": [
+                    "Jean-Luc Godard",
+                    "Top 10 locations"
+                ],
+                "movies": [
+                    "Bande à part"
+                ],
+                "poster_url": ""
             },
             "bbox": [
                 2.3376,
@@ -360,9 +422,13 @@
             "properties": {
                 "name": "street market in Pl. de Levis",
                 "label": "Place de Lévis, Paris, France",
-                "director": "Éric Rohmer",
-                "movie": "La Boulangère de Monceau",
-                "production_year": "1962"
+                "keywords": [
+                    "Hidden Gems"
+                ],
+                "movies": [
+                    "La Boulangère de Monceau"
+                ],
+                "poster_url": ""
             },
             "bbox": [
                 2.3116,
@@ -383,9 +449,12 @@
             "properties": {
                 "name": "boulevard Montmartre 12",
                 "label": "12 Boulevard Montmartre, Paris, France",
-                "director": "François Truffaut",
-                "movie": "Les 400 coups",
-                "production_year": "1959",
+                "keywords": [
+                    "Hidden Gems"
+                ],
+                "movies": [
+                    "Les 400 coups"
+                ],
                 "poster_url": "img/img_movie/montMatreModern.jpg"
             },
             "bbox": [
@@ -407,9 +476,12 @@
             "properties": {
                 "name": "Rue Puget 2",
                 "label": "2 Rue Puget, Paris, France",
-                "director": "François Truffaut",
-                "movie": "Les 400 coups",
-                "production_year": "1959",
+                "keywords": [
+                    "Hidden Gems"
+                ],
+                "movies": [
+                    "Les 400 coups"
+                ],
                 "poster_url": "img/img_movie/ruePugetModern.jpg"
             },
             "bbox": [
@@ -431,9 +503,10 @@
             "properties": {
                 "name": "Rue Lepic 3",
                 "label": "3 Rue Lepic, Paris, France",
-                "director": "François Truffaut",
-                "movie": "Les 400 coups",
-                "production_year": "1959",
+                "keywords": [],
+                "movies": [
+                    "Les 400 coups"
+                ],
                 "poster_url": "img/img_movie/rueLepicModern.jpg"
             },
             "bbox": [
@@ -455,9 +528,12 @@
             "properties": {
                 "name": "Square d'Estienne d'Orves",
                 "label": "Square d'Estienne d'Orves, Paris, France",
-                "director": "François Truffaut",
-                "movie": "Les 400 coups",
-                "production_year": "1959",
+                "keywords": [
+                    "Hidden Gems"
+                ],
+                "movies": [
+                    "Les 400 coups"
+                ],
                 "poster_url": "img/img_movie/estienneOrvesModern.jpg"
             },
             "bbox": [
@@ -479,9 +555,13 @@
             "properties": {
                 "name": "Sacré-Cœur in Montmartre.",
                 "label": "Sacré-Cœur, Montmartre, Paris, France",
-                "director": "François Truffaut",
-                "movie": "Les 400 coups",
-                "production_year": "1959",
+                "keywords": [
+                    "Top 10 locations",
+                    "Cinematic Churches"
+                ],
+                "movies": [
+                    "Les 400 coups"
+                ],
                 "poster_url": "img/img_movie/sacreCoeurModern.jpg"
             },
             "bbox": [
@@ -503,9 +583,12 @@
             "properties": {
                 "name": "Champs Elysées (60 avenue des Champs Elysées)",
                 "label": "60 Avenue des Champs-Élysées, Paris, France",
-                "director": "François Truffaut",
-                "movie": "Les 400 coups",
-                "production_year": "1959",
+                "keywords": [
+                    "Top 10 locations"
+                ],
+                "movies": [
+                    "Les 400 coups"
+                ],
                 "poster_url": "img/img_movie/champsElyseesModern.jpg"
             },
             "bbox": [
@@ -527,9 +610,13 @@
             "properties": {
                 "name": "Palais de Chaillot",
                 "label": "Palais de Chaillot, Paris, France",
-                "director": "François Truffaut",
-                "movie": "Les 400 coups",
-                "production_year": "1959"
+                "keywords": [
+                    "Top 10 locations"
+                ],
+                "movies": [
+                    "Les 400 coups"
+                ],
+                "poster_url": ""
             },
             "bbox": [
                 2.2884,
@@ -550,9 +637,13 @@
             "properties": {
                 "name": "128 Rue de Rivoli",
                 "label": "128 Rue de Rivoli, Paris, France",
-                "director": "Agnès Varda",
-                "movie": "Cléo de 5 à 7",
-                "production_year": "1962"
+                "keywords": [
+                    "Agnès Varda"
+                ],
+                "movies": [
+                    "Cléo de 5 à 7"
+                ],
+                "poster_url": ""
             },
             "bbox": [
                 2.3415,
@@ -573,9 +664,13 @@
             "properties": {
                 "name": "Café du Dôme",
                 "label": "Café du Dôme - 108 Bd du Montparnasse, Paris, France",
-                "director": "Agnès Varda",
-                "movie": "Cléo de 5 à 7",
-                "production_year": "1962",
+                "keywords": [
+                    "Agnès Varda",
+                    "Top 10 locations"
+                ],
+                "movies": [
+                    "Cléo de 5 à 7"
+                ],
                 "poster_url": "img/img_movie/cafeDuDomeModern.png"
             },
             "bbox": [
@@ -597,9 +692,12 @@
             "properties": {
                 "name": "Parc Montsouris",
                 "label": "Parc Montsouris, Paris, France",
-                "director": "Agnès Varda",
-                "movie": "Cléo de 5 à 7",
-                "production_year": "1962",
+                "keywords": [
+                    "Agnès Varda"
+                ],
+                "movies": [
+                    "Cléo de 5 à 7"
+                ],
                 "poster_url": "img/img_movie/parcMontsourisModern.png"
             },
             "bbox": [
@@ -618,20 +716,23 @@
                     48.873771
                 ]
             },
+            "properties": {
+                "name": "Arc de Triomphe",
+                "label": "Arc de Triomphe - Place Charles de Gaulle, 75008 Paris, France",
+                "keywords": [
+                    "Top 10 locations"
+                ],
+                "movies": [
+                    "Paris nous appartient"
+                ],
+                "poster_url": "img/img_movie/arcDeTriompheModern.png"
+            },
             "bbox": [
                 2.295035,
                 48.873771,
                 2.295035,
                 48.873771
-            ],
-            "properties": {
-                "label": "Arc de Triomphe - Place Charles de Gaulle, 75008 Paris, France",
-                "name": "Arc de Triomphe",
-                "director": "Jacques Rivette",
-                "movie": "Paris nous appartient",
-                "production_year": 1961,
-                "poster_url": "img/img_movie/arcDeTriompheModern.png"
-            }
+            ]
         }
     ]
 }
