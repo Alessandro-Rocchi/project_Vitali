@@ -491,6 +491,13 @@ footer ul a:not(.pipe):hover {
     padding: 0px !important;
 }
 
+.leaflet-popup-content .card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+}
+
 .card_link { 
     color: var(--primary-bright); 
     font-weight: bold; 
@@ -646,12 +653,11 @@ footer ul a:not(.pipe):hover {
 }
 
 .custom-panel, .sub-panel-filter, .sub-panel-explore {
-    background: var(--glass-bg);
+    background: rgba(255, 255, 255, 0.1);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
     box-shadow: 0 10px 40px rgba(27, 94, 32, 0.15);
-    border-radius: 16px;
+    border-radius: 20px;
 }
 
 /* --- SCROLLBAR ECOLOGICA BIO-LUMINESCENTE --- */

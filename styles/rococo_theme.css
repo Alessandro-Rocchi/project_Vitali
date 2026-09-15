@@ -1078,6 +1078,13 @@ aside.bookmarks a:hover {
   max-width: 100%; /* Prevents the card from overflowing the popup */
 }
 
+.leaflet-popup-content .card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+}
+
 #info-panel #text-section #btn-scopri{
     color: #a87c43;
 }

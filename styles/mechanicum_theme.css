@@ -528,6 +528,13 @@ footer ul a:not(.pipe):hover {
     border: none;
 }
 
+.leaflet-popup-content .card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+}
+
 .leaflet-popup-content-wrapper{
     background-color: var(--steel-gray);
     border-radius: 0;
