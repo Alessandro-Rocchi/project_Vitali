@@ -951,13 +951,33 @@ button:disabled {
 #backToFirst {
     color: #F4F1FA !important;
     background-color:#A92325 !important;
-    border:#A92325 1px solid !important;
+    border:#A92325 2px solid !important;
+}
+
+#backToFirst span{
+    color: inherit !important;
 }
 
 #backToFirst:hover {
     color: #A92325 !important;
-    background-color:#F4F1FA !important;
-    border:#A92325 1px solid !important;
+    background-color:transparent !important;
+    border:#A92325 2px solid !important;
+}
+
+@media (max-width: 992px){
+    #backToFirstRow{
+        margin: 0 0 0.5rem 0 !important;
+    }
+
+    #backToFirstCol{
+        width: 97%;
+        margin: auto;
+        padding-right:0px;
+    }
+ 
+    .tour-container #map{
+        margin: auto auto 0.5rem auto;
+    }
 }
 
 /*THEME*/
