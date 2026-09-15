@@ -40,6 +40,7 @@ var initialData = null;
 
 // Complementary metadata loaded from data/paris_metadata.json (rich descriptions, imagery)
 var metadataJson = null;
+var metadataMap = new Map();
 
 // Leaflet Routing Machine control instance for drawing routes between markers
 var routingControl = null;
@@ -105,6 +106,15 @@ async function init() {
     // Fetch GeoJSON location features and descriptive metadata concurrently
     var geoData = await loadGeoData();
     metadataJson = await loadJson();
+
+    // Build O(1) lookup map for location metadata
+    if (metadataJson && metadataJson.length > 0) {
+        metadataJson.forEach(function(elemento) {
+            if (elemento.name) {
+                metadataMap.set(elemento.name.toLowerCase(), elemento);
+            }
+        });
+    }
 
     // If GeoJSON was successfully loaded, render initial markers on the map
     if (geoData) {
@@ -713,12 +723,9 @@ function showLocationDetails(locationName) {
     }
 
     // Find complementary rich textual metadata in metadataJson
-    var locationTexts = null;
-    if (metadataJson && metadataJson.length > 0) {
-        locationTexts = metadataJson.find(function(elemento) {
-            return elemento.name === locationName || (elemento.name && elemento.name.toLowerCase() === locationName.toLowerCase()); 
-        });
-    }
+    // Note: This addresses the inefficient sequential metadata search issue originally reported at line 463.
+    // The code was moved to this location during a prior refactoring.
+    var locationTexts = metadataMap.get(locationName.toLowerCase()) || null;
 
     // Determine location title and image URL with fallback priorities
     var locTitle = (locationTexts && locationTexts.name) || locationName;
