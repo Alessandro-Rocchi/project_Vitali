@@ -74,7 +74,7 @@
                 "movies": [
                     "Paris nous appartient"
                 ],
-                "poster_url": "img/img_movie/pontDesArtsModern.png"
+                "poster_url": "img/img_movie/pontsDesArtsModern.png"
             },
             "bbox": [
                 2.3375,
@@ -155,7 +155,7 @@
                 "movies": [
                     "À bout de souffle"
                 ],
-                "poster_url": ""
+                "poster_url": "img/img_movie/hotelModern.jpg"
             },
             "bbox": [
                 2.345,
@@ -182,7 +182,7 @@
                 "movies": [
                     "À bout de souffle"
                 ],
-                "poster_url": ""
+                "poster_url": "img/img_movie/georgeVMetroModern.jpg"
             },
             "bbox": [
                 2.3006,
@@ -237,7 +237,7 @@
                 "movies": [
                     "À bout de souffle"
                 ],
-                "poster_url": ""
+                "poster_url": "img/img_movie/leSelectModern.jpg"
             },
             "bbox": [
                 2.3283,
@@ -264,7 +264,7 @@
                 "movies": [
                     "À bout de souffle"
                 ],
-                "poster_url": ""
+                "poster_url": "img/img_movie/metroRaspailModern.jpg"
             },
             "bbox": [
                 2.3308,
@@ -319,7 +319,7 @@
                 "movies": [
                     "Bande à part"
                 ],
-                "poster_url": ""
+                "poster_url": "img/img_movie/ileDeCorbeauxModern.jpg"
             },
             "bbox": [
                 2.433,
@@ -346,7 +346,7 @@
                 "movies": [
                     "Bande à part"
                 ],
-                "poster_url": ""
+                "poster_url": "img/img_movie/colonneJuilletModern.png"
             },
             "bbox": [
                 2.369,
@@ -373,7 +373,7 @@
                 "movies": [
                     "Bande à part"
                 ],
-                "poster_url": ""
+                "poster_url": "img/img_movie/quaiDeContiModern.jpg"
             },
             "bbox": [
                 2.3385,
@@ -401,7 +401,7 @@
                 "movies": [
                     "Bande à part"
                 ],
-                "poster_url": ""
+                "poster_url": "img/img_movie/louvreModern.png"
             },
             "bbox": [
                 2.3376,
@@ -455,7 +455,7 @@
                 "movies": [
                     "Les 400 coups"
                 ],
-                "poster_url": "img/img_movie/montMatreModern.jpg"
+                "poster_url": "img/img_movie/montMatreModern.png"
             },
             "bbox": [
                 2.3422,
@@ -534,7 +534,7 @@
                 "movies": [
                     "Les 400 coups"
                 ],
-                "poster_url": "img/img_movie/estienneOrvesModern.jpg"
+                "poster_url": "img/img_movie/estienneOrvesModern.png"
             },
             "bbox": [
                 2.3317,
@@ -562,7 +562,7 @@
                 "movies": [
                     "Les 400 coups"
                 ],
-                "poster_url": "img/img_movie/sacreCoeurModern.jpg"
+                "poster_url": "img/img_movie/sacreCoeurModern.png"
             },
             "bbox": [
                 2.3431,
@@ -698,7 +698,7 @@
                 "movies": [
                     "Cléo de 5 à 7"
                 ],
-                "poster_url": "img/img_movie/parcMontsourisModern.png"
+                "poster_url": "img/img_movie/parcMontsourisModer.png"
             },
             "bbox": [
                 2.338,
