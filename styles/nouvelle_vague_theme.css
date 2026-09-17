@@ -376,6 +376,15 @@ span .navbar-toggler {
     font-size: clamp(1rem, 5vw, 3rem);
 }
 
+.navbar-toggler {
+    border:none !important;
+    box-shadow: none !important;
+}
+
+.navbar-toggler .material-symbols-outlined{
+    color: #faf1ea!important;
+    font-size:clamp(1rem, 5vw, 3rem);
+}
 
 /*BREADCRUMBS*/
 .breadcrumbs a, .breadcrumbs p {
