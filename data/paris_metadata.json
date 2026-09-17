@@ -18,7 +18,7 @@
     "image_url": "img/img_movie/capelleDeLaSorbonneModern.png"
   },
   {
-    "name": "Chiesa di Saint Suplice",
+    "name": "Church of Saint-Sulpice",
     "year": "1646",
     "associated_movie": [
       {
@@ -117,12 +117,13 @@
         "director": "Jean-Luc Godard",
         "production_year": 1960,
         "film_scene_description": "Patricia sells copies of the New York Herald Tribune on the Champs-Élysées near the George V metro entrance.",
-        "film_poster_url": ""
+        "film_poster_url": "img/img_movie/georgeVMetroOld.jpg"
       }
     ],
     "simple_description": "The historic entrance of a famous Parisian metro station.",
     "medium_description": "Opened in 1900 on Line 1, this station is located under the Champs-Élysées. Its entrances are typical of the Parisian metropolitan style, offering direct access to the city's most famous avenue.",
-    "detailed_description": "The George V metro station, inaugurated on August 13, 1900, is located in the heart of the 8th arrondissement of Paris, serving the bustling and luxurious Avenue des Champs-Élysées. Originally named 'Alma', it was renamed in 1920 in honor of the King of England, George V, for British support during the First World War. The entrances reflect the functional yet iconic aesthetics of Parisian public transport, emerging directly onto the wide sidewalks where high society and global tourism intertwine."
+    "detailed_description": "The George V metro station, inaugurated on August 13, 1900, is located in the heart of the 8th arrondissement of Paris, serving the bustling and luxurious Avenue des Champs-Élysées. Originally named 'Alma', it was renamed in 1920 in honor of the King of England, George V, for British support during the First World War. The entrances reflect the functional yet iconic aesthetics of Parisian public transport, emerging directly onto the wide sidewalks where high society and global tourism intertwine.",
+    "image_url" : "img/img_movie/georgeVMetroModern.jpg"
   },
   {
     "name": "Place de la Concorde",
@@ -134,12 +135,13 @@
         "director": "Jean-Luc Godard",
         "production_year": 1960,
         "film_scene_description": "Michel Poiccard drives and walks across the monumental square during his travels across Paris.",
-        "film_poster_url": ""
+        "film_poster_url": "img/img_movie/placeConcordeOld.jpg"
       }
     ],
     "simple_description": "The largest and most famous square in Paris.",
     "medium_description": "A majestic public square located at the end of the Champs-Élysées, completed in 1772. It is famous for the ancient Egyptian obelisk at its center and its turbulent past during the French Revolution.",
-    "detailed_description": "Place de la Concorde is the largest and most monumental square in Paris, designed by architect Ange-Jacques Gabriel and originally conceived as Place Louis XV. It became one of the main stages of the French Revolution, where the beheadings of Louis XVI and Marie Antoinette were carried out. At its center stands the Luxor Obelisk, an Egyptian artifact over 3,000 years old donated to France in the 19th century. Concluding the Champs-Élysées, it offers spectacular perspectives of the Tuileries Gardens, the Arc de Triomphe, and the Seine."
+    "detailed_description": "Place de la Concorde is the largest and most monumental square in Paris, designed by architect Ange-Jacques Gabriel and originally conceived as Place Louis XV. It became one of the main stages of the French Revolution, where the beheadings of Louis XVI and Marie Antoinette were carried out. At its center stands the Luxor Obelisk, an Egyptian artifact over 3,000 years old donated to France in the 19th century. Concluding the Champs-Élysées, it offers spectacular perspectives of the Tuileries Gardens, the Arc de Triomphe, and the Seine.",
+    "image_url": "img/img_movie/placeConcordeModern.jpg"
   },
   {
     "name": "Le Select, 99 boulevard Montparnasse",
@@ -176,23 +178,6 @@
     "medium_description": "Opened in 1906, this metro station serves the Montparnasse area. It takes its name from the boulevard above, dedicated to the chemist and politician François-Vincent Raspail.",
     "detailed_description": "The Raspail metro station is an underground hub located in the 14th arrondissement of Paris, inaugurated in 1906. It serves lines 4 and 6 and is strategically positioned in the Montparnasse district. The internal architecture features the classic beveled white tiles of the historic metro network. It serves as a vital vein for city transit and access to the historic sites of the Rive Gauche.",
     "image_url" : "img/img_movie/metroRaspailModern.jpg"
-  },
-  {
-    "name": "the Marne",
-    "year": "N/D",
-    "associated_movie": [
-      {
-        "film_id": 1,
-        "film_name": "Bande à part",
-        "director": "Jean-Luc Godard",
-        "production_year": 1964,
-        "film_scene_description": "Arthur, Franz, and Odile spend time along the placid and tree-lined banks of the Marne river.",
-        "film_poster_url": ""
-      }
-    ],
-    "simple_description": "A major French river that flows into the Seine.",
-    "medium_description": "The Marne is a river about 514 km long that flows in the east and within the Parisian basin of France. It is historically famous for being the site of two major battles during the First World War.",
-    "detailed_description": "The Marne is one of the main rivers in France and a major right tributary of the Seine, which it joins at the eastern gates of Paris. In addition to shaping the landscapes of the French countryside, it has profound historical significance: it was the front line for the famous Battles of the Marne (1914 and 1918) during the First World War. Its placid and tree-lined banks have inspired countless impressionist painters and remain a classic backdrop for French cinema."
   },
   {
     "name": "Ile des Corbeaux at Saint-Maurice",
@@ -276,12 +261,13 @@
         "director": "Éric Rohmer",
         "production_year": 1962,
         "film_scene_description": "The young narrator frequents the bustling market street of Place de Lévis while pursuing the bakery girl.",
-        "film_poster_url": ""
+        "film_poster_url": "img/img_movie/placeLevisOld.jpeg"
       }
     ],
     "simple_description": "A lively and historic neighborhood market in Paris.",
     "medium_description": "Located in the 17th arrondissement, the market around Place de Lévis is a popular pedestrian street known for its gastronomic excellence, offering cheese, wine, and fresh produce.",
-    "detailed_description": "The street market that winds around Place de Lévis, in the 17th arrondissement of Paris, is one of the city's most beloved commercial and culinary promenades. Having transformed from a simple rural road in the 19th century into a modern pedestrian zone, the street retains the vibrant atmosphere of the classic Parisian 'marché de quartier' (neighborhood market). Visitors flock there for the abundance of artisan shops, fromageries, boulangeries, and stalls of prime produce, which fully represent the French art of living."
+    "detailed_description": "The street market that winds around Place de Lévis, in the 17th arrondissement of Paris, is one of the city's most beloved commercial and culinary promenades. Having transformed from a simple rural road in the 19th century into a modern pedestrian zone, the street retains the vibrant atmosphere of the classic Parisian 'marché de quartier' (neighborhood market). Visitors flock there for the abundance of artisan shops, fromageries, boulangeries, and stalls of prime produce, which fully represent the French art of living.",
+    "image_url" : "img/img_movie/placeLevisModern.jpeg"
   },
   {
     "name": "boulevard Montmartre 12",

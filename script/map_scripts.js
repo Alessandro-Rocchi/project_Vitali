@@ -111,6 +111,12 @@ async function init() {
         addGeoData(geoData);
     }
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetLocation = urlParams.get('location') || urlParams.get('name');
+    if (targetLocation) {
+        focusLocation(targetLocation, 15, false);
+    }
+
     /**
      * Override pinSearch internal helper to populate autocomplete suggestions
      * by collecting all unique location names from the active dataset.
@@ -717,7 +723,7 @@ function filterByYear(yearRange) {
  * Level 3: Detailed long description ("Learn more" -> button becomes "Show less" to cycle back)
  * @param {string} locationName - Name of the location clicked.
  */
-function showLocationDetails(locationName) {
+function showLocationDetails(locationName, shouldScroll = true) {
     // Retrieve target DOM elements
     var text_info = document.getElementById('text-section');
     var img_panel = document.getElementById('img-section');
@@ -948,3 +954,17 @@ function createExplorePanelUI(map) {
     
     return div;
 };
+
+function focusLocation(locatioName, zoomLevel, shouldScroll){
+    currentLayer.eachLayer(function(layer) {
+                if (layer.feature && layer.feature.properties && layer.feature.properties.name.toLowerCase() === locatioName.toLowerCase()) {
+                    targetLayer = layer;
+                }
+            });
+
+    map.flyTo(targetLayer.getLatLng(), zoomLevel, { animate: true, duration: 1.2 })
+
+    targetLayer.openPopup()
+
+    showLocationDetails(targetLayer.feature.properties.name, shouldScroll)
+}

@@ -686,6 +686,7 @@ function renderCatalogueCards(locations) {
 
     // Clear existing cards
     cardSection.innerHTML = "";
+    
 
     // Empty state fallback when no locations match
     if (!locations || locations.length === 0) {
@@ -707,6 +708,8 @@ function renderCatalogueCards(locations) {
         const imgUrl = location.image_url || "img/generic_bg.png";
         const title = location.name || "Location";
         const desc = location.simple_description || location.medium_description || "";
+        const mapUrl = `map.html?location=${encodeURIComponent(location.name)}`;
+
 
         // Build HTML template for the location card with image fallback and link to map
         col.innerHTML = `
@@ -714,7 +717,7 @@ function renderCatalogueCards(locations) {
                 <img src="${imgUrl}" class="img-fluid" alt="${title}" onerror="this.onerror=null;this.src='img/generic_bg.png';">
                 <h5 class="ps-2 my-2 mx-1">${title}</h5>
                 <p class="ps-2 my-2 mx-1">${desc}</p>
-                <a href="map.html" class="card_link align-self-end mt-auto pe-2 my-2 mx-1 d-flex align-items-center">
+                <a href="${mapUrl}" class="card_link align-self-end mt-auto pe-2 my-2 mx-1 d-flex align-items-center">
                     Go to the map<span class="material-symbols-outlined arrow_forward_ios card_arrow">arrow_forward_ios</span>
                 </a>
             </div>

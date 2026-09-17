@@ -38,7 +38,7 @@
                 ]
             },
             "properties": {
-                "name": "Chiesa di Saint Suplice",
+                "name": "Church of Saint-Sulpice",
                 "label": "Church of Saint-Sulpice, Paris, France",
                 "keywords": [
                     "Top 10 locations",
@@ -210,7 +210,7 @@
                 "movies": [
                     "À bout de souffle"
                 ],
-                "poster_url": ""
+                "poster_url": "img/img_movie/placeConcordeModern.jpg"
             },
             "bbox": [
                 2.3219,
@@ -271,33 +271,6 @@
                 48.839,
                 2.3308,
                 48.839
-            ]
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    2.42,
-                    48.82
-                ]
-            },
-            "properties": {
-                "name": "the Marne",
-                "label": "The Marne River, France",
-                "keywords": [
-                    "Jean-Luc Godard"
-                ],
-                "movies": [
-                    "Bande à part"
-                ],
-                "poster_url": ""
-            },
-            "bbox": [
-                2.42,
-                48.82,
-                2.42,
-                48.82
             ]
         },
         {
@@ -428,7 +401,7 @@
                 "movies": [
                     "La Boulangère de Monceau"
                 ],
-                "poster_url": ""
+                "poster_url": "img/img_movie/placeLevisModern.jpeg"
             },
             "bbox": [
                 2.3116,
