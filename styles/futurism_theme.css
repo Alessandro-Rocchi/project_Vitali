@@ -389,6 +389,16 @@ a[aria-expanded="false"] i {
     transform: rotate(0deg);
 }
 
+#info-panel #button-row {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+}
+
+#info-panel #btn-film {
+    width: fit-content; /* Makes the button only as wide as its text */
+    padding: 0.2rem 4rem !important;
+}
+
 /*NAVBAR*/
 
 .navbar{

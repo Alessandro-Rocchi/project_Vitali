@@ -293,6 +293,27 @@ padding-bottom: 1.5rem;
     margin: auto;
 }
 
+#info-panel #button-row {
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+}
+
+#info-panel #btn-film {
+    width: fit-content; /* Makes the button only as wide as its text */
+    color: #F4F1EA;
+    background-color: #d32f2f;
+    border: 2px solid transparent;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    padding: 0.2rem 4rem !important;
+}
+
+#info-panel #btn-film:hover {
+    background-color: transparent;
+    color: #d32f2f;
+    border: 2px solid #d32f2f;
+}
+
 /*SCROLLBAR*/
 /* Firefox */
 html {

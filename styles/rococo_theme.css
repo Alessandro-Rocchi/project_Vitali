@@ -1126,3 +1126,22 @@ aside.bookmarks a:hover {
     font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
     color: #1A1A1A;
 }
+
+#info-panel #button-row {
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+}
+
+#info-panel #btn-film {
+    width: fit-content; /* Makes the button only as wide as its text */
+    color: #EDEAE2;
+    background-color: #A87C43;
+    border: 2px solid transparent;
+    padding: 0.2rem 4rem !important;
+}
+
+#info-panel #btn-film:hover {
+    background-color: transparent;
+    color: #925e5e;
+    border: 2px solid #925e5e;
+}

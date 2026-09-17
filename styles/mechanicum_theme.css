@@ -510,6 +510,16 @@ footer ul a:not(.pipe):hover {
     color: var(--text-bone);
 }
 
+#info-panel #button-row {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+}
+
+#info-panel #btn-film {
+    width: fit-content; /* Makes the button only as wide as its text */
+    padding: 0.2rem 4rem !important;
+}
+
 .card_link { 
     color: var(--void-black); 
     font-weight: 900; 
