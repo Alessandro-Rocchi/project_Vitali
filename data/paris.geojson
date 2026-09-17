@@ -11,7 +11,7 @@
                 ]
             },
             "properties": {
-                "name": "Capelle de la Sorbonne",
+                "name": "Chapelle de la Sorbonne",
                 "label": "Sorbonne Chapel, Paris, France",
                 "keywords": [
                     "Cinematic Churches"
@@ -19,7 +19,7 @@
                 "movies": [
                     "Paris nous appartient"
                 ],
-                "poster_url": "img/img_movie/capelleDeLaSorbonneModern.png"
+                "poster_url": "img/img_movie/chapelleDeLaSorbonneModern.jpg"
             },
             "bbox": [
                 2.3433,
@@ -99,7 +99,7 @@
                 "movies": [
                     "Paris nous appartient"
                 ],
-                "poster_url": "img/img_movie/cafeLePresbourgModern.png"
+                "poster_url": "img/img_movie/cafeLePresbourgModern.jpg"
             },
             "bbox": [
                 2.2961,
@@ -698,7 +698,7 @@
                 "movies": [
                     "Paris nous appartient"
                 ],
-                "poster_url": "img/img_movie/arcDeTriompheModern.png"
+                "poster_url": "img/img_movie/arcDeTriompheModern.jpg"
             },
             "bbox": [
                 2.295035,
