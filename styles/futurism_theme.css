@@ -369,6 +369,26 @@ a[aria-expanded="false"] i {
 ;
 }
 
+#info-panel button{
+    margin-top: 10px;
+    border-radius: 6px !important;
+    background-color: #F2A900;
+    border: 2px solid #F2A900;
+    color:#1A1A1A;
+    transition: 0.5s ease;
+    transform: rotate(2.5deg);
+}
+
+#info-panel button:hover{
+    margin-top: 10px;
+    border-radius: 6px !important;
+    color: #F2A900;
+    background-color:transparent;
+    border: 2px solid #F2A900;
+    transition: 0.5s ease;
+    transform: rotate(0deg);
+}
+
 /*NAVBAR*/
 
 .navbar{

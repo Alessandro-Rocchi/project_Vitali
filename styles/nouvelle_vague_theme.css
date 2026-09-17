@@ -260,13 +260,23 @@ padding-bottom: 1.5rem;
     font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
 }
 
-#info-panel #text-section #btn-scopri {
+#info-panel #text-section #btn-scopri{
     font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
     color: #002FA7;
     text-decoration: underline !important;
 }
 
-#info-panel #text-section #btn-scopri:hover {
+#info-panel #btn-film{
+    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
+    color: #002FA7;
+    text-decoration: underline !important;
+}
+
+#info-panel #text-section #btn-scopri:hover{
+    color: #e63946;
+}
+
+#info-panel #btn-film:hover{
     color: #e63946;
 }
 

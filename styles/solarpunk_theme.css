@@ -487,6 +487,18 @@ footer ul a:not(.pipe):hover {
     margin: auto;
 }
 
+#info-panel button{
+    background: linear-gradient(135deg, var(--primary), var(--primary-bright));
+    color: #ffffff;
+    border: none;
+    margin-top: 10px;
+}
+
+#info-panel button:hover{
+    background: linear-gradient(135deg, var(--secondary), var(--accent-brass));
+    box-shadow: var(--glow-gold);
+}
+
 #map .leaflet-popup-content .card{
     padding: 0px !important;
 }

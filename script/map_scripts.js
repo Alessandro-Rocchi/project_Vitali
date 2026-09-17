@@ -824,6 +824,7 @@ function showLocationDetails(locationName) {
         headInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
+    // Create the row of buttons for associated movies
     const buttonRow = document.getElementById('button-row');
         if (buttonRow && locationTexts && Array.isArray(locationTexts.associated_movie)) {
             buttonRow.innerHTML = '';
@@ -832,7 +833,8 @@ function showLocationDetails(locationName) {
                 if (!elemento || !elemento.film_name) return;
 
                 var btn = document.createElement('button');
-                btn.className = 'button';
+                btn.id ="btn-film";
+                btn.className = 'btn btn-primary col-12 mb-3 mt-3 col-lg-5 d-inline-flex align-items-center justify-content-center fw-bold';
                 btn.textContent = elemento.film_name;
 
                 btn.addEventListener('click', function(e) {

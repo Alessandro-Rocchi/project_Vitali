@@ -1089,7 +1089,15 @@ aside.bookmarks a:hover {
     color: #a87c43;
 }
 
-#info-panel #text-section #btn-scopri:hover {
+#info-panel #btn-film{
+    color: #a87c43;
+}
+
+#info-panel #text-section #btn-scopri:hover{
+    color: #e2a759;
+}
+
+#info-panel #btn-film:hover{
     color: #e2a759;
 }
 

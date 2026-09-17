@@ -320,8 +320,6 @@ filter: grayscale(1) brightness(60%);
     background-color: #33ff33 !important;
 }
 
-
-
 .leaflet-popup-content-wrapper{
     background-color:#030a03;
     border-radius: 0;
@@ -390,6 +388,22 @@ filter: grayscale(1) brightness(60%);
 
 #info-panel #text-section #btn-scopri:hover::before{
     color: #33FF33;
+}
+
+#info-panel button{
+    background-color: #030a03;
+    font-weight: 400 !important;
+    font-size: 1rem;
+    color: #33FF33;
+    padding: 0px 10px !important;
+    border: 2px solid #33FF33;
+    border-radius: 0 !important;
+}
+
+#info-panel button:hover{
+    background-color: #33FF33;
+    color: #030a03;
+    border: 2px solid #33FF33;
 }
 
 #head-info #title-sect{

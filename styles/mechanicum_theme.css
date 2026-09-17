@@ -564,16 +564,24 @@ footer ul a:not(.pipe):hover {
     box-shadow: 3px 3px 0 var(--toxic-green);
 }
 
-#map .card .card-body button:hover{
-    background-color: var(--furnace-fire);
-    color: var(--void-black) !important;
-    box-shadow: 0 0 15px var(--furnace-fire);
-}
-
 #info-panel #img-div img{
     border-radius: 0 !important;
     max-height: 400px;
     margin: auto;
+}
+
+#info-panel button{
+    background: var(--blood-rust);
+    color: #ffffff;
+    border: none;
+    margin-top: 10px;
+    box-shadow: 3px 3px 0 var(--toxic-green);
+}
+
+#info-panel button:hover{
+    background-color: var(--furnace-fire);
+    color: var(--void-black) !important;
+    box-shadow: 0 0 15px var(--furnace-fire);
 }
 
 .card_link:hover { 
