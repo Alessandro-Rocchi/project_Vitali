@@ -19,7 +19,7 @@
                 "movies": [
                     "Paris nous appartient"
                 ],
-                "poster_url": "img/img_movie/chapelleDeLaSorbonneModern.jpg"
+                "poster_url": "img/img_movie/chapelleDeLaSorbonneModern.png"
             },
             "bbox": [
                 2.3433,
@@ -346,7 +346,7 @@
                 "movies": [
                     "Bande à part"
                 ],
-                "poster_url": "img/img_movie/quaiDeContiModern.jpg"
+                "poster_url": "img/img_movie/quaiDeContiModern.png"
             },
             "bbox": [
                 2.3385,
@@ -428,7 +428,7 @@
                 "movies": [
                     "Les 400 coups"
                 ],
-                "poster_url": "img/img_movie/montMatreModern.png"
+                "poster_url": "img/img_movie/montMartreModern.png"
             },
             "bbox": [
                 2.3422,
@@ -589,7 +589,7 @@
                 "movies": [
                     "Les 400 coups"
                 ],
-                "poster_url": ""
+                "poster_url": "img/img_movie/palaisDeChaillotModern.jpg"
             },
             "bbox": [
                 2.2884,
@@ -616,7 +616,7 @@
                 "movies": [
                     "Cléo de 5 à 7"
                 ],
-                "poster_url": ""
+                "poster_url": "img/img_movie/rueDeRivoliModern.png"
             },
             "bbox": [
                 2.3415,
@@ -671,7 +671,7 @@
                 "movies": [
                     "Cléo de 5 à 7"
                 ],
-                "poster_url": "img/img_movie/parcMontsourisModer.png"
+                "poster_url": "img/img_movie/parcMontsourisModern.png"
             },
             "bbox": [
                 2.338,
