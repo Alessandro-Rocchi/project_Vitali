@@ -728,7 +728,7 @@ function showLocationDetails(locationName, shouldScroll = true) {
     var text_info = document.getElementById('text-section');
     var img_panel = document.getElementById('img-section');
     var title_sect = document.getElementById('title-sect');
-    
+
 
     // Ensure spatial data is loaded
     if (!initialData || !initialData.features) {
@@ -828,6 +828,16 @@ function showLocationDetails(locationName, shouldScroll = true) {
     var headInfo = document.getElementById('head-info');
     if (headInfo) {
         headInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    
+    var text_film_info = document.getElementById('text-film-section');
+    var img_film_panel = document.getElementById('img-film-section');
+
+    if(text_film_info && img_film_panel){
+        text_film_info.innerHTML = '';
+        img_film_panel.removeAttribute('src');
+        img_film_panel.alt = '';
+        img_film_panel.style.display = 'none';
     }
 
     // Create the row of buttons for associated movies
