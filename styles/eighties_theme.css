@@ -905,18 +905,126 @@ aside.bookmarks::-webkit-scrollbar-thumb:hover {
     background-color: #66FF66;
 }
 
-#about_NV_text_content {
+#about_NV_text_content,
+#documentation_text_content {
     font-size: 16pt;
     font-weight: 300;
 }
 
-#about_NV_text_content strong{
+#about_NV_text_content strong,
+#documentation_text_content strong {
     color: #030a03;
     background-color: #33FF33;
+    padding: 0 4px;
 }
 
-#about_NV_text_content img {
+#documentation_text_content h2 {
+    color: #33FF33;
+    font-family: "VT323", Courier, monospace;
+    font-size: 2.4rem;
+    text-shadow: 0 0 10px rgba(51, 255, 51, 0.6);
+    border-bottom: 2px dashed #33FF33;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+#documentation_text_content h3 {
+    color: #00ffff;
+    font-family: "VT323", Courier, monospace;
+    font-size: 1.8rem;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+    margin-top: 1.5rem;
+}
+
+#documentation_text_content h4 {
+    color: #ff00ff;
+    font-family: "VT323", Courier, monospace;
+    font-size: 1.4rem;
+}
+
+#documentation_text_content p,
+#documentation_text_content li {
+    color: #d1ffd1;
+    line-height: 1.7;
+}
+
+#documentation_text_content a {
+    color: #00ffff;
+    text-decoration: underline;
+}
+
+#documentation_text_content a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 8px #ff00ff;
+}
+
+#about_NV_text_content img,
+#documentation_text_content img {
     border: 3px #33FF33 solid;
+}
+
+/* Code & Pre in Eighties Retro */
+#documentation_text_content pre {
+    background-color: #020802;
+    border: 2px solid #33FF33;
+    box-shadow: 0 0 15px rgba(51, 255, 51, 0.25);
+    color: #33FF33;
+    font-family: "VT323", "Space Mono", monospace;
+    font-size: 1.15rem;
+    padding: 1rem;
+    border-radius: 0;
+    overflow-x: auto;
+}
+
+#documentation_text_content code {
+    background-color: #071c07;
+    color: #33FF33;
+    border: 1px solid #33FF33;
+    font-family: "VT323", monospace;
+    font-size: 1.1em;
+    padding: 0.1rem 0.4rem;
+}
+
+#documentation_text_content pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+#documentation_text_content blockquote {
+    background-color: #051405;
+    border-left: 4px solid #ff00ff;
+    color: #ff80ff;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+}
+
+#documentation_text_content .table {
+    background-color: #020802;
+    border: 2px solid #33FF33;
+    color: #33FF33;
+    font-family: "Space Mono", monospace;
+}
+
+#documentation_text_content .table thead th {
+    background-color: #0d260d;
+    color: #00ffff;
+    border-bottom: 2px solid #33FF33;
+}
+
+#documentation_text_content .table td,
+#documentation_text_content .table th {
+    border-color: rgba(51, 255, 51, 0.3);
+    padding: 0.75rem;
+}
+
+.doc-academic-card {
+    background-color: #051405;
+    border: 2px solid #33FF33;
+    box-shadow: 0 0 20px rgba(51, 255, 51, 0.25);
+    border-radius: 0;
 }
 
 /*ABOUT OUR TEAM*/

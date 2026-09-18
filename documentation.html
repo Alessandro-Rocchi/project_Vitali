@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Technical Documentation | Les Rues du CSS</title>
+        <link rel="icon" type="image/x-icon" href="img/S.svg">
+        
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=GFS+Didot&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap" rel="stylesheet">
+        
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- Bootstrap 5.3 CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        
+        <!-- Scripts -->
+        <script src="script/scripts.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        
+        <!-- Dynamic Theme Stylesheet --> 
+        <link id="stylesheet_file" rel="stylesheet" href="styles/solarpunk_theme.css">
+    </head>
+    <body data-page="documentation">
+
+        <!-- Theme Switcher Floating Widget -->
+        <div class="theme">
+            <div class="closeTheme" title="Change Theme">
+                <div class="blur-background"></div>
+                <span class="material-symbols-outlined p-1">palette</span>
+            </div>
+            <div class="openTheme">
+                <div class="blur-background"></div>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/mechanicum_theme.css" title="Mechanicum">settings</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/solarpunk_theme.css" title="Solarpunk">clear_day</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/nouvelle_vague_theme.css" title="Nouvelle Vague">videocam</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/eighties_theme.css" title="Eighties">monitor</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/futurism_theme.css" title="Futurism">flash_on</span>
+                <span class="material-symbols-outlined p-1 d-block btn-tema" data-file="styles/rococo_theme.css" title="Rococo">spa</span>
+                <span class="material-symbols-outlined p-1 d-block btn-chiudi" title="Close">palette</span>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a href="index.html" id="logo-link"><span class="col-auto navbar-text">Les Rues du CSS</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="material-symbols-outlined">menu</span>                
+                </button>
+                <div class="col-auto collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="index.html">home</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="map.html">map</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="catalogue.html">catalogue</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link active" aria-current="page" href="about.html">about</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Page Content -->
+        <section class="page_content pb-5 m-0">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs d-inline-flex ms-4 gap-2 my-3">
+                <a href="index.html">Home</a>
+                <p class="mb-0">/</p>
+                <a href="about.html">About</a>
+                <p class="mb-0">/</p>
+                <a class="disabled">Technical Documentation</a>
+            </div>
+
+            <!-- Academic Header & Project Card -->
+            <div class="container-fluid px-3 px-md-5 my-3">
+                <div class="doc-academic-card p-4 p-md-5 mb-4">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-xl-8">
+                            <h1 class="display-5 fw-bold mb-2">Les Rues du CSS <span class="fs-4 text-muted fw-normal d-block d-md-inline">(Cinéma Sur la Seine)</span></h1>
+                            <p class="lead mb-3">Technical and Architectural Project Documentation</p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge bg-dark text-light p-2"><i class="bi bi-mortarboard-fill me-1"></i> University of Bologna</span>
+                                <span class="badge bg-secondary text-light p-2"><i class="bi bi-book me-1"></i> DHDK Master's Degree</span>
+                                <span class="badge bg-primary text-light p-2"><i class="bi bi-code-slash me-1"></i> Web Technologies</span>
+                            </div>
+                            <p class="mb-1"><strong>Course Instructor:</strong> Prof. Fabio Vitali</p>
+                            <p class="mb-3"><strong>Development Team:</strong> Alessandro Rocchi (<em>Presidente</em>), Daniele Bottaro (<em>Dan</em>), Elena Mocci (<em>Mele</em>)</p>
+                        </div>
+                        <div class="col-12 col-xl-4 text-xl-end mt-3 mt-xl-0">
+                            <a href="https://github.com/Alessandro-Rocchi/vitali_project_DHDK" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark me-2 mb-2">
+                                <i class="bi bi-github me-1"></i> GitHub Repository
+                            </a>
+                            <a href="map.html" class="btn btn-dark mb-2">
+                                <i class="bi bi-geo-alt-fill me-1"></i> Explore Live Map
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document Layout (Sticky Aside Bookmarks + Main Content) -->
+            <div class="container-fluid px-3 px-md-5">
+                <div class="row">
+                    <!-- Sticky Sidebar Bookmarks Navigation -->
+                    <aside class="col-12 col-lg-3 bookmarks p-3 mb-4 mb-lg-0">
+                        <h4 class="mb-3 fw-bold"><i class="bi bi-list-nested me-2"></i>Contents</h4>
+                        <ol>
+                            <li><a href="#vision">Introduction and Vision</a></li>
+                            <li><a href="#architecture">Architecture & Directory Tree</a></li>
+                            <li><a href="#pages-analysis">In-Depth Web Page Analysis</a></li>
+                            <li><a href="#data-models">Data Modeling & Schemas</a></li>
+                            <li><a href="#client-logic">Client-Side Logic</a></li>
+                            <li><a href="#design-system">Design System & 6 Themes</a></li>
+                            <li><a href="#multimedia">Multimedia & Archival Assets</a></li>
+                            <li><a href="#deployment">Deployment Pipeline & CI/CD</a></li>
+                            <li><a href="#setup-guide">Local Development Guide</a></li>
+                            <li><a href="#acknowledgments">Conclusions & Credits</a></li>
+                        </ol>
+                    </aside>
+
+                    <!-- Main Documentation Text Content -->
+                    <main class="col-12 col-lg-9 p-3 p-md-4 clearfix" id="documentation_text_content">
+
+                        <!-- SECTION 1: INTRODUCTION AND PROJECT VISION -->
+                        <section id="vision">
+                            <h2>1. Introduction and Project Vision</h2>
+                            <p>
+                                <strong>Les Rues du CSS (Cinéma Sur la Seine)</strong> is an interactive, multidisciplinary web platform dedicated to cinematic cartography and the cultural exploration of the French <strong>Nouvelle Vague</strong> (New Wave) in Paris between the late 1950s and late 1960s.
+                            </p>
+                            <p>
+                                Conceived as part of the <em>Web Technologies</em> curriculum within the <em>Digital Humanities and Digital Knowledge</em> (DHDK) Master's Degree at the University of Bologna (taught by <strong>Prof. Fabio Vitali</strong>), the project addresses four interconnected digital humanities and engineering challenges:
+                            </p>
+                            
+                            <div class="row g-3 my-2">
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded h-100 bg-body-tertiary">
+                                        <h4>1. Historical & Cinematic Research</h4>
+                                        <p class="mb-0 small">
+                                            Identifying authentic Parisian urban locations transformed into open-air film sets by foundational auteurs (Jean-Luc Godard, François Truffaut, Agnès Varda, Jacques Rivette, Chris Marker).
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded h-100 bg-body-tertiary">
+                                        <h4>2. Geospatial & Semantic Modeling</h4>
+                                        <p class="mb-0 small">
+                                            Structuring Points of Interest (POIs) using standard <code>GeoJSON</code> and <code>JSON</code> formats, enriched with relational film metadata, multi-tier descriptions (<em>Progressive Disclosure</em>), and vintage vs. modern comparison photography.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded h-100 bg-body-tertiary">
+                                        <h4>3. Spatiotemporal Exploration</h4>
+                                        <p class="mb-0 small">
+                                            Interactive cartography powered by Leaflet.js, automated itinerary calculation via Leaflet Routing Machine, and step-by-step narrative tours with synchronized camera animations.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded h-100 bg-body-tertiary">
+                                        <h4>4. The Full Power of CSS</h4>
+                                        <p class="mb-0 small">
+                                            Delivering <strong>6 completely distinct visual themes</strong> switchable at runtime without changing a single character of HTML markup, persisted in <code>localStorage</code> to prove complete separation of semantic content and visual presentation.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <hr class="my-5">
+
+                        <!-- SECTION 2: CONCEPTUAL ARCHITECTURE AND REPOSITORY STRUCTURE -->
+                        <section id="architecture">
+                            <h2>2. Conceptual Architecture and Repository Structure</h2>
+                            <p>
+                                The platform is engineered as a zero-build, modular client-side static web application conforming strictly to W3C standards. This guarantees high performance, zero runtime server overhead, long-term archival resilience, and direct continuous deployment via GitHub Pages.
+                            </p>
+
+                            <h3>Repository Directory Tree</h3>
+                            <pre><code>project_Vitali/
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml          # Automated CI/CD pipeline for GitHub Pages
+├── data/
+│   ├── paris.geojson                 # GeoJSON FeatureCollection (26 Paris film locations)
+│   ├── paris_metadata.json           # Extended metadata, 3-tier texts, and linked filmography
+│   └── tour_data.json                # Narrative data for 6 curated thematic tours
+├── img/
+│   ├── img_movie/                    # Historical (Old) vs. contemporary (Modern) photo pairs
+│   │   ├── arcDeTriompheModern.jpg
+│   │   ├── arcDeTriompheOld.jpg
+│   │   ├── cafeDuDomeModern.png
+│   │   ├── cafeDuDomeOld.png
+│   │   ├── louvreModern.png
+│   │   ├── louvreOld.jpeg
+│   │   └── ...                       # (46 total comparison assets across 26 locations)
+│   ├── agnes_varda.jpg               # Director portraits and historical photography
+│   ├── andre-bazin.jpg
+│   ├── breathless.jpg
+│   ├── breathless-hero.jpg
+│   ├── cow_pres.jpg, cow_dani.jpg... # Playful team member avatars
+│   ├── generic_bg.png                # Fallback visual asset for missing images
+│   ├── hidden-gems.jpg
+│   ├── Jean-Luc-Godard.jpg
+│   ├── montmartre-sacre-coeur.jpg
+│   ├── nouvelle_vague.jpg
+│   ├── paris_nousAppartient.webp
+│   ├── S.png, S.svg                  # Project branding, logos, and favicon
+│   ├── top-ten-locations.jpg
+│   └── Truffaut.jpg
+├── script/
+│   ├── map_scripts.js                # Interactive map engine (search, filters, routing, panel)
+│   └── scripts.js                    # Multi-page controller, tour engine, catalogue, theme switcher
+├── styles/
+│   ├── eighties_theme.css            # 1980s Retro Synthwave / Vaporwave Theme
+│   ├── futurism_theme.css            # Avant-garde Italian Futurism Theme
+│   ├── mechanicum_theme.css          # Dark Industrial / Grimdark Steampunk Theme
+│   ├── nouvelle_vague_theme.css      # Monochrome Classic Cinema B&W Theme
+│   ├── rococo_theme.css              # 18th-century French Rococo Pastel Theme
+│   └── solarpunk_theme.css           # Organic Eco-Futuristic Solarpunk Theme (Default)
+├── about.html                        # Hub page linking to historical, team, and doc sections
+├── about_nouvelle_vague.html         # Theoretical monograph + KnightLab TimelineJS
+├── about_our_team.html               # Presentation page of the development team
+├── catalogue.html                    # Analytical location catalogue with pagination & filters
+├── documentation.html                # Dedicated technical and architectural documentation (this page)
+├── index.html                        # Homepage with hero, conceptual cards, and tour links
+├── map.html                          # Full-screen interactive map of Paris
+├── tour.html                         # Step-by-step guided tour experience
+├── DOCUMENTATION.md                  # Comprehensive markdown documentation
+└── README.md                         # Repository landing guide for GitHub</code></pre>
+                        </section>
+
+                        <hr class="my-5">
+
+                        <!-- SECTION 3: IN-DEPTH WEB PAGE ANALYSIS -->
+                        <section id="pages-analysis">
+                            <h2>3. In-Depth Web Page Analysis</h2>
+                            <p>
+                                Every HTML document follows a standardized, accessible, semantic architecture with identical layout containers, dynamic theme linking, and routing hooks via the <code>data-page</code> attribute on the <code>&lt;body&gt;</code> element.
+                            </p>
+
+                            <h3>3.1 Home Page (<code>index.html</code>)</h3>
+                            <p><strong>Page Identifier:</strong> <code>data-page="index"</code></p>
+                            <ul>
+                                <li><strong>Hero Header:</strong> Atmospheric full-width background banner with high-impact typography (<em>Walk Paris through the lens of the Nouvelle Vague</em>).</li>
+                                <li><strong>Presentation of Concept:</strong> Title <em>Les Rues du CSS</em> followed by three analytical collapsible cards (<em>A Cinematic Cartography</em>, <em>The Road as Set</em>, and <em>Exploration Tools</em>).</li>
+                                <li><strong>Visual Call-to-Action Cards:</strong> Two high-contrast 16:9 cards directing visitors directly to the interactive map (<a href="map.html"><code>map.html</code></a>) and the theoretical essay (<a href="about_nouvelle_vague.html"><code>about_nouvelle_vague.html</code></a>).</li>
+                                <li><strong>Thematic Inspiration Grid:</strong> Six discovery cards linking to pre-filtered narrative itineraries via URL query strings (e.g., <code>tour.html?keyword=Jean-Luc%20Godard</code>).</li>
+                            </ul>
+
+                            <h3>3.2 Interactive Cinema Map (<code>map.html</code>)</h3>
+                            <p><strong>Page Identifier:</strong> <code>data-page="map"</code> | <strong>Engine:</strong> <code>script/map_scripts.js</code></p>
+                            <ul>
+                                <li><strong>Map Canvas:</strong> OpenStreetMap tile layer centered on Paris (<code>[48.8566, 2.3522]</code>) at zoom level 13. Controls are placed in the top-left and zoom controls relocated to bottom-right.</li>
+                                <li><strong>Control Bar:</strong>
+                                    <ul>
+                                        <li><strong>Search Button:</strong> Activates <code>Leaflet.PinSearch</code> with autocomplete for all 26 monument names.</li>
+                                        <li><strong>Filters Dropdown:</strong> Multi-criteria filtering by <em>Director</em> (dynamically extracted) and <em>Decade</em> (1950–1959, 1960–1969).</li>
+                                        <li><strong>Explore Button:</strong> Quick modal access to thematic tour shortcuts.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>3-Tier Progressive Disclosure Panel (<code>#info-panel</code>):</strong>
+                                    Circular text-state expansion: <em>Short Description</em> &rarr; <em>Medium Overview</em> &rarr; <em>Detailed Monograph</em> &rarr; <em>Reset to Short</em>.
+                                </li>
+                                <li><strong>Dynamic Film Buttons:</strong> Lists each film shot at the monument. Clicking a title displays scene descriptions, production years, directors, and vintage posters.</li>
+                                <li><strong>Deep Linking:</strong> Handles <code>map.html?location=...</code> by triggering a smooth camera flight (<code>flyTo</code>), opening marker popups, and expanding details automatically.</li>
+                            </ul>
+
+                            <h3>3.3 Location Catalogue (<code>catalogue.html</code>)</h3>
+                            <p><strong>Page Identifier:</strong> <code>data-page="catalogue"</code> | <strong>Controller:</strong> <code>pages.catalogue</code></p>
+                            <ul>
+                                <li><strong>Responsive Filter Sidebar:</strong> Desktop collapsible drawer toggled via <code>#desktop_filter_toggle</code>, and mobile offcanvas slide-out drawer (<code>offcanvas-md</code>).</li>
+                                <li><strong>Dynamic Card Grid (<code>#cardSection</code>):</strong> Asynchronously populated from <code>data/paris_metadata.json</code> with responsive 1/2/3/4 column breakpoints and image error fallbacks (<code>img/generic_bg.png</code>).</li>
+                                <li><strong>Smart Sliding-Window Pagination:</strong> Computes visible pages and ellipsis gaps (<code>getPaginationRange</code>) with 9 items per page and automatic scroll-to-top on page change.</li>
+                            </ul>
+
+                            <h3>3.4 Thematic Tour Engine (<code>tour.html</code>)</h3>
+                            <p><strong>Page Identifier:</strong> <code>data-page="tour"</code> | <strong>Controller:</strong> <code>pages.tour</code></p>
+                            <ul>
+                                <li><strong>Tour Switcher Dropdown:</strong> Instant switching between any of the 6 curated itineraries without page reload.</li>
+                                <li><strong>Synchronized Split-View:</strong> Dedicated Leaflet map on the left displaying only the markers for the active itinerary, paired with narrative stop storytelling on the right.</li>
+                                <li><strong>Step Progression:</strong> Real-time progress bar computing <code>((currentTourIndex + 1) / totalStops) * 100%</code>, boundary-disabled previous/next controls, and smooth camera flight animations (<code>mapTour.flyTo(coords, 16)</code>).</li>
+                            </ul>
+
+                            <h3>3.5 Exploration Hub (<code>about.html</code>)</h3>
+                            <p><strong>Page Identifier:</strong> <code>data-page="about"</code></p>
+                            <p>
+                                Acts as the portal connecting the cinematic history (<a href="about_nouvelle_vague.html">About Nouvelle Vague</a>), team background (<a href="about_our_team.html">About Our Team</a>), and technical specifications (<a href="documentation.html">Technical Documentation</a>).
+                            </p>
+
+                            <h3>3.6 Critical Monograph and Timeline (<code>about_nouvelle_vague.html</code>)</h3>
+                            <p><strong>Page Identifier:</strong> <code>data-page="about_nouvelle_vague"</code></p>
+                            <ul>
+                                <li><strong>Embedded Timeline:</strong> Responsive iframe integrating <strong>KnightLab TimelineJS</strong> tracing pivotal events between 1946 and 1968.</li>
+                                <li><strong>Sticky Sidebar Bookmarks:</strong> 10 theoretical chapters linking to essays on the <em>Cinémathèque Française</em>, <em>Cahiers du Cinéma</em>, <em>caméra-stylo</em>, <em>politique des auteurs</em>, Left Bank vs. Right Bank, and May '68.</li>
+                            </ul>
+
+                            <h3>3.7 Team Presentation (<code>about_our_team.html</code>)</h3>
+                            <p><strong>Page Identifier:</strong> <code>data-page="about_our_team"</code></p>
+                            <p>
+                                Introduces the development team behind the project: Alessandro Rocchi (<em>Presidente</em>), Daniele Bottaro (<em>Dan</em>), and Elena Mocci (<em>Mele</em>), featuring stylized custom avatars.
+                            </p>
+                        </section>
+
+                        <hr class="my-5">
+
+                        <!-- SECTION 4: DATA MODELING AND SCHEMAS -->
+                        <section id="data-models">
+                            <h2>4. Data Modeling and Schemas</h2>
+                            <p>
+                                The platform is driven by three interconnected flat JSON databases stored in the <code>data/</code> directory:
+                            </p>
+
+                            <pre><code>                  ┌──────────────────────┐
+                  │   data/paris.geojson │  (Point geometries, WGS84 coordinates,
+                  └──────────┬───────────┘   bbox, keywords for tour filtering)
+                             │
+                             │ location name / matchTourLocation()
+                             ▼
+               ┌─────────────────────────────┐
+               │  data/paris_metadata.json   │  (Extended historical descriptions,
+               └─────────────┬───────────────┘   short/med/long tiers, linked movies)
+                             │
+                             │ keywords / location_name
+                             ▼
+                  ┌──────────────────────┐
+                  │ data/tour_data.json  │  (Itineraries, sequential stops,
+                  └──────────────────────┘   custom narratives, metadata pills)</code></pre>
+
+                            <h3>4.1 Spatial Features and Coordinates (<code>data/paris.geojson</code>)</h3>
+                            <p>
+                                Standard GeoJSON RFC 7946 <code>FeatureCollection</code> containing 26 georeferenced Parisian locations.
+                            </p>
+                            <pre><code>{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [2.3433, 48.8483]
+  },
+  "properties": {
+    "name": "Chapelle de la Sorbonne",
+    "label": "Sorbonne Chapel, Paris, France",
+    "keywords": [ "Cinematic Churches" ],
+    "movies": [ "Paris nous appartient" ],
+    "poster_url": "img/img_movie/chapelleDeLaSorbonneModern.png"
+  },
+  "bbox": [2.3433, 48.8483, 2.3433, 48.8483]
+}</code></pre>
+
+                            <h3>4.2 Extended Historical Metadata (<code>data/paris_metadata.json</code>)</h3>
+                            <p>
+                                Stores rich encyclopedic records for all 26 monuments according to a <strong>3-Tier Progressive Disclosure Model</strong>:
+                            </p>
+                            <ul>
+                                <li><code>simple_description</code>: Concise one-sentence summary.</li>
+                                <li><code>medium_description</code>: 2–3 sentence architectural and historical contextualization.</li>
+                                <li><code>detailed_description</code>: In-depth historical monograph and cinematic filming anecdotes.</li>
+                                <li><code>associated_movie</code>: Relational array supporting 1-to-many relationships (monuments featured in multiple films).</li>
+                            </ul>
+
+                            <pre><code>{
+  "name": "Chapelle de la Sorbonne",
+  "year": "1642",
+  "associated_movie": [
+    {
+      "film_id": 1,
+      "film_name": "Paris nous appartient",
+      "director": "Jacques Rivette",
+      "production_year": 1961,
+      "film_scene_description": "Anne visits the Sorbonne chapel while investigating Juan's death.",
+      "film_poster_url": "img/img_movie/chapelleDeLaSorbonneOld.jpg"
+    }
+  ],
+  "simple_description": "The private chapel of the Sorbonne University in Paris.",
+  "medium_description": "A historic Parisian chapel completed in 1642...",
+  "detailed_description": "The Chapelle de la Sorbonne is a masterpiece of French Baroque architecture...",
+  "image_url": "img/img_movie/chapelleDeLaSorbonneModern.png"
+}</code></pre>
+
+                            <h3>4.3 Curated Narrative Itineraries (<code>data/tour_data.json</code>)</h3>
+                            <p>
+                                Specifies 6 curated thematic walking and transit tours through Paris:
+                            </p>
+
+                            <div class="table-responsive my-3">
+                                <table class="table table-bordered align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Tour Name</th>
+                                            <th>Keyword Parameter</th>
+                                            <th class="text-center">Stops</th>
+                                            <th>Metadata Badges</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td><strong>Nouvelle Vague Tour: Jean-Luc Godard</strong></td>
+                                            <td><code>Jean-Luc Godard</code></td>
+                                            <td class="text-center">11</td>
+                                            <td>1 Hour &bull; Accessible &bull; Day</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td><strong>Nouvelle Vague Tour: Agnès Varda</strong></td>
+                                            <td><code>Agnès Varda</code></td>
+                                            <td class="text-center">3</td>
+                                            <td>45 Min &bull; Walking &bull; Afternoon</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td><strong>Top 10 Locations in Paris</strong></td>
+                                            <td><code>Top 10 locations</code></td>
+                                            <td class="text-center">10</td>
+                                            <td>2 Hours &bull; Mixed Transit &bull; Full Day</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td><strong>Cinematic Churches of Paris</strong></td>
+                                            <td><code>Cinematic Churches</code></td>
+                                            <td class="text-center">4</td>
+                                            <td>1.5 Hours &bull; Accessible &bull; Morning</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td><strong>Hidden Gems of Paris</strong></td>
+                                            <td><code>Hidden Gems</code></td>
+                                            <td class="text-center">5</td>
+                                            <td>1.5 Hours &bull; Walking &bull; Sunset</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td><strong>Montmartre District</strong></td>
+                                            <td><code>Montmartre District</code></td>
+                                            <td class="text-center">3</td>
+                                            <td>1 Hour &bull; Hills/Stairs &bull; Afternoon</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <hr class="my-5">
+
+                        <!-- SECTION 5: CLIENT-SIDE APPLICATION LOGIC -->
+                        <section id="client-logic">
+                            <h2>5. Client-Side Application Logic</h2>
+                            <p>
+                                Application logic is encapsulated into two modular vanilla JavaScript controllers (zero external runtime frameworks) using modern <code>async/await</code> and standard DOM events:
+                            </p>
+
+                            <pre><code>                    ┌─────────────────────────┐
+                    │  DOM Event Listener     │
+                    │   (DOMContentLoaded)    │
+                    └────────────┬────────────┘
+                                 │
+                 ┌───────────────┴───────────────┐
+                 ▼                               ▼
+       [ Restore Theme from ]          [ Read data-page on &lt;body&gt; ]
+       [   localStorage     ]                    │
+                                     ┌───────────┴───────────┐
+                                     ▼                       ▼
+                              pages.catalogue()        pages.tour()</code></pre>
+
+                            <h3>5.1 Multi-Page Controller & Tour Engine (<code>script/scripts.js</code>)</h3>
+                            <ul>
+                                <li><strong>Page Routing via Dataset (<code>pages</code> dictionary):</strong> Initializes page-specific logic matching <code>document.body.dataset.page</code> upon <code>DOMContentLoaded</code>.</li>
+                                <li><strong>Global Theme Switcher & Persistence:</strong> Dynamically swaps the <code>href</code> of <code>&lt;link id="stylesheet_file"&gt;</code> and syncs the choice with <code>localStorage.setItem('fileTheme', ...)</code>.</li>
+                                <li><strong>Catalogue Controller:</strong> Manages filtering, dynamic card rendering, desktop sidebar toggle states, and the sliding-window pagination algorithm (<code>getPaginationRange</code>).</li>
+                                <li><strong>Tour Engine:</strong> Coordinates URL query parsing, string normalization (<code>normalizeTourName</code>), narrative step transitions, progress bar calculations, and synchronized camera travel (<code>mapTour.flyTo()</code>).</li>
+                            </ul>
+
+                            <h3>5.2 Advanced Cartography Engine (<code>script/map_scripts.js</code>)</h3>
+                            <ul>
+                                <li><strong>Map Setup & Layer Control:</strong> OpenStreetMap tile provider with controls in <code>topleft</code> and native zoom relocated to <code>bottomright</code>.</li>
+                                <li><strong>Leaflet.PinSearch Integration:</strong> Custom autocomplete searching across all monuments; automatically resets active filters if a searched monument is hidden.</li>
+                                <li><strong>Multi-Criteria Filter Engine:</strong> Dual-predicate matching combining <em>Director</em> and <em>Decade</em> range, updating marker layers and calling <code>map.fitBounds()</code>.</li>
+                                <li><strong>Cinematic Itinerary Routing (<code>Leaflet Routing Machine</code>):</strong> When a director is selected, calculates and renders a sequential polyline route in signature red (<code>#E32636</code>, 4px weight).</li>
+                                <li><strong>3-Tier Progressive Disclosure Text Reader:</strong> Cycles through Short &rarr; Medium &rarr; Long descriptions via <code>#btn-scopri</code> with intuitive button label updates.</li>
+                            </ul>
+                        </section>
+
+                        <hr class="my-5">
+
+                        <!-- SECTION 6: DESIGN SYSTEM AND DYNAMIC CSS THEMING -->
+                        <section id="design-system">
+                            <h2>6. Design System and Dynamic CSS Theming</h2>
+                            
+                            <h3>6.1 The Wordplay "Les Rues du CSS"</h3>
+                            <p>The project title carries a deliberate, playful double meaning:</p>
+                            <ul>
+                                <li><strong>Cinematic Acronym:</strong> <em>Cinéma Sur la Seine</em> (cinema along the Seine river and Parisian boulevards).</li>
+                                <li><strong>Technological Acronym:</strong> <em>Cascading Style Sheets</em> (the styling backbone of the World Wide Web).</li>
+                            </ul>
+                            <blockquote>
+                                "The entire website serves as an academic and practical demonstration of total decoupling: one identical, semantic HTML markup rendered into 6 radically different visual universes."
+                            </blockquote>
+
+                            <h3>6.2 Detailed Review of the 6 Custom Themes</h3>
+                            <div class="table-responsive my-3">
+                                <table class="table table-bordered align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Theme</th>
+                                            <th>Stylesheet File</th>
+                                            <th>Aesthetic Concept</th>
+                                            <th>Dominant Color Palette</th>
+                                            <th>Key Typography</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Solarpunk (Default)</strong></td>
+                                            <td><code>styles/solarpunk_theme.css</code></td>
+                                            <td>Eco-optimistic harmony between technology and nature; Art Nouveau curves.</td>
+                                            <td>Forest green, sage mint, warm parchment, morning sun gold.</td>
+                                            <td>Playfair Display, Inter, Montserrat</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Nouvelle Vague</strong></td>
+                                            <td><code>styles/nouvelle_vague_theme.css</code></td>
+                                            <td>Monochrome 1960s film celluloid; intellectual <em>Cahiers du Cinéma</em> editorial style.</td>
+                                            <td>High-contrast black, crisp paper white, classic French blue & red.</td>
+                                            <td>GFS Didot, Anton, Inter</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Eighties</strong></td>
+                                            <td><code>styles/eighties_theme.css</code></td>
+                                            <td>1980s arcade culture, CRT terminal scanlines, synthwave neon aesthetic.</td>
+                                            <td>Deep CRT green-black, glowing phosphor green, neon cyan, hot magenta.</td>
+                                            <td>VT323 (8-bit), Space Mono</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Futurism</strong></td>
+                                            <td><code>styles/futurism_theme.css</code></td>
+                                            <td>Early 20th-century Italian Futurism; speed, industrial force, diagonal cuts.</td>
+                                            <td>Industrial charcoal, blazing crimson, warning yellow, bright white.</td>
+                                            <td>Anton, Space Mono</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Mechanicum</strong></td>
+                                            <td><code>styles/mechanicum_theme.css</code></td>
+                                            <td>Dark industrial gothic, dieselpunk forge, Warhammer 40k machine veneration.</td>
+                                            <td>Cast iron, deep rust, furnace fire orange, mechanical gold.</td>
+                                            <td>Playfair Display, Space Mono</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Rococo</strong></td>
+                                            <td><code>styles/rococo_theme.css</code></td>
+                                            <td>18th-century French aristocratic elegance, pastel lightness, decorative flourishes.</td>
+                                            <td>Powder pink, creamy ivory, rose gold, soft terracotta.</td>
+                                            <td>Pinyon Script, Playfair Display</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3>6.3 Typography and Icon Suites</h3>
+                            <ul>
+                                <li><strong>Google Fonts:</strong> <code>Anton</code>, <code>GFS Didot</code>, <code>Inter</code>, <code>Montserrat</code>, <code>Pinyon Script</code>, <code>Playfair Display</code>, <code>Space Mono</code>, <code>VT323</code>.</li>
+                                <li><strong>Bootstrap Icons (v1.11.3):</strong> Navigational arrows, status indicators, badges.</li>
+                                <li><strong>Material Symbols Outlined:</strong> Theme switcher triggers (<code>palette</code>, <code>videocam</code>, <code>monitor</code>, <code>flash_on</code>, <code>settings</code>, <code>clear_day</code>, <code>spa</code>).</li>
+                                <li><strong>Bootstrap 5.3:</strong> CSS normalization, responsive 12-column grid, collapses, and offcanvas drawers.</li>
+                            </ul>
+                        </section>
+
+                        <hr class="my-5">
+
+                        <!-- SECTION 7: MULTIMEDIA INTEGRATION AND VISUAL ASSETS -->
+                        <section id="multimedia">
+                            <h2>7. Multimedia Integration and Visual Assets</h2>
+                            <p>
+                                The platform integrates a curated digital archive stored in <code>img/</code>:
+                            </p>
+                            <ul>
+                                <li><strong>Comparative "Then and Now" Photographic Corpus (<code>img/img_movie/</code>):</strong>
+                                    26 pairs of synchronized images (46 total visual assets) comparing historical 1950s/1960s film frames (<code>*Old.*</code>) against contemporary photography shot from the exact same angle and perspective (<code>*Modern.*</code>).
+                                </li>
+                                <li><strong>Historical Portraits:</strong> Archival photographs of François Truffaut, Jean-Luc Godard, Agnès Varda, and André Bazin.</li>
+                                <li><strong>Branding & Fallbacks:</strong> Vector logo (<code>S.svg</code>) symbolizing the curve of the Seine and cinema celluloid reels, backed by an image fallback handler (<code>generic_bg.png</code>).</li>
+                            </ul>
+                        </section>
+
+                        <hr class="my-5">
+
+                        <!-- SECTION 8: DEPLOYMENT PIPELINE AND CI/CD -->
+                        <section id="deployment">
+                            <h2>8. Deployment Pipeline and CI/CD</h2>
+                            <p>
+                                Continuous Integration and Deployment are automated via GitHub Actions in <code>.github/workflows/deploy-pages.yml</code>:
+                            </p>
+
+                            <pre><code>name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4</code></pre>
+
+                            <h3>Pipeline Highlights:</h3>
+                            <ul>
+                                <li><strong>Automatic Push Trigger:</strong> Triggers on every push to <code>main</code>, updating the live site within seconds.</li>
+                                <li><strong>OIDC Token Security:</strong> Uses OpenID Connect credentials for secure GitHub Pages publishing.</li>
+                                <li><strong>Zero Compilation Overhead:</strong> Pure static files deployed directly without build bottlenecks.</li>
+                            </ul>
+                        </section>
+
+                        <hr class="my-5">
+
+                        <!-- SECTION 9: LOCAL DEVELOPMENT AND SETUP GUIDE -->
+                        <section id="setup-guide">
+                            <h2>9. Local Development and Setup Guide</h2>
+                            <p>
+                                Due to browser Cross-Origin Resource Sharing (CORS) security policies restricting <code>fetch()</code> requests over the <code>file:///</code> protocol, the website must be served through a local HTTP server:
+                            </p>
+
+                            <h4>Option 1: Python 3 (Recommended)</h4>
+                            <pre><code># Start a local HTTP server on port 8000
+python -m http.server 8000</code></pre>
+                            <p>Navigate to: <code>http://localhost:8000</code></p>
+
+                            <h4>Option 2: Node.js / npx</h4>
+                            <pre><code># Instant static server
+npx serve .</code></pre>
+
+                            <h4>Option 3: VS Code (Live Server)</h4>
+                            <p>
+                                Install the <strong>Live Server</strong> extension, right-click <code>index.html</code>, and select <strong>"Open with Live Server"</strong>.
+                            </p>
+                        </section>
+
+                        <hr class="my-5">
+
+                        <!-- SECTION 10: CONCLUSIONS AND ACKNOWLEDGMENTS -->
+                        <section id="acknowledgments">
+                            <h2>10. Conclusions and Acknowledgments</h2>
+                            <p>
+                                <strong>Les Rues du CSS</strong> bridges humanistic cinema scholarship with modern web engineering, demonstrating how digital heritage platforms can transform static archival information into dynamic, immersive spatial narratives.
+                            </p>
+                            <p>
+                                Special pedagogical thanks to <strong>Prof. Fabio Vitali</strong> for his invaluable guidance throughout the course, to the <strong>Cinémathèque Française</strong> for preserving the rich historical heritage of the Nouvelle Vague, and to the Department of Classical Philology and Italian Studies at the University of Bologna.
+                            </p>
+                        </section>
+
+                    </main>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standard Footer -->
+        <footer class="container-fluid col-12">
+            <div class="row py-5 ps-2 py-sm-3">
+                <div class="logo-footer col-xl-4 col-xxl-3 col-12 ps-xl-5 py-3">
+                    <div class="logo-img row justify-content-center justify-content-xl-start">
+                        <img src="img/S.png" style="max-width: 7rem; max-height: 6rem;" title="Logo" alt="Logo">
+                    </div>
+                    <div class="row logo-text mt-2 text-center text-xl-start">
+                        <h2>Les Rues du CSS <br> (Cinéma Sur la Seine)</h2>
+                    </div>
+                </div>
+                <div class="links-footer col-xl-8 col-xxl-9 col-12 pe-xl-5 py-3 py-xxl-0">
+                    <div class="row align-items-center h-100">
+                        <ul class="nav justify-content-center justify-content-xl-between">
+                            <li class="nav-item"><a class="nav-link" href="about_nouvelle_vague.html">About Nouvelle Vague</a></li>
+                            <li class="nav-item"><a class="pipe nav-link">|</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Contacts</a></li>
+                            <li class="nav-item pipe-contacts"><a class="pipe nav-link">|</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">License</a></li>
+                            <li class="nav-item d-none d-lg-inline-block pipe-license"><a class="pipe nav-link">|</a></li>
+                            <li class="w-100 d-lg-none"></li>
+                            <li class="nav-item mt-2 mt-lg-0"><a class="nav-link" href="about_our_team.html">Credits</a></li>
+                            <li class="nav-item mt-2 mt-lg-0"><a class="pipe nav-link">|</a></li>
+                            <li class="nav-item mt-2 mt-lg-0"><a class="nav-link" href="documentation.html">Web Project Plan</a></li>
+                        </ul>                        
+                    </div>
+                </div>                    
+            </div>
+        </footer>
+    </body>
+</html>
+

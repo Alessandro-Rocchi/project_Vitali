@@ -11,6 +11,8 @@
 > **Master's Degree in Digital Humanities and Digital Knowledge (DHDK)**  
 > University of Bologna
 
+project website: [project website](https://alessandro-rocchi.github.io/project_Vitali/)
+
 ---
 
 ## 📖 Project Overview
@@ -85,10 +87,11 @@ project_Vitali/
 ├── about_nouvelle_vague.html          # Historical monograph + KnightLab TimelineJS
 ├── about_our_team.html                # Team presentation page
 ├── catalogue.html                     # Paginated location catalogue
+├── documentation.html                 # Dedicated technical documentation web page
 ├── index.html                         # Homepage
 ├── map.html                           # Full interactive map
 ├── tour.html                          # Guided tour experience
-├── DOCUMENTATION.md                   # Comprehensive architectural documentation
+├── DOCUMENTATION.md                   # Comprehensive architectural documentation (Markdown)
 └── README.md                          # Repository overview (this file)
 ```
 
@@ -118,7 +121,7 @@ Use the **Live Server** extension by right-clicking `index.html` and selecting *
 
 - **Alessandro Rocchi** (*Presidente*) - [GitHub](https://github.com/Alessandro-Rocchi)
 - **Daniele Bottaro** (*Dan*) - [GitHub](https://github.com/DanieleBottaro)
-- **Elena Mocci** (*Mele*)
+- **Elena Mocci** (*Mele*) - [Github](https://github.com/elemocc)
 
 *Created for the University of Bologna – Master's Degree in Digital Humanities and Digital Knowledge (DHDK).*
 
@@ -126,5 +129,7 @@ Use the **Live Server** extension by right-clicking `index.html` and selecting *
 
 ## 📑 Full Documentation
 
-For comprehensive technical specifications, data schemas, JavaScript API references, and design system rationales, read the full documentation document:  
-👉 **[DOCUMENTATION.md](DOCUMENTATION.md)**
+For comprehensive technical specifications, data schemas, JavaScript API references, and design system rationales, explore the full documentation:
+
+- 🌐 **[Interactive Web Documentation](documentation.html)** (live web page styled with all 6 themes)
+- 📄 **[DOCUMENTATION.md](DOCUMENTATION.md)** (complete repository markdown file)

@@ -907,28 +907,50 @@ aside.bookmarks a:hover {
    ========================================================================== */
 
 /* Elementi Strong - Radicati a terra */
-#about_NV_text_content strong {
+#about_NV_text_content strong,
+#documentation_text_content strong {
     color: var(--primary); /* Verde foresta scuro per non appesantire */
     font-weight: 800;
 }
 
-#about_NV_text_content h2 {
+#about_NV_text_content h2,
+#documentation_text_content h2 {
     font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);    
     font-weight: 400;
+    color: var(--primary);
 }
 
-#about_NV_text_content h2:not(#revolution){
+#documentation_text_content h3 {
+    font-size: clamp(1.2rem, 1rem + 0.8vw, 1.6rem);
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+#documentation_text_content h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-bright);
+    margin-top: 1.2rem;
+}
+
+#about_NV_text_content h2:not(#revolution),
+#documentation_text_content h2:not(:first-of-type) {
     padding-top: 2.5rem;
 }
 
-#about_NV_text_content p{
+#about_NV_text_content p,
+#documentation_text_content p,
+#documentation_text_content li {
     font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
     line-height: 1.6;    
     font-weight: 400;
 }
 
 /* Link nel testo - Gialli e sottolineati di default */
-#about_NV_text_content a {
+#about_NV_text_content a,
+#documentation_text_content a {
     color: var(--secondary);
     text-decoration: underline; 
     text-decoration-color: rgba(245, 166, 35, 0.6); /* Sottolineatura giallo-oro leggermente trasparente */
@@ -937,7 +959,8 @@ aside.bookmarks a:hover {
 }
 
 /* Hover dei Link - Effetto bagliore solare/neon */
-#about_NV_text_content a:hover {
+#about_NV_text_content a:hover,
+#documentation_text_content a:hover {
     color: #f5a623; /* Diventa leggermente più chiaro/dorato al passaggio */
     text-decoration-color: var(--accent-brass);
     text-decoration-thickness: 2px; /* La linea diventa un po' più spessa */
@@ -946,6 +969,81 @@ aside.bookmarks a:hover {
     text-shadow: 
         0 0 8px rgba(245, 166, 35, 0.8),
         0 0 15px rgba(245, 166, 35, 0.4);
+}
+
+/* Code blocks & pre in Solarpunk */
+#documentation_text_content pre {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-left: 4px solid var(--primary-bright);
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(8px);
+    overflow-x: auto;
+    font-family: "Space Mono", monospace;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+#documentation_text_content code {
+    font-family: "Space Mono", monospace;
+    color: var(--primary);
+    background: rgba(76, 175, 80, 0.12);
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+#documentation_text_content pre code {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Blockquote in Solarpunk */
+#documentation_text_content blockquote {
+    background: var(--glass-bg);
+    border-left: 4px solid var(--secondary);
+    border-radius: 0 12px 12px 0;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(8px);
+}
+
+/* Tables in Solarpunk */
+#documentation_text_content .table {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    overflow: hidden;
+    color: var(--text-color);
+    box-shadow: var(--glass-shadow);
+}
+
+#documentation_text_content .table thead th {
+    background: rgba(76, 175, 80, 0.2);
+    color: var(--primary);
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    border-bottom: 2px solid var(--primary-bright);
+}
+
+#documentation_text_content .table td,
+#documentation_text_content .table th {
+    padding: 0.75rem 1rem;
+    border-color: rgba(76, 175, 80, 0.15);
+}
+
+/* Documentation metadata & highlight card */
+.doc-academic-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(12px);
 }
 
 /* ==========================================================================

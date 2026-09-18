@@ -967,36 +967,130 @@ aside.bookmarks a:hover {
         0 0 15px rgba(168, 124, 67, 0.5);  /* Alone esterno più scuro */
 }
 
-#about_NV_text_content h2 {
+#about_NV_text_content h2,
+#documentation_text_content h2 {
     font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);    
     font-weight: 400;
+    color: var(--mech-yellow);
+    border-bottom: 2px solid var(--blood-rust);
+    padding-bottom: 0.4rem;
 }
 
-#about_NV_text_content h2:not(#revolution){
+#documentation_text_content h3 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.2rem, 1rem + 0.8vw, 1.6rem);
+    font-weight: 700;
+    color: var(--furnace-fire);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+#documentation_text_content h4 {
+    font-family: "Space Mono", monospace;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--toxic-green-bright);
+    margin-top: 1.2rem;
+}
+
+#about_NV_text_content h2:not(#revolution),
+#documentation_text_content h2:not(:first-of-type){
     padding-top: 2.5rem;
 }
 
-#about_NV_text_content p{
+#about_NV_text_content p,
+#documentation_text_content p,
+#documentation_text_content li {
     font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
     line-height: 1.6;    
     font-weight: 400;
+    color: var(--text-bone);
 }
 
-#about_NV_text_content a {
+#about_NV_text_content a,
+#documentation_text_content a {
     color: #d94a1e;
     font-weight: 500;
 }
 
-#about_NV_text_content a:hover {
+#about_NV_text_content a:hover,
+#documentation_text_content a:hover {
     color: #ff6536;
     text-shadow: 
         0 0 8px rgba(217, 74, 30, 0.8),
         0 0 15px rgba(217, 74, 30, 0.4);   
 }
 
-#about_NV_text_content strong {
+#about_NV_text_content strong,
+#documentation_text_content strong {
     font-weight: 600;
     color: #3a854a;
+}
+
+/* Documentation in Mechanicum (Dark Industrial Gothic, Iron & Molten Rust) */
+#documentation_text_content pre {
+    background: #0d0d0d;
+    color: var(--text-bone);
+    border: 1px solid var(--iron-plate);
+    border-left: 4px solid var(--furnace-fire);
+    box-shadow: 4px 4px 0px var(--void-black);
+    padding: 1.2rem;
+    font-family: "Space Mono", monospace;
+    font-size: 0.9rem;
+    border-radius: 0;
+    overflow-x: auto;
+}
+
+#documentation_text_content code {
+    font-family: "Space Mono", monospace;
+    color: var(--furnace-fire);
+    background: #181412;
+    border: 1px solid var(--blood-rust);
+    padding: 0.15rem 0.4rem;
+    border-radius: 0;
+}
+
+#documentation_text_content pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+#documentation_text_content blockquote {
+    border-left: 4px solid var(--mech-yellow);
+    background: #161210;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    color: var(--text-bone);
+    box-shadow: 4px 4px 0px var(--void-black);
+}
+
+#documentation_text_content .table {
+    border: 1px solid var(--blood-rust);
+    background: #111111;
+    color: var(--text-bone);
+}
+
+#documentation_text_content .table thead th {
+    background: #1a120e;
+    color: var(--mech-yellow);
+    font-family: "Space Mono", monospace;
+    border-bottom: 2px solid var(--furnace-fire);
+}
+
+#documentation_text_content .table td,
+#documentation_text_content .table th {
+    border-color: #261a15;
+    padding: 0.75rem 1rem;
+}
+
+.doc-academic-card {
+    background: #111111;
+    border: 2px solid var(--blood-rust);
+    box-shadow: 6px 6px 0px var(--void-black);
+    border-radius: 0;
 }
 
 

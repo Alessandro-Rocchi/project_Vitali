@@ -783,35 +783,122 @@ aside.bookmarks ol li:first-child {
     margin-top: 10px;
 }
 
-#about_NV_text_content h2 {
+#about_NV_text_content h2,
+#documentation_text_content h2 {
     font-family: "Anton", sans-serif;
     font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);    
     font-weight: 400;
 }
 
-#about_NV_text_content h2:not(#revolution){
+#documentation_text_content h3 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(1.2rem, 1rem + 0.8vw, 1.6rem);
+    font-weight: 400;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+#documentation_text_content h4 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #d73b3e;
+    margin-top: 1.2rem;
+}
+
+#about_NV_text_content h2:not(#revolution),
+#documentation_text_content h2:not(:first-of-type) {
     padding-top: 2.5rem;
 }
 
-#about_NV_text_content p{
+#about_NV_text_content p,
+#documentation_text_content p,
+#documentation_text_content li {
     font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
     line-height: 1.6;    
     font-weight: 400;
 }
 
-#about_NV_text_content strong{
+#about_NV_text_content strong,
+#documentation_text_content strong {
     font-weight: 600;
     color: #d73b3e;
 }
 
-#about_NV_text_content a {
+#about_NV_text_content a,
+#documentation_text_content a {
     color: #002FA7;
     text-decoration: underline;
     font-weight: 500;
 }
 
-#about_NV_text_content a:hover {
+#about_NV_text_content a:hover,
+#documentation_text_content a:hover {
     color: #009760;
+}
+
+/* Documentation styling for Nouvelle Vague (Editorial B&W with Cahiers accents) */
+#documentation_text_content pre {
+    background: #111111;
+    color: #f8f9fa;
+    border-left: 4px solid #d73b3e;
+    border-radius: 4px;
+    padding: 1.2rem;
+    overflow-x: auto;
+    font-family: "Space Mono", monospace;
+    font-size: 0.9rem;
+}
+
+#documentation_text_content code {
+    font-family: "Space Mono", monospace;
+    color: #d73b3e;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+#documentation_text_content pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+#documentation_text_content blockquote {
+    border-left: 4px solid #002FA7;
+    background: #f7f7f7;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+}
+
+#documentation_text_content .table {
+    border: 1px solid #111;
+    background: #ffffff;
+}
+
+#documentation_text_content .table thead th {
+    background: #111111;
+    color: #ffffff;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+#documentation_text_content .table td,
+#documentation_text_content .table th {
+    padding: 0.75rem 1rem;
+    border-color: #dee2e6;
+}
+
+.doc-academic-card {
+    background: #ffffff;
+    border: 2px solid #111111;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0px #111111;
 }
 
 /*ABOUT OUR TEAM*/

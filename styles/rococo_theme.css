@@ -747,38 +747,137 @@ aside.bookmarks a:hover {
     text-shadow: 0 0 1px rgba(168, 124, 67, 0.4);
 }
 
-#about_NV_text_content h2 {
+#about_NV_text_content h2,
+#documentation_text_content h2 {
+    font-family: "Playfair Display", serif;
     font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);    
     font-weight: 400;
+    color: #623e3e;
+    border-bottom: 2px solid #E8B4B8;
+    padding-bottom: 0.4rem;
 }
 
-#about_NV_text_content h2:not(#revolution){
+#documentation_text_content h3 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.2rem, 1rem + 0.8vw, 1.6rem);
+    font-weight: 600;
+    color: #A87C43;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+#documentation_text_content h4 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #623e3e;
+    margin-top: 1.2rem;
+}
+
+#about_NV_text_content h2:not(#revolution),
+#documentation_text_content h2:not(:first-of-type){
     padding-top: 2.5rem;
 }
 
-#about_NV_text_content p{
+#about_NV_text_content p,
+#documentation_text_content p,
+#documentation_text_content li {
     font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
     line-height: 1.6;    
     font-weight: 400;
+    color: #443232;
 }
 
-
-#about_NV_text_content strong {
+#about_NV_text_content strong,
+#documentation_text_content strong {
     color: #623e3e; 
     font-weight: 700;
 }
 
-#about_NV_text_content a {
+#about_NV_text_content a,
+#documentation_text_content a {
     color: #A87C43;
     text-decoration: none;
     border-bottom: 1px dashed #A87C43; 
     transition: all 0.3s ease;
 }
 
-#about_NV_text_content a:hover {
+#about_NV_text_content a:hover,
+#documentation_text_content a:hover {
     color: #e2a759; 
     border-bottom: 1px solid #e2a759; 
     text-shadow: 0 0 5px rgba(226, 167, 89, 0.4); /* Leggero bagliore dorato */
+}
+
+/* Documentation in Rococo (Pastel pink, cream ivory, gold ornaments) */
+#documentation_text_content pre {
+    background: #FFFDFC;
+    border: 1px solid #E8B4B8;
+    border-left: 4px solid #A87C43;
+    border-radius: 12px;
+    padding: 1.2rem;
+    font-family: "Space Mono", monospace;
+    font-size: 0.9rem;
+    color: #553e3e;
+    box-shadow: 0 4px 15px rgba(232, 180, 184, 0.25);
+    overflow-x: auto;
+}
+
+#documentation_text_content code {
+    font-family: "Space Mono", monospace;
+    color: #A87C43;
+    background: #FCECEE;
+    border: 1px solid #F0C4C8;
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+}
+
+#documentation_text_content pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+#documentation_text_content blockquote {
+    border-left: 4px solid #A87C43;
+    background: #FFF8F9;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+    color: #623e3e;
+    box-shadow: 0 4px 12px rgba(168, 124, 67, 0.1);
+}
+
+#documentation_text_content .table {
+    background: #FFFDFC;
+    border: 1px solid #E8B4B8;
+    border-radius: 12px;
+    overflow: hidden;
+    color: #443232;
+    box-shadow: 0 4px 15px rgba(232, 180, 184, 0.2);
+}
+
+#documentation_text_content .table thead th {
+    background: #FCECEE;
+    color: #623e3e;
+    font-family: "Playfair Display", serif;
+    border-bottom: 2px solid #E8B4B8;
+}
+
+#documentation_text_content .table td,
+#documentation_text_content .table th {
+    border-color: #F8D8DC;
+    padding: 0.75rem 1rem;
+}
+
+.doc-academic-card {
+    background: #FFFDFC;
+    border: 1px solid #E8B4B8;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(232, 180, 184, 0.3);
 }
 
 
