@@ -1086,11 +1086,67 @@ aside.bookmarks a:hover {
     padding: 0.75rem 1rem;
 }
 
-.doc-academic-card {
+.doc-academic-card,
+.doc-challenge-card {
     background: #111111;
     border: 2px solid var(--blood-rust);
-    box-shadow: 6px 6px 0px var(--void-black);
+    border-left: 5px solid var(--furnace-fire);
+    box-shadow: 5px 5px 0px var(--void-black);
     border-radius: 0;
+    color: var(--text-bone);
+}
+
+.doc-challenge-card h4 {
+    color: var(--mech-yellow) !important;
+    font-family: "Playfair Display", serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.doc-challenge-card p {
+    color: var(--text-ash) !important;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.doc-badge {
+    background: #1a120e;
+    color: var(--mech-yellow);
+    border: 1px solid var(--blood-rust);
+    border-radius: 0;
+    font-family: "Space Mono", monospace;
+    font-weight: normal;
+}
+
+.doc-btn-outline {
+    background: transparent;
+    color: var(--text-bone);
+    border: 2px solid var(--blood-rust);
+    border-radius: 0;
+    font-family: "Space Mono", monospace;
+    transition: all 0.2s ease;
+}
+
+.doc-btn-outline:hover {
+    background: var(--blood-rust);
+    color: var(--mech-yellow);
+    border-color: var(--furnace-fire);
+}
+
+.doc-btn-primary {
+    background: var(--furnace-fire);
+    color: #ffffff;
+    border: 2px solid var(--blood-rust);
+    border-radius: 0;
+    font-family: "Space Mono", monospace;
+    transition: all 0.2s ease;
+}
+
+.doc-btn-primary:hover {
+    background: var(--mech-yellow);
+    color: var(--void-black);
+    border-color: var(--mech-yellow);
 }
 
 

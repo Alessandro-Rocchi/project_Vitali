@@ -894,11 +894,65 @@ aside.bookmarks ol li:first-child {
     border-color: #dee2e6;
 }
 
-.doc-academic-card {
+.doc-academic-card,
+.doc-challenge-card {
     background: #ffffff;
     border: 2px solid #111111;
+    border-left: 5px solid #d73b3e;
     border-radius: 4px;
     box-shadow: 4px 4px 0px #111111;
+    color: #111111;
+}
+
+.doc-challenge-card h4 {
+    color: #d73b3e !important;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.doc-challenge-card p {
+    color: #212529 !important;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.doc-badge {
+    background: #111111;
+    color: #ffffff;
+    border-radius: 4px;
+    font-family: "Space Mono", monospace;
+    font-weight: normal;
+}
+
+.doc-btn-outline {
+    background: transparent;
+    color: #111111;
+    border: 2px solid #111111;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.doc-btn-outline:hover {
+    background: #111111;
+    color: #ffffff;
+}
+
+.doc-btn-primary {
+    background: #d73b3e;
+    color: #ffffff;
+    border: 2px solid #d73b3e;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.doc-btn-primary:hover {
+    background: #002FA7;
+    border-color: #002FA7;
+    color: #ffffff;
 }
 
 /*ABOUT OUR TEAM*/

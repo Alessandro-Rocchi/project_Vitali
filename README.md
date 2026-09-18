@@ -11,7 +11,7 @@
 > **Master's Degree in Digital Humanities and Digital Knowledge (DHDK)**  
 > University of Bologna
 
-project website: [project website](https://alessandro-rocchi.github.io/project_Vitali/)
+project website: [https://alessandro-rocchi.github.io/project_Vitali/](https://alessandro-rocchi.github.io/project_Vitali/)
 
 ---
 
@@ -131,5 +131,5 @@ Use the **Live Server** extension by right-clicking `index.html` and selecting *
 
 For comprehensive technical specifications, data schemas, JavaScript API references, and design system rationales, explore the full documentation:
 
-- 🌐 **[Interactive Web Documentation](documentation.html)** (live web page styled with all 6 themes)
+- 🌐 **[Interactive Web Documentation](https://alessandro-rocchi.github.io/project_Vitali/documentation.html)** (live web page styled with all 6 themes)
 - 📄 **[DOCUMENTATION.md](DOCUMENTATION.md)** (complete repository markdown file)

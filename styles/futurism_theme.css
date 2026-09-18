@@ -1085,11 +1085,70 @@ aside.bookmarks ol li:first-child {
     padding: 0.75rem 1rem;
 }
 
-.doc-academic-card {
+.doc-academic-card,
+.doc-challenge-card {
     background: #ffffff;
     border: 3px solid #1a1a1a;
+    border-left: 6px solid #d32f2f;
     box-shadow: 6px 6px 0px #d32f2f;
     border-radius: 0;
+    color: #1a1a1a;
+}
+
+.doc-challenge-card h4 {
+    color: #d32f2f !important;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.doc-challenge-card p {
+    color: #1a1a1a !important;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.doc-badge {
+    background: #1a1a1a;
+    color: #ffcc00;
+    border-radius: 0;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.doc-btn-outline {
+    background: transparent;
+    color: #1a1a1a;
+    border: 3px solid #1a1a1a;
+    border-radius: 0;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.doc-btn-outline:hover {
+    background: #1a1a1a;
+    color: #ffcc00;
+}
+
+.doc-btn-primary {
+    background: #d32f2f;
+    color: #ffffff;
+    border: 3px solid #1a1a1a;
+    border-radius: 0;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.doc-btn-primary:hover {
+    background: #ffcc00;
+    color: #1a1a1a;
 }
 
 /*ABOUT OUR TEAM*/

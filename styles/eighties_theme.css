@@ -1020,11 +1020,70 @@ aside.bookmarks::-webkit-scrollbar-thumb:hover {
     padding: 0.75rem;
 }
 
-.doc-academic-card {
+.doc-academic-card,
+.doc-challenge-card {
     background-color: #051405;
     border: 2px solid #33FF33;
+    border-left: 5px solid #00ffff;
     box-shadow: 0 0 20px rgba(51, 255, 51, 0.25);
     border-radius: 0;
+    color: #d1ffd1;
+}
+
+.doc-challenge-card h4 {
+    color: #00ffff !important;
+    font-family: "VT323", Courier, monospace;
+    font-size: 1.4rem;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+}
+
+.doc-challenge-card p {
+    color: #d1ffd1 !important;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.doc-badge {
+    background-color: #020a02;
+    color: #33FF33;
+    border: 1px solid #33FF33;
+    border-radius: 0;
+    font-family: "VT323", monospace;
+    font-size: 1.1rem;
+    box-shadow: 0 0 5px rgba(51, 255, 51, 0.3);
+}
+
+.doc-btn-outline {
+    background: transparent;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    border-radius: 0;
+    font-family: "VT323", Courier, monospace;
+    font-size: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.doc-btn-outline:hover {
+    background: #00ffff;
+    color: #030a03;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+.doc-btn-primary {
+    background: #33FF33;
+    color: #030a03;
+    border: 2px solid #33FF33;
+    border-radius: 0;
+    font-family: "VT323", Courier, monospace;
+    font-size: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.doc-btn-primary:hover {
+    background: #66FF66;
+    color: #030a03;
+    box-shadow: 0 0 15px #33FF33;
 }
 
 /*ABOUT OUR TEAM*/

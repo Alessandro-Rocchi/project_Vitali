@@ -1038,12 +1038,67 @@ aside.bookmarks a:hover {
 }
 
 /* Documentation metadata & highlight card */
-.doc-academic-card {
+.doc-academic-card,
+.doc-challenge-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
+    border-left: 5px solid var(--primary-bright);
     border-radius: 16px;
     box-shadow: var(--glass-shadow);
     backdrop-filter: blur(12px);
+    color: var(--text-color);
+}
+
+.doc-challenge-card h4 {
+    color: var(--primary) !important;
+    font-family: "Playfair Display", serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.doc-challenge-card p {
+    color: var(--text-color) !important;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.doc-badge {
+    background: rgba(76, 175, 80, 0.15);
+    color: var(--primary);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    border-radius: 8px;
+    font-family: "Space Mono", monospace;
+    font-weight: normal;
+}
+
+.doc-btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.doc-btn-outline:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.doc-btn-primary {
+    background: var(--primary);
+    color: #ffffff;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.doc-btn-primary:hover {
+    background: var(--primary-bright);
+    border-color: var(--primary-bright);
+    color: #ffffff;
 }
 
 /* ==========================================================================

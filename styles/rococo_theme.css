@@ -873,11 +873,68 @@ aside.bookmarks a:hover {
     padding: 0.75rem 1rem;
 }
 
-.doc-academic-card {
+.doc-academic-card,
+.doc-challenge-card {
     background: #FFFDFC;
     border: 1px solid #E8B4B8;
+    border-left: 5px solid #A87C43;
     border-radius: 16px;
     box-shadow: 0 8px 25px rgba(232, 180, 184, 0.3);
+    color: #443232;
+}
+
+.doc-challenge-card h4 {
+    color: #623e3e !important;
+    font-family: "Playfair Display", serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.doc-challenge-card p {
+    color: #443232 !important;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.doc-badge {
+    background: #FCECEE;
+    color: #623e3e;
+    border: 1px solid #E8B4B8;
+    border-radius: 8px;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+}
+
+.doc-btn-outline {
+    background: transparent;
+    color: #623e3e;
+    border: 2px solid #A87C43;
+    border-radius: 8px;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.doc-btn-outline:hover {
+    background: #A87C43;
+    color: #ffffff;
+}
+
+.doc-btn-primary {
+    background: #A87C43;
+    color: #ffffff;
+    border: 2px solid #A87C43;
+    border-radius: 8px;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.doc-btn-primary:hover {
+    background: #e2a759;
+    border-color: #e2a759;
+    color: #ffffff;
 }
 
 
