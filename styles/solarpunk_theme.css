@@ -466,6 +466,15 @@ footer ul a:not(.pipe):hover {
     border: none;
 }
 
+.leaflet-popup-content {
+  display: flex;
+  justify-content: center;
+}
+
+.leaflet-popup-content .card {
+  max-width: 100%; /* Prevents the card from overflowing the popup */
+}
+
 #map .card .card-body button{
     background: linear-gradient(135deg, var(--primary), var(--primary-bright));
     color: #ffffff;
@@ -492,11 +501,22 @@ footer ul a:not(.pipe):hover {
     color: #ffffff;
     border: none;
     margin-top: 10px;
+    padding: 2px 8px !important;
 }
 
 #info-panel button:hover{
     background: linear-gradient(135deg, var(--secondary), var(--accent-brass));
     box-shadow: var(--glow-gold);
+}
+
+#info-panel #button-row {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+}
+
+#info-panel #btn-film {
+    width: fit-content; /* Makes the button only as wide as its text */
+    padding: 0.2rem 4rem !important;
 }
 
 #map .leaflet-popup-content .card{

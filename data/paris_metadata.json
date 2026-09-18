@@ -1,6 +1,6 @@
 [
   {
-    "name": "Capelle de la Sorbonne",
+    "name": "Chapelle de la Sorbonne",
     "year": "1642",
     "associated_movie": [
       {
@@ -9,13 +9,13 @@
         "director": "Jacques Rivette",
         "production_year": 1961,
         "film_scene_description": "Anne visits the Sorbonne chapel while investigating the mysterious circumstances surrounding Juan's death.",
-        "film_poster_url": "img/img_movie/capelleDeLaSorbonneOld.png"
+        "film_poster_url": "img/img_movie/chapelleDeLaSorbonneOld.jpg"
       }
     ],
     "simple_description": "The private chapel of the Sorbonne University in Paris.",
     "medium_description": "A historic Parisian chapel completed in 1642 at the request of Cardinal Richelieu. It represents an important example of French Baroque architecture in the heart of the Latin Quarter.",
     "detailed_description": "The Chapelle de la Sorbonne is a masterpiece of French Baroque architecture, designed by the architect Jacques Lemercier and completed in 1642. It was commissioned by Cardinal Richelieu, whose remains still rest today in the mausoleum within the nave. The structure is distinguished by its elegant dome, which was one of the first of its kind to be built in Paris, and is one of the intellectual symbols of the city.",
-    "image_url": "img/img_movie/capelleDeLaSorbonneModern.png"
+    "image_url": "img/img_movie/chapelleDeLaSorbonneModern.png"
   },
   {
     "name": "Church of Saint-Sulpice",
@@ -63,13 +63,13 @@
         "director": "Jacques Rivette",
         "production_year": 1961,
         "film_scene_description": "The protagonists meet at the café near Place de l'Étoile to debate theater, politics, and bohemian life.",
-        "film_poster_url": "img/img_movie/cafeLePresbourgOld.png"
+        "film_poster_url": "img/img_movie/cafeLePresbourgOld.jpg"
       }
     ],
     "simple_description": "An iconic Parisian café located near the Arc de Triomphe.",
     "medium_description": "A historic venue strategically positioned at Place de l'Étoile. It was a favorite meeting place for intellectuals, artists, and protagonists of the French New Wave.",
     "detailed_description": "Café le Presbourg is one of the iconic addresses of Parisian social and cultural life, set in the elegant surroundings of the Arc de Triomphe and Champs-Élysées district. A place of transit and pause for intellectuals and filmmakers throughout the twentieth century, it embodies the classic style of a French brasserie. Its vibrant atmosphere and period architecture make it the perfect stage for the dynamics and discussions that historically animated the Parisian cinema world.",
-    "image_url": "img/img_movie/cafeLePresbourgModern.png"
+    "image_url": "img/img_movie/cafeLePresbourgModern.jpg"
   },
   {
     "name": "Notre Dame",
@@ -231,7 +231,7 @@
     "simple_description": "An iconic street running along the left bank of the Seine.",
     "medium_description": "The Quai de Conti is located in the 6th arrondissement of Paris and houses prestigious buildings such as the Institut de France and the Monnaie de Paris. It is a hub of cultural and academic life.",
     "detailed_description": "The Quai de Conti is a historic riverside promenade located on the Rive Gauche in the 6th arrondissement of Paris, with roots dating back to the development of the river embankments since 1313. It is a walk of great architectural value and is dominated by two imposing institutions: the monumental headquarters of the Institut de France, under whose dome the Académie Française meets, and the Monnaie de Paris (Paris Mint). The quai captures the essence of Parisian elegance and the preservation of its high culture.",
-    "image_url" : "img/img_movie/quaiDeContiModern.jpg"
+    "image_url" : "img/img_movie/quaiDeContiModern.png"
   },
   {
     "name": "The Louvre Museum, Paris",
@@ -243,7 +243,7 @@
         "director": "Jean-Luc Godard",
         "production_year": 1964,
         "film_scene_description": "A famous sequence where Arthur, Franz, and Odile run through the Louvre galleries trying to beat the world record for visiting the museum.",
-        "film_poster_url": "img/img_movie/louvreModern.jpeg"
+        "film_poster_url": "img/img_movie/louvreOld.jpeg"
       }
     ],
     "simple_description": "The most famous and largest art museum in the world.",
@@ -279,13 +279,13 @@
         "director": "François Truffaut",
         "production_year": 1959,
         "film_scene_description": "Antoine Doinel and René explore the lively Grands Boulevards near the cinema and covered passages.",
-        "film_poster_url": "img/img_movie/montMatreOld.jpg"
+        "film_poster_url": "img/img_movie/montMartreOld.jpg"
       }
     ],
     "simple_description": "An address located along the famous Grands Boulevards of Paris.",
     "medium_description": "Located on the famous Boulevard Montmartre, in the vibrant heart of Paris, this address is close to the famous Passage Jouffroy. The area is historically known for its theaters and cafés.",
     "detailed_description": "The address at number 12 Boulevard Montmartre is part of the string of 'Grands Boulevards' in Paris, arteries born from the demolition of the old city walls. The 19th century saw this boulevard flourish as a center of high society and theatrical entertainment. In the immediate vicinity of number 12 are the entrances to the evocative Parisian covered passages, such as Passage Jouffroy, veritable arcades that enclose the soul of 19th-century French commerce.",
-    "image_url": "img/img_movie/montMatreModern.png"
+    "image_url": "img/img_movie/montMartreModern.png"
   },
   {
     "name": "Rue Puget 2",
@@ -303,7 +303,7 @@
     "simple_description": "A small street nestled in the Montmartre district.",
     "medium_description": "Located in the artistic 18th arrondissement, Rue Puget is a short street that reflects the classic bohemian charm of the Montmartre hill, adjacent to the famous eponymous cemetery.",
     "detailed_description": "Number 2 Rue Puget is situated on a quiet, short street in the 18th arrondissement of Paris, right in the atmosphere of Montmartre. The street runs tightly against the protective walls of the famous Montmartre Cemetery, where countless French intellectual figures rest. Despite its secluded position away from the main tourist routes, the surrounding architecture perfectly reflects the residential character and the romantic, slightly decadent appearance typical of the Belle Époque.",
-    "image_url": "img/img_movie/ruePugetModern.png"
+    "image_url": "img/img_movie/ruePugetModern.jpg"
   },
   {
     "name": "Rue Lepic 3",
@@ -357,7 +357,7 @@
     "simple_description": "A magnificent white basilica at the top of the Montmartre hill.",
     "medium_description": "Built between the late 19th century and 1914, the Basilica of the Sacred Heart is the highest point in Paris. Its Romano-Byzantine architecture offers a spectacular view over the entire city.",
     "detailed_description": "The Sacré-Cœur Basilica is a grand Catholic place of worship that dominates the city from the summit of the Montmartre butte. Construction began in 1875 and the structure was completed in 1914. It is characterized by its luminous limestone, known for cleaning itself with rain, and by an eclectic style that combines Romanesque and Byzantine influences. From its monumental parvise, one can admire one of the most extraordinary and vast panoramas of the entire French capital.",
-    "image_url": "img/img_movie/sacreCoeurModern.jpg"
+    "image_url": "img/img_movie/sacreCoeurModern.png"
   },
   {
     "name": "Champs Elysées (60 avenue des Champs Elysées)",
@@ -387,12 +387,13 @@
         "director": "François Truffaut",
         "production_year": 1959,
         "film_scene_description": "Antoine looks out over the Trocadéro esplanade with the iconic view of the Eiffel Tower.",
-        "film_poster_url": ""
+        "film_poster_url": "img/img_movie/palaisDeChaillotOld.png"
       }
     ],
     "simple_description": "A large exhibition building with the best view of the Eiffel Tower.",
     "medium_description": "Built in Art Deco style for the 1937 Universal Exhibition, it is located on the Chaillot hill. Its famous esplanade offers a breathtaking panorama of the Trocadéro gardens.",
-    "detailed_description": "The Palais de Chaillot is a majestic architectural complex located in the 16th arrondissement, at the peak of the Chaillot hill. It was built for the 1937 International Exhibition. Composed of two large curved wings separated by a monumental esplanade, it offers by far the most famous and emblematic framing of the Eiffel Tower on the other bank of the Seine. It houses prestigious museums inside, such as the Cité de l'Architecture et du Patrimoine."
+    "detailed_description": "The Palais de Chaillot is a majestic architectural complex located in the 16th arrondissement, at the peak of the Chaillot hill. It was built for the 1937 International Exhibition. Composed of two large curved wings separated by a monumental esplanade, it offers by far the most famous and emblematic framing of the Eiffel Tower on the other bank of the Seine. It houses prestigious museums inside, such as the Cité de l'Architecture et du Patrimoine.",
+    "image_url": "img/img_movie/palaisDeChaillotModern.jpg"
   },
   {
     "name": "128 Rue de Rivoli",
@@ -404,12 +405,13 @@
         "director": "Agnès Varda",
         "production_year": 1962,
         "film_scene_description": "Cléo walks along the historic arcades of Rue de Rivoli after visiting the fortune teller.",
-        "film_poster_url": ""
+        "film_poster_url": "img/img_movie/rueDeRivoliOld.png"
       }
     ],
     "simple_description": "An address along one of the main shopping streets in Paris.",
     "medium_description": "Located along the famous commercial arcades, Rue de Rivoli was founded by Napoleon Bonaparte. This address is very close to central monuments, including the Louvre.",
-    "detailed_description": "Number 128 Rue de Rivoli is part of one of the longest, most central, and most historic arteries in the city of Paris. The street was designed and initiated in 1802 with the characteristic structure of uniform arcades and colonnades alongside the Tuileries Gardens and the Louvre. This commercial stretch connects the city's main monumental axes and reflects the splendor of the imperial era through the unmistakable alignment of its imposing stone facades."
+    "detailed_description": "Number 128 Rue de Rivoli is part of one of the longest, most central, and most historic arteries in the city of Paris. The street was designed and initiated in 1802 with the characteristic structure of uniform arcades and colonnades alongside the Tuileries Gardens and the Louvre. This commercial stretch connects the city's main monumental axes and reflects the splendor of the imperial era through the unmistakable alignment of its imposing stone facades.",
+    "image_url": "img/img_movie/rueDeRivoliModern.png"
   },
   {
     "name": "Café du Dôme",
@@ -445,7 +447,7 @@
     "simple_description": "A large and peaceful English-style public park in the south of Paris.",
     "medium_description": "Designed by Adolphe Alphand at the request of Napoleon III in 1869, Parc Montsouris covers 15 hectares. It is known for its large artificial lake, waterfalls, and rich vegetation.",
     "detailed_description": "Parc Montsouris is one of the four large urban parks commissioned by Emperor Napoleon III to offer green oxygen zones to the capital, officially opened in 1869. Located in the 14th arrondissement near the Cité Universitaire, it was designed by the brilliant engineer Jean-Charles Adolphe Alphand in a typical English landscape style, transforming an area of abandoned quarries. It is dominated by a vast central artificial lake that makes it a serene oasis as much appreciated by students as by filmmakers.",
-    "image_url": "img/img_movie/parcMontsourisModer.png"
+    "image_url": "img/img_movie/parcMontsourisModern.png"
   },
   {
     "name": "Arc de Triomphe",
@@ -457,12 +459,12 @@
         "director": "Jacques Rivette",
         "production_year": 1961,
         "film_scene_description": "The opening sequences feature the bustling traffic and views around the monumental arch at Place de l'Étoile.",
-        "film_poster_url": "img/img_movie/arcDeTriompheOld.png"
+        "film_poster_url": "img/img_movie/arcDeTriompheOld.jpg"
       }
     ],
     "simple_description": "An iconic monumental arch standing at the western end of the Champs-Élysées.",
     "medium_description": "Commissioned by Napoleon in 1806 to honor French military victories, this Neoclassical monument stands at the center of Place de l'Étoile. It shelters the Tomb of the Unknown Soldier and serves as the monumental anchor of Paris's historic axis.",
     "detailed_description": "The Arc de Triomphe is one of the most celebrated monuments in France, commissioned by Napoleon Bonaparte in 1806 following the victory at Austerlitz and inaugurated in 1836 under King Louis-Philippe. Designed in a monumental Neoclassical style by architect Jean Chalgrin, it commands the center of Place Charles de Gaulle (historically Place de l'Étoile), from which twelve grand avenues radiate outwards. The structure is renowned for its high-relief sculptural groups, notably François Rude's 'La Marseillaise', celebrating the French Revolutionary and Imperial campaigns. Beneath its arch lies the Tomb of the Unknown Soldier and the eternal flame rekindled daily since 1923, making it both a primary site of national remembrance and a defining visual landmark of Parisian cinema.",
-    "image_url": "img/img_movie/arcDeTriompheModern.png"
+    "image_url": "img/img_movie/arcDeTriompheModern.jpg"
   }
 ]
