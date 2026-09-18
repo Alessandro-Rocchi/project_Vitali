@@ -276,7 +276,7 @@ function createPopupContent(feature) {
                 ${posterHtml}
                 <div class="card-body">
                     <h5 class="card-title">${props.name || 'Location'}</h5>
-                    <p class="card-text mb-2"><b>Associated Movies:</b>${props.movies && props.movies.length > 0 ? props.movies.join(', ') : 'N/A'}</p>
+                    <p class="card-text mb-2"><b>Associated Movie(s): </b>${props.movies && props.movies.length > 0 ? props.movies.join(', ') : 'N/A'}</p>
                     <button class="btn btn-primary" onclick="showLocationDetails('${safeName}')">View Details</button>
                 </div>
             </div>`;

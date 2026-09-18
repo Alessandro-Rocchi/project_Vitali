@@ -90,7 +90,7 @@
     "image_url": "img/img_movie/notreDameModern.jpg"
   },
   {
-    "name": "Les Rives de Notre Dame, quai St Michel, Paris",
+    "name": "Hotel Les Rives de Notre Dame, quai St Michel, Paris",
     "year": "1378",
     "associated_movie": [
       {
@@ -102,7 +102,7 @@
         "film_poster_url": "img/img_movie/hotelOld.jpg"
       }
     ],
-    "simple_description": "Historic promenades along the Seine, near Notre-Dame.",
+    "simple_description": "A hotel in the heart of Paris, formerly known as the Hotel de Suede.",
     "medium_description": "The Quai Saint-Michel is a famous street running along the left bank of the Seine. It offers one of the most iconic views of the Notre-Dame Cathedral and hosts numerous antique book stalls.",
     "detailed_description": "The Quai Saint-Michel is a historic street on the riverfront of the Parisian Rive Gauche, whose current layout largely dates back to medieval urban works and subsequent adjustments. It offers a picturesque and uninterrupted panoramic view of the nearby Notre-Dame Cathedral and the Île de la Cité. The banks are populated by the traditional 'bouquinistes', the open-air booksellers that characterize the bohemian and literary soul of the capital, making this walk a true immersion into history.",
     "image_url" : "img/img_movie/hotelModern.jpg"
@@ -224,7 +224,7 @@
         "film_name": "Bande à part",
         "director": "Jean-Luc Godard",
         "production_year": 1964,
-        "film_scene_description": "The protagonists drive along the historic Left Bank quay bordering the Seine and the Institut de France.",
+        "film_scene_description": "Franz buys Odile the book she reminds him of on the quai de Conti on the Left Bank of the Seine",
         "film_poster_url": "img/img_movie/quaiDeContiOld.png"
       }
     ],
