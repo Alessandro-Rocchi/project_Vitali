@@ -450,7 +450,8 @@
                 "name": "Rue Puget 2",
                 "label": "2 Rue Puget, Paris, France",
                 "keywords": [
-                    "Hidden Gems"
+                    "Hidden Gems",
+                    "Montmartre District"
                 ],
                 "movies": [
                     "Les 400 coups"
@@ -476,7 +477,9 @@
             "properties": {
                 "name": "Rue Lepic 3",
                 "label": "3 Rue Lepic, Paris, France",
-                "keywords": [],
+                "keywords": [
+                    "Montmartre District"
+                ],
                 "movies": [
                     "Les 400 coups"
                 ],
@@ -530,7 +533,8 @@
                 "label": "Sacré-Cœur, Montmartre, Paris, France",
                 "keywords": [
                     "Top 10 locations",
-                    "Cinematic Churches"
+                    "Cinematic Churches",
+                    "Montmartre District"
                 ],
                 "movies": [
                     "Les 400 coups"

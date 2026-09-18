@@ -208,5 +208,30 @@
                             "text": "Île des Corbeaux is a quiet and small river islet located on the Marne River, falling within the administrative territory of the municipality of Saint-Maurice, not far from the Bois de Vincennes, on the outskirts of Paris. The name evokes rural and wild atmospheres in stark contrast to urban expansion. Over time, these river islands have attracted Parisians looking for nature, offering idyllic landscapes and enchanting paths far from the urban frenzy."
                         }
         ]
+    },
+    {
+        "tour_id": 6,
+        "tour_name": "Montmartre District",
+        "keywords": "Montmartre District",
+        "description": "Step into the bohemian heart and cinematic memory of Montmartre, the iconic Parisian hill immortalized by François Truffaut in Les 400 coups. From the winding ascent of Rue Lepic—once home to artists and painters—past the secluded, romantic Belle Époque charm of Rue Puget bordering the historic Montmartre Cemetery, to the summit at the majestic Sacré-Cœur Basilica offering panoramic vistas over all of Paris, discover the timeless streets, stairways, and artistic atmosphere of the Butte.",
+        "pills" : ["1.5 Hours", "Accessible", "Day"],
+        "locations": [
+                        {
+                            "location_id": 1,
+                            "location_name": "Rue Lepic 3",
+                            "text": "Number 3 Rue Lepic marks the beginning of one of the most iconic and ancient streets in the Montmartre district, originally traced out in 1852 by Emperor Napoleon III to facilitate the ascent up the hill. Starting from Boulevard de Clichy, the address introduces pedestrians to the lively uphill path. Giants of art such as Vincent van Gogh have lived along Rue Lepic, making the entire artery a true open-air scenography, perfect for cinema."
+                        },
+                        {
+                            "location_id": 2,
+                            "location_name": "Rue Puget 2",
+                            "text": "Number 2 Rue Puget is situated on a quiet, short street in the 18th arrondissement of Paris, right in the atmosphere of Montmartre. The street runs tightly against the protective walls of the famous Montmartre Cemetery, where countless French intellectual figures rest. Despite its secluded position away from the main tourist routes, the surrounding architecture perfectly reflects the residential character and the romantic, slightly decadent appearance typical of the Belle Époque."
+                        },
+                        {
+                            "location_id": 3,
+                            "location_name": "Sacré-Cœur in Montmartre.",
+                            "text": "The Sacré-Cœur Basilica is a grand Catholic place of worship that dominates the city from the summit of the Montmartre butte. Construction began in 1875 and the structure was completed in 1914. It is characterized by its luminous limestone, known for cleaning itself with rain, and by an eclectic style that combines Romanesque and Byzantine influences. From its monumental parvise, one can admire one of the most extraordinary and vast panoramas of the entire French capital."
+                        }
+        ]
     }
 ]
+

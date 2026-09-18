@@ -423,11 +423,8 @@ async function loadAndDisplayTour(keyword) {
     if (currentTourData && currentTourData.locations.length > 0) {
         showParagraph(0);
     }
-
-    // 5. Update browser URL using keyword as the sole parameter
     const newUrl = new URL(window.location);
     newUrl.searchParams.set('keyword', targetKeyword);
-    newUrl.searchParams.delete('regista');
     window.history.pushState({}, '', newUrl);
 }
 
@@ -491,9 +488,6 @@ function goToLocation(index) {
  */
 function createPopupContentTour(feature) {
     var props = feature.properties || {};
-    var safeName = (props.name || '').replace(/'/g, "\\'");
-    var director = props.director || (currentTourData && currentTourData.keywords) || 'N/A';
-    var year = props.production_year || 'N/A';
     var movie = (props.movies && props.movies.join(', ')) || props.movie || 'N/A';
     return `<div class="card" style="width: 18rem;">
                 <div class="card-body">
@@ -512,11 +506,13 @@ function updateLocationTexts(index) {
     if (!currentTourData || !currentTourData.locations[index]) return;
     const currentLocation = currentTourData.locations[index];
     const textInfo = document.getElementById('text-section');
+    const mapTourUrl = `map.html?location=${encodeURIComponent(currentLocation.location_name)}`;
     if (textInfo) {
         // Inject location heading and descriptive historical narrative text
         textInfo.innerHTML = `
             <h3>${currentLocation.location_name}</h3>
             <p>${currentLocation.text}</p>
+            <a href="${mapTourUrl}" id="backToMapTour"class="btn btn-primary mt-2">Go to the Location on the Map</a>
         `;
     }
 }

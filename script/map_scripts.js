@@ -887,8 +887,9 @@ function showFilmDetails(film) {
         if (film) {
             text_film_info.innerHTML = `
                 <p><b>Movie:</b> ${film.film_name || 'N/A'}</p>
-                <p><b>Scene Description:</b> ${film.film_scene_description || 'N/A'}</p>
                 <p><b>Director:</b> ${film.director || 'N/A'}</p>
+                <p><b>Year:</b> ${film.production_year || 'N/A'}</p>
+                <p><b>Scene Description:</b> ${film.film_scene_description || 'N/A'}</p>
             `;
         } else {
             text_film_info.innerHTML = '<p>Movie details not available.</p>';
