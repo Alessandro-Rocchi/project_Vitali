@@ -359,6 +359,7 @@ button {
     background-color: var(--iron-plate) !important;
     box-shadow: inset 0 5px 15px rgba(0,0,0,1);
     height: 35px !important; 
+    width: 95%;
 }
 
 .progress-bar {
@@ -398,6 +399,10 @@ button {
     .tour-container #map{
         margin: auto auto 0.5rem auto;
     }
+}
+
+.tour-container #nextPrevRow {
+   margin-bottom: 3rem; 
 }
 
 /* --- FOOTER --- */

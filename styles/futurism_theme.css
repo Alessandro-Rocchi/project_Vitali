@@ -1161,6 +1161,10 @@ button:disabled {
 }
 
 /*PROGRESS BAR*/
+.progress {
+    width: 95%;
+}
+
 .progress-bar {
     background-color: #F2A900 !important;
 }
@@ -1208,6 +1212,10 @@ button:disabled {
     .tour-container #map{
         margin: auto auto 0.5rem auto;
     }
+}
+
+.tour-container #nextPrevRow {
+   margin-bottom: 3rem; 
 }
 
 /*THEME*/

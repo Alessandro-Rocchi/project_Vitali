@@ -481,6 +481,11 @@ button:disabled {
 }
 
 /*PROGRESS BAR*/
+
+.progress {
+    width: 95%;
+}
+
 .progress-bar {
     background-color: #A87C43 !important;
 }
@@ -500,6 +505,10 @@ button:disabled {
     color: #A87C43 !important;
     background-color:#D4EFE2 !important;
     border:#A87C43 2px solid !important;
+}
+
+.tour-container #nextPrevRow {
+   margin-bottom: 3rem; 
 }
 
 .tour-container #btn-prev , .tour-container #btn-next, button#btn-next-mobile, button#btn-prev-mobile {

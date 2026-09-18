@@ -27,13 +27,13 @@
         "director": "Jacques Rivette",
         "production_year": 1961,
         "film_scene_description": "The characters pass through Place Saint-Sulpice and by the historic church during their journey across Paris.",
-        "film_poster_url": "img/img_movie/saintSupliceOld.png"
+        "film_poster_url": "img/img_movie/saintSulpiceOld.png"
       }
     ],
     "simple_description": "A large and historic Catholic church in the Odéon district.",
     "medium_description": "The second largest church in Paris after Notre-Dame, with construction beginning in 1646. It is famous for its imposing twin-tower facade and the astronomical gnomon located inside.",
     "detailed_description": "The Église Saint-Sulpice is a vast religious building located in the 6th arrondissement of Paris, whose construction origins date back to 1646, although it took over a century and a half to complete. It is famous for its imposing asymmetrical facade designed by Jean-Nicolas Servandoni and for the magnificent frescoes by Eugène Delacroix. The church also houses an important astronomical meridian (the gnomon of Saint-Sulpice) and a monumental Cavaillé-Coll organ, among the finest in France.",
-    "image_url": "img/img_movie/saintSupliceModern.png"
+    "image_url": "img/img_movie/saintSulpiceModern.png"
   },
   {
     "name": "Pont des Arts",
