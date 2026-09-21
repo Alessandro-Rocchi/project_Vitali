@@ -1103,6 +1103,11 @@ aside.bookmarks a:hover {
 
 /* --- IMMAGINI STILE WIKIPEDIA --- */
 
+#about_NV_text_content h2 {
+    clear: both;
+    padding-top: 1rem; 
+}
+
 .wiki-img-right, .wiki-img-left {
     width: 100%; /* Su schermi piccoli (mobile) l'immagine prende tutto lo spazio per non schiacciare il testo */
     max-width: 350px; /* Limita la larghezza massima per non farle diventare enormi */
@@ -1116,17 +1121,27 @@ aside.bookmarks a:hover {
     display: block;
 }
 
-/* Su schermi medi e grandi (da tablet in su) attiviamo l'affiancamento del testo (float) */
 @media (min-width: 768px) {
     .wiki-img-right {
         float: right;
-        margin-left: 1.5rem; /* Margine per allontanare il testo a sinistra */
+        margin-left: 1.5rem;
+        width: 35%; 
+        max-width: 300px; /* L'immagine cresce col 35%, ma si ferma a 380px */
     }
     
     .wiki-img-left {
         float: left;
-        margin-right: 1.5rem; /* Margine per allontanare il testo a destra */
+        margin-right: 1.5rem;
+        width: 35%; 
+        max-width: 300px; /* L'immagine cresce col 35%, ma si ferma a 380px */
     }
+}
+
+/* Assicura che la didascalia (figcaption o card-body) non superi l'immagine */
+.wiki-img-right figcaption, .wiki-img-left figcaption,
+.wiki-img-right .card-body, .wiki-img-left .card-body {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* ==========================================================================

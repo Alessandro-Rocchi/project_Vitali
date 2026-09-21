@@ -318,7 +318,7 @@ padding-bottom: 1.5rem;
 /* Firefox */
 html {
     scrollbar-width: thin;
-    scrollbar-color: #A92325 #EDEAE2; /* Pollice rosso scuro[cite: 2], traccia chiara[cite: 2] */
+    scrollbar-color: #A92325 #EDEAE2;
 }
 
 /* Chrome, Edge, Safari */
@@ -364,7 +364,7 @@ span.navbar-text {
 
 .navbar-nav .nav-link {
     color: #faf1ea;
-    font-size: clamp(0.75rem, 0.5vw + 0.75rem, 1.5rem); /*cambiare poi con misure relative*/
+    font-size: clamp(0.75rem, 0.5vw + 0.75rem, 1.5rem);
     border-bottom: 1px solid transparent;
     font-family: "Space Mono", monospace;
     padding-right: clamp(0.75rem, 2vw,4rem);
@@ -497,7 +497,8 @@ footer a.nav-link, footer h2{
 
 /*CATALOGUE*/
 
-.page_content /*l'ho usato per dare un colore di sfondo uniforme a tutto il contenuto della pagina*/ {
+
+.page_content {
     background-color: #faf1ea; 
 }
 
