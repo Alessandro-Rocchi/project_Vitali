@@ -937,7 +937,33 @@ aside.bookmarks a:hover {
     color: #ffffff;
 }
 
+/* --- IMMAGINI STILE WIKIPEDIA --- */
 
+.wiki-img-right, .wiki-img-left {
+    width: 100%; /* Su schermi piccoli (mobile) l'immagine prende tutto lo spazio per non schiacciare il testo */
+    max-width: 350px; /* Limita la larghezza massima per non farle diventare enormi */
+    margin-bottom: 1.5rem;
+}
+
+/* Le immagini interne si devono adattare al contenitore fluido */
+.wiki-img-right img, .wiki-img-left img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Su schermi medi e grandi (da tablet in su) attiviamo l'affiancamento del testo (float) */
+@media (min-width: 768px) {
+    .wiki-img-right {
+        float: right;
+        margin-left: 1.5rem; /* Margine per allontanare il testo a sinistra */
+    }
+    
+    .wiki-img-left {
+        float: left;
+        margin-right: 1.5rem; /* Margine per allontanare il testo a destra */
+    }
+}
 
 /*ABOUT OUR TEAM*/
 
