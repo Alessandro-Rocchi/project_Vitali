@@ -234,20 +234,21 @@ function loadGeoData() {
 
 /**
  * Fetches JSON file containing supplementary metadata (extended descriptions, photos) for locations.
+ * Reuses the shared loadJson implementation from scripts.js if already defined.
  * @returns {Promise<Array>} Array of metadata objects, or empty array on error.
  */
-function loadJson(){
-    return fetch("data/paris_metadata.json")
-        .then(function(response){
-            if (!response.ok) {
-                throw new Error("HTTP error " + response.status);
-            }
-            return response.json();
-        })
-        .catch(function(error){
-            console.error("Fetch error metadata: ", error);
-            return [];
-        });
+if (typeof loadJson !== 'function') {
+    var loadJson = function() {
+        return fetch("data/paris_metadata.json")
+            .then(function(response) {
+                if (!response.ok) throw new Error("HTTP error " + response.status);
+                return response.json();
+            })
+            .catch(function(error) {
+                console.error("Fetch error metadata: ", error);
+                return [];
+            });
+    };
 }
 
 
@@ -966,16 +967,19 @@ function createExplorePanelUI(map) {
     return div;
 };
 
-function focusLocation(locatioName, zoomLevel, shouldScroll){
-    currentLayer.eachLayer(function(layer) {
-                if (layer.feature && layer.feature.properties && layer.feature.properties.name.toLowerCase() === locatioName.toLowerCase()) {
-                    targetLayer = layer;
-                }
-            });
+function focusLocation(locationName, zoomLevel, shouldScroll) {
+    var targetLayer = null;
+    if (currentLayer) {
+        currentLayer.eachLayer(function(layer) {
+            if (layer.feature && layer.feature.properties && layer.feature.properties.name && layer.feature.properties.name.toLowerCase() === locationName.toLowerCase()) {
+                targetLayer = layer;
+            }
+        });
+    }
 
-    map.flyTo(targetLayer.getLatLng(), zoomLevel, { animate: true, duration: 1.2 })
-
-    targetLayer.openPopup()
-
-    showLocationDetails(targetLayer.feature.properties.name, shouldScroll)
+    if (targetLayer) {
+        map.flyTo(targetLayer.getLatLng(), zoomLevel, { animate: true, duration: 1.2 });
+        targetLayer.openPopup();
+        showLocationDetails(targetLayer.feature.properties.name, shouldScroll);
+    }
 }

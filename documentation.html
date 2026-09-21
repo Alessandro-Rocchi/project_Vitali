@@ -6,28 +6,22 @@
         <title>Technical Documentation | Les Rues du CSS</title>
         <link rel="icon" type="image/x-icon" href="img/S.svg">
         
-        <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=GFS+Didot&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap" rel="stylesheet">
         
-        <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-        <!-- Bootstrap 5.3 CDN -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         
-        <!-- Scripts -->
         <script src="script/scripts.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         
-        <!-- Dynamic Theme Stylesheet --> 
         <link id="stylesheet_file" rel="stylesheet" href="styles/solarpunk_theme.css">
     </head>
     <body data-page="documentation">
 
-        <!-- Theme Switcher Floating Widget -->
         <div class="theme">
             <div class="closeTheme">
                 <div class="blur-background"></div>
@@ -45,7 +39,6 @@
             </div>
         </div>
 
-        <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a href="index.html" id="logo-link"><span class="col-auto navbar-text">Les Rues du CSS</span></a>
@@ -71,9 +64,7 @@
             </div>
         </nav>
 
-        <!-- Main Page Content -->
         <section class="page_content pb-5 m-0">
-            <!-- Breadcrumbs -->
             <div class="breadcrumbs d-inline-flex ms-4 gap-2 my-3">
                 <a href="index.html">Home</a>
                 <p class="mb-0">/</p>
@@ -499,10 +490,11 @@
                             <h2>6. Design System and Dynamic CSS Theming</h2>
                             
                             <h3>6.1 The Wordplay "Les Rues du CSS"</h3>
-                            <p>The project title carries a deliberate, playful double meaning:</p>
+                            <p>The project title carries a deliberate, playful meaning that breaks down into three key elements:</p>
                             <ul>
+                                <li><strong>Thematic focus:</strong> <em>Les Rues</em> (The Streets) highlights the site's core mission to map real-life, on-street film locations, honoring the Nouvelle Vague's love for outdoor shooting.</li>
                                 <li><strong>Cinematic Acronym:</strong> <em>Cinéma Sur la Seine</em> (cinema along the Seine river and Parisian boulevards).</li>
-                                <li><strong>Technological Acronym:</strong> <em>Cascading Style Sheets</em> (the styling backbone of the World Wide Web).</li>
+                                <li><strong>Technological Acronym:</strong> <em>Cascading Style Sheets</em> (the sole engine behind our six interchangeable themes, transforming the site's look while the HTML structure remains untouched).</li>
                             </ul>
                             <blockquote>
                                 "The entire website serves as an academic and practical demonstration of total decoupling: one identical, semantic HTML markup rendered into 6 radically different visual universes."
@@ -532,21 +524,21 @@
                                             <td><strong>Nouvelle Vague</strong></td>
                                             <td><code>styles/nouvelle_vague_theme.css</code></td>
                                             <td>Monochrome 1960s film celluloid; intellectual <em>Cahiers du Cinéma</em> editorial style.</td>
-                                            <td>High-contrast black, crisp paper white, classic French blue & red.</td>
+                                            <td>High-contrast black, crisp paper white, deep and elegant red.</td>
                                             <td>GFS Didot, Anton, Inter</td>
                                         </tr>
                                         <tr>
                                             <td><strong>Eighties</strong></td>
                                             <td><code>styles/eighties_theme.css</code></td>
                                             <td>1980s arcade culture, CRT terminal scanlines, synthwave neon aesthetic.</td>
-                                            <td>Deep CRT green-black, glowing phosphor green, neon cyan, hot magenta.</td>
+                                            <td>Deep CRT green-black, phosphor green.</td>
                                             <td>VT323 (8-bit), Space Mono</td>
                                         </tr>
                                         <tr>
                                             <td><strong>Futurism</strong></td>
                                             <td><code>styles/futurism_theme.css</code></td>
                                             <td>Early 20th-century Italian Futurism; speed, industrial force, diagonal cuts.</td>
-                                            <td>Industrial charcoal, blazing crimson, warning yellow, bright white.</td>
+                                            <td>Kinetic cobalt, blazing crimson, warning yellow, bright white.</td>
                                             <td>Anton, Space Mono</td>
                                         </tr>
                                         <tr>
@@ -560,7 +552,7 @@
                                             <td><strong>Rococo</strong></td>
                                             <td><code>styles/rococo_theme.css</code></td>
                                             <td>18th-century French aristocratic elegance, pastel lightness, decorative flourishes.</td>
-                                            <td>Powder pink, creamy ivory, rose gold, soft terracotta.</td>
+                                            <td>Powder pink, creamy ivory, rose gold.</td>
                                             <td>Pinyon Script, Playfair Display</td>
                                         </tr>
                                     </tbody>
@@ -586,7 +578,7 @@
                             </p>
                             <ul>
                                 <li><strong>Comparative "Then and Now" Photographic Corpus (<code>img/img_movie/</code>):</strong>
-                                    26 pairs of synchronized images (46 total visual assets) comparing historical 1950s/1960s film frames (<code>*Old.*</code>) against contemporary photography shot from the exact same angle and perspective (<code>*Modern.*</code>).
+                                    26 pairs of synchronized images (46 total visual assets) comparing historical 1950s/1960s film frames (<code>*Old.*</code>) against contemporary photography shot almost from the exact same angle and perspective, when possible (<code>*Modern.*</code>).
                                 </li>
                                 <li><strong>Historical Portraits:</strong> Archival photographs of François Truffaut, Jean-Luc Godard, Agnès Varda, and André Bazin.</li>
                                 <li><strong>Branding & Fallbacks:</strong> Vector logo (<code>S.svg</code>) symbolizing the curve of the Seine and cinema celluloid reels, backed by an image fallback handler (<code>generic_bg.png</code>).</li>
@@ -688,7 +680,6 @@ npx serve .</code></pre>
             </div>
         </section>
 
-        <!-- Standard Footer -->
         <footer class="container-fluid col-12">
             <div class="row py-5 ps-2 py-sm-3">
                 <div class="logo-footer col-xl-4 col-xxl-3 col-12 ps-xl-5 py-3">

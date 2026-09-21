@@ -48,10 +48,9 @@ html::-webkit-scrollbar-thumb:hover {
     display: none;
 }    
 
-.catchphrase h1 {
+.catchphrase {
+    color:#33FF33 !important;
     font-family: "VT323", Courier, monospace;
-    font-size: clamp(15px, 1.1vw + 12px, 40px); /*non ho usato vh o vw per le dimensioni limite e per la proporzione usata nel valore centrale per evitare che il browser calcolasse dimensioni con la virgola e facesse saltare l'effetto pixellato del font*/
-
 }
 
 /*per avere il viewport responsive e rimpicciolire l'immagine nei dispositivi più piccoli*/
@@ -918,6 +917,11 @@ aside.bookmarks::-webkit-scrollbar-thumb:hover {
     padding: 0 4px;
 }
 
+#about_NV_text_content ol li, #about_NV_text_content ul li{
+    color: #33FF33;
+    font-family: "VT323", Courier, monospace;
+}
+
 #documentation_text_content h2 {
     color: #33FF33;
     font-family: "VT323", Courier, monospace;
@@ -944,6 +948,7 @@ aside.bookmarks::-webkit-scrollbar-thumb:hover {
 
 #documentation_text_content p,
 #documentation_text_content li {
+    font-family: "VT323", Courier, monospace;
     color: #d1ffd1;
     line-height: 1.7;
 }
@@ -1331,6 +1336,20 @@ aside.bookmarks::-webkit-scrollbar-thumb:hover {
    margin-bottom: 3rem; 
 }
 
+#backToMapTour{
+    background-color: #33FF33;
+    border-radius: 0 !important;
+    color:#020802;
+    font-family: "VT323", monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    border: 2px solid #020802;
+}
+
+#backToMapTour:hover{
+    color:#33FF33;
+    background-color: #020802;
+    border: 2px solid #33FF33;
+}
 
 /*PILLS*/
 .pill{
@@ -1588,7 +1607,7 @@ button:disabled {
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
     z-index: -1;
-    border-radius: 50px;
+    border-radius: none;
 }
 
 /*FOOTER*/

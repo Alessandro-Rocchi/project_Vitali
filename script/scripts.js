@@ -293,7 +293,7 @@ async function loadTourTextData(targetKeyword) {
             const pillSecTwo = document.getElementById('pillsTwoSection');
             const pillSecThree = document.getElementById('pillsThreeSection');
 
-            if (titleSect) titleSect.innerHTML = `<h2>${filteredTourData.tour_name}</h2>`;
+            if (titleSect) titleSect.innerHTML = `${filteredTourData.tour_name}`;
             if (descSect) descSect.innerHTML = `<p>${filteredTourData.description}</p>`;
             // Populate thematic badges/pills
             if (pillSecOne) pillSecOne.innerHTML = `${filteredTourData.pills[0]}`;
@@ -512,7 +512,7 @@ function updateLocationTexts(index) {
         textInfo.innerHTML = `
             <h3>${currentLocation.location_name}</h3>
             <p>${currentLocation.text}</p>
-            <a href="${mapTourUrl}" id="backToMapTour"class="btn btn-primary mt-2">Go to the Location on the Map</a>
+            <a href="${mapTourUrl}" id="backToMapTour"class="btn btn-primary mt-2 mb-3">Go to the Location on the Map</a>
         `;
     }
 }
