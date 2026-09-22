@@ -1227,10 +1227,6 @@ aside.bookmarks ol li:first-child {
     margin:0;
 }
 
-/*set a background color to the body*/
-
-
-
 /*GOOGLE FONTS & ICONS*/
 .material-symbols-outlined {
     font-variation-settings:
@@ -1456,22 +1452,6 @@ button:disabled {
     z-index: -1;
     border-radius: 50px;
 }
-
-/*PAGINA TOUR*/
-
-/*------------------INIZIO CSS TOUR-------------------------*/
-
-/*set a background color to the body*/
-
-/*GOOGLE FONTS & ICONS*/
-.material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-}
-
 
 /*FOOTER*/
 footer {

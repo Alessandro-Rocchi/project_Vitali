@@ -825,28 +825,21 @@ footer ul a:not(.pipe):hover {
     }
 }
 
-aside.bookmarks {
-    align-self: flex-start; /* Fondamentale per layout flex */
-    height: auto;
-}
-
 /* ==========================================================================
    MENU ASIDE - STILE SOLARPUNK (Serra Cartografica)
    ========================================================================== */
 
 aside.bookmarks {
-    /* 1. Effetto Vetro (Glassmorphism) ereditato dalle tue card */
+    align-self: flex-start;
+    height: auto;
     line-height: 1.5;
-    padding: 10px;
     background: var(--glass-bg);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
+    border-left: 4px solid var(--primary-bright);
     border-radius: 16px;
     padding: 1.5rem 1.5rem 1.5rem 2rem !important;
-    
-    /* 2. Bordo strutturale bio-tech e Ombreggiatura */
-    border-left: 4px solid var(--primary-bright); 
     box-shadow: var(--glass-shadow);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

@@ -257,18 +257,21 @@ function showParagraph(newIndex) {
 
 /**
  * Fetches JSON file containing metadata (extended descriptions, photos) for Paris locations.
+ * Reuses the shared loadJson implementation from map_scripts.js if already defined.
  * @returns {Promise<Array>} Array of metadata objects, or empty array on error.
  */
-function loadJson() {
-    return fetch("data/paris_metadata.json")
-        .then(function(response) {
-            if (!response.ok) throw new Error("HTTP error " + response.status);
-            return response.json();
-        })
-        .catch(function(error) {
-            console.error("Fetch error metadata: ", error);
-            return [];
-        });
+if (typeof loadJson !== 'function') {
+    var loadJson = function() {
+        return fetch("data/paris_metadata.json")
+            .then(function(response) {
+                if (!response.ok) throw new Error("HTTP error " + response.status);
+                return response.json();
+            })
+            .catch(function(error) {
+                console.error("Fetch error metadata: ", error);
+                return [];
+            });
+    };
 }
 
 /**

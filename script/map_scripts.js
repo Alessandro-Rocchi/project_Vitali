@@ -967,6 +967,13 @@ function createExplorePanelUI(map) {
     return div;
 };
 
+/**
+ * Focuses the map view on a specific location by name, animating the camera,
+ * opening its popup, and populating the location detail sidebar.
+ * @param {string} locationName - Name of the location to focus.
+ * @param {number} zoomLevel - Target map zoom level for the flight animation.
+ * @param {boolean} [shouldScroll] - Whether to scroll the location details sidebar into view.
+ */
 function focusLocation(locationName, zoomLevel, shouldScroll) {
     var targetLayer = null;
     if (currentLayer) {

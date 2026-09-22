@@ -75,11 +75,6 @@
             <div class="container-fluid px-0">
                 <div class="d-flex align-items-start">
 
-                    <!-- 
-                        ZONA FILTRI 
-                        Su mobile: Diventa un Offcanvas a comparsa (grazie a offcanvas-md)
-                        Su desktop: Diventa una colonna laterale che di default è chiusa (collapsed-desktop) 
-                    -->
                     <div class="offcanvas-md offcanvas-start filter-sidebar collapsed-desktop" tabindex="-1" id="filters_menu" aria-labelledby="filters_menu_label">
                         
                         <div class="offcanvas-header d-md-none">
@@ -131,21 +126,14 @@
                         </div>
                     </div>
 
-                    <!-- 
-                        ZONA CARDS E CONTROLLI
-                        Con flex-grow-1, questa zona occupa tutto lo spazio rimanente. 
-                        Quando la sidebar desktop si apre, questa zona si restringerà automaticamente.
-                    -->
                     <div class="flex-grow-1 content-area">
                         
                         <div class="d-flex align-items-center m-3">
-                            <!-- BOTTONE DESKTOP: Affiancato alle card (nascosto su mobile) -->
                             <button class="btn btn-desktop-toggle d-none d-md-flex align-items-center me-3" type="button" id="desktop_filter_toggle">
                                 <span class="material-symbols-outlined filter_list" id="filter_list">filter_list</span>
                                 <span class="material-symbols-outlined arrow_forward_ios" id="arrow_forward_ios">arrow_forward_ios</span>
                             </button>
 
-                            <!-- BOTTONE MOBILE: Sopra le card (nascosto su desktop). Apre l'offcanvas. -->
                             <button class="btn btn-mobile-toggle d-md-none w-100 d-flex justify-content-center align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#filters_menu" aria-controls="filters_menu">
                                 <span class="material-symbols-outlined">filter_list</span> Mostra Filtri
                             </button>

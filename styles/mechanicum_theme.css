@@ -166,13 +166,6 @@ hr {
     color: var(--mech-yellow) !important; 
 }
 
-.catchphrase h1, .catchphrase h1 span, header > .row h1 {
-    position: relative;
-    z-index: 1;
-    text-shadow: 4px 4px 0px var(--void-black); 
-    color: var(--mech-yellow) !important; 
-}
-
 /* --- CARDS & PANELS --- */
 .paper-card {
     background: var(--steel-gray);
