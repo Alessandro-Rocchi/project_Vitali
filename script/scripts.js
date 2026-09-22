@@ -97,7 +97,7 @@ const pages = {
         }
 
         // Asynchronously fetch catalogue locations metadata
-        loadJson().then(locations => {
+        loadScriptJson().then(locations => {
             if (locations && locations.length > 0) {
                 // Store loaded locations in state and render page 1
                 catalogueState.allLocations = locations;
@@ -257,22 +257,19 @@ function showParagraph(newIndex) {
 
 /**
  * Fetches JSON file containing metadata (extended descriptions, photos) for Paris locations.
- * Reuses the shared loadJson implementation from map_scripts.js if already defined.
  * @returns {Promise<Array>} Array of metadata objects, or empty array on error.
  */
-if (typeof loadJson !== 'function') {
-    var loadJson = function() {
-        return fetch("data/paris_metadata.json")
-            .then(function(response) {
-                if (!response.ok) throw new Error("HTTP error " + response.status);
-                return response.json();
-            })
-            .catch(function(error) {
-                console.error("Fetch error metadata: ", error);
-                return [];
-            });
-    };
-}
+function loadScriptJson() {
+    return fetch("data/paris_metadata.json")
+    .then(function(response) {
+        if (!response.ok) throw new Error("HTTP error " + response.status);
+        return response.json();
+    })
+    .catch(function(error) {
+        console.error("Fetch error metadata: ", error);
+        return [];
+    });
+};
 
 /**
  * Fetches tour narrative data and populates introductory tour header details
