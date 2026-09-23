@@ -703,7 +703,7 @@ function renderCatalogueCards(locations) {
 
         const imgUrl = location.image_url || "img/generic_bg.png";
         const title = location.location_name || "Location";
-        const desc = location.simple_description || location.medium_description || "";
+        const desc = location.tones.adult.simple_description || location.medium_description || "";
         const mapUrl = `map.html?location=${encodeURIComponent(location.location_name || '')}`;
 
 
