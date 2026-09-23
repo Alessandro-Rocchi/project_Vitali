@@ -295,8 +295,8 @@ function addGeoData(geojson) {
         initialData.features.forEach(function(f) {
             if (!f.properties.director || !f.properties.production_year) {
                 var meta = metadataJson.find(function(m) {
-                    var mName = (m.location_name || '').toLowerCase();
-                    var fName = (f.properties && f.properties.location_name || '').toLowerCase();
+                    var mName = (m.location_name || m.name || '').toLowerCase();
+                    var fName = (f.properties && (f.properties.name || f.properties.location_name) || '').toLowerCase();
                     return mName === fName || (mName.includes('louvre') && fName.includes('louvre'));
                 });
                 if (meta && meta.associated_movie && meta.associated_movie[0]) {
@@ -736,13 +736,15 @@ function showLocationDetails(locationName, shouldScroll = true) {
     // Find complementary rich textual metadata in metadataJson
     var locationTexts = null;
     if (metadataJson && metadataJson.length > 0) {
+        var normTarget = (locationName || '').toLowerCase().trim();
         locationTexts = metadataJson.find(function(elemento) {
-            return elemento.name === locationName || (elemento.name && elemento.name.toLowerCase() === locationName.toLowerCase()); 
+            var metaName = (elemento.location_name || elemento.name || '').toLowerCase().trim();
+            return metaName === normTarget || (normTarget && metaName && (metaName.includes('louvre') && normTarget.includes('louvre'))); 
         });
     }
 
     // Determine location title and image URL with fallback priorities
-    var locTitle = (locationTexts && locationTexts.name) || locationName;
+    var locTitle = (locationTexts && (locationTexts.location_name || locationTexts.name)) || locationName;
     var url_Img = (locationTexts && locationTexts.image_url) || '';
     
 
@@ -824,14 +826,14 @@ function showLocationDetails(locationName, shouldScroll = true) {
 
     // Smoothly scroll sidebar container into view on mobile or small screens
     var headInfo = document.getElementById('head-info');
-    if (headInfo) {
+    if (headInfo && shouldScroll) {
         headInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
     
     var text_film_info = document.getElementById('text-film-section');
     var img_film_panel = document.getElementById('img-film-section');
 
-    if(text_film_info && img_film_panel){
+    if (text_film_info && img_film_panel) {
         text_film_info.innerHTML = '';
         img_film_panel.removeAttribute('src');
         img_film_panel.alt = '';
@@ -840,14 +842,15 @@ function showLocationDetails(locationName, shouldScroll = true) {
 
     // Create the row of buttons for associated movies
     const buttonRow = document.getElementById('button-row');
-        if (buttonRow && locationTexts && Array.isArray(locationTexts.associated_movie)) {
-            buttonRow.innerHTML = '';
+    if (buttonRow) {
+        buttonRow.innerHTML = '';
 
+        if (locationTexts && Array.isArray(locationTexts.associated_movie)) {
             locationTexts.associated_movie.forEach(function(elemento) {
                 if (!elemento || !elemento.film_name) return;
 
                 var btn = document.createElement('button');
-                btn.id ="btn-film";
+                btn.id = "btn-film";
                 btn.className = 'btn btn-primary col-12 mb-3 mt-3 col-lg-5 d-inline-flex align-items-center justify-content-center fw-bold';
                 btn.textContent = elemento.film_name;
 
@@ -859,6 +862,7 @@ function showLocationDetails(locationName, shouldScroll = true) {
                 buttonRow.appendChild(btn);
             });
         }
+    }
 }
 
 function showFilmDetails(film) {
@@ -973,9 +977,11 @@ function createExplorePanelUI(map) {
  */
 function focusLocation(locationName, zoomLevel, shouldScroll) {
     var targetLayer = null;
-    if (currentLayer) {
+    if (currentLayer && locationName) {
+        var cleanTarget = locationName.toLowerCase().trim();
         currentLayer.eachLayer(function(layer) {
-            if (layer.feature && layer.feature.properties && layer.feature.properties.name && layer.feature.properties.name.toLowerCase() === locationName.toLowerCase()) {
+            var pName = (layer.feature && layer.feature.properties && (layer.feature.properties.name || layer.feature.properties.location_name) || '').toLowerCase().trim();
+            if (pName === cleanTarget || (cleanTarget && pName && (pName.includes('louvre') && cleanTarget.includes('louvre')))) {
                 targetLayer = layer;
             }
         });
@@ -984,6 +990,7 @@ function focusLocation(locationName, zoomLevel, shouldScroll) {
     if (targetLayer) {
         map.flyTo(targetLayer.getLatLng(), zoomLevel, { animate: true, duration: 1.2 });
         targetLayer.openPopup();
-        showLocationDetails(targetLayer.feature.properties.name, shouldScroll);
+        var featureName = targetLayer.feature && targetLayer.feature.properties && (targetLayer.feature.properties.name || targetLayer.feature.properties.location_name);
+        showLocationDetails(featureName, shouldScroll);
     }
 }
