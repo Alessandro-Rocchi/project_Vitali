@@ -8,7 +8,7 @@
 > - **Alessandro Rocchi** (*Presidente*)  
 > - **Daniele Bottaro** (*Dan*)  
 > - **Elena Mocci** (*Mele*)  
-> **GitHub Repositories:** [Alessandro-Rocchi/vitali_project_DHDK](https://github.com/Alessandro-Rocchi/vitali_project_DHDK) / [Alessandro-Rocchi/project_Vitali](https://github.com/Alessandro-Rocchi/project_Vitali)
+> **GitHub Repositories:** [Alessandro-Rocchi/vitali_project_DHDK](https://github.com/Alessandro-Rocchi/vitali_project_DHDK) / [Alessandro-Rocchi/project_Web_Technologies](https://github.com/Alessandro-Rocchi/project_Web_Technologies)
 
 ---
 
@@ -61,7 +61,7 @@ The project is built as a zero-build, modular client-side static web application
 ### Repository Directory Tree
 
 ```
-project_Vitali/
+project_Web_Technologies/
 ├── .github/
 │   └── workflows/
 │       └── deploy-pages.yml          # GitHub Actions CI/CD pipeline for GitHub Pages
@@ -656,7 +656,7 @@ npx serve .
 ```
 
 ### Option 3: Visual Studio Code (Live Server)
-1. Open the `project_Vitali` folder in Visual Studio Code.
+1. Open the `project_Web_Technologies` folder in Visual Studio Code.
 2. Install the **Live Server** extension by Ritwick Dey.
 3. Right-click `index.html` and click **"Open with Live Server"**.
 
