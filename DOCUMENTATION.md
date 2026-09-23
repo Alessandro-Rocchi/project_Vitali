@@ -327,6 +327,74 @@ The application is powered by three relational, flat-file JSON databases stored 
 }
 ```
 
+#### Extended Filmographic Metadata & Linked Open Data (LOD)
+To provide exhaustive filmographic context and connect the platform with global semantic knowledge graphs, each film entry in the `associated_movie` array has been enriched with full technical credits and Linked Open Data (LOD) persistent identifiers:
+
+- `movie_wikidata`: Direct URI linking to the corresponding Wikidata entity (e.g., `https://www.wikidata.org/wiki/Q25513` for *Paris nous appartient*). This anchors the local dataset in the Semantic Web cloud, enabling federated cross-querying and interoperability with open knowledge bases (Wikidata, DBpedia).
+- `director_viaf`: Linked Open Data authority URI pointing to the Virtual International Authority File (VIAF) record for the director (e.g., `http://viaf.org/viaf/84270544` for Jacques Rivette). This provides standardized authority control, disambiguating creators across international library and cultural heritage databases.
+- `starring`: Comma-separated list of principal cast members (e.g., `"Betty Schneider, Giani Esposito, Françoise Prévost"`).
+- `duration`: Official film running time (e.g., `"140min"`).
+- `genre`: Cinematic classification (e.g., `"drama"`).
+- `production`: Film production companies and studios (e.g., `"Ajym Films, Les Films du Carrosse"`).
+- `cinematographer`: Director of photography (*chef opérateur*) responsible for the camera work and lighting (e.g., `"Charles L. Bitsch"`).
+
+#### Multi-Audience Adaptive Tone System (`tones`)
+In addition to the baseline historical descriptions, `data/paris_metadata.json` incorporates a structured `tones` object introducing target-audience narrative adaptation. This architectural enhancement allows the interface to dynamically serve tailored text registers across three audience profiles, each fully implementing the complete 3-Tier Progressive Disclosure model (`simple_description`, `medium_description`, `detailed_description`):
+
+1. **`adult` (General Public)**:
+   - Balanced, culturally nuanced narrative for general visitors, cinephiles, and cultural tourists.
+   - Synthesizes historical context, architectural highlights, and cinematic significance.
+2. **`child` (Young Learners & Educational Storytelling)**:
+   - Simplified vocabulary and engaging, imaginative storytelling designed for younger audiences and educational visits.
+   - Emphasizes sensory imagery, curious historical anecdotes, and relatable visual comparisons.
+3. **`professional` (Academic & Domain Specialists)**:
+   - Rigorous, scholarly terminology targeting art historians, urbanists, and film scholars.
+   - Details stylistic movements (e.g., French Classical Baroque, double-tiered facades), chronological benchmarks, architect attributions, and critical film-theory analysis.
+
+#### Complete Enriched Record Structure (`data/paris_metadata.json`)
+
+```json
+{
+  "location_name": "Chapelle de la Sorbonne",
+  "locationYear": "1642",
+  "associated_movie": [
+    {
+      "film_id": 1,
+      "film_name": "Paris nous appartient",
+      "movie_wikidata": "https://www.wikidata.org/wiki/Q25513",
+      "director": "Jacques Rivette",
+      "director_viaf": "http://viaf.org/viaf/84270544",
+      "production_year": 1961,
+      "film_scene_description": "Anne visits the Sorbonne chapel while investigating the mysterious circumstances surrounding Juan's death.",
+      "starring": "Betty Schneider, Giani Esposito, Françoise Prévost",
+      "duration": "140min",
+      "genre": "drama",
+      "production": "Ajym Films, Les Films du Carrosse",
+      "cinematographer": "Charles L. Bitsch",
+      "film_poster_url": "img/img_movie/chapelleDeLaSorbonneOld.jpg"
+    }
+  ],
+  "image_url": "img/img_movie/chapelleDeLaSorbonneModern.png",
+  "tones": {
+    "adult": {
+      "simple_description": "The private chapel of the Sorbonne University in Paris.",
+      "medium_description": "A historic Parisian chapel completed in 1642 at the request of Cardinal Richelieu. It represents an important example of French Baroque architecture in the heart of the Latin Quarter.",
+      "detailed_description": "The Chapelle de la Sorbonne is a masterpiece of French Baroque architecture, designed by the architect Jacques Lemercier and completed in 1642. It was commissioned by Cardinal Richelieu, whose remains still rest today in the mausoleum within the nave. The structure is distinguished by its elegant dome, which was one of the first of its kind to be built in Paris, and is one of the intellectual symbols of the city."
+    },
+    "child": {
+      "simple_description": "A cool historic church located inside Paris's famous university!",
+      "medium_description": "Built way back in 1642 for Cardinal Richelieu, this church has a giant dome that looks like a king's crown in the middle of the student district.",
+      "detailed_description": "Imagine stepping into a university chapel built over 350 years ago! Designed by Jacques Lemercier in 1642, it holds the tomb of Cardinal Richelieu. Its high round dome was one of the very first built in Paris, making it look like a magical castle tower where scholars studied ancient secrets."
+    },
+    "professional": {
+      "simple_description": "A monumental French Baroque ecclesiastical structure within the Sorbonne complex.",
+      "medium_description": "Designed by Jacques Lemercier and consecrated in 1642, the Sorbonne Chapel stands as a pivotal milestone of French Classical Baroque architectural style, commissioned by Cardinal Richelieu.",
+      "detailed_description": "The Chapelle de la Sorbonne (1635–1642) represents a stylistic synthesis of Roman Baroque influence and traditional French double-tiered classical facades. Architect Jacques Lemercier designed the hemispherical dome over a double-drum, setting an architectural precedent for Parisian monumental domes. Featured prominently in Jacques Rivette's 'Paris nous appartient' (1961), the location evokes the intellectual and existential paranoia characteristic of early French New Wave cinema."
+    }
+  }
+}
+```
+
 ---
 
 ### 4.3 Curated Narrative Itineraries (`data/tour_data.json`)
