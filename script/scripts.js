@@ -702,9 +702,9 @@ function renderCatalogueCards(locations) {
         col.className = "col-sm-12 col-md-6 col-lg-4 col-xl-4";
 
         const imgUrl = location.image_url || "img/generic_bg.png";
-        const title = location.name || "Location";
+        const title = location.location_name || "Location";
         const desc = location.simple_description || location.medium_description || "";
-        const mapUrl = `map.html?location=${encodeURIComponent(location.name)}`;
+        const mapUrl = `map.html?location=${encodeURIComponent(location.location_name || '')}`;
 
 
         // Build HTML template for the location card with image fallback and link to map

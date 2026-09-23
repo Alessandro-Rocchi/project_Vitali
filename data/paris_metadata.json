@@ -1,7 +1,7 @@
 [
   {
-    "name": "Chapelle de la Sorbonne",
-    "year": "1642",
+    "location_name": "Chapelle de la Sorbonne",
+    "locationYear": "1642",
     "associated_movie": [
       {
         "film_id": 1,
@@ -18,8 +18,8 @@
     "image_url": "img/img_movie/chapelleDeLaSorbonneModern.png"
   },
   {
-    "name": "Church of Saint-Sulpice",
-    "year": "1646",
+    "location_name": "Church of Saint-Sulpice",
+    "locationYear": "1646",
     "associated_movie": [
       {
         "film_id": 1,
@@ -36,8 +36,8 @@
     "image_url": "img/img_movie/saintSulpiceModern.png"
   },
   {
-    "name": "Pont des Arts",
-    "year": "1804",
+    "location_name": "Pont des Arts",
+    "locationYear": "1804",
     "associated_movie": [
       {
         "film_id": 1,
@@ -54,8 +54,8 @@
     "image_url": "img/img_movie/pontsDesArtsModern.png"
   },
   {
-    "name": "Café le Presbourg",
-    "year": "1954",
+    "location_name": "Café le Presbourg",
+    "locationYear": "1954",
     "associated_movie": [
       {
         "film_id": 1,
@@ -72,8 +72,8 @@
     "image_url": "img/img_movie/cafeLePresbourgModern.jpg"
   },
   {
-    "name": "Notre Dame",
-    "year": "1345",
+    "location_name": "Notre Dame",
+    "locationYear": "1345",
     "associated_movie": [
       {
         "film_id": 1,
@@ -90,8 +90,8 @@
     "image_url": "img/img_movie/notreDameModern.jpg"
   },
   {
-    "name": "Hotel Les Rives de Notre Dame, quai St Michel, Paris",
-    "year": "1378",
+    "location_name": "Hotel Les Rives de Notre Dame, quai St Michel, Paris",
+    "locationYear": "1378",
     "associated_movie": [
       {
         "film_id": 1,
@@ -108,8 +108,8 @@
     "image_url" : "img/img_movie/hotelModern.jpg"
   },
   {
-    "name": "The entrances to the George V Métro station",
-    "year": "1900",
+    "location_name": "The entrances to the George V Métro station",
+    "locationYear": "1900",
     "associated_movie": [
       {
         "film_id": 1,
@@ -126,8 +126,8 @@
     "image_url" : "img/img_movie/georgeVMetroModern.jpg"
   },
   {
-    "name": "Place de la Concorde",
-    "year": "1772",
+    "location_name": "Place de la Concorde",
+    "locationYear": "1772",
     "associated_movie": [
       {
         "film_id": 1,
@@ -144,8 +144,8 @@
     "image_url": "img/img_movie/placeConcordeModern.jpg"
   },
   {
-    "name": "Le Select, 99 boulevard Montparnasse",
-    "year": "1923",
+    "location_name": "Le Select, 99 boulevard Montparnasse",
+    "locationYear": "1923",
     "associated_movie": [
       {
         "film_id": 1,
@@ -162,8 +162,8 @@
     "image_url": "img/img_movie/leSelectModern.jpg"
   },
   {
-    "name": "metro: Raspail",
-    "year": "1906",
+    "location_name": "metro: Raspail",
+    "locationYear": "1906",
     "associated_movie": [
       {
         "film_id": 1,
@@ -180,8 +180,8 @@
     "image_url" : "img/img_movie/metroRaspailModern.jpg"
   },
   {
-    "name": "Ile des Corbeaux at Saint-Maurice",
-    "year": "N/D",
+    "location_name": "Ile des Corbeaux at Saint-Maurice",
+    "locationYear": "N/D",
     "associated_movie": [
       {
         "film_id": 1,
@@ -198,8 +198,8 @@
     "image_url" : "img/img_movie/ileDeCorbeauxModern.jpg"
   },
   {
-    "name": "Column de Juillet, Paris",
-    "year": "1840",
+    "location_name": "Column de Juillet, Paris",
+    "locationYear": "1840",
     "associated_movie": [
       {
         "film_id": 1,
@@ -216,8 +216,8 @@
     "image_url" : "img/img_movie/colonneJuilletModern.png"
   },
   {
-    "name": "quai de Conti",
-    "year": "1313",
+    "location_name": "quai de Conti",
+    "locationYear": "1313",
     "associated_movie": [
       {
         "film_id": 1,
@@ -234,8 +234,8 @@
     "image_url" : "img/img_movie/quaiDeContiModern.png"
   },
   {
-    "name": "The Louvre Museum, Paris",
-    "year": "1793",
+    "location_name": "The Louvre Museum, Paris",
+    "locationYear": "1793",
     "associated_movie": [
       {
         "film_id": 1,
@@ -252,8 +252,8 @@
     "image_url" : "img/img_movie/louvreModern.png"
   },
   {
-    "name": "street market in Pl. de Levis",
-    "year": "1800s",
+    "location_name": "street market in Pl. de Levis",
+    "locationYear": "1800s",
     "associated_movie": [
       {
         "film_id": 1,
@@ -270,8 +270,8 @@
     "image_url" : "img/img_movie/placeLevisModern.jpeg"
   },
   {
-    "name": "boulevard Montmartre 12",
-    "year": "1833",
+    "location_name": "boulevard Montmartre 12",
+    "locationYear": "1833",
     "associated_movie": [
       {
         "film_id": 1,
@@ -288,8 +288,8 @@
     "image_url": "img/img_movie/montMartreModern.png"
   },
   {
-    "name": "Rue Puget 2",
-    "year": "1800s",
+    "location_name": "Rue Puget 2",
+    "locationYear": "1800s",
     "associated_movie": [
       {
         "film_id": 1,
@@ -306,8 +306,8 @@
     "image_url": "img/img_movie/ruePugetModern.jpg"
   },
   {
-    "name": "Rue Lepic 3",
-    "year": "1852",
+    "location_name": "Rue Lepic 3",
+    "locationYear": "1852",
     "associated_movie": [
       {
         "film_id": 1,
@@ -324,8 +324,8 @@
     "image_url": "img/img_movie/rueLepicModern.jpg"
   },
   {
-    "name": "Square d'Estienne d'Orves",
-    "year": "1866",
+    "location_name": "Square d'Estienne d'Orves",
+    "locationYear": "1866",
     "associated_movie": [
       {
         "film_id": 1,
@@ -342,8 +342,8 @@
     "image_url": "img/img_movie/estienneOrvesModern.png"
   },
   {
-    "name": "Sacré-Cœur in Montmartre.",
-    "year": "1914",
+    "location_name": "Sacré-Cœur in Montmartre.",
+    "locationYear": "1914",
     "associated_movie": [
       {
         "film_id": 1,
@@ -360,8 +360,8 @@
     "image_url": "img/img_movie/sacreCoeurModern.png"
   },
   {
-    "name": "Champs Elysées (60 avenue des Champs Elysées)",
-    "year": "1670",
+    "location_name": "Champs Elysées (60 avenue des Champs Elysées)",
+    "locationYear": "1670",
     "associated_movie": [
       {
         "film_id": 1,
@@ -378,8 +378,8 @@
     "image_url": "img/img_movie/champsElyseesModern.jpg"
   },
   {
-    "name": "Palais de Chaillot",
-    "year": "1937",
+    "location_name": "Palais de Chaillot",
+    "locationYear": "1937",
     "associated_movie": [
       {
         "film_id": 1,
@@ -396,8 +396,8 @@
     "image_url": "img/img_movie/palaisDeChaillotModern.jpg"
   },
   {
-    "name": "128 Rue de Rivoli",
-    "year": "1802",
+    "location_name": "128 Rue de Rivoli",
+    "locationYear": "1802",
     "associated_movie": [
       {
         "film_id": 1,
@@ -414,8 +414,8 @@
     "image_url": "img/img_movie/rueDeRivoliModern.png"
   },
   {
-    "name": "Café du Dôme",
-    "year": "1898",
+    "location_name": "Café du Dôme",
+    "locationYear": "1898",
     "associated_movie": [
       {
         "film_id": 1,
@@ -432,8 +432,8 @@
     "image_url": "img/img_movie/cafeDuDomeModern.png"
   },
   {
-    "name": "Parc Montsouris",
-    "year": "1869",
+    "location_name": "Parc Montsouris",
+    "locationYear": "1869",
     "associated_movie": [
       {
         "film_id": 1,
@@ -450,8 +450,8 @@
     "image_url": "img/img_movie/parcMontsourisModern.png"
   },
   {
-    "name": "Arc de Triomphe",
-    "year": "1836",
+    "location_name": "Arc de Triomphe",
+    "locationYear": "1836",
     "associated_movie": [
       {
         "film_id": 1,

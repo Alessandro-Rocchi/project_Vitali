@@ -295,8 +295,8 @@ function addGeoData(geojson) {
         initialData.features.forEach(function(f) {
             if (!f.properties.director || !f.properties.production_year) {
                 var meta = metadataJson.find(function(m) {
-                    var mName = (m.name || '').toLowerCase();
-                    var fName = (f.properties && f.properties.name || '').toLowerCase();
+                    var mName = (m.location_name || '').toLowerCase();
+                    var fName = (f.properties && f.properties.location_name || '').toLowerCase();
                     return mName === fName || (mName.includes('louvre') && fName.includes('louvre'));
                 });
                 if (meta && meta.associated_movie && meta.associated_movie[0]) {
