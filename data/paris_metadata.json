@@ -6,9 +6,16 @@
       {
         "film_id": 1,
         "film_name": "Paris nous appartient",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q25513",
         "director": "Jacques Rivette",
+        "director_viaf": "http://viaf.org/viaf/84270544",
         "production_year": 1961,
         "film_scene_description": "Anne visits the Sorbonne chapel while investigating the mysterious circumstances surrounding Juan's death.",
+        "starring": "Betty Schneider, Giani Esposito, Françoise Prévost",
+        "duration": "140min",
+        "genre": "drama",
+        "production": "Ajym Films, Les Films du Carrosse",
+        "cinematographer": "Charles L. Bitsch",
         "film_poster_url": "img/img_movie/chapelleDeLaSorbonneOld.jpg"
       }
     ],
@@ -38,9 +45,16 @@
       {
         "film_id": 1,
         "film_name": "Paris nous appartient",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q25513",
         "director": "Jacques Rivette",
+        "director_viaf": "http://viaf.org/viaf/84270544",
         "production_year": 1961,
         "film_scene_description": "The characters pass through Place Saint-Sulpice and by the historic church during their journey across Paris.",
+        "starring": "Betty Schneider, Giani Esposito, Françoise Prévost",
+        "duration": "140min",
+        "genre": "drama",
+        "production": "Ajym Films, Les Films du Carrosse",
+        "cinematographer": "Charles L. Bitsch",
         "film_poster_url": "img/img_movie/saintSulpiceOld.png"
       }
     ],
@@ -70,9 +84,16 @@
       {
         "film_id": 1,
         "film_name": "Paris nous appartient",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q25513",
         "director": "Jacques Rivette",
+        "director_viaf": "http://viaf.org/viaf/84270544",
         "production_year": 1961,
         "film_scene_description": "A scenic sequence on the pedestrian bridge overlooking the Seine, where the characters discuss art and their theatrical ambitions.",
+        "starring": "Betty Schneider, Giani Esposito, Françoise Prévost",
+        "duration": "140min",
+        "genre": "drama",
+        "production": "Ajym Films, Les Films du Carrosse",
+        "cinematographer": "Charles L. Bitsch",
         "film_poster_url": "img/img_movie/pontsDesArtsOld.png"
       }
     ],
@@ -102,9 +123,16 @@
       {
         "film_id": 1,
         "film_name": "Paris nous appartient",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q25513",
         "director": "Jacques Rivette",
+        "director_viaf": "http://viaf.org/viaf/84270544",
         "production_year": 1961,
         "film_scene_description": "The protagonists meet at the café near Place de l'Étoile to debate theater, politics, and bohemian life.",
+        "starring": "Betty Schneider, Giani Esposito, Françoise Prévost",
+        "duration": "140min",
+        "genre": "drama",
+        "production": "Ajym Films, Les Films du Carrosse",
+        "cinematographer": "Charles L. Bitsch",
         "film_poster_url": "img/img_movie/cafeLePresbourgOld.jpg"
       }
     ],
@@ -134,9 +162,16 @@
       {
         "film_id": 1,
         "film_name": "À bout de souffle",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q86427",
         "director": "Jean-Luc Godard",
+        "director_viaf": "http://viaf.org/viaf/108762210",
         "production_year": 1960,
         "film_scene_description": "A famous scene where the protagonists walk along the Seine with Notre-Dame in the background.",
+        "starring": "Jean-Paul Belmondo, Jean Seberg",
+        "duration": "90min",
+        "genre": "noir",
+        "production": "Société nouvelle de cinématographie",
+        "cinematographer": "Raoul Coutard",
         "film_poster_url": "img/img_movie/notreDameOld.png"
       }
     ],
@@ -166,9 +201,16 @@
       {
         "film_id": 1,
         "film_name": "À bout de souffle",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q86427",
         "director": "Jean-Luc Godard",
+        "director_viaf": "http://viaf.org/viaf/108762210",
         "production_year": 1960,
         "film_scene_description": "Michel and Patricia stroll along the riverbanks near the bouquinistes with the Notre-Dame Cathedral in the background.",
+        "starring": "Jean-Paul Belmondo, Jean Seberg",
+        "duration": "90min",
+        "genre": "noir",
+        "production": "Société nouvelle de cinématographie",
+        "cinematographer": "Raoul Coutard",
         "film_poster_url": "img/img_movie/hotelOld.jpg"
       }
     ],
@@ -198,9 +240,16 @@
       {
         "film_id": 1,
         "film_name": "À bout de souffle",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q86427",
         "director": "Jean-Luc Godard",
+        "director_viaf": "http://viaf.org/viaf/108762210",
         "production_year": 1960,
         "film_scene_description": "Patricia sells copies of the New York Herald Tribune on the Champs-Élysées near the George V metro entrance.",
+        "starring": "Jean-Paul Belmondo, Jean Seberg",
+        "duration": "90min",
+        "genre": "noir",
+        "production": "Société nouvelle de cinématographie",
+        "cinematographer": "Raoul Coutard",
         "film_poster_url": "img/img_movie/georgeVMetroOld.jpg"
       }
     ],
@@ -230,9 +279,16 @@
       {
         "film_id": 1,
         "film_name": "À bout de souffle",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q86427",
         "director": "Jean-Luc Godard",
+        "director_viaf": "http://viaf.org/viaf/108762210",
         "production_year": 1960,
         "film_scene_description": "Michel Poiccard drives and walks across the monumental square during his travels across Paris.",
+        "starring": "Jean-Paul Belmondo, Jean Seberg",
+        "duration": "90min",
+        "genre": "noir",
+        "production": "Société nouvelle de cinématographie",
+        "cinematographer": "Raoul Coutard",
         "film_poster_url": "img/img_movie/placeConcordeOld.jpg"
       }
     ],
@@ -262,9 +318,16 @@
       {
         "film_id": 1,
         "film_name": "À bout de souffle",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q86427",
         "director": "Jean-Luc Godard",
+        "director_viaf": "http://viaf.org/viaf/108762210",
         "production_year": 1960,
         "film_scene_description": "Michel Poiccard spends time and meets contacts at the classic Montparnasse café.",
+        "starring": "Jean-Paul Belmondo, Jean Seberg",
+        "duration": "90min",
+        "genre": "noir",
+        "production": "Société nouvelle de cinématographie",
+        "cinematographer": "Raoul Coutard",
         "film_poster_url": "img/img_movie/leSelectOld.jpg"
       }
     ],
@@ -294,9 +357,16 @@
       {
         "film_id": 1,
         "film_name": "À bout de souffle",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q86427",
         "director": "Jean-Luc Godard",
+        "director_viaf": "http://viaf.org/viaf/108762210",
         "production_year": 1960,
         "film_scene_description": "Michel is shot by police and he runs down rue Campagne-Première before collapsing and dying near the Raspail metro station while exchanging final words with Patricia.",
+        "starring": "Jean-Paul Belmondo, Jean Seberg",
+        "duration": "90min",
+        "genre": "noir",
+        "production": "Société nouvelle de cinématographie",
+        "cinematographer": "Raoul Coutard",
         "film_poster_url": "img/img_movie/metroRaspailOld.png"
       }
     ],
@@ -326,9 +396,16 @@
       {
         "film_id": 1,
         "film_name": "Bande à part",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q1211216",
         "director": "Jean-Luc Godard",
+        "director_viaf": "http://viaf.org/viaf/108762210",
         "production_year": 1964,
         "film_scene_description": "The trio visits the picturesque river island along the Marne during a quiet escape from the city.",
+        "starring": "Anna Karina, Sami Frey, Claude Brasseur",
+        "duration": "97min",
+        "genre": "noir, drama",
+        "production": "Anouchka Films, Orsay Films",
+        "cinematographer": "Raoul Coutard",
         "film_poster_url": "img/img_movie/ileDeCorbeauxOld.png"
       }
     ],
@@ -358,9 +435,16 @@
       {
         "film_id": 1,
         "film_name": "Bande à part",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q1211216",
         "director": "Jean-Luc Godard",
+        "director_viaf": "http://viaf.org/viaf/108762210",
         "production_year": 1964,
         "film_scene_description": "The characters drive past the monumental column at Place de la Bastille in their convertible.",
+        "starring": "Anna Karina, Sami Frey, Claude Brasseur",
+        "duration": "97min",
+        "genre": "noir, drama",
+        "production": "Anouchka Films, Orsay Films",
+        "cinematographer": "Raoul Coutard",
         "film_poster_url": "img/img_movie/colonneJuilletOld.png"
       }
     ],
@@ -390,9 +474,16 @@
       {
         "film_id": 1,
         "film_name": "Bande à part",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q1211216",
         "director": "Jean-Luc Godard",
+        "director_viaf": "http://viaf.org/viaf/108762210",
         "production_year": 1964,
         "film_scene_description": "Franz buys Odile the book she reminds him of on the quai de Conti on the Left Bank of the Seine",
+        "starring": "Anna Karina, Sami Frey, Claude Brasseur",
+        "duration": "97min",
+        "genre": "noir, drama",
+        "production": "Anouchka Films, Orsay Films",
+        "cinematographer": "Raoul Coutard",
         "film_poster_url": "img/img_movie/quaiDeContiOld.png"
       }
     ],
@@ -422,9 +513,16 @@
       {
         "film_id": 1,
         "film_name": "Bande à part",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q1211216",
         "director": "Jean-Luc Godard",
+        "director_viaf": "http://viaf.org/viaf/108762210",
         "production_year": 1964,
         "film_scene_description": "A famous sequence where Arthur, Franz, and Odile run through the Louvre galleries trying to beat the world record for visiting the museum.",
+        "starring": "Anna Karina, Sami Frey, Claude Brasseur",
+        "duration": "97min",
+        "genre": "noir, drama",
+        "production": "Anouchka Films, Orsay Films",
+        "cinematographer": "Raoul Coutard",
         "film_poster_url": "img/img_movie/louvreOld.jpeg"
       }
     ],
@@ -454,9 +552,16 @@
       {
         "film_id": 1,
         "film_name": "La Boulangère de Monceau",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q1211824",
         "director": "Éric Rohmer",
+        "director_viaf": "http://viaf.org/viaf/56615643",
         "production_year": 1962,
         "film_scene_description": "The young narrator frequents the bustling market street of Place de Lévis while pursuing the bakery girl.",
+        "starring": "Barbet Schroeder, Claudine Soubrier, Michèle Girardon",
+        "duration": "23min",
+        "genre": "comedy",
+        "production": "Les Films du Losange",
+        "cinematographer": "Jean-Michel Meurice, Bruno Barbey",
         "film_poster_url": "img/img_movie/placeLevisOld.jpeg"
       }
     ],
@@ -486,9 +591,16 @@
       {
         "film_id": 1,
         "film_name": "Les 400 coups",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q162331",
         "director": "François Truffaut",
+        "director_viaf": "http://viaf.org/viaf/102375575",
         "production_year": 1959,
         "film_scene_description": "Antoine Doinel and René explore the lively Grands Boulevards near the cinema and covered passages.",
+        "starring": "Jean-Pierre Léaud, Claire Maurier, Albert Rémy",
+        "duration": "99min",
+        "genre": "drama",
+        "production": "Les Films du Carrosse, S.E.D.I.F.",
+        "cinematographer": "Henri Decaë",
         "film_poster_url": "img/img_movie/montMartreOld.jpg"
       }
     ],
@@ -518,9 +630,16 @@
       {
         "film_id": 1,
         "film_name": "Les 400 coups",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q162331",
         "director": "François Truffaut",
+        "director_viaf": "http://viaf.org/viaf/102375575",
         "production_year": 1959,
         "film_scene_description": "Antoine wanders through the secluded Montmartre street running alongside the cemetery wall.",
+        "starring": "Jean-Pierre Léaud, Claire Maurier, Albert Rémy",
+        "duration": "99min",
+        "genre": "drama",
+        "production": "Les Films du Carrosse, S.E.D.I.F.",
+        "cinematographer": "Henri Decaë",
         "film_poster_url": "img/img_movie/ruePugetOld.jpg"
       }
     ],
@@ -550,9 +669,16 @@
       {
         "film_id": 1,
         "film_name": "Les 400 coups",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q162331",
         "director": "François Truffaut",
+        "director_viaf": "http://viaf.org/viaf/102375575",
         "production_year": 1959,
         "film_scene_description": "Antoine walks up the iconic winding street in the heart of Montmartre.",
+        "starring": "Jean-Pierre Léaud, Claire Maurier, Albert Rémy",
+        "duration": "99min",
+        "genre": "drama",
+        "production": "Les Films du Carrosse, S.E.D.I.F.",
+        "cinematographer": "Henri Decaë",
         "film_poster_url": "img/img_movie/rueLepicOld.jpg"
       }
     ],
@@ -582,9 +708,16 @@
       {
         "film_id": 1,
         "film_name": "Les 400 coups",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q162331",
         "director": "François Truffaut",
+        "director_viaf": "http://viaf.org/viaf/102375575",
         "production_year": 1959,
         "film_scene_description": "Antoine and René play near the fountains and gardens of the square facing the Sainte-Trinité church.",
+        "starring": "Jean-Pierre Léaud, Claire Maurier, Albert Rémy",
+        "duration": "99min",
+        "genre": "drama",
+        "production": "Les Films du Carrosse, S.E.D.I.F.",
+        "cinematographer": "Henri Decaë",
         "film_poster_url": "img/img_movie/estienneOrvesOld.jpg"
       }
     ],
@@ -614,9 +747,16 @@
       {
         "film_id": 1,
         "film_name": "Les 400 coups",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q162331",
         "director": "François Truffaut",
+        "director_viaf": "http://viaf.org/viaf/102375575",
         "production_year": 1959,
         "film_scene_description": "Antoine roams the heights of Montmartre with the Sacré-Cœur basilica standing in the background.",
+        "starring": "Jean-Pierre Léaud, Claire Maurier, Albert Rémy",
+        "duration": "99min",
+        "genre": "drama",
+        "production": "Les Films du Carrosse, S.E.D.I.F.",
+        "cinematographer": "Henri Decaë",
         "film_poster_url": "img/img_movie/sacreCoeurOld.jpg"
       }
     ],
@@ -646,9 +786,16 @@
       {
         "film_id": 1,
         "film_name": "Les 400 coups",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q162331",
         "director": "François Truffaut",
+        "director_viaf": "http://viaf.org/viaf/102375575",
         "production_year": 1959,
         "film_scene_description": "Antoine and his friend steal a typewriter from an office located on the Champs-Élysées.",
+        "starring": "Jean-Pierre Léaud, Claire Maurier, Albert Rémy",
+        "duration": "99min",
+        "genre": "drama",
+        "production": "Les Films du Carrosse, S.E.D.I.F.",
+        "cinematographer": "Henri Decaë",
         "film_poster_url": "img/img_movie/champsElyseesOld.jpg"
       }
     ],
@@ -678,9 +825,16 @@
       {
         "film_id": 1,
         "film_name": "Les 400 coups",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q162331",
         "director": "François Truffaut",
+        "director_viaf": "http://viaf.org/viaf/102375575",
         "production_year": 1959,
         "film_scene_description": "Antoine looks out over the Trocadéro esplanade with the iconic view of the Eiffel Tower.",
+        "starring": "Jean-Pierre Léaud, Claire Maurier, Albert Rémy",
+        "duration": "99min",
+        "genre": "drama",
+        "production": "Les Films du Carrosse, S.E.D.I.F.",
+        "cinematographer": "Henri Decaë",
         "film_poster_url": "img/img_movie/palaisDeChaillotOld.png"
       }
     ],
@@ -710,9 +864,16 @@
       {
         "film_id": 1,
         "film_name": "Cléo de 5 à 7",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q1199628",
         "director": "Agnès Varda",
+        "director_viaf": "http://viaf.org/viaf/84256688",
         "production_year": 1962,
         "film_scene_description": "Cléo walks along the historic arcades of Rue de Rivoli after visiting the fortune teller.",
+        "starring": "Corinne Marchand, Antoine Bourseiller, Dominique Davray",
+        "duration": "90min",
+        "genre": "drama",
+        "production": "Ciné-tamaris, Rome Paris Films",
+        "cinematographer": "Jean Rabier, Alain Levent, Paul Bonis",
         "film_poster_url": "img/img_movie/rueDeRivoliOld.png"
       }
     ],
@@ -742,9 +903,16 @@
       {
         "film_id": 1,
         "film_name": "Cléo de 5 à 7",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q1199628",
         "director": "Agnès Varda",
+        "director_viaf": "http://viaf.org/viaf/84256688",
         "production_year": 1962,
         "film_scene_description": "Cléo meets her companions and reflects on her life at the historic Montparnasse café.",
+        "starring": "Corinne Marchand, Antoine Bourseiller, Dominique Davray",
+        "duration": "90min",
+        "genre": "drama",
+        "production": "Ciné-tamaris, Rome Paris Films",
+        "cinematographer": "Jean Rabier, Alain Levent, Paul Bonis",
         "film_poster_url": "img/img_movie/cafeDuDomeOld.png"
       }
     ],
@@ -774,9 +942,16 @@
       {
         "film_id": 1,
         "film_name": "Cléo de 5 à 7",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q1199628",
         "director": "Agnès Varda",
+        "director_viaf": "http://viaf.org/viaf/84256688",
         "production_year": 1962,
         "film_scene_description": "Cléo walks through the peaceful park where she meets Antoine, a soldier on leave, by the lake.",
+        "starring": "Corinne Marchand, Antoine Bourseiller, Dominique Davray",
+        "duration": "90min",
+        "genre": "drama",
+        "production": "Ciné-tamaris, Rome Paris Films",
+        "cinematographer": "Jean Rabier, Alain Levent, Paul Bonis",
         "film_poster_url": "img/img_movie/parcMontsourisOld.png"
       }
     ],
@@ -806,9 +981,16 @@
       {
         "film_id": 1,
         "film_name": "Paris nous appartient",
+        "movie_wikidata": "https://www.wikidata.org/wiki/Q25513",
         "director": "Jacques Rivette",
+        "director_viaf": "http://viaf.org/viaf/84270544",
         "production_year": 1961,
         "film_scene_description": "The opening sequences feature the bustling traffic and views around the monumental arch at Place de l'Étoile.",
+        "starring": "Betty Schneider, Giani Esposito, Françoise Prévost",
+        "duration": "140min",
+        "genre": "drama",
+        "production": "Ajym Films, Les Films du Carrosse",
+        "cinematographer": "Charles L. Bitsch",
         "film_poster_url": "img/img_movie/arcDeTriompheOld.jpg"
       }
     ],

@@ -922,9 +922,14 @@ function showFilmDetails(film) {
     if (text_film_info) {
         if (film) {
             text_film_info.innerHTML = `
-                <p><b>Movie:</b> ${film.film_name || 'N/A'}</p>
-                <p><b>Director:</b> ${film.director || 'N/A'}</p>
+                <p><b>Movie:</b> ${film.film_name || 'N/A'} <sup>[<a href="${film.movie_wikidata || 'N/A'}" target="_blank">wikidata</a>]</sup></p>
+                <p><b>Director:</b> ${film.director || 'N/A'} <sup>[<a href="${film.director_viaf || 'N/A'}" target="_blank">viaf</a>]</sup></p>
                 <p><b>Year:</b> ${film.production_year || 'N/A'}</p>
+                <p><b>Starring:</b> ${film.starring || 'N/A'}</p>
+                <p><b>Genre:</b> ${film.genre || 'N/A'}</p>
+                <p><b>Duration:</b> ${film.duration || 'N/A'}</p>
+                <p><b>Cinematographer:</b> ${film.cinematographer || 'N/A'}</p>
+                <p><b>Production:</b> ${film.production || 'N/A'}</p>
                 <p><b>Scene Description:</b> ${film.film_scene_description || 'N/A'}</p>
             `;
         } else {
