@@ -1322,3 +1322,17 @@ aside.bookmarks a:hover {
     color: #925e5e;
     border: 2px solid #925e5e;
 }
+
+.btn-tone {
+    color: #EDEAE2;
+    background-color: #A87C43;
+    border: 2px solid transparent;
+    margin: 0 1rem;
+    border-radius: 3px !important;
+}
+
+.btn-tone:hover, .btn-tone.active {
+    background-color: transparent;
+    color: #925e5e;
+    border: 2px solid #925e5e;
+}

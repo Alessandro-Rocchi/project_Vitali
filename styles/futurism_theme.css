@@ -399,6 +399,27 @@ a[aria-expanded="false"] i {
     padding: 0.2rem 4rem !important;
 }
 
+#tone-selector-container {
+    font-family: "Space Mono", monospace;
+    color: #002FA7;
+    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
+}
+
+.btn-tone {
+    border: 2px solid #009760 !important;
+    border-radius: 5px !important;
+    font-family: "Space Mono", monospace;
+    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
+    background-color: #009760;
+    color: #e9ecef;
+    margin: 0 1rem;
+}
+
+.btn-tone:hover, .btn-tone.active {
+    background-color: transparent;
+    color: #009760;
+}
+
 /*NAVBAR*/
 
 .navbar{

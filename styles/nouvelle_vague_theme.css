@@ -299,6 +299,27 @@ padding-bottom: 1.5rem;
     border: 2px solid #d32f2f;
 }
 
+#tone-selector-container {
+    font-family: "Space Mono", monospace;
+    color: #002FA7;
+    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
+}
+
+.btn-tone {
+    border: 2px solid #1A1A1A !important;
+    border-radius: 5px !important;
+    font-family: "Space Mono", monospace;
+    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
+    background-color: #1A1A1A;
+    color: #EDEAE2;
+    margin: 0 1rem;
+}
+
+.btn-tone:hover, .btn-tone.active {
+    background-color: transparent;
+    color: #1A1A1A;
+}
+
 /*SCROLLBAR*/
 /* Firefox */
 html {

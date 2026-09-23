@@ -592,6 +592,29 @@ footer ul a:not(.pipe):hover {
     box-shadow: 0 0 15px var(--furnace-fire);
 }
 
+
+.btn-tone {
+    color: var(--text-ash) !important;
+    border: 3px solid var(--iron-plate) !important;
+    background: var(--void-black);
+    border-radius: 0;
+    padding: 10px 20px !important;
+    margin: 8px 5px;
+    box-shadow: 4px 4px 0 var(--blood-rust);
+    transition: all 0.2s ease-out;
+    font-weight: bold;
+    display: inline-block;
+    font-family: "Space Mono", 'Courier New', Courier, monospace;
+}
+
+.btn-tone:hover, .btn-tone.active {
+    color: var(--void-black) !important;
+    background-color: var(--furnace-fire);
+    border-color: var(--furnace-fire) !important;
+    transform: scale(1.05); /* Ingrandimento centrato */
+    box-shadow: 0 0 15px var(--furnace-fire);
+}
+
 .card_link:hover { 
     color: var(--text-bone); 
     background: var(--furnace-fire); 

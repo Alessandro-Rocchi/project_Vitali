@@ -534,6 +534,23 @@ footer ul a:not(.pipe):hover {
     object-position: center;
 }
 
+.btn-tone {
+    color: var(--secondary) !important;
+    border: 3px solid rgba(245, 166, 35, 0.3) !important;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 6px 18px !important;
+    margin: 4px 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-tone:hover, .btn-tone.active {
+    color: #112d18 !important;
+    background-color: var(--secondary);
+    box-shadow: var(--glow-gold);
+    transform: translateY(-2px);
+}
+
 .card_link { 
     color: var(--primary-bright); 
     font-weight: bold; 

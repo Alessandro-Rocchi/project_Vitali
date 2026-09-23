@@ -418,6 +418,27 @@ filter: grayscale(1) brightness(60%);
     font-family: "VT323", 'Courier New', Courier, monospace;
 }
 
+#tone-selector-container {
+    font-family: "VT323", 'Courier New', Courier, monospace;
+    color: #33FF33;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+}
+
+.btn-tone {
+    border: 2px solid #33FF33 !important;
+    border-radius: 0 !important;
+    font-family: "VT323", 'Courier New', Courier, monospace;
+    font-size: clamp(15px, 1.1vw + 12px, 40px);
+    background-color: #33FF33;
+    color: #020802;
+    margin: 0 1rem;
+}
+
+.btn-tone:hover, .btn-tone.active {
+    background-color: #020802;
+    color: #33FF33;
+}
+
 /*NAVBAR*/
 
 .navbar{
