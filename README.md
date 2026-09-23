@@ -11,7 +11,7 @@
 > **Master's Degree in Digital Humanities and Digital Knowledge (DHDK)**  
 > University of Bologna
 
-project website: [https://alessandro-rocchi.github.io/project_Vitali/](https://alessandro-rocchi.github.io/project_Vitali/)
+project website: [https://alessandro-rocchi.github.io/project_Web_Technologies/](https://alessandro-rocchi.github.io/project_Web_Technologies/)
 
 ---
 
@@ -64,7 +64,7 @@ The site features **6 custom, fully distinct CSS stylesheets switchable at runti
 ## 🗂️ Repository Structure
 
 ```
-project_Vitali/
+project_Web_Technologies/
 ├── .github/workflows/deploy-pages.yml   # GitHub Pages CI/CD pipeline
 ├── data/
 │   ├── paris.geojson                  # 26 georeferenced WGS84 coordinates & tags
