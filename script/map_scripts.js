@@ -53,6 +53,12 @@ var selectedDirector = "Any";
 // Current year range filter selection ("Any" or decade string like "1950-1959")
 var selectedYearRange = "Any";
 
+// Currently active tone for descriptions ('adult' | 'child' | 'professional')
+var selectedTone = "adult";
+
+// Currently active location name being displayed in details panel
+var currentLocationName = null;
+
 
 // =============================================================================
 // MAP INITIALIZATION & BOOTSTRAP
@@ -204,6 +210,33 @@ async function init() {
 
     // Add the top-level button bar to the map
     panelControl.addTo(map);
+
+    // Attach event listeners for tone selector buttons
+    setupToneSelectorListeners();
+}
+
+/**
+ * Attaches event listeners to the tone selector buttons in map.html.
+ * Updates selectedTone and refreshes the current location details when clicked.
+ */
+function setupToneSelectorListeners() {
+    var toneButtons = document.querySelectorAll('.btn-tone');
+    toneButtons.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            var tone = this.getAttribute('data-tone');
+            if (tone && tone !== selectedTone) {
+                selectedTone = tone;
+                // Update active state on buttons
+                toneButtons.forEach(function(b) { b.classList.remove('active'); });
+                this.classList.add('active');
+
+                // Re-render details for current location if active
+                if (currentLocationName) {
+                    showLocationDetails(currentLocationName, false);
+                }
+            }
+        });
+    });
 }
 
 // Attach init execution to DOMContentLoaded event
@@ -767,11 +800,16 @@ function showLocationDetails(locationName, shouldScroll = true) {
     if (!text_info) return;
 
 
-    // Populate textual description with progressive disclosure toggle
+    // Track currently viewed location name
+    currentLocationName = locationName;
+
+    // Populate textual description with progressive disclosure toggle according to selected tone
     if (locationTexts) {
-        var text_short = locationTexts.simple_description || '';
-        var text_medium = locationTexts.medium_description || '';
-        var text_long = locationTexts.detailed_description || '';
+        var toneObject = (locationTexts.tones && locationTexts.tones[selectedTone]) ? locationTexts.tones[selectedTone] : locationTexts;
+
+        var text_short = toneObject.simple_description || locationTexts.simple_description || '';
+        var text_medium = toneObject.medium_description || locationTexts.medium_description || '';
+        var text_long = toneObject.detailed_description || locationTexts.detailed_description || '';
 
         // If all three description tiers exist, construct tiered spans with toggle button
         if (text_short && text_medium && text_long) {
