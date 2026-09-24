@@ -94,6 +94,7 @@ project_Web_Technologies/
 │   └── Truffaut.jpg
 ├── script/
 │   ├── map_scripts.js                # Interactive map engine (search, filters, routing, panel)
+│   └── scripts.js                    # Multi-page controller, tour engine, catalogue, theme swi
 │   └── scripts.js                    # Multi-page controller, tour engine, catalogue, theme switcher
 ├── styles/
 │   ├── eighties_theme.css            # 1980s Retro Synthwave / Vaporwave Theme

@@ -83,7 +83,7 @@
                             <div class="d-flex flex-wrap gap-2 mb-3">
                                 <span class="badge doc-badge p-2"><i class="bi bi-mortarboard-fill me-1"></i> University of Bologna</span>
                                 <span class="badge doc-badge p-2"><i class="bi bi-book me-1"></i> DHDK Master's Degree</span>
-                                <span class="badge doc-badge p-2"><i class="bi bi-code-slash me-1"></i> Web Technologies</span>
+                                <span class="badge doc-badge p-2"><i class="bi bi-code-slash me-1"></i> Information Modeling and Web Technologies</span>
                             </div>
                             <p class="mb-1"><strong>Course Instructor:</strong> Prof. Fabio Vitali</p>
                             <p class="mb-3"><strong>Development Team:</strong> Alessandro Rocchi (<em>Presidente</em>), Daniele Bottaro (<em>Dan</em>), Elena Mocci (<em>Mele</em>)</p>
@@ -117,6 +117,8 @@
                             <li><a href="#deployment">Deployment Pipeline & CI/CD</a></li>
                             <li><a href="#setup-guide">Local Development Guide</a></li>
                             <li><a href="#acknowledgments">Conclusions & Credits</a></li>
+                            <li><a href="#disclaimer">Disclaimer</a></li>
+                            <li><a href="#ai-statement">Generative AI Usage Statement</a></li>
                         </ol>
                     </aside>
 
@@ -130,7 +132,7 @@
                                 <strong>Les Rues du CSS (Cinéma Sur la Seine)</strong> is an interactive, multidisciplinary web platform dedicated to cinematic cartography and the cultural exploration of the French <strong>Nouvelle Vague</strong> (New Wave) in Paris between the late 1950s and late 1960s.
                             </p>
                             <p>
-                                Conceived as part of the <em>Web Technologies</em> curriculum within the <em>Digital Humanities and Digital Knowledge</em> (DHDK) Master's Degree at the University of Bologna (taught by <strong>Prof. Fabio Vitali</strong>), the project addresses four interconnected digital humanities and engineering challenges:
+                                Conceived as part of the <em>Information Modeling and Web Technologies</em> curriculum within the <em>Digital Humanities and Digital Knowledge</em> (DHDK) Master's Degree at the University of Bologna (taught by <strong>Prof. Fabio Vitali</strong>), the project addresses four interconnected digital humanities and engineering challenges:
                             </p>
                             
                             <div class="row g-3 my-2">
@@ -186,6 +188,7 @@
 ├── data/
 │   ├── paris.geojson                 # GeoJSON FeatureCollection (26 Paris film locations)
 │   ├── paris_metadata.json           # Extended metadata, 3-tier texts, and linked filmography
+│   ├── paris_metadata.json           # Extended metadata, 3 tones x 3-tier texts, LOD & filmography
 │   └── tour_data.json                # Narrative data for 6 curated thematic tours
 ├── img/
 │   ├── img_movie/                    # Historical (Old) vs. contemporary (Modern) photo pairs
@@ -210,8 +213,11 @@
 │   ├── S.png, S.svg                  # Project branding, logos, and favicon
 │   ├── top-ten-locations.jpg
 │   └── Truffaut.jpg
+│   ├── Truffaut.jpg
+│   └── truffaut-on-set.jpg
 ├── script/
 │   ├── map_scripts.js                # Interactive map engine (search, filters, routing, panel)
+│   ├── map_scripts.js                # Interactive map engine (search, filters, routing, tones, LOD modal)
 │   └── scripts.js                    # Multi-page controller, tour engine, catalogue, theme switcher
 ├── styles/
 │   ├── eighties_theme.css            # 1980s Retro Synthwave / Vaporwave Theme
@@ -223,10 +229,13 @@
 ├── about.html                        # Hub page linking to historical, team, and doc sections
 ├── about_nouvelle_vague.html         # Theoretical monograph + KnightLab TimelineJS
 ├── about_our_team.html               # Presentation page of the development team
+├── about_nouvelle_vague.html         # Theoretical monograph + KnightLab TimelineJS + gallery
+├── about_our_team.html               # Presentation page of the development team & academic roles
 ├── catalogue.html                    # Analytical location catalogue with pagination & filters
 ├── documentation.html                # Dedicated technical and architectural documentation (this page)
 ├── index.html                        # Homepage with hero, conceptual cards, and tour links
 ├── map.html                          # Full-screen interactive map of Paris
+├── map.html                          # Full-screen interactive map with tone selector & LOD details
 ├── tour.html                         # Step-by-step guided tour experience
 ├── DOCUMENTATION.md                  # Comprehensive markdown documentation
 └── README.md                         # Repository landing guide for GitHub</code></pre>
@@ -254,18 +263,35 @@
                             <p><strong>Page Identifier:</strong> <code>data-page="map"</code> | <strong>Engine:</strong> <code>script/map_scripts.js</code></p>
                             <ul>
                                 <li><strong>Map Canvas:</strong> OpenStreetMap tile layer centered on Paris (<code>[48.8566, 2.3522]</code>) at zoom level 13. Controls are placed in the top-left and zoom controls relocated to bottom-right.</li>
+                                <li><strong>Map Canvas:</strong> OpenStreetMap tile layer centered on Paris (<code>[48.8566, 2.3522]</code>) at zoom level 13. Custom panels and controls are mounted in the top-left while native zoom controls are cleanly repositioned to the bottom-right.</li>
                                 <li><strong>Control Bar:</strong>
                                     <ul>
                                         <li><strong>Search Button:</strong> Activates <code>Leaflet.PinSearch</code> with autocomplete for all 26 monument names.</li>
                                         <li><strong>Filters Dropdown:</strong> Multi-criteria filtering by <em>Director</em> (dynamically extracted) and <em>Decade</em> (1950–1959, 1960–1969).</li>
                                         <li><strong>Explore Button:</strong> Quick modal access to thematic tour shortcuts.</li>
+                                        <li><strong>Search Button:</strong> Activates <code>Leaflet.PinSearch</code> with auto-complete lookup across all 26 georeferenced monuments.</li>
+                                        <li><strong>Filters Dropdown:</strong> Multi-criteria filtering by <em>Director</em> (dynamically extracted from film metadata) and <em>Decade</em> (1950–1959, 1960–1969).</li>
+                                        <li><strong>Explore Button:</strong> Modal shortcut menu for quickly initiating thematic tours and discovering iconic filming areas.</li>
                                     </ul>
+                                </li>
+                                <li><strong>Audience Tone Selector Control:</strong>
+                                    A dedicated button group (<code>.btn-tone</code> with <code>data-tone="adult|child|professional"</code>) located directly above the information panel. Allows visitors to dynamically toggle narrative registers (<em>Adult</em>, <em>Child</em>, <em>Professional</em>) in real time without reloading the page or losing current map focus.
                                 </li>
                                 <li><strong>3-Tier Progressive Disclosure Panel (<code>#info-panel</code>):</strong>
                                     Circular text-state expansion: <em>Short Description</em> &rarr; <em>Medium Overview</em> &rarr; <em>Detailed Monograph</em> &rarr; <em>Reset to Short</em>.
+                                    Adaptive text disclosure tailored to the active audience tone: <em>Simple Description</em> &rarr; <em>Medium Overview</em> &rarr; <em>Detailed Monograph</em> &rarr; <em>Reset to Simple</em>, managed via <code>#btn-scopri</code>.
                                 </li>
                                 <li><strong>Dynamic Film Buttons:</strong> Lists each film shot at the monument. Clicking a title displays the corresponding movie shot, the scene's description and basic metadata of the movie (production year, director and movie title).</li>
                                 <li><strong>Deep Linking:</strong> Handles <code>map.html?location=...</code> by triggering a smooth camera flight (<code>flyTo</code>), opening marker popups, and expanding details automatically.</li>
+                                <li><strong>Dynamic Film Buttons & Enriched LOD Panel:</strong>
+                                    Generates dedicated buttons for each movie filmed at the monument. Clicking a title displays the film still/poster, scene narrative, and exhaustive technical credits enriched with Linked Open Data (LOD) persistent identifiers:
+                                    <ul>
+                                        <li>Direct Wikidata entity hyperlink (<code><sup>[wikidata]</sup></code>) for federated semantic queries.</li>
+                                        <li>Director VIAF authority record hyperlink (<code><sup>[viaf]</sup></code>) for international authority control.</li>
+                                        <li>Starring cast, official running time, cinematic genre, production studios, and cinematographer (<em>chef opérateur</em>).</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Deep Linking:</strong> Handles <code>map.html?location=...</code> and <code>map.html?name=...</code> query parameters by triggering smooth camera travel (<code>flyTo</code>), opening marker popups, and expanding details automatically.</li>
                             </ul>
 
                             <h3>3.3 Location Catalogue (<code>catalogue.html</code>)</h3>
@@ -294,6 +320,7 @@
                             <p><strong>Page Identifier:</strong> <code>data-page="about_nouvelle_vague"</code></p>
                             <ul>
                                 <li><strong>Embedded Timeline:</strong> Responsive iframe integrating <strong>KnightLab TimelineJS</strong> tracing pivotal events between 1946 and 1968.</li>
+                                <li><strong>Curated Archival Gallery:</strong> Integrated historical photography depicting key New Wave figures (Jean-Luc Godard, François Truffaut on set, André Bazin, Agnès Varda).</li>
                                 <li><strong>Sticky Sidebar Bookmarks:</strong> 10 theoretical chapters linking to essays on the <em>Cinémathèque Française</em>, <em>Cahiers du Cinéma</em>, <em>caméra-stylo</em>, <em>politique des auteurs</em>, Left Bank vs. Right Bank, and May '68.</li>
                             </ul>
 
@@ -301,7 +328,13 @@
                             <p><strong>Page Identifier:</strong> <code>data-page="about_our_team"</code></p>
                             <p>
                                 Introduces the development team behind the project: Alessandro Rocchi (<em>Presidente</em>), Daniele Bottaro (<em>Dan</em>), and Elena Mocci (<em>Mele</em>), featuring stylized custom avatars.
+                                Introduces the development team behind the project with stylized custom avatars and academic DHDK role specializations:
                             </p>
+                            <ul>
+                                <li><strong>Alessandro Rocchi (<em>Presidente</em>):</strong> Project Management, Cartographic &amp; Spatial Modeling, Leaflet Routing Engine.</li>
+                                <li><strong>Daniele Bottaro (<em>Dan</em>):</strong> Linked Open Data (LOD) Modeling, Wikidata &amp; VIAF Semantic Integration, Catalog Architecture.</li>
+                                <li><strong>Elena Mocci (<em>Mele</em>):</strong> Multi-Theme CSS Design System, Responsive Frontend Engineering, Narrative &amp; Tone Integration.</li>
+                            </ul>
                         </section>
 
                         <hr class="my-5">
@@ -313,22 +346,29 @@
                                 The platform is driven by three interconnected flat JSON databases stored in the <code>data/</code> directory:
                             </p>
 
+                            <pre>
+                                
+                            </pre>
                             <pre><code>                  ┌──────────────────────┐
                   │   data/paris.geojson │  (Point geometries, WGS84 coordinates,
                   └──────────┬───────────┘   bbox, keywords for tour filtering)
                              │
-                             │ location name / matchTourLocation()
+                             │ location_name / matchTourLocation()
                              ▼
                ┌─────────────────────────────┐
                │  data/paris_metadata.json   │  (Extended historical descriptions,
-               └─────────────┬───────────────┘   short/med/long tiers, linked movies)
+               └─────────────┬───────────────┘   3 tones × 3 disclosure tiers, LOD links)
                              │
                              │ keywords / location_name
                              ▼
                   ┌──────────────────────┐
-                  │ data/tour_data.json  │  (Itineraries, sequential stops,
-                  └──────────────────────┘   custom narratives, metadata pills)</code></pre>
+                  │ data/tour_data.json  │  (Curated narrative itineraries,
+                  └──────────────────────┘   sequential stops, metadata pills)</code></pre>
 
+                                <h3>4.1 Spatial Features and Coordinates (<code>data/paris.geojson</code>)</h3>
+                                    <p>
+                                        Standard GeoJSON RFC 7946 <code>FeatureCollection</code> containing 26 georeferenced Parisian locations.
+                                    </p>
                             <h3>4.1 Spatial Features and Coordinates (<code>data/paris.geojson</code>)</h3>
                             <p>
                                 Standard GeoJSON RFC 7946 <code>FeatureCollection</code> containing 26 georeferenced Parisian locations.
@@ -352,12 +392,18 @@
                             <h3>4.2 Extended Historical Metadata (<code>data/paris_metadata.json</code>)</h3>
                             <p>
                                 Stores rich encyclopedic records for all 26 monuments according to a <strong>3-Tier Progressive Disclosure Model</strong>:
+                                Stores rich encyclopedic records for all 26 monuments, integrating Linked Open Data (LOD) authority identifiers and target-audience narrative adaptation through a structured <strong>3-Tier Progressive Disclosure Model</strong> across three distinct audience profiles:
                             </p>
                             <ul>
                                 <li><code>simple_description</code>: Concise one-sentence summary.</li>
                                 <li><code>medium_description</code>: 2–3 sentence architectural and historical contextualization.</li>
                                 <li><code>detailed_description</code>: In-depth historical monograph and cinematic filming anecdotes.</li>
                                 <li><code>associated_movie</code>: Relational array supporting 1-to-many relationships (monuments featured in multiple films).</li>
+                                <li><code>location_name</code>: Normalized monument title matching GeoJSON properties and tour stops.</li>
+                                <li><code>locationYear</code>: Historical construction / consecration year.</li>
+                                <li><code>associated_movie</code>: Relational array supporting 1-to-many relationships (monuments featured in multiple films) enriched with Linked Open Data identifiers.</li>
+                                <li><code>image_url</code>: Contemporary comparative photograph path.</li>
+                                <li><code>tones</code>: Multi-audience narrative object containing <code>adult</code>, <code>child</code>, and <code>professional</code> registers, each providing <code>simple_description</code>, <code>medium_description</code>, and <code>detailed_description</code>.</li>
                             </ul>
 
                             <pre><code>{
@@ -541,8 +587,12 @@
                             <h3>5.2 Advanced Cartography Engine (<code>script/map_scripts.js</code>)</h3>
                             <ul>
                                 <li><strong>Map Setup & Layer Control:</strong> OpenStreetMap tile provider with controls in <code>topleft</code> and native zoom relocated to <code>bottomright</code>.</li>
+                                <li><strong>Map Setup &amp; Layer Control:</strong> OpenStreetMap tile provider with controls in <code>topleft</code> and native zoom relocated to <code>bottomright</code>.</li>
                                 <li><strong>Leaflet.PinSearch Integration:</strong> Custom autocomplete searching across all monuments; automatically resets active filters if a searched monument is hidden.</li>
                                 <li><strong>Multi-Criteria Filter Engine:</strong> Dual-predicate matching combining <em>Director</em> and <em>Decade</em> range, updating marker layers and calling <code>map.fitBounds()</code>.</li>
+                                <li><strong>Audience Tone Controller (<code>setupToneSelectorListeners</code>):</strong> Manages the <code>selectedTone</code> state (<code>"adult"</code>, <code>"child"</code>, <code>"professional"</code>), binds click handlers to <code>.btn-tone</code>, toggles the active button state, and dynamically re-renders location descriptions via <code>showLocationDetails()</code> without reloading the page or losing current map focus.</li>
+                                <li><strong>3-Tier Progressive Disclosure Text Reader:</strong> Cycles through Short &rarr; Medium &rarr; Long descriptions via <code>#btn-scopri</code>, resolving narrative strings dynamically from <code>locationTexts.tones[selectedTone]</code> while supporting legacy fallbacks.</li>
+                                <li><strong>Linked Open Data (LOD) &amp; Film Metadata Modal (<code>showFilmDetails</code>):</strong> Dynamically constructs semantic DOM elements featuring clickable external authority links with <code>target="_blank"</code> to Wikidata (<code><sup>[wikidata]</sup></code>) and VIAF (<code><sup>[viaf]</sup></code>), alongside full film credits (cast, duration, genre, cinematographer, and production companies).</li>
                                 <li><strong>Cinematic Itinerary Routing (<code>Leaflet Routing Machine</code>):</strong> When a director is selected, calculates and renders a sequential polyline route in signature red (<code>#E32636</code>, 4px weight).</li>
                                 <li><strong>3-Tier Progressive Disclosure Text Reader:</strong> Cycles through Short &rarr; Medium &rarr; Long descriptions via <code>#btn-scopri</code> with intuitive button label updates.</li>
                             </ul>
@@ -624,11 +674,25 @@
                                 </table>
                             </div>
 
+                            <h4>Theme-Adaptive Tone Selection Controls</h4>
+                            <p>
+                                Demonstrating deep CSS decoupling, each stylesheet defines dedicated visual rules for the Tone Selector buttons (<code>.btn-tone</code> and <code>.btn-tone.active</code>) to ensure interface controls seamlessly embody each aesthetic universe:
+                            </p>
+                            <ul>
+                                <li><strong>Solarpunk:</strong> Translucent organic pill buttons (<code>border-radius: 30px</code>) with subtle gold borders, smooth elevation transforms, and a warm solar hover glow.</li>
+                                <li><strong>Nouvelle Vague:</strong> High-contrast cinematic minimalism with sharp black-and-paper borders (<code>#1A1A1A</code> / <code>#EDEAE2</code>) and Space Mono typography.</li>
+                                <li><strong>Eighties:</strong> Retro terminal phosphor-green buttons (<code>#33FF33</code>) set against CRT black (<code>#020802</code>) with zero border radius and 8-bit <code>VT323</code> typography.</li>
+                                <li><strong>Futurism:</strong> Kinetic angled styling featuring speed-inspired cobalt and warning emerald accents (<code>#009760</code>) with Space Mono font.</li>
+                                <li><strong>Mechanicum:</strong> Grimdark forged iron borders (<code>border: 3px solid var(--iron-plate)</code>) with heavy rust drop shadows (<code>box-shadow: 4px 4px 0 var(--blood-rust)</code>) that ignite with a furnace fire glow on active/hover state.</li>
+                                <li><strong>Rococo:</strong> Aristocratic pastel lightness featuring antique gold fill (<code>#A87C43</code>), dusty rose borders (<code>#925e5e</code>), and delicate serif accents.</li>
+                            </ul>
+
                             <h3>6.3 Typography and Icon Suites</h3>
                             <ul>
                                 <li><strong>Google Fonts:</strong> <code>Anton</code>, <code>GFS Didot</code>, <code>Inter</code>, <code>Montserrat</code>, <code>Pinyon Script</code>, <code>Playfair Display</code>, <code>Space Mono</code>, <code>VT323</code>.</li>
                                 <li><strong>Bootstrap Icons (v1.11.3):</strong> Navigational arrows, status indicators, badges.</li>
                                 <li><strong>Material Symbols Outlined:</strong> Theme switcher triggers (<code>palette</code>, <code>videocam</code>, <code>monitor</code>, <code>flash_on</code>, <code>settings</code>, <code>clear_day</code>, <code>spa</code>).</li>
+                                <li><strong>Material Symbols Outlined:</strong> Theme switcher triggers (<code>palette</code>, <code>videocam</code>, <code>monitor</code>, <code>flash_on</code>, <code>settings</code>, <code>clear_day</code>, <code>spa</code>) with descriptive accessibility tooltips.</li>
                                 <li><strong>Bootstrap 5.3:</strong> CSS normalization, responsive 12-column grid, collapses, and offcanvas drawers.</li>
                             </ul>
                         </section>
@@ -740,11 +804,47 @@ npx serve .</code></pre>
                             </p>
                         </section>
 
+                        <hr class="my-5">
+
+                        <section id="disclaimer">
+                            <h2>11. Disclaimer</h2>
+                            <p>
+                                The purpose of this web site is to explore various types of typographic and layout style for specialized tourist visits, as an end-of-course project for the "Information Modeling and Web technologies" course of the Master's Degree in Digital Humanities and Digital Knowledge of the University of Bologna, under the supervision of prof. Fabio Vitali. Their publication here is not intended to be an alternative to or a replacement for their original locations, and the authors of this web site do not claim any copyright or other rights on them. Copyright and related rights on the content remain with their original owners. Copyright on the typographic and layout choices are 2026 © by the authors of this web site.
+                            </p>
+                        </section>
+
+                        <hr class="my-5">
+
+                        <section id="ai-statement">
+                            <h2>12. Generative AI Usage Statement</h2>
+                            <p>
+                                Throughout the design and development phases of this project, Google Gemini was utilized strictly as an auxiliary assistant for technical implementation, UI prototyping, and editorial refinement. The model served an operational role to streamline workflows, without replacing the authors' critical analysis, domain expertise, or conceptual agency.
+                                AI assistance was leveraged across the following areas:
+
+                                Code implementation and debugging: evaluating alternative approaches in HTML, CSS, and JavaScript; refining responsive behaviors; and troubleshooting interactive components (including dynamic mapping, filtering, and theme switches).
+
+                                Repository maintenance and data integrity: identifying syntax issues, verifying structural integrity across dataset files, reconciling relative asset paths following directory reorganizations, and assisting with code refactoring.
+
+                                UI/UX prototyping: exploring layout variations, assessing user flows, and translating editorial criteria into front-end visual behaviors.
+
+                                Documentation support: assisting with structural clarity and language consistency across technical explanations.
+
+                                Human Authorship, Purposeful Planning, and Responsibility
+
+                                It is explicitly stated that all items presented (data entries, resources, metadata, assets, and visual materials) as well as the entire project documentation were conceived, authored, cataloged, and thoroughly verified directly by human beings. Every single element reflects deliberate, purposeful decisions made within the overarching planning, methodology, and scope of the project.
+
+                                The AI model was not treated as an authoritative, historical, or bibliographic source, nor were any curatorial or editorial decisions delegated to it. All machine-assisted outputs were rigorously examined, tested, and adapted prior to inclusion. Full intellectual authorship and final responsibility for the published contents, methodological rigor, and technical solutions rest solely and jointly with the authors: Alessandro Rocchi, Elena Mocci, and Daniele Bottaro.
+
+                                Runtime Architecture
+
+                                The deployed web application operates deterministically: it makes no calls to generative AI APIs and generates no content automatically at runtime. The use of Gemini was strictly confined to the local development and authoring stages.
+                            </p>
+                        </section>
+
                     </main>
                 </div>
             </div>
         </section>
-
         <footer class="container-fluid col-12">
             <div class="row py-5 ps-2 py-sm-3">
                 <div class="logo-footer col-xl-4 col-xxl-3 col-12 ps-xl-5 py-3">
