@@ -8,7 +8,7 @@
 > - **Alessandro Rocchi** (*Presidente*)  
 > - **Daniele Bottaro** (*Dan*)  
 > - **Elena Mocci** (*Mele*)  
-> **GitHub Repositories:** [Alessandro-Rocchi/vitali_project_DHDK](https://github.com/Alessandro-Rocchi/vitali_project_DHDK) / [Alessandro-Rocchi/project_Web_Technologies](https://github.com/Alessandro-Rocchi/project_Web_Technologies)
+> **GitHub Repositories:** [Alessandro-Rocchi/project_Web_Technologies](https://github.com/Alessandro-Rocchi/project_Web_Technologies)
 
 ---
 
