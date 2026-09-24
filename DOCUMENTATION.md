@@ -666,5 +666,3 @@ npx serve .
 ## Conclusion and Acknowledgments
 
 **Les Rues du CSS** bridges humanistic cinema scholarship with modern web engineering, showing how digital heritage platforms can transform passive archival information into dynamic, immersive spatial narratives.
-
-Special thanks to **Prof. Fabio Vitali** for pedagogical and technical guidance throughout the course, and to the **Cinémathèque Française** for preserving the rich historical heritage of the Nouvelle Vague.

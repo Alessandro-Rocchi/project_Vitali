@@ -327,7 +327,6 @@
                             <h3>3.7 Team Presentation (<code>about_our_team.html</code>)</h3>
                             <p><strong>Page Identifier:</strong> <code>data-page="about_our_team"</code></p>
                             <p>
-                                Introduces the development team behind the project: Alessandro Rocchi (<em>Presidente</em>), Daniele Bottaro (<em>Dan</em>), and Elena Mocci (<em>Mele</em>), featuring stylized custom avatars.
                                 Introduces the development team behind the project with stylized custom avatars and academic DHDK role specializations:
                             </p>
                             <ul>
@@ -343,107 +342,159 @@
                         <section id="data-models">
                             <h2>4. Data Modeling and Schemas</h2>
                             <p>
-                                The platform is driven by three interconnected flat JSON databases stored in the <code>data/</code> directory:
+                                The platform is driven by three interconnected, flat-file JSON databases located in the <code>data/</code> directory. By decoupling geographic geometry, encyclopedic monograph metadata, and curated narrative itineraries, the architecture ensures separation of concerns, high maintainability, and zero runtime backend database overhead:
                             </p>
-                            <pre><code>                  ┌──────────────────────┐
-                  │   data/paris.geojson │  (Point geometries, WGS84 coordinates,
-                  └──────────┬───────────┘   bbox, keywords for tour filtering)
-                             │
-                             │ location_name / matchTourLocation()
-                             ▼
-               ┌─────────────────────────────┐
-               │  data/paris_metadata.json   │  (Extended historical descriptions,
-               └─────────────┬───────────────┘   3 tones × 3 disclosure tiers, LOD links)
-                             │
-                             │ keywords / location_name
-                             ▼
-                  ┌──────────────────────┐
-                  │ data/tour_data.json  │  (Curated narrative itineraries,
-                  └──────────────────────┘   sequential stops, metadata pills)</code></pre>
+
+                            <pre><code>                  ┌─────────────────────────────────────────┐
+                  │           data/paris.geojson            │  RFC 7946 GeoJSON FeatureCollection
+                  │  (WGS84 Coordinates, bbox, keywords,    │  26 Point locations, map popups,
+                  │   movies array, visual poster_url)      │  spatial bounds for Leaflet fitBounds()
+                  └────────────────────┬────────────────────┘
+                                       │
+                                       │ Primary Key Join: properties.name == location_name
+                                       │ (case-insensitive &amp; diacritic-normalized via matchTourLocation)
+                                       ▼
+                  ┌─────────────────────────────────────────┐
+                  │        data/paris_metadata.json         │  Monographic POI repository
+                  │  (location_name, locationYear,          │  26 enriched monument profiles,
+                  │   curiosity lore, associated_movie[],   │  3×3 Multi-Audience Tone Matrix,
+                  │   image_url, tones register matrix)     │  Linked Open Data (Wikidata &amp; VIAF URIs)
+                  └────────────────────┬────────────────────┘
+                                       │
+                                       │ Relational Filter: properties.keywords.includes(tour.keywords)
+                                       │ Narrative Sequence: tour_data.locations[].location_name
+                                       ▼
+                  ┌─────────────────────────────────────────┐
+                  │           data/tour_data.json           │  Curated thematic itineraries
+                  │  (tour_id, tour_name, keywords filter,  │  6 guided narrative tours, sequential
+                  │   description, pills, locations stops)  │  stops, dynamic guide texts &amp; camera steps
+                  └─────────────────────────────────────────┘</code></pre>
+
                             <h3>4.1 Spatial Features and Coordinates (<code>data/paris.geojson</code>)</h3>
                             <p>
-                                Standard GeoJSON RFC 7946 <code>FeatureCollection</code> containing 26 georeferenced Parisian locations.
+                                Conforming strictly to the <strong>RFC 7946 GeoJSON specification</strong>, <code>data/paris.geojson</code> contains a <code>FeatureCollection</code> of 26 georeferenced Parisian cultural landmarks. All spatial coordinates use the standard <strong>WGS84</strong> datum in <code>[longitude, latitude]</code> order.
                             </p>
+                            <ul>
+                                <li><code>geometry</code>: GeoJSON <code>Point</code> object specifying exact geographical coordinates (e.g., <code>[2.3433, 48.8483]</code>).</li>
+                                <li><code>bbox</code>: Four-element bounding box array <code>[minLng, minLat, maxLng, maxLat]</code> allowing the Leaflet engine to calculate instantaneous spatial framing and layer bounding limits.</li>
+                                <li><code>properties.name</code>: Normalized canonical landmark name, serving as the <strong>primary relational join key</strong> with <code>paris_metadata.json</code> and <code>tour_data.json</code>.</li>
+                                <li><code>properties.label</code>: Comprehensive human-readable location string (monument name, city, country) displayed in popup headers and queried during Leaflet.PinSearch autocompletion.</li>
+                                <li><code>properties.keywords</code>: Array of thematic classification tags (e.g., <code>["Top 10 locations", "Cinematic Churches"]</code>) evaluated by <code>filteredLoadGeoData()</code> to dynamically isolate markers for specific tours.</li>
+                                <li><code>properties.movies</code>: Array of cinematic film titles associated with the location, rendered in quick-preview map popups and cross-referenced by director filters.</li>
+                                <li><code>properties.poster_url</code>: Relative asset path to a contemporary preview photograph.</li>
+                            </ul>
+
                             <pre><code>{
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [2.3433, 48.8483]
+    "coordinates": [ 2.3433, 48.8483 ]
   },
   "properties": {
     "name": "Chapelle de la Sorbonne",
     "label": "Sorbonne Chapel, Paris, France",
-    "keywords": [ "Cinematic Churches" ],
-    "movies": [ "Paris nous appartient" ],
+    "keywords": [
+      "Cinematic Churches"
+    ],
+    "movies": [
+      "Paris nous appartient"
+    ],
     "poster_url": "img/img_movie/chapelleDeLaSorbonneModern.png"
   },
-  "bbox": [2.3433, 48.8483, 2.3433, 48.8483]
+  "bbox": [ 2.3433, 48.8483, 2.3433, 48.8483 ]
 }</code></pre>
 
                             <h3>4.2 Extended Historical Metadata (<code>data/paris_metadata.json</code>)</h3>
                             <p>
-                                Stores rich encyclopedic records for all 26 monuments according to a <strong>3-Tier Progressive Disclosure Model</strong>:
-                                Stores rich encyclopedic records for all 26 monuments, integrating Linked Open Data (LOD) authority identifiers and target-audience narrative adaptation through a structured <strong>3-Tier Progressive Disclosure Model</strong> across three distinct audience profiles:
+                                <code>data/paris_metadata.json</code> serves as the encyclopedic monograph store for all 26 monuments. Each record unifies historical chronologies, urban anecdotes, filmographic catalogs enriched with Semantic Web identifiers, and an adaptive narrative matrix:
                             </p>
                             <ul>
-                                <li><code>simple_description</code>: Concise one-sentence summary.</li>
-                                <li><code>medium_description</code>: 2–3 sentence architectural and historical contextualization.</li>
-                                <li><code>detailed_description</code>: In-depth historical monograph and cinematic filming anecdotes.</li>
-                                <li><code>associated_movie</code>: Relational array supporting 1-to-many relationships (monuments featured in multiple films).</li>
-                                <li><code>location_name</code>: Normalized monument title matching GeoJSON properties and tour stops.</li>
-                                <li><code>locationYear</code>: Historical construction / consecration year.</li>
-                                <li><code>associated_movie</code>: Relational array supporting 1-to-many relationships (monuments featured in multiple films) enriched with Linked Open Data identifiers.</li>
-                                <li><code>image_url</code>: Contemporary comparative photograph path.</li>
-                                <li><code>tones</code>: Multi-audience narrative object containing <code>adult</code>, <code>child</code>, and <code>professional</code> registers, each providing <code>simple_description</code>, <code>medium_description</code>, and <code>detailed_description</code>.</li>
+                                <li><code>location_name</code>: Canonical landmark title matching <code>paris.geojson.properties.name</code>.</li>
+                                <li><code>locationYear</code>: Historical construction, inauguration, or consecration year (e.g., <code>"1642"</code>, <code>"1889"</code>).</li>
+                                <li><code>curiosity</code>: Curated historical anecdote, unusual trivia, or secret lore associated with the monument (e.g., Cardinal Richelieu's decapitated skull during the Revolution, or the astronomical gnomon at Saint-Sulpice). Displayed prominently in the modal drawer and exploration panels.</li>
+                                <li><code>image_url</code>: Relative file path to a high-resolution contemporary photograph used for comparative visual study.</li>
+                                <li><code>associated_movie</code>: Relational array modeling a <strong>1-to-many</strong> relationship between monuments and cinematic appearances.</li>
+                                <li><code>tones</code>: Multi-audience narrative object implementing a structured <strong>$3 \times 3$ Adaptive Tone Matrix</strong>.</li>
                             </ul>
 
-                            <pre><code>{
-  "name": "Chapelle de la Sorbonne",
-  "year": "1642",
-  "associated_movie": [
-    {
-      "film_id": 1,
-      "film_name": "Paris nous appartient",
-      "director": "Jacques Rivette",
-      "production_year": 1961,
-      "film_scene_description": "Anne visits the Sorbonne chapel while investigating Juan's death.",
-      "film_poster_url": "img/img_movie/chapelleDeLaSorbonneOld.jpg"
-    }
-  ],
-  "simple_description": "The private chapel of the Sorbonne University in Paris.",
-  "medium_description": "A historic Parisian chapel completed in 1642...",
-  "detailed_description": "The Chapelle de la Sorbonne is a masterpiece of French Baroque architecture...",
-  "image_url": "img/img_movie/chapelleDeLaSorbonneModern.png"
-}</code></pre>
-
-                            <h4>Extended Filmographic Metadata &amp; Linked Open Data (LOD)</h4>
+                            <h4>4.2.1 Filmographic Catalog &amp; Linked Open Data (LOD)</h4>
                             <p>
-                                To provide exhaustive filmographic context and connect the platform with global semantic knowledge graphs, each film record within the <code>associated_movie</code> array has been enriched with full technical credits and Linked Open Data (LOD) persistent identifiers:
+                                To anchor local historical data within the global <strong>Semantic Web</strong> knowledge graph, each entry in the <code>associated_movie</code> array incorporates persistent Linked Open Data identifiers alongside comprehensive technical film credits:
                             </p>
                             <ul>
-                                <li><code>movie_wikidata</code>: Direct URI linking to the corresponding Wikidata entity (e.g., <code>https://www.wikidata.org/wiki/Q25513</code> for <em>Paris nous appartient</em>). This anchors the local dataset in the Semantic Web cloud, enabling federated cross-querying and interoperability with open knowledge bases (Wikidata, DBpedia).</li>
-                                <li><code>director_viaf</code>: Linked Open Data authority URI pointing to the Virtual International Authority File (VIAF) record for the director (e.g., <code>http://viaf.org/viaf/84270544</code> for Jacques Rivette). This provides standardized authority control, disambiguating creators across international library and cultural heritage databases.</li>
-                                <li><code>starring</code>: Comma-separated list of principal cast members (e.g., <code>"Betty Schneider, Giani Esposito, Françoise Prévost"</code>).</li>
+                                <li><code>movie_wikidata</code>: Persistent URI pointing directly to the Wikidata entity (e.g., <code>https://www.wikidata.org/wiki/Q25513</code> for <em>Paris nous appartient</em>). This anchors the local dataset in the open Linked Data cloud, enabling federated SPARQL cross-querying and interoperability with DBpedia and schema.org graphs.</li>
+                                <li><code>director_viaf</code>: Linked Open Data authority URI pointing to the Virtual International Authority File (VIAF) record (e.g., <code>http://viaf.org/viaf/84270544</code> for Jacques Rivette). This provides standardized authority control, resolving ambiguity across international library catalogs and cultural heritage repositories.</li>
+                                <li><code>film_id</code>: Unique integer identifier for the film appearance record.</li>
+                                <li><code>film_name</code>: Official cinematic release title.</li>
+                                <li><code>director</code>: Full name of the film director.</li>
+                                <li><code>production_year</code>: Cinematic release year, used for client-side chronological timeline filtering.</li>
+                                <li><code>film_scene_description</code>: Curated narrative describing the exact scene filmed at the monument and its dramaturgical context.</li>
+                                <li><code>starring</code>: Comma-separated list of principal cast members.</li>
                                 <li><code>duration</code>: Official film running time (e.g., <code>"140min"</code>).</li>
                                 <li><code>genre</code>: Cinematic classification (e.g., <code>"drama"</code>).</li>
-                                <li><code>production</code>: Film production companies and studios (e.g., <code>"Ajym Films, Les Films du Carrosse"</code>).</li>
-                                <li><code>cinematographer</code>: Director of photography (<em>chef opérateur</em>) responsible for camera work and lighting (e.g., <code>"Charles L. Bitsch"</code>).</li>
+                                <li><code>production</code>: Production companies and studio credits (e.g., <code>"Ajym Films, Les Films du Carrosse"</code>).</li>
+                                <li><code>cinematographer</code>: Director of photography (<em>chef opérateur</em>) responsible for visual lighting and camera work (e.g., <code>"Charles L. Bitsch"</code>).</li>
+                                <li><code>film_poster_url</code>: Relative asset path to an archival scene still or vintage movie poster.</li>
                             </ul>
 
-                            <h4>Multi-Audience Adaptive Tone System (<code>tones</code>)</h4>
+                            <h4>4.2.2 Multi-Audience Adaptive Tone System (<code>tones</code>)</h4>
                             <p>
-                                In addition to baseline historical descriptions, <code>data/paris_metadata.json</code> incorporates a structured <code>tones</code> object introducing target-audience narrative adaptation. This architectural enhancement allows the interface to dynamically serve tailored text registers across three audience profiles, each fully implementing the complete 3-Tier Progressive Disclosure model (<code>simple_description</code>, <code>medium_description</code>, <code>detailed_description</code>):
+                                The platform abandons monolithic text descriptions in favor of a dynamic <strong>$3 \times 3$ Narrative Matrix</strong> (3 target audience registers $\times$ 3 progressive disclosure tiers), enabling the interface to adapt its pedagogical complexity on the fly:
+                            </p>
+
+                            <div class="row g-4 my-2">
+                                <div class="col-md-4">
+                                    <div class="card h-100 border-primary">
+                                        <div class="card-header bg-primary text-white">
+                                            <h5 class="card-title mb-0"><code>adult</code> (General Public)</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text small">
+                                                Balanced, culturally nuanced narrative designed for general visitors, cultural tourists, and cinephiles. Blends architectural context, historical background, and cinematic lore.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card h-100 border-success">
+                                        <div class="card-header bg-success text-white">
+                                            <h5 class="card-title mb-0"><code>child</code> (Young Learners)</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text small">
+                                                Engaging, imaginative storytelling using simplified syntax, vivid metaphors, relatable visual analogies, and exciting historical anecdotes designed for educational exploration.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card h-100 border-info">
+                                        <div class="card-header bg-info text-white">
+                                            <h5 class="card-title mb-0"><code>professional</code> (Scholarly)</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text small">
+                                                Rigorous, scholarly prose targeting art historians, urbanists, and film scholars. Details structural typologies, architectural attributions, socio-political context, and film-theory critique.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="mt-3">
+                                Within each audience register, the text is structured across three <strong>Progressive Disclosure Tiers</strong>:
                             </p>
                             <ol>
-                                <li><strong><code>adult</code> (General Public):</strong> Balanced, culturally nuanced narrative for general visitors, cinephiles, and cultural tourists, synthesizing historical context, architectural highlights, and cinematic significance.</li>
-                                <li><strong><code>child</code> (Young Learners &amp; Educational Storytelling):</strong> Simplified vocabulary and engaging, imaginative storytelling designed for younger audiences and educational visits, emphasizing sensory imagery, curious historical anecdotes, and relatable visual comparisons.</li>
-                                <li><strong><code>professional</code> (Academic &amp; Domain Specialists):</strong> Rigorous, scholarly terminology targeting art historians, urbanists, and film scholars, detailing stylistic movements (e.g., French Classical Baroque, double-tiered facades), chronological benchmarks, architect attributions, and critical film-theory analysis.</li>
+                                <li><code>simple_description</code>: Concise single-sentence summary designed for compact UI views, catalogue card headers, and quick-scan previews.</li>
+                                <li><code>medium_description</code>: 2–3 sentence architectural and historical contextualization, ideal for catalogue card bodies and modal summaries.</li>
+                                <li><code>detailed_description</code>: Comprehensive, multi-paragraph monograph providing in-depth historical analysis and critical film-scene commentary.</li>
                             </ol>
 
                             <h4>Complete Enriched Record Structure (<code>data/paris_metadata.json</code>)</h4>
                             <pre><code>{
   "location_name": "Chapelle de la Sorbonne",
   "locationYear": "1642",
+  "curiosity": "It is the resting place of Cardinal Richelieu. During the French Revolution, his tomb was profaned and his head was actually stolen, only to be returned and reunited with his body many decades later.",
   "associated_movie": [
     {
       "film_id": 1,
@@ -483,14 +534,28 @@
 
                             <h3>4.3 Curated Narrative Itineraries (<code>data/tour_data.json</code>)</h3>
                             <p>
-                                Specifies 6 curated thematic walking and transit tours through Paris:
+                                <code>data/tour_data.json</code> contains 6 curated cinematic walking and transit itineraries. Each itinerary structures individual landmarks into an ordered story arc:
                             </p>
+                            <ul>
+                                <li><code>tour_id</code>: Unique numeric itinerary identifier (1 through 6).</li>
+                                <li><code>tour_name</code>: Display title of the tour presented across navigation dropdowns and headings.</li>
+                                <li><code>keywords</code>: Exact identifier string used for URL query parameter routing (<code>tour.html?keyword=...</code>) and GeoJSON keyword matching.</li>
+                                <li><code>description</code>: Curatorial narrative introductory overview setting the historical theme.</li>
+                                <li><code>pills</code>: Three-element metadata badge array defining <code>[Estimated Duration, Mobility / Accessibility, Recommended Time of Day]</code>.</li>
+                                <li><code>locations</code>: Sequentially ordered array of tour stops, each defining:
+                                    <ul>
+                                        <li><code>location_id</code> / <code>id</code>: Sequential stop index (1-indexed).</li>
+                                        <li><code>location_name</code>: Landmark title matched against GeoJSON via <code>matchTourLocation()</code>.</li>
+                                        <li><code>text</code>: Dedicated tour narrative commentary tailored to this specific stop along the journey.</li>
+                                    </ul>
+                                </li>
+                            </ul>
 
                             <div class="table-responsive my-3">
                                 <table class="table table-bordered align-middle">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th class="text-center">ID</th>
                                             <th>Tour Name</th>
                                             <th>Keyword Parameter</th>
                                             <th class="text-center">Stops</th>
@@ -499,42 +564,42 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
+                                            <td class="text-center">1</td>
                                             <td><strong>Nouvelle Vague Tour: Jean-Luc Godard</strong></td>
                                             <td><code>Jean-Luc Godard</code></td>
                                             <td class="text-center">11</td>
                                             <td>1 Hour &bull; Accessible &bull; Day</td>
                                         </tr>
                                         <tr>
-                                            <td>2</td>
+                                            <td class="text-center">2</td>
                                             <td><strong>Nouvelle Vague Tour: Agnès Varda</strong></td>
                                             <td><code>Agnès Varda</code></td>
                                             <td class="text-center">3</td>
                                             <td>45 Min &bull; Walking &bull; Afternoon</td>
                                         </tr>
                                         <tr>
-                                            <td>3</td>
+                                            <td class="text-center">3</td>
                                             <td><strong>Top 10 Locations in Paris</strong></td>
                                             <td><code>Top 10 locations</code></td>
                                             <td class="text-center">10</td>
                                             <td>2 Hours &bull; Mixed Transit &bull; Full Day</td>
                                         </tr>
                                         <tr>
-                                            <td>4</td>
+                                            <td class="text-center">4</td>
                                             <td><strong>Cinematic Churches of Paris</strong></td>
                                             <td><code>Cinematic Churches</code></td>
                                             <td class="text-center">4</td>
                                             <td>1.5 Hours &bull; Accessible &bull; Morning</td>
                                         </tr>
                                         <tr>
-                                            <td>5</td>
+                                            <td class="text-center">5</td>
                                             <td><strong>Hidden Gems of Paris</strong></td>
                                             <td><code>Hidden Gems</code></td>
                                             <td class="text-center">5</td>
                                             <td>1.5 Hours &bull; Walking &bull; Sunset</td>
                                         </tr>
                                         <tr>
-                                            <td>6</td>
+                                            <td class="text-center">6</td>
                                             <td><strong>Montmartre District</strong></td>
                                             <td><code>Montmartre District</code></td>
                                             <td class="text-center">3</td>
@@ -543,6 +608,30 @@
                                     </tbody>
                                 </table>
                             </div>
+
+                            <h3>4.4 Cross-Dataset Relational Integrity &amp; Runtime Query Flow</h3>
+                            <p>
+                                Rather than relying on a monolithic database server, the platform achieves full relational cross-querying on the client side using pure JavaScript asynchronous pipelines across four primary operational contexts:
+                            </p>
+
+                            <ol>
+                                <li>
+                                    <strong>Catalogue Card Grid Pipeline:</strong>
+                                    <code>loadScriptJson()</code> fetches <code>data/paris_metadata.json</code> into memory. The catalogue controller iterates through the 26 entries, applying pagination (9 items per page via <code>getPaginationRange</code>). Each card is rendered using <code>location_name</code>, <code>locationYear</code>, <code>curiosity</code>, and <code>tones.adult.medium_description</code>.
+                                </li>
+                                <li>
+                                    <strong>Cartographic Multi-Criteria Filtering:</strong>
+                                    <code>loadGeoData()</code> (fetching <code>data/paris.geojson</code>) and <code>loadMapJson()</code> (fetching <code>data/paris_metadata.json</code>) execute concurrently. In <code>map_scripts.js</code>, features are enriched with director and production year from <code>metadataJson</code> by matching <code>(m.location_name || m.name).toLowerCase() === (f.properties.name || f.properties.location_name).toLowerCase()</code> (with a dedicated fallback matching <code>"louvre"</code>). The filter engine evaluates dual predicates (active director and decade range), and calls <code>map.fitBounds()</code> to zoom smoothly to the matching subset.
+                                </li>
+                                <li>
+                                    <strong>Tour Engine Sequential Synchronization:</strong>
+                                    Upon loading <code>tour.html?keyword=...</code>, <code>loadTourTextData()</code> locates the tour object in <code>data/tour_data.json</code> matching <code>tour.keywords === targetKeyword</code>. Concurrently, <code>filteredLoadGeoData()</code> fetches <code>data/paris.geojson</code> and filters features where <code>feature.properties.keywords.includes(targetKeyword)</code>. Next, <code>sortFeaturesByTourOrder()</code> applies <code>matchTourLocation()</code> (normalizing diacritics via Unicode NFD and stripping non-alphanumeric characters) to sort spatial GeoJSON features into the exact sequential order of <code>tour_data.json.locations</code>. During navigation, <code>showParagraph(index)</code> updates stop texts and executes smooth camera flight animations via <code>mapTour.flyTo()</code>.
+                                </li>
+                                <li>
+                                    <strong>Dynamic Detail Modal &amp; LOD Authority Linking:</strong>
+                                    When a user clicks any Leaflet marker or catalogue card, <code>showLocationDetails(locationName)</code> locates the matching monograph in <code>metadataJson</code>. The modal injects the contemporary photo, historical year, and curiosity anecdote. It renders interactive tabs for the 3 audience tones (adult, child, professional) and 3 progressive disclosure tiers. Finally, it builds a film carousel displaying technical film credits, scene stills, and external hyperlinks pointing to <strong>Wikidata</strong> (<code>movie_wikidata</code>) and <strong>VIAF</strong> (<code>director_viaf</code>).
+                                </li>
+                            </ol>
                         </section>
 
                         <hr class="my-5">
