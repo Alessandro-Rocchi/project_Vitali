@@ -1131,6 +1131,83 @@ aside.bookmarks a:hover {
     line-height: 1.5;
 }
 
+/* Documentation Multi-Audience Tone Cards (Mechanicum Forge) */
+.doc-tone-card {
+    background: #111111;
+    border: 2px solid var(--blood-rust);
+    border-radius: 0;
+    box-shadow: 5px 5px 0px var(--void-black);
+    color: var(--text-bone);
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.doc-tone-card:hover {
+    border-color: var(--mech-yellow);
+    transform: translateY(-2px);
+}
+
+.doc-tone-header {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    padding: 0.65rem 1rem;
+    border-bottom: 2px solid var(--blood-rust);
+    border-radius: 0;
+}
+
+.doc-tone-header .card-title {
+    font-size: 1.05rem;
+}
+
+.doc-tone-body {
+    background: #0d0a08;
+    color: var(--text-ash);
+    font-family: "Space Mono", monospace;
+    padding: 1rem;
+}
+
+.doc-tone-adult {
+    border-top: 5px solid var(--furnace-fire);
+}
+.doc-tone-adult .doc-tone-header {
+    background: #1f0f08;
+    color: var(--furnace-fire);
+    border-bottom-color: var(--furnace-fire);
+}
+.doc-tone-adult code {
+    color: var(--furnace-fire);
+    background: #000000;
+    border: 1px solid var(--furnace-fire);
+}
+
+.doc-tone-child {
+    border-top: 5px solid var(--mech-yellow);
+}
+.doc-tone-child .doc-tone-header {
+    background: #241908;
+    color: var(--mech-yellow);
+    border-bottom-color: var(--mech-yellow);
+}
+.doc-tone-child code {
+    color: var(--mech-yellow);
+    background: #000000;
+    border: 1px solid var(--mech-yellow);
+}
+
+.doc-tone-professional {
+    border-top: 5px solid var(--blood-rust);
+}
+.doc-tone-professional .doc-tone-header {
+    background: #200806;
+    color: #ff7b72;
+    border-bottom-color: var(--blood-rust);
+}
+.doc-tone-professional code {
+    color: #ff7b72;
+    background: #000000;
+    border: 1px solid var(--blood-rust);
+}
+
 .doc-badge {
     background: #1a120e;
     color: var(--mech-yellow);

@@ -545,6 +545,15 @@ All stylesheets are located in `styles/` and feature custom variables, typograph
    - *Palette:* Powder pink, mint green, creamy ivory, and warm gold highlights.
    - *Typography:* Flowing calligraphy `Pinyon Script` paired with `Playfair Display`.
 
+#### Theme-Adaptive Narrative Tone Cards (`.doc-tone-card`)
+Demonstrating complete CSS decoupling, the narrative tone cards documented in Section 4.2.2 dynamically adopt the visual language of each active theme:
+- **Solarpunk:** Glassmorphism (`backdrop-filter: blur(12px)`), rounded corners (`border-radius: 16px`), leaf green (`adult`), warm amber (`child`), and deep forest (`professional`) accent borders.
+- **Nouvelle Vague:** High-contrast monochrome cards with sharp 4px corners, bold `Anton` titles, and Godardian Tricolore accents (French blue for `adult`, cinema red for `child`, archival black for `professional`).
+- **Eighties:** Retro CRT terminal cards (`#051405` background, zero border radius) with glowing neon phosphor borders (CRT green for `adult`, arcade pink for `child`, cyber cyan for `professional`) rendered in `VT323` bitmap font.
+- **Futurism:** Bold constructivist styling with 3px solid black borders, hard drop shadows, and high-impact manifesto colors (emerald speed green for `adult`, kinetic yellow for `child`, speed red for `professional`).
+- **Mechanicum:** Grimdark forge aesthetic with cast-iron plating, dark metallic surfaces (`#111111` / `#0d0a08`), blood-rust borders, and furnace fire / brass highlights.
+- **Rococo:** Versailles salon styling featuring ivory card surfaces (`#FFFDFC`), delicate dusty rose borders (`#E8B4B8`), antique gold headers, and warm ambient shadows.
+
 ---
 
 ### 6.3 Typography, Iconography, and UI Framework

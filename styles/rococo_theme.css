@@ -893,6 +893,82 @@ aside.bookmarks a:hover {
     line-height: 1.5;
 }
 
+/* Documentation Multi-Audience Tone Cards (Rococo Versailles Salon) */
+.doc-tone-card {
+    background: #FFFDFC;
+    border: 1px solid #E8B4B8;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(232, 180, 184, 0.3);
+    color: #443232;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.doc-tone-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(168, 124, 67, 0.25);
+}
+
+.doc-tone-header {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #E8B4B8;
+}
+
+.doc-tone-header .card-title {
+    font-size: 1.1rem;
+}
+
+.doc-tone-body {
+    background: #FFFDFC;
+    color: #443232;
+    font-family: "Playfair Display", serif;
+    padding: 1rem;
+}
+
+.doc-tone-adult {
+    border-top: 4px solid #A87C43;
+}
+.doc-tone-adult .doc-tone-header {
+    background: #FDF6EE;
+    color: #805c2a;
+    border-bottom-color: #E6CEAE;
+}
+.doc-tone-adult code {
+    color: #805c2a;
+    background: #ffffff;
+    border: 1px solid #E6CEAE;
+}
+
+.doc-tone-child {
+    border-top: 4px solid #d48896;
+}
+.doc-tone-child .doc-tone-header {
+    background: #FCECEE;
+    color: #8c4251;
+    border-bottom-color: #E8B4B8;
+}
+.doc-tone-child code {
+    color: #8c4251;
+    background: #ffffff;
+    border: 1px solid #E8B4B8;
+}
+
+.doc-tone-professional {
+    border-top: 4px solid #623e3e;
+}
+.doc-tone-professional .doc-tone-header {
+    background: #F3EAE8;
+    color: #623e3e;
+    border-bottom-color: #d6bcba;
+}
+.doc-tone-professional code {
+    color: #623e3e;
+    background: #ffffff;
+    border: 1px solid #d6bcba;
+}
+
 .doc-badge {
     background: #FCECEE;
     color: #623e3e;

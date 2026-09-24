@@ -936,6 +936,79 @@ aside.bookmarks ol li:first-child {
     line-height: 1.5;
 }
 
+/* Documentation Multi-Audience Tone Cards (Nouvelle Vague Tricolore & Noir) */
+.doc-tone-card {
+    background: #ffffff;
+    border: 2px solid #111111;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0px #111111;
+    color: #111111;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.doc-tone-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #111111;
+}
+
+.doc-tone-header {
+    font-family: "Anton", sans-serif;
+    letter-spacing: 0.5px;
+    padding: 0.65rem 1rem;
+    border-bottom: 2px solid #111111;
+}
+
+.doc-tone-header .card-title {
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+.doc-tone-body {
+    background: #ffffff;
+    color: #212529;
+    padding: 1rem;
+}
+
+.doc-tone-adult {
+    border-top: 5px solid #002FA7;
+}
+.doc-tone-adult .doc-tone-header {
+    background: #002FA7;
+    color: #ffffff;
+    border-bottom-color: #002FA7;
+}
+.doc-tone-adult code {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.doc-tone-child {
+    border-top: 5px solid #d73b3e;
+}
+.doc-tone-child .doc-tone-header {
+    background: #d73b3e;
+    color: #ffffff;
+    border-bottom-color: #d73b3e;
+}
+.doc-tone-child code {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.doc-tone-professional {
+    border-top: 5px solid #111111;
+}
+.doc-tone-professional .doc-tone-header {
+    background: #111111;
+    color: #ffffff;
+    border-bottom-color: #111111;
+}
+.doc-tone-professional code {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.25);
+}
+
 .doc-badge {
     background: #111111;
     color: #ffffff;

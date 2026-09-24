@@ -85,7 +85,7 @@
                                 <span class="badge doc-badge p-2"><i class="bi bi-book me-1"></i> DHDK Master's Degree</span>
                                 <span class="badge doc-badge p-2"><i class="bi bi-code-slash me-1"></i> Information Modeling and Web Technologies</span>
                             </div>
-                            <p class="mb-1"><strong>Course Instructor:</strong> Prof. Fabio Vitali</p>
+                            <p class="mb-1"><strong>Course Teacher:</strong> Prof. Fabio Vitali</p>
                             <p class="mb-3"><strong>Development Team:</strong> Alessandro Rocchi (<em>Presidente</em>), Daniele Bottaro (<em>Dan</em>), Elena Mocci (<em>Mele</em>)</p>
                         </div>
                         <div class="col-12 col-xl-4 text-xl-end mt-3 mt-xl-0">
@@ -180,7 +180,7 @@
                                 The platform is engineered as a zero-build, modular client-side static web application conforming strictly to W3C standards. This guarantees high performance, zero runtime server overhead, long-term archival resilience, and direct continuous deployment via GitHub Pages.
                             </p>
 
-                            <h3>Repository Directory Tree</h3>
+                            <h3>2.1 Repository Directory Tree</h3>
                             <pre><code>project_Web_Technologies/
 ├── .github/
 │   └── workflows/
@@ -239,6 +239,12 @@
 ├── tour.html                         # Step-by-step guided tour experience
 ├── DOCUMENTATION.md                  # Comprehensive markdown documentation
 └── README.md                         # Repository landing guide for GitHub</code></pre>
+
+                                <h3>2.2 Layout and Wireframes</h3>
+                                <p>
+                                    The following wireframe diagram illustrates the conceptual layout of the platform, highlighting the consistent structure across all pages, including header, navigation, main content, and footer sections. We used whimsical.com to create the wireframe, which is embedded below for interactive exploration.
+                                </p>
+                                <iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/3ktuYJ8hmL68QfaPU3bTbk@9kGbMz9Kzt?color-mode=system"></iframe>
                         </section>
 
                         <hr class="my-5">
@@ -444,36 +450,36 @@
 
                             <div class="row g-4 my-2">
                                 <div class="col-md-4">
-                                    <div class="card h-100 border-primary">
-                                        <div class="card-header bg-primary text-white">
-                                            <h5 class="card-title mb-0"><code>adult</code> (General Public)</h5>
+                                    <div class="card h-100 doc-tone-card doc-tone-adult">
+                                        <div class="card-header doc-tone-header">
+                                            <h5 class="card-title mb-0"><i class="bi bi-person-fill me-1"></i> <code>adult</code> (General Public)</h5>
                                         </div>
-                                        <div class="card-body">
-                                            <p class="card-text small">
+                                        <div class="card-body doc-tone-body">
+                                            <p class="card-text small mb-0">
                                                 Balanced, culturally nuanced narrative designed for general visitors, cultural tourists, and cinephiles. Blends architectural context, historical background, and cinematic lore.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card h-100 border-success">
-                                        <div class="card-header bg-success text-white">
-                                            <h5 class="card-title mb-0"><code>child</code> (Young Learners)</h5>
+                                    <div class="card h-100 doc-tone-card doc-tone-child">
+                                        <div class="card-header doc-tone-header">
+                                            <h5 class="card-title mb-0"><i class="bi bi-emoji-smile-fill me-1"></i> <code>child</code> (Young Learners)</h5>
                                         </div>
-                                        <div class="card-body">
-                                            <p class="card-text small">
+                                        <div class="card-body doc-tone-body">
+                                            <p class="card-text small mb-0">
                                                 Engaging, imaginative storytelling using simplified syntax, vivid metaphors, relatable visual analogies, and exciting historical anecdotes designed for educational exploration.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card h-100 border-info">
-                                        <div class="card-header bg-info text-white">
-                                            <h5 class="card-title mb-0"><code>professional</code> (Scholarly)</h5>
+                                    <div class="card h-100 doc-tone-card doc-tone-professional">
+                                        <div class="card-header doc-tone-header">
+                                            <h5 class="card-title mb-0"><i class="bi bi-mortarboard-fill me-1"></i> <code>professional</code> (Scholarly)</h5>
                                         </div>
-                                        <div class="card-body">
-                                            <p class="card-text small">
+                                        <div class="card-body doc-tone-body">
+                                            <p class="card-text small mb-0">
                                                 Rigorous, scholarly prose targeting art historians, urbanists, and film scholars. Details structural typologies, architectural attributions, socio-political context, and film-theory critique.
                                             </p>
                                         </div>
@@ -767,11 +773,23 @@
                                 <li><strong>Rococo:</strong> Aristocratic pastel lightness featuring antique gold fill (<code>#A87C43</code>), dusty rose borders (<code>#925e5e</code>), and delicate serif accents.</li>
                             </ul>
 
+                            <h4>Theme-Adaptive Narrative Tone Cards</h4>
+                            <p>
+                                Following the same design philosophy, the narrative tone cards documented in Section 4.2.2 (<code>.doc-tone-card</code>) dynamically adopt the signature visual language of each active theme:
+                            </p>
+                            <ul>
+                                <li><strong>Solarpunk:</strong> Translucent glassmorphism (<code>backdrop-filter: blur(12px)</code>) with organic rounded corners (<code>border-radius: 16px</code>), leaf-green (<code>adult</code>), warm amber (<code>child</code>), and deep forest (<code>professional</code>) accent borders.</li>
+                                <li><strong>Nouvelle Vague:</strong> High-contrast cinematic monochrome with sharp 4px corners, bold <code>Anton</code> titles, and Godardian Tricolore accents (Yves Klein blue for <code>adult</code>, cinema red for <code>child</code>, stark black for <code>professional</code>).</li>
+                                <li><strong>Eighties:</strong> Retro CRT terminal cards (<code>#051405</code> background, <code>border-radius: 0</code>) with neon phosphor glow (CRT green for <code>adult</code>, arcade pink for <code>child</code>, and cyber cyan for <code>professional</code>) rendered in 8-bit <code>VT323</code> font.</li>
+                                <li><strong>Futurism:</strong> Sharp constructivist angles with 3px solid black borders, dynamic drop shadows, and high-impact manifesto colors (emerald speed green for <code>adult</code>, kinetic yellow for <code>child</code>, and speed red for <code>professional</code>).</li>
+                                <li><strong>Mechanicum:</strong> Grimdark forge styling with cast-iron plating, dark metallic backgrounds (<code>#111111</code> / <code>#0d0a08</code>), blood-rust borders, and furnace fire / brass highlights.</li>
+                                <li><strong>Rococo:</strong> Aristocratic salon aesthetics featuring ivory surfaces (<code>#FFFDFC</code>), delicate dusty rose borders (<code>#E8B4B8</code>), antique gold headers, and warm ambient shadows.</li>
+                            </ul>
+
                             <h3>6.3 Typography and Icon Suites</h3>
                             <ul>
                                 <li><strong>Google Fonts:</strong> <code>Anton</code>, <code>GFS Didot</code>, <code>Inter</code>, <code>Montserrat</code>, <code>Pinyon Script</code>, <code>Playfair Display</code>, <code>Space Mono</code>, <code>VT323</code>.</li>
                                 <li><strong>Bootstrap Icons (v1.11.3):</strong> Navigational arrows, status indicators, badges.</li>
-                                <li><strong>Material Symbols Outlined:</strong> Theme switcher triggers (<code>palette</code>, <code>videocam</code>, <code>monitor</code>, <code>flash_on</code>, <code>settings</code>, <code>clear_day</code>, <code>spa</code>).</li>
                                 <li><strong>Material Symbols Outlined:</strong> Theme switcher triggers (<code>palette</code>, <code>videocam</code>, <code>monitor</code>, <code>flash_on</code>, <code>settings</code>, <code>clear_day</code>, <code>spa</code>) with descriptive accessibility tooltips.</li>
                                 <li><strong>Bootstrap 5.3:</strong> CSS normalization, responsive 12-column grid, collapses, and offcanvas drawers.</li>
                             </ul>

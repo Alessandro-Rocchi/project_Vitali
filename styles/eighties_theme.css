@@ -1046,6 +1046,92 @@ aside.bookmarks::-webkit-scrollbar-thumb:hover {
     line-height: 1.5;
 }
 
+/* Documentation Multi-Audience Tone Cards (Eighties Arcade CRT) */
+.doc-tone-card {
+    background-color: #051405;
+    border-radius: 0;
+    overflow: hidden;
+    transition: all 0.25s ease;
+}
+
+.doc-tone-header {
+    font-family: "VT323", Courier, monospace;
+    font-size: 1.35rem;
+    padding: 0.5rem 0.75rem;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-radius: 0;
+}
+
+.doc-tone-body {
+    background-color: #020a02;
+    color: #d1ffd1;
+    font-family: "VT323", Courier, monospace;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    padding: 0.85rem;
+}
+
+.doc-tone-adult {
+    border: 2px solid #33FF33;
+    box-shadow: 0 0 15px rgba(51, 255, 51, 0.25);
+}
+.doc-tone-adult:hover {
+    box-shadow: 0 0 25px rgba(51, 255, 51, 0.5);
+    transform: translateY(-2px);
+}
+.doc-tone-adult .doc-tone-header {
+    background-color: #0a290a;
+    color: #33FF33;
+    border-bottom-color: #33FF33;
+    text-shadow: 0 0 8px #33FF33;
+}
+.doc-tone-adult code {
+    color: #33FF33;
+    background: #020a02;
+    border: 1px solid #33FF33;
+}
+
+.doc-tone-child {
+    border: 2px solid #ff007f;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.25);
+}
+.doc-tone-child:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 127, 0.5);
+    transform: translateY(-2px);
+}
+.doc-tone-child .doc-tone-header {
+    background-color: #290014;
+    color: #ff007f;
+    border-bottom-color: #ff007f;
+    text-shadow: 0 0 8px #ff007f;
+}
+.doc-tone-child code {
+    color: #ff007f;
+    background: #020a02;
+    border: 1px solid #ff007f;
+}
+
+.doc-tone-professional {
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.25);
+}
+.doc-tone-professional:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+.doc-tone-professional .doc-tone-header {
+    background-color: #002629;
+    color: #00ffff;
+    border-bottom-color: #00ffff;
+    text-shadow: 0 0 8px #00ffff;
+}
+.doc-tone-professional code {
+    color: #00ffff;
+    background: #020a02;
+    border: 1px solid #00ffff;
+}
+
 .doc-badge {
     background-color: #020a02;
     color: #33FF33;

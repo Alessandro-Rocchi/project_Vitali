@@ -1136,6 +1136,78 @@ aside.bookmarks ol li:first-child {
     line-height: 1.5;
 }
 
+/* Documentation Multi-Audience Tone Cards (Futurism / Constructivism) */
+.doc-tone-card {
+    background: #ffffff;
+    border: 3px solid #1a1a1a;
+    border-radius: 0;
+    box-shadow: 5px 5px 0px #1a1a1a;
+    color: #1a1a1a;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.doc-tone-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0px #d32f2f;
+}
+
+.doc-tone-header {
+    font-family: "Anton", sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.65rem 1rem;
+    border-bottom: 3px solid #1a1a1a;
+    border-radius: 0;
+}
+
+.doc-tone-header .card-title {
+    font-size: 1.15rem;
+}
+
+.doc-tone-body {
+    background: #ffffff;
+    color: #1a1a1a;
+    font-family: "Space Mono", monospace;
+    padding: 1rem;
+}
+
+.doc-tone-adult {
+    border-top: 6px solid #009760;
+}
+.doc-tone-adult .doc-tone-header {
+    background: #009760;
+    color: #ffffff;
+}
+.doc-tone-adult code {
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.doc-tone-child {
+    border-top: 6px solid #ffcc00;
+}
+.doc-tone-child .doc-tone-header {
+    background: #ffcc00;
+    color: #1a1a1a;
+}
+.doc-tone-child code {
+    color: #1a1a1a;
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.doc-tone-professional {
+    border-top: 6px solid #d32f2f;
+}
+.doc-tone-professional .doc-tone-header {
+    background: #d32f2f;
+    color: #ffffff;
+}
+.doc-tone-professional code {
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.25);
+}
+
 .doc-badge {
     background: #1a1a1a;
     color: #ffcc00;

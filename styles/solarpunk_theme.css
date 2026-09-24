@@ -1078,6 +1078,76 @@ aside.bookmarks a:hover {
     line-height: 1.5;
 }
 
+/* Documentation Multi-Audience Tone Cards (Solarpunk Glassmorphic) */
+.doc-tone-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(12px);
+    color: var(--text-color);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.doc-tone-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.2);
+}
+
+.doc-tone-header {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.doc-tone-header .card-title {
+    font-size: 1.05rem;
+}
+
+.doc-tone-body {
+    background: transparent;
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+.doc-tone-adult {
+    border-top: 4px solid var(--primary);
+}
+.doc-tone-adult .doc-tone-header {
+    background: rgba(46, 125, 50, 0.12);
+    color: var(--primary);
+}
+.doc-tone-adult code {
+    color: var(--primary);
+    background: rgba(46, 125, 50, 0.15);
+}
+
+.doc-tone-child {
+    border-top: 4px solid var(--secondary);
+}
+.doc-tone-child .doc-tone-header {
+    background: rgba(245, 166, 35, 0.14);
+    color: #b37400;
+}
+.doc-tone-child code {
+    color: #b37400;
+    background: rgba(245, 166, 35, 0.18);
+}
+
+.doc-tone-professional {
+    border-top: 4px solid #1b5e20;
+}
+.doc-tone-professional .doc-tone-header {
+    background: rgba(27, 94, 32, 0.16);
+    color: #1b5e20;
+}
+.doc-tone-professional code {
+    color: #1b5e20;
+    background: rgba(27, 94, 32, 0.18);
+}
+
 .doc-badge {
     background: rgba(76, 175, 80, 0.15);
     color: var(--primary);
