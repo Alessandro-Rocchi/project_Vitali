@@ -420,6 +420,11 @@ a[aria-expanded="false"] i {
     color: #009760;
 }
 
+
+#text-film-section sup, #text-film-section a {
+    color: #002FA7;
+}
+
 /*NAVBAR*/
 
 .navbar{

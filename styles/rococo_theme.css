@@ -1336,3 +1336,7 @@ aside.bookmarks a:hover {
     color: #925e5e;
     border: 2px solid #925e5e;
 }
+
+#text-film-section sup, #text-film-section a {
+    color: #925e5e;
+}

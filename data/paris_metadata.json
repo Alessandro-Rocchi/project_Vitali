@@ -2,6 +2,7 @@
   {
     "location_name": "Chapelle de la Sorbonne",
     "locationYear": "1642",
+    "curiosity": "It is the resting place of Cardinal Richelieu. During the French Revolution, his tomb was profaned and his head was actually stolen, only to be returned and reunited with his body many decades later.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -41,6 +42,7 @@
   {
     "location_name": "Church of Saint-Sulpice",
     "locationYear": "1646",
+    "curiosity": "It houses an astronomical gnomon, a brass line on the floor once used to calculate the date of Easter and the solstices. This line became world-famous thanks to the novel and movie 'The Da Vinci Code'.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -80,6 +82,7 @@
   {
     "location_name": "Pont des Arts",
     "locationYear": "1804",
+    "curiosity": "Until 2015, it was famous for its millions of 'love locks', but the combined weight of the padlocks (about 45 tons) was literally causing the bridge's parapets to collapse, forcing the city to remove them all.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -119,6 +122,7 @@
   {
     "location_name": "Café le Presbourg",
     "locationYear": "1954",
+    "curiosity": "Given its proximity to the Arc de Triomphe and major avenues, this venue became a favorite 'open-air' set for French New Wave directors, who often stole shots of unsuspecting passersby without formal permits.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -158,6 +162,7 @@
   {
     "location_name": "Notre Dame",
     "locationYear": "1345",
+    "curiosity": "All road distances measured in France start from 'Point Zéro' (Point Zero of French roads), marked by a small bronze plate embedded in the cobblestones of the square right in front of the cathedral's main entrance.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -197,6 +202,7 @@
   {
     "location_name": "Hotel Les Rives de Notre Dame, quai St Michel, Paris",
     "locationYear": "1378",
+    "curiosity": "The 'bouquinistes' (sellers of antiquarian and used books) lining the wall of this quai earned the Seine the poetic nickname of 'the only river in the world that runs between two bookshelves'.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -236,6 +242,7 @@
   {
     "location_name": "The entrances to the George V Métro station",
     "locationYear": "1900",
+    "curiosity": "Until 1920, the station was called 'Alma'. It was renamed 'George V' in honor of King George V of the United Kingdom, as a sign of deep gratitude for British support given to France during the First World War.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -275,6 +282,7 @@
   {
     "location_name": "Place de la Concorde",
     "locationYear": "1772",
+    "curiosity": "The ancient Egyptian obelisk at the center of the square had a twin, which remained at the entrance of the Luxor Temple in Egypt; France officially renounced ownership of the second obelisk only in the 1990s, with a symbolic act by President Mitterrand.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -314,6 +322,7 @@
   {
     "location_name": "Le Select, 99 boulevard Montparnasse",
     "locationYear": "1923",
+    "curiosity": "It was the very first café-brasserie in Montparnasse to remain open all night, becoming a true second home for night-owl writers of the 'Lost Generation', such as Ernest Hemingway, F. Scott Fitzgerald, and Picasso.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -353,6 +362,7 @@
   {
     "location_name": "metro: Raspail",
     "locationYear": "1906",
+    "curiosity": "It is named after François-Vincent Raspail, a 19th-century physician, chemist, and politician famous for advocating medicine for the poor and who was convinced that camphor was a universal panacea for almost all human ailments.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -392,6 +402,7 @@
   {
     "location_name": "Ile des Corbeaux at Saint-Maurice",
     "locationYear": "N/D",
+    "curiosity": "The name 'Island of the Crows' comes from the large colonies of these birds that once inhabited the thick vegetation of the islet. Its wild nature right next to the city made it perfect for Godard's famous melancholic shots.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -431,6 +442,7 @@
   {
     "location_name": "Column de Juillet, Paris",
     "locationYear": "1840",
+    "curiosity": "Many tourists mistakenly believe that the column in Place de la Bastille celebrates the storming of the Bastille (1789). In reality, it commemorates the 'July Revolution' of 1830; at its base lies a vast necropolis where the bodies of the revolutionaries rest.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -470,6 +482,7 @@
   {
     "location_name": "quai de Conti",
     "locationYear": "1313",
+    "curiosity": "This elegant stretch along the Seine houses the 'Monnaie de Paris' (Paris Mint), which is not only an operating mint but is officially the oldest government institution in France, having coined money continuously since the year 864.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -509,6 +522,7 @@
   {
     "location_name": "The Louvre Museum, Paris",
     "locationYear": "1793",
+    "curiosity": "If you wanted to spend just 30 seconds admiring every single work of art displayed at the Louvre, day and night without ever sleeping or taking breaks, it would take you more than 100 days to see them all.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -548,6 +562,7 @@
   {
     "location_name": "street market in Pl. de Levis",
     "locationYear": "1800s",
+    "curiosity": "This street was once much more than a market: it was the grand main entrance axis leading to the magnificent (and now lost) Château de Monceau, around which the local bourgeoisie developed.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -587,6 +602,7 @@
   {
     "location_name": "boulevard Montmartre 12",
     "locationYear": "1833",
+    "curiosity": "This address is right next to Passage Jouffroy which, inaugurated in 1846, was the very first covered arcade in Paris to have an underfloor heating system and to be built entirely of metal and glass.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -626,6 +642,7 @@
   {
     "location_name": "Rue Puget 2",
     "locationYear": "1800s",
+    "curiosity": "Being wedged right up against the walls of the Montmartre Cemetery, this small street was highly sought after by penniless artists and poets, who could pay lower rents while enjoying the 'guarantee' of having extremely quiet neighbors.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -665,6 +682,7 @@
   {
     "location_name": "Rue Lepic 3",
     "locationYear": "1852",
+    "curiosity": "Originally this winding street was laid out (as 'Chemin Neuf') to allow traffic to bypass the most extreme slopes of Montmartre: it was the only way for carts to climb the hill without tipping over backwards.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -704,6 +722,7 @@
   {
     "location_name": "Square d'Estienne d'Orves",
     "locationYear": "1866",
+    "curiosity": "Before this elegant Haussmannian park was built, the land was occupied by the 'Guinguette de la Grande Pinte', a colossal tavern beloved by Parisians that could host more than 600 patrons at a time.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -743,6 +762,7 @@
   {
     "location_name": "Sacré-Cœur in Montmartre.",
     "locationYear": "1914",
+    "curiosity": "The characteristic stark white color of the basilica is due to the Château-Landon travertine used to build it: when this stone comes into contact with rainwater, it secretes a substance called calcite that constantly cleans the building.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -782,6 +802,7 @@
   {
     "location_name": "Champs Elysées (60 avenue des Champs Elysées)",
     "locationYear": "1670",
+    "curiosity": "Although today it is the street with the highest and most prestigious commercial rents in Europe, up until the early 17th century the entire area was nothing more than a notorious, uninhabited swamp.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -821,6 +842,7 @@
   {
     "location_name": "Palais de Chaillot",
     "locationYear": "1937",
+    "curiosity": "It is not just an Art Deco masterpiece from which to admire the Eiffel Tower: it was right inside this palace that on December 10, 1948, the United Nations General Assembly adopted the historic Universal Declaration of Human Rights.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -860,6 +882,7 @@
   {
     "location_name": "128 Rue de Rivoli",
     "locationYear": "1802",
+    "curiosity": "Commissioned by Napoleon, it was the first street in Paris equipped with gas lighting and modern sewers. To ensure it was perfect, Napoleon imposed strict rules: no architect could alter the arcades, and all buildings had to be identical.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -899,6 +922,7 @@
   {
     "location_name": "Café du Dôme",
     "locationYear": "1898",
+    "curiosity": "In its golden years, the venue was jokingly nicknamed 'the Anglo-American café'. Poor and starving artists could order a sausage and mash (the famous 'saucisse de Toulouse' dish) for the equivalent of a few pennies, surviving to write masterpieces.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -938,6 +962,7 @@
   {
     "location_name": "Parc Montsouris",
     "locationYear": "1869",
+    "curiosity": "While on the surface Parisians stroll amidst the greenery, a dense and silent underground labyrinth runs beneath Parc Montsouris: the park is in fact built over ancient stone quarries connected to the famous network of the Paris catacombs.",
     "associated_movie": [
       {
         "film_id": 1,
@@ -977,6 +1002,7 @@
   {
     "location_name": "Arc de Triomphe",
     "locationYear": "1836",
+    "curiosity": "In 1919, shortly after the end of World War I, the French aviator Charles Godefroy accomplished an incredible (and highly illegal) feat by flying his biplane directly through the center of the Arch, becoming a folk hero.",
     "associated_movie": [
       {
         "film_id": 1,

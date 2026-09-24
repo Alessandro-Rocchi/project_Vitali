@@ -551,6 +551,11 @@ footer ul a:not(.pipe):hover {
     transform: translateY(-2px);
 }
 
+
+#text-film-section sup, #text-film-section a {
+    color: #52c455;
+}
+
 .card_link { 
     color: var(--primary-bright); 
     font-weight: bold; 
