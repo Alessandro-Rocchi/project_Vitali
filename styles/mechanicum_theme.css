@@ -615,6 +615,11 @@ footer ul a:not(.pipe):hover {
     box-shadow: 0 0 15px var(--furnace-fire);
 }
 
+
+#text-film-section sup, #text-film-section a {
+    color: #d94a1e;
+}
+
 .card_link:hover { 
     color: var(--text-bone); 
     background: var(--furnace-fire); 

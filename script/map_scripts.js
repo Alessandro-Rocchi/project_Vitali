@@ -804,12 +804,16 @@ function showLocationDetails(locationName, shouldScroll = true) {
     currentLocationName = locationName;
 
     // Populate textual description with progressive disclosure toggle according to selected tone
+   // Populate textual description with progressive disclosure toggle according to selected tone
     if (locationTexts) {
         var toneObject = (locationTexts.tones && locationTexts.tones[selectedTone]) ? locationTexts.tones[selectedTone] : locationTexts;
 
         var text_short = toneObject.simple_description || locationTexts.simple_description || '';
         var text_medium = toneObject.medium_description || locationTexts.medium_description || '';
         var text_long = toneObject.detailed_description || locationTexts.detailed_description || '';
+
+        // Prepara l'HTML per la curiosità, usando le classi Bootstrap d-block e mt-3 per spingerla a capo sotto al bottone
+        var curiosity_html = locationTexts.curiosity ? `<span class="d-block mt-3"><b>Curiosity:</b> ${locationTexts.curiosity}</span>` : '';
 
         // If all three description tiers exist, construct tiered spans with toggle button
         if (text_short && text_medium && text_long) {
@@ -818,6 +822,7 @@ function showLocationDetails(locationName, shouldScroll = true) {
                 <span id="testo-medio" style="display: none;">${text_medium}</span>
                 <span id="testo-lungo" style="display: none;">${text_long}</span>
                 <button id="btn-scopri" class="btn btn-link p-0 ms-1 text-decoration-none fw-bold">Learn more</button>
+                ${curiosity_html}
             `;
 
             var btnScopri = document.getElementById('btn-scopri');
@@ -852,8 +857,69 @@ function showLocationDetails(locationName, shouldScroll = true) {
                 });
             }
         } else {
-            // Fallback if full 3-level tiering is incomplete: show whichever description is present
-            text_info.textContent = text_short || text_medium || text_long || 'Details not available.';
+            // Fallback if full 3-level tiering is incomplete: show whichever description is present + curiosity
+            var fallbackText = text_short || text_medium || text_long || 'Details not available.';
+            text_info.innerHTML = fallbackText + curiosity_html;
+        }
+    } else {
+        // Fallback when no metadata record exists for this location
+        text_info.textContent = 'Details not yet inserted into the database.';
+    }// Populate textual description with progressive disclosure toggle according to selected tone
+    if (locationTexts) {
+        var toneObject = (locationTexts.tones && locationTexts.tones[selectedTone]) ? locationTexts.tones[selectedTone] : locationTexts;
+
+        var text_short = toneObject.simple_description || locationTexts.simple_description || '';
+        var text_medium = toneObject.medium_description || locationTexts.medium_description || '';
+        var text_long = toneObject.detailed_description || locationTexts.detailed_description || '';
+
+        // Prepara l'HTML per la curiosità, usando le classi Bootstrap d-block e mt-3 per spingerla a capo sotto al bottone
+        var curiosity_html = locationTexts.curiosity ? `<span class="d-block mt-3"><b>Curiosity:</b> ${locationTexts.curiosity}</span>` : '';
+
+        // If all three description tiers exist, construct tiered spans with toggle button
+        if (text_short && text_medium && text_long) {
+            text_info.innerHTML = `
+                <span id="testo-breve">${text_short}</span>
+                <span id="testo-medio" style="display: none;">${text_medium}</span>
+                <span id="testo-lungo" style="display: none;">${text_long}</span>
+                <button id="btn-scopri" class="btn btn-link p-0 ms-1 text-decoration-none fw-bold">Learn more</button>
+                ${curiosity_html}
+            `;
+
+            var btnScopri = document.getElementById('btn-scopri');
+            if (btnScopri) {
+                // Click handler cycling through Short -> Medium -> Long -> Short
+                btnScopri.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    var spanBreve = document.getElementById('testo-breve');
+                    var spanMedio = document.getElementById('testo-medio');
+                    var spanLungo = document.getElementById('testo-lungo');
+
+                    // Step 1: If short is visible, switch to medium
+                    if (spanBreve.style.display !== 'none') {
+                        spanBreve.style.display = 'none';
+                        spanMedio.style.display = 'inline';
+                        spanLungo.style.display = 'none';
+                        this.textContent = 'Learn more';
+                    // Step 2: If medium is visible, switch to long and update button to "Show less"
+                    } else if (spanMedio.style.display !== 'none') {
+                        spanBreve.style.display = 'none';
+                        spanMedio.style.display = 'none';
+                        spanLungo.style.display = 'inline';
+                        this.textContent = 'Show less';
+                    // Step 3: If long is visible, cycle back to short and button to "Learn more"
+                    } else {
+                        spanBreve.style.display = 'inline';
+                        spanMedio.style.display = 'none';
+                        spanLungo.style.display = 'none';
+                        this.textContent = 'Learn more';
+                    }
+                });
+            }
+        } else {
+            // Fallback if full 3-level tiering is incomplete: show whichever description is present + curiosity
+            var fallbackText = text_short || text_medium || text_long || 'Details not available.';
+            text_info.innerHTML = fallbackText + curiosity_html;
         }
     } else {
         // Fallback when no metadata record exists for this location

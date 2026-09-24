@@ -320,6 +320,11 @@ padding-bottom: 1.5rem;
     color: #1A1A1A;
 }
 
+
+#text-film-section sup, #text-film-section a {
+    color: #fb404f;
+}
+
 /*SCROLLBAR*/
 /* Firefox */
 html {
